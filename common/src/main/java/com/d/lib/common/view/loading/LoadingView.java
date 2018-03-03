@@ -52,6 +52,7 @@ public class LoadingView extends View {
         isFirst = true;
         color = ContextCompat.getColor(context, R.color.lib_pub_color_main);
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(color);
         minAlpha = 50;
         daration = 1000;
         widthRate = 1f / 3;

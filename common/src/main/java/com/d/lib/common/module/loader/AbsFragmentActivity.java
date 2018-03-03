@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.TextView;
 
 import com.d.lib.common.R;
 import com.d.lib.common.R2;
@@ -24,8 +23,6 @@ import butterknife.OnClick;
 public abstract class AbsFragmentActivity extends BaseFragmentActivity implements ViewPager.OnPageChangeListener {
     @BindView(R2.id.tl_title)
     public TitleLayout tlTitle;
-    @BindView(R2.id.tv_title_right)
-    public TextView tvTitleR;
     @BindView(R2.id.indicator)
     public ScrollTab indicator;
     @BindView(R2.id.vp_page)
@@ -35,7 +32,7 @@ public abstract class AbsFragmentActivity extends BaseFragmentActivity implement
     protected List<Fragment> fragments;
     protected Fragment curFragment;
 
-    @OnClick({R2.id.iv_title_left, R2.id.tv_title_right})
+    @OnClick({R2.id.iv_title_left})
     public void onAbsFragmentActivityClickListener(View v) {
         int resId = v.getId();
         if (resId == R.id.iv_title_left) {
@@ -50,7 +47,6 @@ public abstract class AbsFragmentActivity extends BaseFragmentActivity implement
 
     @Override
     protected void init() {
-        tvTitleR.setVisibility(View.GONE);
         titles = getTitles();
         fragments = getFragments();
         if (titles.size() != fragments.size()) {
