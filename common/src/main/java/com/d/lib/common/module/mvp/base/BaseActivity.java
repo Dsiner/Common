@@ -40,6 +40,7 @@ public abstract class BaseActivity<T extends MvpBasePresenter> extends Activity 
         if (getDSLayoutRes() != 0) {
             dslDs = (DSLayout) findViewById(getDSLayoutRes());
         }
+        bindView();
         unbinder = ButterKnife.bind(this);
         mPresenter = getPresenter();
         if (mPresenter != null) {
@@ -102,6 +103,9 @@ public abstract class BaseActivity<T extends MvpBasePresenter> extends Activity 
     public abstract T getPresenter();
 
     protected abstract MvpView getMvpView();
+
+    protected void bindView() {
+    }
 
     protected abstract void init();
 }

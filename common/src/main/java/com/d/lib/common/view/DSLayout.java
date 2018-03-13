@@ -107,7 +107,7 @@ public class DSLayout extends FrameLayout {
         ldlLoading.setVisibility(GONE);
         llytDsl.setVisibility(VISIBLE);
         ivIcon.setImageResource(resIdEmpty);
-        tvDesc.setText("暂无歌曲");
+        tvDesc.setText("暂无数据");
         button.setVisibility(GONE);
     }
 

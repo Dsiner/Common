@@ -49,6 +49,7 @@ public abstract class BaseFragment<T extends MvpBasePresenter> extends Fragment 
             if (getDSLayoutRes() != 0) {
                 dslDs = (DSLayout) rootView.findViewById(getDSLayoutRes());
             }
+            bindView();
             unbinder = ButterKnife.bind(this, rootView);
             init();
         } else {
@@ -58,6 +59,7 @@ public abstract class BaseFragment<T extends MvpBasePresenter> extends Fragment 
             if (getDSLayoutRes() != 0) {
                 dslDs = (DSLayout) rootView.findViewById(getDSLayoutRes());
             }
+            bindView();
             unbinder = ButterKnife.bind(this, rootView);
         }
         return rootView;
@@ -130,6 +132,9 @@ public abstract class BaseFragment<T extends MvpBasePresenter> extends Fragment 
     public abstract T getPresenter();
 
     protected abstract MvpView getMvpView();
+
+    protected void bindView() {
+    }
 
     protected abstract void init();
 }

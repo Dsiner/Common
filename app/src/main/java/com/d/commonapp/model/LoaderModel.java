@@ -60,4 +60,60 @@ public class LoaderModel extends BaseModel {
             public String medium;
         }
     }
+
+    /**
+     * 获取星级
+     */
+    public static String getRating(LoaderModel item) {
+        if (item.rating == null) {
+            return "?";
+        }
+        if (item.rating.average >= 8) {
+            return "⭐⭐⭐⭐⭐ " + item.rating.average;
+        } else if (item.rating.average >= 6) {
+            return "⭐⭐⭐⭐ " + item.rating.average;
+        } else if (item.rating.average >= 4) {
+            return "⭐⭐⭐ " + item.rating.average;
+        } else if (item.rating.average >= 2) {
+            return "⭐⭐ " + item.rating.average;
+        } else {
+            return "⭐ " + item.rating.average;
+        }
+    }
+
+    /**
+     * 获取导演列表
+     */
+    public static String getDirectors(List<LoaderModel.DirectorsBean> directors) {
+        if (directors == null) {
+            return "";
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < directors.size(); i++) {
+            sb.append(directors.get(i).name);
+            if (i >= 2) {
+                break;
+            }
+            sb.append(" ");
+        }
+        return sb.toString();
+    }
+
+    /**
+     * 获取演员表
+     */
+    public static String getCasts(List<LoaderModel.CastsBean> casts) {
+        if (casts == null) {
+            return "";
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < casts.size(); i++) {
+            sb.append(casts.get(i).name);
+            if (i >= 2) {
+                break;
+            }
+            sb.append(" ");
+        }
+        return sb.toString();
+    }
 }

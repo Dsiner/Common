@@ -39,6 +39,7 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements M
         if (getDSLayoutRes() != 0) {
             dslDs = (DSLayout) findViewById(getDSLayoutRes());
         }
+        bindView();
         unbinder = ButterKnife.bind(this);
         init();
     }
@@ -89,6 +90,9 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements M
      */
     protected int getDSLayoutRes() {
         return 0;
+    }
+
+    protected void bindView() {
     }
 
     protected abstract void init();

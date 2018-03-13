@@ -26,7 +26,7 @@ public class LoaderPresenter extends AbsPresenter<LoaderModel> {
     public void getData(int page) {
         Params params = new Params(API.MovieTop.rtpType);
         params.addParam(API.MovieTop.start, String.valueOf(CommonLoader.PAGE_COUNT * (page - 1)));
-        params.addParam(API.MovieTop.count, "" + CommonLoader.PAGE_COUNT);
+        params.addParam(API.MovieTop.count, String.valueOf(CommonLoader.PAGE_COUNT));
 
         RxNet.getInstance().get(API.MovieTop.rtpType, params)
                 .request(new SimpleCallBack<LoaderInfo>() {
