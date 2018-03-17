@@ -44,8 +44,8 @@ public abstract class AbsFragment<M extends BaseModel, P extends MvpBasePresente
     }
 
     @Override
-    protected void bindView() {
-        super.bindView();
+    protected void bindView(View rootView) {
+        super.bindView(rootView);
         xrvList = ViewHelper.findView(rootView, R.id.xrv_list);
 
         ViewHelper.setOnClick(rootView, this, R.id.btn_dsl);
