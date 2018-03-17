@@ -11,7 +11,7 @@
 - [x] Dialog、PopupWindow
 - [x] 工具类
 
-More usage see [Demo](app/src/main/java/com/d/commonapp/MainActivity.java)
+More usage see [Wiki](https://github.com/Dsiner/Common/wiki)
 
 ## Licence
 
