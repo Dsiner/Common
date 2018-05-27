@@ -1,6 +1,7 @@
 # Common for Android
 
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![API](https://img.shields.io/badge/API-9%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=9)
 
 >**Common**  一个基于 `MVP` 的开发框架
 
@@ -10,6 +11,11 @@
 - [x] Pager
 - [x] Dialog、PopupWindow
 - [x] 工具类
+
+## Demo
+<p>
+   <img src="https://github.com/Dsiner/Resouce/blob/master/lib/Common/common.gif" width="320" alt="Screenshot"/>
+</p>
 
 More usage see [Wiki](https://github.com/Dsiner/Common/wiki)
 

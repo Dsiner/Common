@@ -8,7 +8,7 @@ android {
     resourcePrefix 'lib_pub_'
 
     defaultConfig {
-        minSdkVersion 11
+        minSdkVersion 9
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -40,5 +40,5 @@ dependencies {
     compile "com.nineoldandroids:library:2.4.0"
     compile "com.jakewharton:butterknife:8.8.1"
     annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
-    compile 'com.dsiner.lib:xrv:1.1.0'
+    compile 'com.dsiner.lib:xrv:1.1.1'
 }
