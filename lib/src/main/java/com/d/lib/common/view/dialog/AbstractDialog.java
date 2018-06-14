@@ -37,17 +37,20 @@ public abstract class AbstractDialog {
         dialog = new Dialog(context, themeResId);
         dialog.setCanceledOnTouchOutside(true);
         dialog.setCancelable(true);
+        dialog.setContentView(rootView);
         if (isSetWin) {
             Window dialogWindow = dialog.getWindow();
             if (dialogWindow != null) {
+                dialogWindow.setBackgroundDrawableResource(android.R.color.transparent);
+                dialogWindow.setWindowAnimations(-1);
                 dialogWindow.setGravity(gravity);
+                dialogWindow.getDecorView().setPadding(0, 0, 0, 0);
                 WindowManager.LayoutParams p = dialogWindow.getAttributes(); // 获取对话框当前的参数值
                 p.width = width; //宽度设置
                 p.height = heith; //高度设置
                 dialogWindow.setAttributes(p);
             }
         }
-        dialog.setContentView(rootView);
         init(rootView);
     }
 
@@ -58,6 +61,12 @@ public abstract class AbstractDialog {
         dialog.setCanceledOnTouchOutside(true);
         dialog.setCancelable(true);
         dialog.setContentView(rootView, params);
+        Window dialogWindow = dialog.getWindow();
+        if (dialogWindow != null) {
+            dialogWindow.setBackgroundDrawableResource(android.R.color.transparent);
+            dialogWindow.setWindowAnimations(-1);
+            dialogWindow.getDecorView().setPadding(0, 0, 0, 0);
+        }
         init(rootView);
     }
 

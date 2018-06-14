@@ -19,6 +19,10 @@
     <color name="lib_pub_color_main_50">#805E87FF</color>
     <color name="lib_pub_color_main_30">#665E87FF</color>
 
+    <color name="lib_pub_color_text_main">#000000</color>
+    <color name="lib_pub_color_text_sub">#FF888888</color>
+    <color name="lib_pub_color_text_hint">#CCCCCC</color>
+
     <color name="lib_pub_color_line">#e5e5e5</color>
     <color name="lib_pub_color_dialog_bg">#aaC1C1C1</color>
 </resources>

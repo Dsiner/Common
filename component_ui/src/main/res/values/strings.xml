@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="component_ui_app_name">Component-UI</string>
+
+    <string name="component_ui_dialog_title">标题单行</string>
+    <string name="component_ui_dialog_content">告知当前状态，信息和解决方案，文字换行的情况。</string>
+    <string name="component_ui_dialog_ok">确定</string>
+    <string name="component_ui_dialog_cancel">取消</string>
+    <string name="component_ui_dialog_gotit">知道了</string>
+    <string name="component_ui_dialog_bottom_title">告知当前状态，信息和解决方案单行</string>
+    <string name="component_ui_dialog_bottom_operation">普通操作</string>
+    <string name="component_ui_dialog_bottom_operation_dangerous">危险操作</string>
+    <string name="component_ui_dialog_bottom_operation_none">不可用操作</string>
+
 </resources>
