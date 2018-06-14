@@ -15,6 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="@dimen/lib_pub_dimen_title_height"
         android:layout_alignParentLeft="true"
+        android:gravity="center"
         android:paddingLeft="@dimen/lib_pub_dimen_margin"
         android:paddingRight="@dimen/lib_pub_dimen_margin"
         android:textColor="@color/lib_pub_color_white"
