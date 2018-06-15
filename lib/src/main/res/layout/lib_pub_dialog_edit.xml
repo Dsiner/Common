@@ -8,7 +8,16 @@
 
     <include layout="@layout/lib_pub_dialog_gt_title" />
 
-    <include layout="@layout/lib_pub_dialog_gt_content" />
+    <com.d.lib.common.view.ClearEditText
+        android:id="@+id/cet_edit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/lib_pub_dimen_margin"
+        android:background="#EDEDED"
+        android:paddingBottom="6dp"
+        android:paddingLeft="@dimen/lib_pub_dimen_margin"
+        android:paddingRight="@dimen/lib_pub_dimen_margin"
+        android:paddingTop="6dp" />
 
     <include layout="@layout/lib_pub_dialog_gt_btn" />
 </LinearLayout>

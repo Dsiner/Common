@@ -4,6 +4,7 @@
 
     <application>
         <activity android:name="com.d.common.component.ui.TitleActivity" />
-        <activity android:name="com.d.common.component.ui.DialogActivity" />
+        <activity android:name="com.d.common.component.ui.AlertActivity" />
+        <activity android:name="com.d.common.component.ui.BottomDialogActivity" />
     </application>
 </manifest>

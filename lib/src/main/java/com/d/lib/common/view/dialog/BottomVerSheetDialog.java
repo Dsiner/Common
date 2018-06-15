@@ -2,14 +2,13 @@ package com.d.lib.common.view.dialog;
 
 import android.content.Context;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
-import android.view.Gravity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.d.lib.common.R;
-import com.d.lib.xrv.LRecyclerView;
 import com.d.lib.xrv.adapter.CommonAdapter;
 import com.d.lib.xrv.adapter.CommonHolder;
 
@@ -23,14 +22,11 @@ import java.util.List;
  * 不需要显示时则调用BottomDialog(Context context, List<String> datas)构造方法，或上面方法传入title=null或""
  * </p>
  */
-public class BottomDialog extends AbstractDialog {
-    private List<Bean> datas;
-    private String title;
-    private OnItemClickListener listener;
+public class BottomVerSheetDialog extends AbsBottomSheetDialog<BottomVerSheetDialog.Bean> {
+    private boolean isChecked;
 
-    public BottomDialog(Context context, List<Bean> datas, String title) {
-        super(context, R.style.lib_pub_dialog_style, true,
-                Gravity.BOTTOM, WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+    public BottomVerSheetDialog(Context context, List<Bean> datas, String title) {
+        super(context);
         this.datas = datas;
         this.title = title;
         initView(rootView);
@@ -38,16 +34,15 @@ public class BottomDialog extends AbstractDialog {
 
     @Override
     protected int getLayoutRes() {
-        return R.layout.lib_pub_dialog_bottom;
+        return R.layout.lib_pub_dialog_bottom_style_ver;
     }
 
     @Override
-    protected void init(View rootView) {
-
-    }
-
     protected void initView(View rootView) {
-        LRecyclerView list = (LRecyclerView) rootView.findViewById(R.id.lrv_list);
+        RecyclerView list = (RecyclerView) rootView.findViewById(R.id.rv_list);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        list.setLayoutManager(layoutManager);
         TextView tvCancle = (TextView) rootView.findViewById(R.id.tv_cancle);
         TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
         if (!TextUtils.isEmpty(title)) {
@@ -56,7 +51,18 @@ public class BottomDialog extends AbstractDialog {
         } else {
             tvTitle.setVisibility(View.GONE);
         }
-        BottomAdapter adapter = new BottomAdapter(context, datas, R.layout.lib_pub_adapter_dlg_bottom);
+        int adapterLayoutId = R.layout.lib_pub_adapter_dlg_bottom_ver;
+        if (datas != null && datas.size() > 0) {
+            int size = datas.size();
+            for (int i = 0; i < size; i++) {
+                if (datas.get(i).isChecked) {
+                    adapterLayoutId = R.layout.lib_pub_adapter_dlg_bottom_ver_check;
+                    isChecked = true;
+                    break;
+                }
+            }
+        }
+        BottomAdapter adapter = new BottomAdapter(context, datas, adapterLayoutId);
         list.setAdapter(adapter);
         tvCancle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,23 +81,17 @@ public class BottomDialog extends AbstractDialog {
         public void convert(final int position, CommonHolder holder, final Bean item) {
             holder.setText(R.id.tv_item, item.item);
             holder.setTextColor(R.id.tv_item, ContextCompat.getColor(mContext, item.color));
+            holder.setViewVisibility(R.id.iv_check, item.isChecked ? View.VISIBLE : View.GONE);
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    if (isChecked) {
+                        item.isChecked = true;
+                        notifyDataSetChanged();
+                    }
                     onItemClick(position, item.item);
                 }
             });
-        }
-    }
-
-    private void onItemClick(int position, String item) {
-        dismiss();
-        if (listener != null) {
-            if (position == -1) {
-                listener.onCancel(this);
-            } else {
-                listener.onClick(this, position, item);
-            }
         }
     }
 
@@ -105,23 +105,5 @@ public class BottomDialog extends AbstractDialog {
             this.color = color;
             this.isChecked = isChecked;
         }
-    }
-
-    public interface OnItemClickListener {
-        /**
-         * Click item
-         *
-         * @param position: from 0 to datas.size()-1;
-         */
-        void onClick(BottomDialog dlg, int position, String item);
-
-        /**
-         * Click cancel
-         */
-        void onCancel(BottomDialog dlg);
-    }
-
-    public void setOnItemClickListener(OnItemClickListener listener) {
-        this.listener = listener;
     }
 }

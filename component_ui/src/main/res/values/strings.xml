@@ -4,6 +4,7 @@
 
     <string name="component_ui_dialog_title">标题单行</string>
     <string name="component_ui_dialog_content">告知当前状态，信息和解决方案，文字换行的情况。</string>
+    <string name="component_ui_dialog_sub_tips">辅助说明不超过一行</string>
     <string name="component_ui_dialog_ok">确定</string>
     <string name="component_ui_dialog_cancel">取消</string>
     <string name="component_ui_dialog_gotit">知道了</string>
