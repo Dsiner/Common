@@ -1,5 +1,6 @@
 package com.d.lib.common.view.dialog;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
@@ -72,12 +73,12 @@ public class EditDialog extends AbstractDialog {
          *
          * @param content: content
          */
-        void onSubmit(EditDialog dlg, String content);
+        void onSubmit(Dialog dlg, String content);
 
         /**
          * Click cancel
          */
-        void onCancel(EditDialog dlg);
+        void onCancel(Dialog dlg);
     }
 
     public void setOnEditListener(OnEditListener listener) {

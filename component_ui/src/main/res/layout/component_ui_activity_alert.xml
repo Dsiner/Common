@@ -33,6 +33,16 @@
                 android:textSize="14dp" />
 
             <Button
+                android:id="@+id/btn_loading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
+                android:layout_marginRight="@dimen/lib_pub_dimen_margin"
+                android:layout_marginTop="@dimen/lib_pub_dimen_margin"
+                android:text="Loading" />
+
+            <Button
                 android:id="@+id/btn_style0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

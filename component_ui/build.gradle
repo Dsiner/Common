@@ -33,6 +33,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     testCompile 'junit:junit:4.12'
-    compile "com.android.support:appcompat-v7:25.3.1"
     compile project(':lib')
+    compile "com.android.support:appcompat-v7:25.3.1"
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
 }

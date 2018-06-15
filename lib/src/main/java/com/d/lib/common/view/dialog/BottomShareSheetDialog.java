@@ -16,15 +16,15 @@ import com.d.lib.xrv.adapter.MultiItemTypeSupport;
 import java.util.List;
 
 /**
- * BottomDialog
+ * BottomShareSheetDialog
  * Created by D on 2017/7/27.
  */
-public class BottomShareSheetDialog extends AbsBottomSheetDialog<BottomShareSheetDialog.Bean> {
+public class BottomShareSheetDialog extends AbsSheetDialog<BottomShareSheetDialog.Bean> {
 
-    public BottomShareSheetDialog(Context context, List<Bean> datas, String title) {
+    public BottomShareSheetDialog(Context context, String title, List<Bean> datas) {
         super(context);
-        this.datas = datas;
         this.title = title;
+        this.datas = datas;
         initView(rootView);
     }
 
@@ -34,20 +34,8 @@ public class BottomShareSheetDialog extends AbsBottomSheetDialog<BottomShareShee
     }
 
     @Override
-    protected void initView(View rootView) {
-        RecyclerView list = (RecyclerView) rootView.findViewById(R.id.rv_list);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        list.setLayoutManager(layoutManager);
-        TextView tvCancle = (TextView) rootView.findViewById(R.id.tv_cancle);
-        TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
-        if (!TextUtils.isEmpty(title)) {
-            tvTitle.setVisibility(View.VISIBLE);
-            tvTitle.setText(title);
-        } else {
-            tvTitle.setVisibility(View.GONE);
-        }
-        BottomAdapter adapter = new BottomAdapter(context, datas, new MultiItemTypeSupport<Bean>() {
+    protected RecyclerView.Adapter getAdapter() {
+        return new SheetAdapter(context, datas, new MultiItemTypeSupport<Bean>() {
             @Override
             public int getLayoutId(int viewType) {
                 if (viewType == Bean.TYPE_CONTENT) {
@@ -63,7 +51,21 @@ public class BottomShareSheetDialog extends AbsBottomSheetDialog<BottomShareShee
                 return bean.type;
             }
         });
-        list.setAdapter(adapter);
+    }
+
+    @Override
+    protected void initView(View rootView) {
+        initRecyclerList(rootView, R.id.rv_list, LinearLayoutManager.VERTICAL);
+
+        TextView tvCancle = (TextView) rootView.findViewById(R.id.tv_cancle);
+        TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
+        if (!TextUtils.isEmpty(title)) {
+            tvTitle.setVisibility(View.VISIBLE);
+            tvTitle.setText(title);
+        } else {
+            tvTitle.setVisibility(View.GONE);
+        }
+
         tvCancle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,9 +74,9 @@ public class BottomShareSheetDialog extends AbsBottomSheetDialog<BottomShareShee
         });
     }
 
-    public class BottomAdapter extends CommonAdapter<Bean> {
+    public class SheetAdapter extends CommonAdapter<Bean> {
 
-        BottomAdapter(Context context, List<Bean> datas, MultiItemTypeSupport<Bean> multiItemTypeSupport) {
+        SheetAdapter(Context context, List<Bean> datas, MultiItemTypeSupport<Bean> multiItemTypeSupport) {
             super(context, datas, multiItemTypeSupport);
         }
 

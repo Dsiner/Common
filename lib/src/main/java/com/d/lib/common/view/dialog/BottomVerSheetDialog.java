@@ -22,13 +22,13 @@ import java.util.List;
  * 不需要显示时则调用BottomDialog(Context context, List<String> datas)构造方法，或上面方法传入title=null或""
  * </p>
  */
-public class BottomVerSheetDialog extends AbsBottomSheetDialog<BottomVerSheetDialog.Bean> {
+public class BottomVerSheetDialog extends AbsSheetDialog<BottomVerSheetDialog.Bean> {
     private boolean isChecked;
 
-    public BottomVerSheetDialog(Context context, List<Bean> datas, String title) {
+    public BottomVerSheetDialog(Context context, String title, List<Bean> datas) {
         super(context);
-        this.datas = datas;
         this.title = title;
+        this.datas = datas;
         initView(rootView);
     }
 
@@ -38,19 +38,7 @@ public class BottomVerSheetDialog extends AbsBottomSheetDialog<BottomVerSheetDia
     }
 
     @Override
-    protected void initView(View rootView) {
-        RecyclerView list = (RecyclerView) rootView.findViewById(R.id.rv_list);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        list.setLayoutManager(layoutManager);
-        TextView tvCancle = (TextView) rootView.findViewById(R.id.tv_cancle);
-        TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
-        if (!TextUtils.isEmpty(title)) {
-            tvTitle.setVisibility(View.VISIBLE);
-            tvTitle.setText(title);
-        } else {
-            tvTitle.setVisibility(View.GONE);
-        }
+    protected RecyclerView.Adapter getAdapter() {
         int adapterLayoutId = R.layout.lib_pub_adapter_dlg_bottom_ver;
         if (datas != null && datas.size() > 0) {
             int size = datas.size();
@@ -62,8 +50,22 @@ public class BottomVerSheetDialog extends AbsBottomSheetDialog<BottomVerSheetDia
                 }
             }
         }
-        BottomAdapter adapter = new BottomAdapter(context, datas, adapterLayoutId);
-        list.setAdapter(adapter);
+        return new SheetAdapter(context, datas, adapterLayoutId);
+    }
+
+    @Override
+    protected void initView(View rootView) {
+        initRecyclerList(rootView, R.id.rv_list, LinearLayoutManager.VERTICAL);
+
+        TextView tvCancle = (TextView) rootView.findViewById(R.id.tv_cancle);
+        TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
+        if (!TextUtils.isEmpty(title)) {
+            tvTitle.setVisibility(View.VISIBLE);
+            tvTitle.setText(title);
+        } else {
+            tvTitle.setVisibility(View.GONE);
+        }
+
         tvCancle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,8 +74,8 @@ public class BottomVerSheetDialog extends AbsBottomSheetDialog<BottomVerSheetDia
         });
     }
 
-    public class BottomAdapter extends CommonAdapter<Bean> {
-        BottomAdapter(Context context, List<Bean> datas, int layoutId) {
+    public class SheetAdapter extends CommonAdapter<Bean> {
+        SheetAdapter(Context context, List<Bean> datas, int layoutId) {
             super(context, datas, layoutId);
         }
 

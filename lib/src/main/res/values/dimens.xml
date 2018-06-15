@@ -15,4 +15,6 @@
     <dimen name="lib_pub_dimen_text_sub">17dp</dimen>
     <dimen name="lib_pub_dimen_text_small">15dp</dimen>
     <dimen name="lib_pub_dimen_text_mini">13dp</dimen>
+
+    <dimen name="lib_pub_dimen_btn_corner">4dp</dimen>
 </resources>

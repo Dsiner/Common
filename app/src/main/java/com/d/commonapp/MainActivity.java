@@ -3,7 +3,7 @@ package com.d.commonapp;
 import android.content.Intent;
 import android.view.View;
 
-import com.d.common.component.ui.AlertActivity;
+import com.d.common.component.ui.StatusActivity;
 import com.d.commonapp.activity.LoaderActivity;
 import com.d.commonapp.activity.PagerActivity;
 import com.d.lib.common.module.mvp.MvpBasePresenter;
@@ -18,7 +18,7 @@ public class MainActivity extends BaseActivity<MvpBasePresenter> implements MvpV
     public void onClickListener(View v) {
         switch (v.getId()) {
             case R.id.btn_ui:
-                startActivity(new Intent(MainActivity.this, AlertActivity.class));
+                startActivity(new Intent(MainActivity.this, StatusActivity.class));
                 break;
             case R.id.btn_loader:
                 startActivity(new Intent(MainActivity.this, LoaderActivity.class));

@@ -2,13 +2,14 @@ package com.d.common.component.ui;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.d.lib.common.common.AlertDialogFactory;
 import com.d.lib.common.utils.ViewHelper;
-import com.d.lib.common.view.dialog.AbsBottomSheetDialog;
+import com.d.lib.common.view.dialog.AbsSheetDialog;
 import com.d.lib.common.view.dialog.AlertSubDialog;
 import com.d.lib.common.view.dialog.EditDialog;
 import com.d.lib.common.view.dialog.InfoDialog;
@@ -23,6 +24,8 @@ public class AlertActivity extends Activity implements View.OnClickListener {
         int resId = v.getId();
         if (resId == R.id.iv_title_left) {
             finish();
+        } else if (resId == R.id.btn_loading) {
+            AlertDialogFactory.createFactory(this).getLoadingDialog("Loading...");
         } else if (resId == R.id.btn_style0) {
             AlertDialogFactory.createFactory(this).getAlertDialog(null,
                     getResources().getString(R.string.component_ui_dialog_content),
@@ -64,17 +67,17 @@ public class AlertActivity extends Activity implements View.OnClickListener {
                         }
                     });
         } else if (resId == R.id.btn_style3) {
-            AlertDialogFactory.createFactory(this).getAlertSubDialog(getResources().getString(R.string.component_ui_dialog_title),
-                    null,
+            AlertDialogFactory.createFactory(this).getAlertSubDialog(null,
+                    getResources().getString(R.string.component_ui_dialog_content),
                     getResources().getString(R.string.component_ui_dialog_sub_tips),
                     false, new AlertSubDialog.OnCheckListener() {
                         @Override
-                        public void onSubmit(AlertSubDialog dlg, boolean isChecked) {
+                        public void onSubmit(Dialog dlg, boolean isChecked) {
 
                         }
 
                         @Override
-                        public void onCancel(AlertSubDialog dlg) {
+                        public void onCancel(Dialog dlg) {
 
                         }
                     });
@@ -84,12 +87,12 @@ public class AlertActivity extends Activity implements View.OnClickListener {
                     getResources().getString(R.string.component_ui_dialog_sub_tips),
                     true, new AlertSubDialog.OnCheckListener() {
                         @Override
-                        public void onSubmit(AlertSubDialog dlg, boolean isChecked) {
+                        public void onSubmit(Dialog dlg, boolean isChecked) {
 
                         }
 
                         @Override
-                        public void onCancel(AlertSubDialog dlg) {
+                        public void onCancel(Dialog dlg) {
 
                         }
                     });
@@ -108,33 +111,34 @@ public class AlertActivity extends Activity implements View.OnClickListener {
             AlertDialogFactory.createFactory(this).getEditDialog(getResources().getString(R.string.component_ui_dialog_title)
                     , "", new EditDialog.OnEditListener() {
                         @Override
-                        public void onSubmit(EditDialog dlg, String content) {
+                        public void onSubmit(Dialog dlg, String content) {
 
                         }
 
                         @Override
-                        public void onCancel(EditDialog dlg) {
+                        public void onCancel(Dialog dlg) {
 
                         }
                     });
         } else if (resId == R.id.btn_style7) {
-            AlertDialogFactory.createFactory(this).getInfoDialog(Arrays.asList(new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "1", "" + 1111111),
-                    new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "2", "" + 2222222),
-                    new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "3", "" + 3333333),
-                    new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "4", "" + 4444444),
-                    new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "5", "" + 5555555)),
-                    getResources().getString(R.string.component_ui_dialog_title));
+            AlertDialogFactory.createFactory(this).getInfoDialog(getResources().getString(R.string.component_ui_dialog_title),
+                    Arrays.asList(new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "1", "" + 1111111),
+                            new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "2", "" + 2222222),
+                            new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "3", "" + 3333333),
+                            new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "4", "" + 4444444),
+                            new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "5", "" + 5555555)));
         } else if (resId == R.id.btn_style8) {
-            AlertDialogFactory.createFactory(this).getOperationDialog(Arrays.asList(new OperationDialog.Bean(getResources().getString(R.string.component_ui_dialog_bottom_operation) + "1", R.color.lib_pub_color_main, false),
-                    new OperationDialog.Bean(getResources().getString(R.string.component_ui_dialog_bottom_operation) + "2", R.color.lib_pub_color_main, false)),
-                    getResources().getString(R.string.component_ui_dialog_content), new AbsBottomSheetDialog.OnItemClickListener() {
+            AlertDialogFactory.createFactory(this).getOperationDialog(getResources().getString(R.string.component_ui_dialog_content),
+                    Arrays.asList(new OperationDialog.Bean(getResources().getString(R.string.component_ui_dialog_bottom_operation) + "1", R.color.lib_pub_color_main, false),
+                            new OperationDialog.Bean(getResources().getString(R.string.component_ui_dialog_bottom_operation) + "2", R.color.lib_pub_color_main, false)),
+                    new AbsSheetDialog.OnItemClickListener() {
                         @Override
-                        public void onClick(AbsBottomSheetDialog dlg, int position, String item) {
+                        public void onClick(Dialog dlg, int position, String item) {
 
                         }
 
                         @Override
-                        public void onCancel(AbsBottomSheetDialog dlg) {
+                        public void onCancel(Dialog dlg) {
 
                         }
                     });
@@ -150,6 +154,7 @@ public class AlertActivity extends Activity implements View.OnClickListener {
 
     private void initClick() {
         ViewHelper.setOnClick(this, this, R.id.iv_title_left);
+        ViewHelper.setOnClick(this, this, R.id.btn_loading);
         ViewHelper.setOnClick(this, this, R.id.btn_style0);
         ViewHelper.setOnClick(this, this, R.id.btn_style1);
         ViewHelper.setOnClick(this, this, R.id.btn_style2);

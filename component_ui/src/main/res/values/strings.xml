@@ -3,6 +3,7 @@
     <string name="component_ui_app_name">Component-UI</string>
 
     <string name="component_ui_dialog_title">标题单行</string>
+    <string name="component_ui_dialog_detail">详细信息</string>
     <string name="component_ui_dialog_content">告知当前状态，信息和解决方案，文字换行的情况。</string>
     <string name="component_ui_dialog_sub_tips">辅助说明不超过一行</string>
     <string name="component_ui_dialog_ok">确定</string>
@@ -13,4 +14,21 @@
     <string name="component_ui_dialog_bottom_operation_dangerous">危险操作</string>
     <string name="component_ui_dialog_bottom_operation_none">不可用操作</string>
 
+    <!--Button-->
+    <string name="component_ui_button">按钮</string>
+    <string name="component_ui_button_main_disable">页面主按钮 Disable</string>
+    <string name="component_ui_button_main_press">页面主按钮 Presss</string>
+    <string name="component_ui_button_main_normal">页面主按钮 Normal</string>
+    <string name="component_ui_button_destroy_press">毁灭性按钮 Presss</string>
+    <string name="component_ui_button_destroy_normal">毁灭性按钮 Normal</string>
+
+    <!--ScrollTab-->
+    <string name="component_ui_label1">标签一</string>
+    <string name="component_ui_label2">标签二</string>
+    <string name="component_ui_label3">标签三</string>
+    <string name="component_ui_label4">标签四</string>
+    <string name="component_ui_labels">标签一;标签二</string>
+
+    <string name="component_ui_scrolltab">Apple;Orange</string>
+    <string name="component_ui_scrolltab_list">GINGERBREAD;GINGERBREAD_MR1;HONEYCOMB;HONEYCOMB_MR1;HONEYCOMB_MR2;ICE_CREAM_SANDWICH;ICE_CREAM_SANDWICH_MR1</string>
 </resources>

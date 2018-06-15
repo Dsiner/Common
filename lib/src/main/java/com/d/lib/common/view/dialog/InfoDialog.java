@@ -14,15 +14,15 @@ import com.d.lib.xrv.adapter.CommonHolder;
 import java.util.List;
 
 /**
- * OperationDialog
+ * InfoDialog
  * Created by D on 2018/6/15.
  */
-public class InfoDialog extends AbsBottomSheetDialog<InfoDialog.Bean> {
+public class InfoDialog extends AbsSheetDialog<InfoDialog.Bean> {
 
-    public InfoDialog(Context context, List<Bean> datas, String title) {
+    public InfoDialog(Context context, String title, List<Bean> datas) {
         super(context, R.style.lib_pub_dialog_style, false, 0, 0, 0);
-        this.datas = datas;
         this.title = title;
+        this.datas = datas;
         initView(rootView);
     }
 
@@ -32,7 +32,14 @@ public class InfoDialog extends AbsBottomSheetDialog<InfoDialog.Bean> {
     }
 
     @Override
+    protected RecyclerView.Adapter getAdapter() {
+        return new SheetAdapter(context, datas, R.layout.lib_pub_adapter_dlg_info);
+    }
+
+    @Override
     protected void initView(View rootView) {
+        initRecyclerList(rootView, R.id.rv_list, LinearLayoutManager.VERTICAL);
+
         TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
         if (!TextUtils.isEmpty(title)) {
             tvTitle.setVisibility(View.VISIBLE);
@@ -40,16 +47,10 @@ public class InfoDialog extends AbsBottomSheetDialog<InfoDialog.Bean> {
         } else {
             tvTitle.setVisibility(View.GONE);
         }
-        RecyclerView list = (RecyclerView) rootView.findViewById(R.id.rv_list);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        list.setLayoutManager(layoutManager);
-        BottomAdapter adapter = new BottomAdapter(context, datas, R.layout.lib_pub_adapter_dlg_info);
-        list.setAdapter(adapter);
     }
 
-    public class BottomAdapter extends CommonAdapter<Bean> {
-        BottomAdapter(Context context, List<Bean> datas, int layoutId) {
+    public class SheetAdapter extends CommonAdapter<Bean> {
+        SheetAdapter(Context context, List<Bean> datas, int layoutId) {
             super(context, datas, layoutId);
         }
 

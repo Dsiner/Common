@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.d.lib.common.R;
-import com.d.lib.common.view.dialog.AbsBottomSheetDialog;
+import com.d.lib.common.view.dialog.AbsSheetDialog;
 import com.d.lib.common.view.dialog.AlertSubDialog;
 import com.d.lib.common.view.dialog.BottomHorSheetDialog;
 import com.d.lib.common.view.dialog.BottomShareSheetDialog;
@@ -123,38 +123,38 @@ public class AlertDialogFactory {
         return dialog;
     }
 
-    public InfoDialog getInfoDialog(List<InfoDialog.Bean> datas, String title) {
-        InfoDialog dialog = new InfoDialog(context, datas, title);
+    public InfoDialog getInfoDialog(String title, List<InfoDialog.Bean> datas) {
+        InfoDialog dialog = new InfoDialog(context, title, datas);
         dialog.show();
         return dialog;
     }
 
-    public OperationDialog getOperationDialog(List<OperationDialog.Bean> datas, String title, AbsBottomSheetDialog.OnItemClickListener listener) {
-        OperationDialog dialog = new OperationDialog(context, datas, title);
+    public OperationDialog getOperationDialog(String title, List<OperationDialog.Bean> datas, AbsSheetDialog.OnItemClickListener listener) {
+        OperationDialog dialog = new OperationDialog(context, title, datas);
         dialog.show();
         return dialog;
     }
 
-    public BottomVerSheetDialog getBottomDialog(List<BottomVerSheetDialog.Bean> datas, AbsBottomSheetDialog.OnItemClickListener listener) {
-        return getBottomDialog(datas, null, listener);
+    public BottomVerSheetDialog getBottomDialog(List<BottomVerSheetDialog.Bean> datas, AbsSheetDialog.OnItemClickListener listener) {
+        return getBottomDialog(null, datas, listener);
     }
 
-    public BottomVerSheetDialog getBottomDialog(List<BottomVerSheetDialog.Bean> datas, String title, AbsBottomSheetDialog.OnItemClickListener listener) {
-        BottomVerSheetDialog dialog = new BottomVerSheetDialog(context, datas, title);
+    public BottomVerSheetDialog getBottomDialog(String title, List<BottomVerSheetDialog.Bean> datas, AbsSheetDialog.OnItemClickListener listener) {
+        BottomVerSheetDialog dialog = new BottomVerSheetDialog(context, title, datas);
         dialog.setOnItemClickListener(listener);
         dialog.show();
         return dialog;
     }
 
-    public BottomHorSheetDialog getBottomHorDialog(List<BottomHorSheetDialog.Bean> datas, String title, AbsBottomSheetDialog.OnItemClickListener listener) {
-        BottomHorSheetDialog dialog = new BottomHorSheetDialog(context, datas, title);
+    public BottomHorSheetDialog getBottomHorDialog(String title, List<BottomHorSheetDialog.Bean> datas, AbsSheetDialog.OnItemClickListener listener) {
+        BottomHorSheetDialog dialog = new BottomHorSheetDialog(context, title, datas);
         dialog.setOnItemClickListener(listener);
         dialog.show();
         return dialog;
     }
 
-    public BottomShareSheetDialog getBottomShareDialog(List<BottomShareSheetDialog.Bean> datas, String title) {
-        BottomShareSheetDialog dialog = new BottomShareSheetDialog(context, datas, title);
+    public BottomShareSheetDialog getBottomShareDialog(String title, List<BottomShareSheetDialog.Bean> datas) {
+        BottomShareSheetDialog dialog = new BottomShareSheetDialog(context, title, datas);
         dialog.show();
         return dialog;
     }

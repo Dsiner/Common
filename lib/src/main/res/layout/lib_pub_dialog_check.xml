@@ -47,7 +47,7 @@
                         android:layout_width="13dp"
                         android:layout_height="13dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/lib_pub_circle_msg_number"
+                        android:background="@drawable/lib_pub_select_check"
                         android:button="@null"
                         android:clickable="false"
                         android:focusable="false"

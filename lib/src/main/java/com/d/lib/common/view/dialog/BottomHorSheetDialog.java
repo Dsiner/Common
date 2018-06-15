@@ -13,12 +13,16 @@ import com.d.lib.xrv.adapter.CommonHolder;
 
 import java.util.List;
 
-public class BottomHorSheetDialog extends AbsBottomSheetDialog<BottomHorSheetDialog.Bean> {
+/**
+ * BottomHorSheetDialog
+ * Created by D on 2017/7/27.
+ */
+public class BottomHorSheetDialog extends AbsSheetDialog<BottomHorSheetDialog.Bean> {
 
-    public BottomHorSheetDialog(Context context, List<Bean> datas, String title) {
+    public BottomHorSheetDialog(Context context, String title, List<Bean> datas) {
         super(context);
-        this.datas = datas;
         this.title = title;
+        this.datas = datas;
         initView(rootView);
     }
 
@@ -28,11 +32,14 @@ public class BottomHorSheetDialog extends AbsBottomSheetDialog<BottomHorSheetDia
     }
 
     @Override
+    protected RecyclerView.Adapter getAdapter() {
+        return new SheetAdapter(context, datas, R.layout.lib_pub_adapter_dlg_bottom_hor);
+    }
+
+    @Override
     protected void initView(View rootView) {
-        RecyclerView list = (RecyclerView) rootView.findViewById(R.id.rv_list);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
-        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        list.setLayoutManager(layoutManager);
+        initRecyclerList(rootView, R.id.rv_list, LinearLayoutManager.HORIZONTAL);
+
         TextView tvCancle = (TextView) rootView.findViewById(R.id.tv_cancle);
         TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
         if (!TextUtils.isEmpty(title)) {
@@ -41,8 +48,7 @@ public class BottomHorSheetDialog extends AbsBottomSheetDialog<BottomHorSheetDia
         } else {
             tvTitle.setVisibility(View.GONE);
         }
-        BottomAdapter adapter = new BottomAdapter(context, datas, R.layout.lib_pub_adapter_dlg_bottom_hor);
-        list.setAdapter(adapter);
+
         tvCancle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,8 +57,8 @@ public class BottomHorSheetDialog extends AbsBottomSheetDialog<BottomHorSheetDia
         });
     }
 
-    public class BottomAdapter extends CommonAdapter<Bean> {
-        BottomAdapter(Context context, List<Bean> datas, int layoutId) {
+    public class SheetAdapter extends CommonAdapter<Bean> {
+        SheetAdapter(Context context, List<Bean> datas, int layoutId) {
             super(context, datas, layoutId);
         }
 

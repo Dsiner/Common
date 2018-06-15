@@ -1,5 +1,6 @@
 package com.d.lib.common.view.dialog;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.View;
@@ -60,6 +61,7 @@ public class AlertSubDialog extends AbstractDialog {
             tvContent.setVisibility(View.GONE);
         }
         tvSubTips.setText(!TextUtils.isEmpty(subTips) ? subTips : "");
+        cbToggle.setChecked(isChecked);
         flytToggle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,12 +95,12 @@ public class AlertSubDialog extends AbstractDialog {
          *
          * @param isChecked: isChecked
          */
-        void onSubmit(AlertSubDialog dlg, boolean isChecked);
+        void onSubmit(Dialog dlg, boolean isChecked);
 
         /**
          * Click cancel
          */
-        void onCancel(AlertSubDialog dlg);
+        void onCancel(Dialog dlg);
     }
 
     public void setOnCheckListener(OnCheckListener listener) {

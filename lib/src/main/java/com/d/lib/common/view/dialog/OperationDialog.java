@@ -18,13 +18,13 @@ import java.util.List;
  * OperationDialog
  * Created by D on 2018/6/15.
  */
-public class OperationDialog extends AbsBottomSheetDialog<OperationDialog.Bean> {
+public class OperationDialog extends AbsSheetDialog<OperationDialog.Bean> {
     private boolean isChecked;
 
-    public OperationDialog(Context context, List<Bean> datas, String title) {
+    public OperationDialog(Context context, String title, List<Bean> datas) {
         super(context, R.style.lib_pub_dialog_style, false, 0, 0, 0);
-        this.datas = datas;
         this.title = title;
+        this.datas = datas;
         initView(rootView);
     }
 
@@ -34,22 +34,7 @@ public class OperationDialog extends AbsBottomSheetDialog<OperationDialog.Bean> 
     }
 
     @Override
-    protected void initView(View rootView) {
-        RecyclerView list = (RecyclerView) rootView.findViewById(R.id.rv_list);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(context);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-        list.setLayoutManager(layoutManager);
-        TextView tvCancle = (TextView) rootView.findViewById(R.id.tv_cancle);
-        TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
-        View vLineTop = rootView.findViewById(R.id.line_top);
-        if (!TextUtils.isEmpty(title)) {
-            tvTitle.setVisibility(View.VISIBLE);
-            tvTitle.setText(title);
-            vLineTop.setVisibility(View.VISIBLE);
-        } else {
-            tvTitle.setVisibility(View.GONE);
-            vLineTop.setVisibility(View.GONE);
-        }
+    protected RecyclerView.Adapter getAdapter() {
         int adapterLayoutId = R.layout.lib_pub_adapter_dlg_bottom_ver;
         if (datas != null && datas.size() > 0) {
             int size = datas.size();
@@ -61,8 +46,25 @@ public class OperationDialog extends AbsBottomSheetDialog<OperationDialog.Bean> 
                 }
             }
         }
-        BottomAdapter adapter = new BottomAdapter(context, datas, adapterLayoutId);
-        list.setAdapter(adapter);
+        return new SheetAdapter(context, datas, adapterLayoutId);
+    }
+
+    @Override
+    protected void initView(View rootView) {
+        initRecyclerList(rootView, R.id.rv_list, LinearLayoutManager.VERTICAL);
+
+        TextView tvCancle = (TextView) rootView.findViewById(R.id.tv_cancle);
+        TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
+        View vLineTop = rootView.findViewById(R.id.line_top);
+        if (!TextUtils.isEmpty(title)) {
+            tvTitle.setVisibility(View.VISIBLE);
+            tvTitle.setText(title);
+            vLineTop.setVisibility(View.VISIBLE);
+        } else {
+            tvTitle.setVisibility(View.GONE);
+            vLineTop.setVisibility(View.GONE);
+        }
+
         tvCancle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,8 +73,8 @@ public class OperationDialog extends AbsBottomSheetDialog<OperationDialog.Bean> 
         });
     }
 
-    public class BottomAdapter extends CommonAdapter<Bean> {
-        BottomAdapter(Context context, List<Bean> datas, int layoutId) {
+    public class SheetAdapter extends CommonAdapter<Bean> {
+        SheetAdapter(Context context, List<Bean> datas, int layoutId) {
             super(context, datas, layoutId);
         }
 

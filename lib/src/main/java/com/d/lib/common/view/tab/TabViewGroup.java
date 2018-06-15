@@ -17,11 +17,10 @@ import com.d.lib.common.R;
 public class TabViewGroup extends RelativeLayout implements TabView {
     private Context context;
     private TextView tvTitle, tvNumber;
-    private int color, colorCur;
-    private boolean focus;
 
     public TabViewGroup(Context context) {
-        this(context, null);
+        super(context);
+        init(context);
     }
 
     public TabViewGroup(Context context, AttributeSet attrs) {
@@ -29,10 +28,13 @@ public class TabViewGroup extends RelativeLayout implements TabView {
         init(context);
     }
 
+    public TabViewGroup(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(context);
+    }
+
     private void init(Context context) {
         this.context = context;
-        this.color = ContextCompat.getColor(context, R.color.lib_pub_color_gray);
-        this.colorCur = ContextCompat.getColor(context, R.color.lib_pub_color_main);
         View root = LayoutInflater.from(context).inflate(R.layout.lib_pub_view_tab, this);
         tvTitle = (TextView) root.findViewById(R.id.tv_title);
         tvNumber = (TextView) root.findViewById(R.id.tv_number);
@@ -56,10 +58,7 @@ public class TabViewGroup extends RelativeLayout implements TabView {
 
     @Override
     public void notifyData(boolean focus) {
-        this.focus = focus;
-        if (tvTitle != null) {
-            tvTitle.setTextColor(focus ? colorCur : color);
-        }
+        tvTitle.setTextColor(ContextCompat.getColor(context, focus ? R.color.lib_pub_color_main : R.color.lib_pub_color_gray));
     }
 
     @Override
