@@ -12,7 +12,7 @@
         android:background="@color/lib_pub_color_main"
         app:lib_pub_tl_leftDrawable="@drawable/lib_pub_ic_title_back"
         app:lib_pub_tl_middleText="Status"
-        app:lib_pub_tl_rightDrawable="@drawable/lib_pub_ic_title_back" />
+        app:lib_pub_tl_rightDrawable="@drawable/lib_pub_ic_title_more" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -118,6 +118,97 @@
                     app:lib_pub_badgev_radius="6dp" />
             </LinearLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/lib_pub_dimen_margin"
+                android:text="Page indicator 组件"
+                android:textColor="@color/lib_pub_color_black"
+                android:textSize="14dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/lib_pub_dimen_margin">
+
+                <ImageView
+                    android:layout_width="9dp"
+                    android:layout_height="9dp"
+                    android:src="@drawable/component_ui_indicator_focus" />
+
+                <ImageView
+                    android:layout_width="9dp"
+                    android:layout_height="9dp"
+                    android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
+                    android:src="@drawable/component_ui_indicator_normal" />
+
+                <ImageView
+                    android:layout_width="9dp"
+                    android:layout_height="9dp"
+                    android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
+                    android:src="@drawable/component_ui_indicator_normal" />
+
+                <ImageView
+                    android:layout_width="9dp"
+                    android:layout_height="9dp"
+                    android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
+                    android:src="@drawable/component_ui_indicator_normal" />
+
+                <ImageView
+                    android:layout_width="9dp"
+                    android:layout_height="9dp"
+                    android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
+                    android:src="@drawable/component_ui_indicator_normal" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/lib_pub_dimen_margin"
+                android:text="Notice Bar 组件"
+                android:textColor="@color/lib_pub_color_black"
+                android:textSize="14dp" />
+
+            <com.d.lib.common.view.NoticeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
+                android:layout_marginRight="@dimen/lib_pub_dimen_margin"
+                app:lib_pub_noticel_exitVisibility="gone"
+                app:lib_pub_noticel_gotoVisibility="visible"
+                app:lib_pub_noticel_text="@string/component_ui_notice_type1" />
+
+            <com.d.lib.common.view.NoticeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
+                android:layout_marginRight="@dimen/lib_pub_dimen_margin"
+                android:layout_marginTop="@dimen/lib_pub_dimen_margin"
+                app:lib_pub_noticel_exitVisibility="visible"
+                app:lib_pub_noticel_gotoVisibility="gone"
+                app:lib_pub_noticel_text="@string/component_ui_notice_type2" />
+
+            <com.d.lib.common.view.NoticeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
+                android:layout_marginRight="@dimen/lib_pub_dimen_margin"
+                android:layout_marginTop="@dimen/lib_pub_dimen_margin"
+                app:lib_pub_noticel_button="@string/component_ui_button"
+                app:lib_pub_noticel_exitVisibility="gone"
+                app:lib_pub_noticel_gotoVisibility="gone"
+                app:lib_pub_noticel_text="@string/component_ui_notice_type3" />
+
+            <com.d.lib.common.view.NoticeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
+                android:layout_marginRight="@dimen/lib_pub_dimen_margin"
+                android:layout_marginTop="@dimen/lib_pub_dimen_margin"
+                app:lib_pub_noticel_exitVisibility="gone"
+                app:lib_pub_noticel_gotoVisibility="gone"
+                app:lib_pub_noticel_text="@string/component_ui_notice_type4" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

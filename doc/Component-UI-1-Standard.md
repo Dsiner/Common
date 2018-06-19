@@ -46,6 +46,8 @@
     <color name="lib_pub_color_press">#E6F7F7F7</color>
     <!--全局隐色-->
     <color name="lib_pub_color_hint">#e3e4e5</color>
+    <!--全局提醒色-->
+    <color name="lib_pub_color_notice">#FFF4CB</color>
     <!--全局分割线色-->
     <color name="lib_pub_color_line">#e5e5e5</color>
     <!--全局弹窗背景色-->

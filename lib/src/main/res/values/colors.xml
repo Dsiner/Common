@@ -30,6 +30,7 @@
 
     <color name="lib_pub_color_press">#E6F7F7F7</color>
     <color name="lib_pub_color_hint">#e3e4e5</color>
+    <color name="lib_pub_color_notice">#FFF4CB</color>
     <color name="lib_pub_color_line">#e5e5e5</color>
     <color name="lib_pub_color_dialog_bg">#AAC1C1C1</color>
 </resources>

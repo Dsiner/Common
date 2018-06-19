@@ -46,7 +46,6 @@
         android:layout_height="14dp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:background="@color/lib_pub_color_dgray"
         android:scaleType="centerCrop"
         android:src="@drawable/lib_pub_ic_more_right" />
 

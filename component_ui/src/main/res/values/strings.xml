@@ -28,7 +28,12 @@
     <string name="component_ui_label3">标签三</string>
     <string name="component_ui_label4">标签四</string>
     <string name="component_ui_labels">标签一;标签二</string>
-
     <string name="component_ui_scrolltab">Apple;Orange</string>
     <string name="component_ui_scrolltab_list">GINGERBREAD;GINGERBREAD_MR1;HONEYCOMB;HONEYCOMB_MR1;HONEYCOMB_MR2;ICE_CREAM_SANDWICH;ICE_CREAM_SANDWICH_MR1</string>
+
+    <!--Notice-->
+    <string name="component_ui_notice_type1">可点击跳转的通告栏样式</string>
+    <string name="component_ui_notice_type2">可关闭的通告栏样式</string>
+    <string name="component_ui_notice_type3">带按钮的通告栏样式</string>
+    <string name="component_ui_notice_type4">可滚动轮播的通告栏样式可滚动轮播的通告栏样式</string>
 </resources>
