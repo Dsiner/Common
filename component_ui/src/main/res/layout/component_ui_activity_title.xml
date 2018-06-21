@@ -27,9 +27,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Navigation Bar 组件"
+                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
+                android:text="@string/component_ui_desc_title"
                 android:textColor="@color/lib_pub_color_black"
-                android:textSize="14dp" />
+                android:textSize="@dimen/lib_pub_dimen_text_small" />
 
             <com.d.lib.common.view.TitleLayout
                 android:layout_width="match_parent"

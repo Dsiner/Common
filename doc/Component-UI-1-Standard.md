@@ -86,3 +86,14 @@
 
     <!--全局按钮圆角值-->
     <dimen name="lib_pub_dimen_btn_corner">4dp</dimen>
+
+
+3.  ------------------------------ Drawable ------------------------------
+    lib_pub_corner_btn_main_disable     |  页面主按钮 不可用背景
+    lib_pub_corner_btn_main_press       |  页面主按钮 按压背景
+    lib_pub_corner_btn_main_normal      |  页面主按钮 正常背景
+    lib_pub_select_btn_main             |  页面主按钮 背景
+
+    lib_pub_corner_btn_destroy_press    |  毁灭性按钮 按压背景
+    lib_pub_corner_btn_destroy_normal   |  毁灭性按钮 正常背景
+    lib_pub_select_btn_destroy          |  毁灭性按钮 背景

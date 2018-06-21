@@ -28,10 +28,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/lib_pub_dimen_margin"
-                android:text="Bagde 组件"
+                android:layout_marginBottom="@dimen/lib_pub_dimen_margin"
+                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
+                android:text="@string/component_ui_desc_bagde"
                 android:textColor="@color/lib_pub_color_black"
-                android:textSize="14dp" />
+                android:textSize="@dimen/lib_pub_dimen_text_small" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -122,9 +123,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/lib_pub_dimen_margin"
-                android:text="Page indicator 组件"
+                android:text="@string/component_ui_desc_page_indicator"
                 android:textColor="@color/lib_pub_color_black"
-                android:textSize="14dp" />
+                android:textSize="@dimen/lib_pub_dimen_text_small" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -166,15 +167,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/lib_pub_dimen_margin"
-                android:text="Notice Bar 组件"
+                android:text="@string/component_ui_desc_notice_bar"
                 android:textColor="@color/lib_pub_color_black"
-                android:textSize="14dp" />
+                android:textSize="@dimen/lib_pub_dimen_text_small" />
 
             <com.d.lib.common.view.NoticeLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
                 android:layout_marginRight="@dimen/lib_pub_dimen_margin"
+                android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 app:lib_pub_noticel_exitVisibility="gone"
                 app:lib_pub_noticel_gotoVisibility="visible"
                 app:lib_pub_noticel_text="@string/component_ui_notice_type1" />

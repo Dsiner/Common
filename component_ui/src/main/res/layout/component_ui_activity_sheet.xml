@@ -11,7 +11,7 @@
         android:layout_height="@dimen/lib_pub_dimen_title_height"
         android:background="@color/lib_pub_color_main"
         app:lib_pub_tl_leftDrawable="@drawable/lib_pub_ic_title_back"
-        app:lib_pub_tl_middleText="Bottom SheetDialog" />
+        app:lib_pub_tl_middleText="Sheet" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,74 +21,60 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/lib_pub_dimen_margin"
-            android:paddingTop="@dimen/lib_pub_dimen_margin">
+            android:padding="@dimen/lib_pub_dimen_margin">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/lib_pub_dimen_margin"
-                android:text="Action Sheet 组件(用于由用户主动操作触发的，执行后立即生效的)"
+                android:text="@string/component_ui_desc_sheet"
                 android:textColor="@color/lib_pub_color_black"
-                android:textSize="14dp" />
+                android:textSize="@dimen/lib_pub_dimen_text_small" />
 
             <Button
                 android:id="@+id/btn_style0"
+                style="@style/lib_pub_btn_style"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
-                android:layout_marginRight="@dimen/lib_pub_dimen_margin"
+                android:layout_height="40dp"
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 android:text="Style1" />
 
             <Button
                 android:id="@+id/btn_style1"
+                style="@style/lib_pub_btn_style"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
-                android:layout_marginRight="@dimen/lib_pub_dimen_margin"
+                android:layout_height="40dp"
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 android:text="Style2" />
 
             <Button
                 android:id="@+id/btn_style2"
+                style="@style/lib_pub_btn_style"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
-                android:layout_marginRight="@dimen/lib_pub_dimen_margin"
+                android:layout_height="40dp"
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 android:text="Style3" />
 
             <Button
                 android:id="@+id/btn_style3"
+                style="@style/lib_pub_btn_style"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
-                android:layout_marginRight="@dimen/lib_pub_dimen_margin"
+                android:layout_height="40dp"
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 android:text="Style4" />
 
             <Button
                 android:id="@+id/btn_style4"
+                style="@style/lib_pub_btn_style"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
-                android:layout_marginRight="@dimen/lib_pub_dimen_margin"
+                android:layout_height="40dp"
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 android:text="Style5" />
 
             <Button
                 android:id="@+id/btn_style5"
+                style="@style/lib_pub_btn_style"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
-                android:layout_marginRight="@dimen/lib_pub_dimen_margin"
+                android:layout_height="40dp"
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 android:text="Style6" />
         </LinearLayout>

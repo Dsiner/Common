@@ -2,6 +2,16 @@
 <resources>
     <string name="component_ui_app_name">Component-UI</string>
 
+    <!--描述-->
+    <string name="component_ui_desc_title">Navigation Bar 组件</string>
+    <string name="component_ui_desc_row">Row 组件</string>
+    <string name="component_ui_desc_tab">Tab 组件</string>
+    <string name="component_ui_desc_alert">Alert 组件</string>
+    <string name="component_ui_desc_sheet">Action Sheet 组件(用于由用户主动操作触发的，执行后立即生效的)</string>
+    <string name="component_ui_desc_bagde">Bagde 组件</string>
+    <string name="component_ui_desc_page_indicator">Page indicator 组件</string>
+    <string name="component_ui_desc_notice_bar">Notice Bar 组件</string>
+
     <string name="component_ui_dialog_title">标题单行</string>
     <string name="component_ui_dialog_detail">详细信息</string>
     <string name="component_ui_dialog_content">告知当前状态，信息和解决方案，文字换行的情况。</string>

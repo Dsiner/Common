@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.d.lib.common.R;
 import com.d.lib.common.utils.Util;
@@ -148,8 +147,8 @@ public class DSLayout extends FrameLayout {
      */
     public DSLayout icon(String url) {
         Glide.with(getContext())
-                .asGif()
                 .load(url)
+                .apply(new RequestOptions().dontTransform().dontAnimate())
                 .into(ivIcon);
         return this;
     }
@@ -170,8 +169,8 @@ public class DSLayout extends FrameLayout {
      */
     public DSLayout gif(String url) {
         Glide.with(getContext())
+                .asGif()
                 .load(url)
-                .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE).dontTransform().dontAnimate())
                 .into(ivIcon);
         return this;
     }

@@ -3,13 +3,14 @@
     package="com.d.common.component.ui">
 
     <application>
+        <activity android:name="com.d.common.component.ui.UIActivity" />
         <activity android:name="com.d.common.component.ui.TitleActivity" />
-        <activity android:name="com.d.common.component.ui.AlertActivity" />
-        <activity android:name="com.d.common.component.ui.SheetActivity" />
-        <activity android:name="com.d.common.component.ui.ButtonActivity" />
+        <activity android:name="com.d.common.component.ui.DSActivity" />
         <activity android:name="com.d.common.component.ui.RowActivity" />
         <activity android:name="com.d.common.component.ui.ToolBarActivity" />
-        <activity android:name="com.d.common.component.ui.DSActivity" />
+        <activity android:name="com.d.common.component.ui.AlertActivity" />
+        <activity android:name="com.d.common.component.ui.SheetActivity" />
         <activity android:name="com.d.common.component.ui.StatusActivity" />
+        <activity android:name="com.d.common.component.ui.ButtonActivity" />
     </application>
 </manifest>

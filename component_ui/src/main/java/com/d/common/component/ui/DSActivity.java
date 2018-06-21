@@ -9,6 +9,9 @@ import com.d.lib.common.utils.ViewHelper;
 import com.d.lib.common.view.DSLayout;
 
 public class DSActivity extends Activity implements View.OnClickListener {
+    private final String urlGif = "https://raw.githubusercontent.com/Dsiner/Common/develop_component_ui/component_ui/src/main/res/drawable-xxhdpi/";
+    private final String urlPng = "https://raw.githubusercontent.com/Dsiner/Common/develop_component_ui/lib/src/main/res/drawable-xxhdpi/";
+
     private DSLayout dslDs;
 
     @Override
@@ -45,14 +48,14 @@ public class DSActivity extends Activity implements View.OnClickListener {
 
         } else if (resId == R.id.btn_2_0) {
             dslDs.setState(DSLayout.STATE_EMPTY)
-                    .gif(R.drawable.component_ui_gif_search)
+                    .gif(urlGif + "component_ui_gif_search.gif")
                     .desc("数据扫描中...");
         } else if (resId == R.id.btn_2_1) {
             dslDs.setState(DSLayout.STATE_EMPTY)
-                    .icon(R.drawable.lib_pub_ic_no_data);
+                    .icon(urlPng + "lib_pub_ic_no_data.png");
         } else if (resId == R.id.btn_2_2) {
             dslDs.setState(DSLayout.STATE_NET_ERROR)
-                    .icon(R.drawable.lib_pub_ic_network_err);
+                    .icon(urlPng + "lib_pub_ic_network_err.png");
         }
     }
 

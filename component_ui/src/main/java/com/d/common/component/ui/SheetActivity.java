@@ -113,6 +113,7 @@ public class SheetActivity extends Activity implements View.OnClickListener {
 
     private void initClick() {
         ViewHelper.setOnClick(this, this, R.id.iv_title_left);
+
         ViewHelper.setOnClick(this, this, R.id.btn_style0);
         ViewHelper.setOnClick(this, this, R.id.btn_style1);
         ViewHelper.setOnClick(this, this, R.id.btn_style2);

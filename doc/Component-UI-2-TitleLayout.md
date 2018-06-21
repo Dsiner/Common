@@ -13,14 +13,14 @@
     @Bind(R.id.tl_title)
     TitleLayout tlTitle;
 
-2.方法
-    1).setVisibility(int resId, int visibility)
-    2).setText(int resId, CharSequence text)
-    3).setOnClickListener(int resId, OnClickListener l)
-    4).findViewById(...)
-    5).setOnClickListener(...)
+3.方法
+    1).findViewById(...)
+    2).setOnClickListener(...)
+    3).setVisibility(int resId, int visibility)
+    4).setText(int resId, CharSequence text)
+    5).setOnClickListener(int resId, OnClickListener l)
 
-3.对照表(属性-Id)
+4.对照表(属性-Id)
     lib_pub_tl_leftText        |  tv_title_left
     lib_pub_tl_leftDrawable    |  iv_title_left
     lib_pub_tl_leftRes         |  reference

@@ -28,10 +28,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/lib_pub_dimen_margin"
-                android:text="Row 组件"
+                android:layout_marginBottom="@dimen/lib_pub_dimen_margin"
+                android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
+                android:text="@string/component_ui_desc_row"
                 android:textColor="@color/lib_pub_color_black"
-                android:textSize="14dp" />
+                android:textSize="@dimen/lib_pub_dimen_text_small" />
 
             <include layout="@layout/lib_pub_layout_line" />
 
