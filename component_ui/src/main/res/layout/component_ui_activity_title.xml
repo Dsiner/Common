@@ -47,7 +47,7 @@
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 android:background="@color/lib_pub_color_main"
                 app:lib_pub_tl_leftDrawable="@drawable/component_ui_bg_rect"
-                app:lib_pub_tl_middleText="标题"
+                app:lib_pub_tl_middleText="@string/component_ui_dialog_title"
                 app:lib_pub_tl_rightDrawable="@drawable/component_ui_bg_rect" />
 
             <com.d.lib.common.view.TitleLayout
@@ -56,14 +56,14 @@
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 android:background="@color/lib_pub_color_main"
                 app:lib_pub_tl_leftDrawable="@drawable/component_ui_bg_rect"
-                app:lib_pub_tl_middleText="标题" />
+                app:lib_pub_tl_middleText="@string/component_ui_dialog_title" />
 
             <com.d.lib.common.view.TitleLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_title_height"
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 android:background="@color/lib_pub_color_main"
-                app:lib_pub_tl_middleText="标题"
+                app:lib_pub_tl_middleText="@string/component_ui_dialog_title"
                 app:lib_pub_tl_rightDrawable="@drawable/component_ui_bg_rect" />
 
             <com.d.lib.common.view.TitleLayout
@@ -72,32 +72,32 @@
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 android:background="@color/lib_pub_color_main"
                 app:lib_pub_tl_leftDrawable="@drawable/component_ui_bg_rect"
-                app:lib_pub_tl_middleText="标题"
-                app:lib_pub_tl_rightText="文字按钮" />
+                app:lib_pub_tl_middleText="@string/component_ui_dialog_title"
+                app:lib_pub_tl_rightText="@string/component_ui_button_text" />
 
             <com.d.lib.common.view.TitleLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_title_height"
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 android:background="@color/lib_pub_color_main"
-                app:lib_pub_tl_middleText="标题"
-                app:lib_pub_tl_rightText="文字按钮" />
+                app:lib_pub_tl_middleText="@string/component_ui_dialog_title"
+                app:lib_pub_tl_rightText="@string/component_ui_button_text" />
 
             <com.d.lib.common.view.TitleLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_title_height"
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 android:background="@color/lib_pub_color_main"
-                app:lib_pub_tl_leftText="文字按钮"
-                app:lib_pub_tl_middleText="标题"
-                app:lib_pub_tl_rightText="文字按钮" />
+                app:lib_pub_tl_leftText="@string/component_ui_button_text"
+                app:lib_pub_tl_middleText="@string/component_ui_dialog_title"
+                app:lib_pub_tl_rightText="@string/component_ui_button_text" />
 
             <com.d.lib.common.view.TitleLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_title_height"
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
                 android:background="@color/lib_pub_color_main"
-                app:lib_pub_tl_middleText="标题" />
+                app:lib_pub_tl_middleText="@string/component_ui_dialog_title" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

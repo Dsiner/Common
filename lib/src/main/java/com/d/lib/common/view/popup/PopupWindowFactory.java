@@ -15,8 +15,9 @@ public class PopupWindowFactory {
         return new PopupWindowFactory(context);
     }
 
-    public MenuPopup getMenuPopup(List<MenuPopup.Bean> datas) {
+    public MenuPopup getMenuPopup(List<MenuPopup.Bean> datas, MenuPopup.OnMenuListener l) {
         MenuPopup popup = new MenuPopup(context, datas);
+        popup.setOnMenuListener(l);
         return popup;
     }
 }

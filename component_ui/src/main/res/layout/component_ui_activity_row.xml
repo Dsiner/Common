@@ -42,7 +42,7 @@
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
                 android:background="@color/lib_pub_color_bg_main"
                 app:lib_pub_rl_gotoVisibility="visible"
-                app:lib_pub_rl_text="@string/component_ui_dialog_title"
+                app:lib_pub_rl_text="@string/component_ui_dialog_title_single"
                 app:lib_pub_rl_toggleVisibility="gone" />
 
             <include layout="@layout/lib_pub_layout_line" />
@@ -59,7 +59,7 @@
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
                 android:background="@color/lib_pub_color_bg_main"
                 app:lib_pub_rl_gotoVisibility="visible"
-                app:lib_pub_rl_text="@string/component_ui_dialog_title"
+                app:lib_pub_rl_text="@string/component_ui_dialog_title_single"
                 app:lib_pub_rl_toggleVisibility="gone" />
 
             <include layout="@layout/lib_pub_layout_line" />
@@ -71,7 +71,7 @@
                 android:background="@color/lib_pub_color_bg_main"
                 app:lib_pub_rl_gotoVisibility="visible"
                 app:lib_pub_rl_hint="@string/component_ui_dialog_detail"
-                app:lib_pub_rl_text="@string/component_ui_dialog_title"
+                app:lib_pub_rl_text="@string/component_ui_dialog_title_single"
                 app:lib_pub_rl_toggleVisibility="gone" />
 
             <include layout="@layout/lib_pub_layout_line" />
@@ -82,7 +82,7 @@
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
                 android:background="@color/lib_pub_color_bg_main"
                 app:lib_pub_rl_gotoVisibility="gone"
-                app:lib_pub_rl_text="@string/component_ui_dialog_title"
+                app:lib_pub_rl_text="@string/component_ui_dialog_title_single"
                 app:lib_pub_rl_toggleVisibility="visible" />
 
             <include layout="@layout/lib_pub_layout_line" />
@@ -93,7 +93,7 @@
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
                 android:background="@color/lib_pub_color_bg_main"
                 app:lib_pub_rl_gotoVisibility="gone"
-                app:lib_pub_rl_text="@string/component_ui_dialog_title"
+                app:lib_pub_rl_text="@string/component_ui_dialog_title_single"
                 app:lib_pub_rl_toggleVisibility="visible" />
 
             <include layout="@layout/lib_pub_layout_line" />
@@ -106,7 +106,7 @@
                 android:background="@color/lib_pub_color_bg_main"
                 app:lib_pub_rl_gotoVisibility="visible"
                 app:lib_pub_rl_icon="@color/lib_pub_color_red"
-                app:lib_pub_rl_text="@string/component_ui_dialog_title"
+                app:lib_pub_rl_text="@string/component_ui_dialog_title_single"
                 app:lib_pub_rl_toggleVisibility="gone" />
 
             <include layout="@layout/lib_pub_layout_line" />

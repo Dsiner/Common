@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.Build;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -16,13 +17,15 @@ import android.view.ViewConfiguration;
 import com.d.lib.common.R;
 import com.d.lib.common.utils.Util;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
- * TabView
+ * SegementView
  * Created by D on 2018/1/17.
  */
 public class SegementView extends View {
-    private String[] TITLES = new String[]{"", ""};//variables 标题
-
     private int width;
     private int height;
 
@@ -33,11 +36,12 @@ public class SegementView extends View {
     private int colorA;
     private int colorB;
 
+    private List<String> TITLES = new ArrayList<>();//variables Titles
     private String strTitles;
     private float textSize;
     private float rectRadius;
     private float divideWidth;
-    private float padding;//variables 背景边框线宽度
+    private float padding;//variables Background border line width
     private int heightText;
     private int curIndex = 0;
     private float dX, dY;
@@ -64,8 +68,8 @@ public class SegementView extends View {
     private void initAttrs(Context context, AttributeSet attrs) {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.lib_pub_SegementView);
         strTitles = typedArray.getString(R.styleable.lib_pub_SegementView_lib_pub_segementv_titles);
-        colorA = typedArray.getColor(R.styleable.lib_pub_SegementView_lib_pub_segementv_colorMain, getResources().getColor(R.color.lib_pub_color_main));
-        colorB = typedArray.getColor(R.styleable.lib_pub_SegementView_lib_pub_segementv_colorSub, getResources().getColor(R.color.lib_pub_color_white));
+        colorA = typedArray.getColor(R.styleable.lib_pub_SegementView_lib_pub_segementv_colorMain, ContextCompat.getColor(context, R.color.lib_pub_color_main));
+        colorB = typedArray.getColor(R.styleable.lib_pub_SegementView_lib_pub_segementv_colorSub, ContextCompat.getColor(context, R.color.lib_pub_color_white));
         textSize = typedArray.getDimension(R.styleable.lib_pub_SegementView_lib_pub_segementv_textSize, Util.dip2px(context, 14));
         rectRadius = typedArray.getDimension(R.styleable.lib_pub_SegementView_lib_pub_segementv_radius, -1);
         divideWidth = typedArray.getDimension(R.styleable.lib_pub_SegementView_lib_pub_segementv_divideWidth, Util.dip2px(context, 1));
@@ -75,7 +79,8 @@ public class SegementView extends View {
 
     private void init(Context context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
-            setLayerType(LAYER_TYPE_SOFTWARE, null);//禁用硬件加速
+            //Disabling hardware acceleration
+            setLayerType(LAYER_TYPE_SOFTWARE, null);
         }
         touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
 
@@ -91,24 +96,25 @@ public class SegementView extends View {
         paintB.setTextSize(textSize);
         paintB.setTextAlign(Paint.Align.CENTER);
 
-        heightText = (int) Util.getTextHeight(paintB);//获取标题的高度px
+        //Get title height px
+        heightText = (int) Util.getTextHeight(paintB);
 
         if (!TextUtils.isEmpty(strTitles)) {
             String[] strs = strTitles.split(";");
-            TITLES = strs != null ? strs : new String[0];
+            TITLES.addAll(Arrays.asList(strs));
         }
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (TITLES == null || TITLES.length <= 0) {
+        if (TITLES == null || TITLES.size() <= 0) {
             return;
         }
-        int size = TITLES.length;
+        int size = TITLES.size();
         float space = (1f * width) / size / 2;
 
-        //背景
+        //Background
         rect.set(0, 0, width, height);
         rectF.set(rect);
         canvas.drawRoundRect(rectF, rectRadius, rectRadius, paintA);
@@ -117,7 +123,7 @@ public class SegementView extends View {
         rectF.set(rect);
         canvas.drawRoundRect(rectF, rectRadius, rectRadius, paintB);
 
-        //滑块
+        //Slider
         if (curIndex == 0) {
             canvas.drawRect(space, 0, space * 2, height, paintA);
             rect.set(0, 0, (int) (space * 2), height);
@@ -140,7 +146,7 @@ public class SegementView extends View {
                         space * 2 * i + divideWidth / 2, height, paintA);
             }
             //Draw title
-            canvas.drawText(TITLES[i], space * 2 * i + space, starty, curIndex == i ? paintB : paintA);
+            canvas.drawText(TITLES.get(i), space * 2 * i + space, starty, curIndex == i ? paintB : paintA);
         }
     }
 
@@ -152,7 +158,6 @@ public class SegementView extends View {
         if (rectRadius == -1) {
             rectRadius = (height + 0.5f) / 2;
         }
-        setMeasuredDimension(width, height);
     }
 
     @Override
@@ -194,23 +199,24 @@ public class SegementView extends View {
         if (eX < 0 || eX > width || eY < 0 || eY > height) {
             return 0;
         }
-        int size = TITLES.length;
+        int size = TITLES.size();
         int index = (int) (eX / (1f * width / size));
         index = Math.min(index, size - 1);
         index = Math.max(index, 0);
         return index;
     }
 
-    public void setTitle(String[] title) {
-        if (title == null || title.length <= 0) {
+    public void setTitles(List<String> ts) {
+        if (ts == null) {
             return;
         }
-        TITLES = title;
+        this.TITLES.clear();
+        this.TITLES.addAll(ts);
         invalidate();
     }
 
     /**
-     * 切换当前tab
+     * Switch current Tab
      *
      * @param index: destination index
      */

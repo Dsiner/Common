@@ -17,6 +17,8 @@
         android:layout_height="75dp"
         android:layout_marginBottom="@dimen/lib_pub_dimen_margin"
         android:clipToPadding="false"
+        android:overScrollMode="never"
         android:paddingLeft="@dimen/lib_pub_dimen_margin"
-        android:paddingRight="@dimen/lib_pub_dimen_margin" />
+        android:paddingRight="@dimen/lib_pub_dimen_margin"
+        android:scrollbars="none" />
 </merge>

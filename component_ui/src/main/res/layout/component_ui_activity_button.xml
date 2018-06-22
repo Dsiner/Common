@@ -38,6 +38,7 @@
                 android:background="@drawable/lib_pub_corner_btn_main_disable"
                 android:gravity="center"
                 android:text="@string/component_ui_button_main_disable"
+                android:textAllCaps="false"
                 android:textColor="@color/lib_pub_color_white"
                 android:textSize="@dimen/lib_pub_dimen_text_small" />
 
@@ -49,6 +50,7 @@
                 android:background="@drawable/lib_pub_corner_btn_main_press"
                 android:gravity="center"
                 android:text="@string/component_ui_button_main_press"
+                android:textAllCaps="false"
                 android:textColor="#DADADA"
                 android:textSize="@dimen/lib_pub_dimen_text_small" />
 
@@ -60,6 +62,7 @@
                 android:background="@drawable/lib_pub_select_btn_main"
                 android:gravity="center"
                 android:text="@string/component_ui_button_main_normal"
+                android:textAllCaps="false"
                 android:textColor="@color/lib_pub_color_select_btn_main"
                 android:textSize="@dimen/lib_pub_dimen_text_small" />
 
@@ -71,6 +74,7 @@
                 android:background="@drawable/lib_pub_corner_btn_destroy_press"
                 android:gravity="center"
                 android:text="@string/component_ui_button_destroy_press"
+                android:textAllCaps="false"
                 android:textColor="#DADADA"
                 android:textSize="@dimen/lib_pub_dimen_text_small" />
 
@@ -82,6 +86,7 @@
                 android:background="@drawable/lib_pub_select_btn_destroy"
                 android:gravity="center"
                 android:text="@string/component_ui_button_destroy_normal"
+                android:textAllCaps="false"
                 android:textColor="@color/lib_pub_color_select_btn_main"
                 android:textSize="@dimen/lib_pub_dimen_text_small" />
 
@@ -157,6 +162,7 @@
                         android:background="@drawable/lib_pub_corner_btn_main_disable"
                         android:gravity="center"
                         android:text="@string/component_ui_button"
+                        android:textAllCaps="false"
                         android:textColor="@color/lib_pub_color_white"
                         android:textSize="@dimen/lib_pub_dimen_text_small" />
 
@@ -168,6 +174,7 @@
                         android:background="@drawable/lib_pub_corner_btn_main_press"
                         android:gravity="center"
                         android:text="@string/component_ui_button"
+                        android:textAllCaps="false"
                         android:textColor="#DADADA"
                         android:textSize="@dimen/lib_pub_dimen_text_small" />
 
@@ -180,6 +187,7 @@
                         android:background="@drawable/lib_pub_select_btn_main"
                         android:gravity="center"
                         android:text="@string/component_ui_button"
+                        android:textAllCaps="false"
                         android:textColor="@color/lib_pub_color_select_btn_main"
                         android:textSize="@dimen/lib_pub_dimen_text_small" />
                 </LinearLayout>
@@ -198,6 +206,7 @@
                         android:background="@drawable/lib_pub_corner_txt_main_disable"
                         android:gravity="center"
                         android:text="@string/component_ui_button"
+                        android:textAllCaps="false"
                         android:textColor="@color/lib_pub_color_text_disable"
                         android:textSize="@dimen/lib_pub_dimen_text_small" />
 
@@ -209,6 +218,7 @@
                         android:background="@drawable/lib_pub_corner_txt_main_press"
                         android:gravity="center"
                         android:text="@string/component_ui_button"
+                        android:textAllCaps="false"
                         android:textColor="@color/lib_pub_color_main_press"
                         android:textSize="@dimen/lib_pub_dimen_text_small" />
 
@@ -221,6 +231,7 @@
                         android:background="@drawable/lib_pub_select_txt_main"
                         android:gravity="center"
                         android:text="@string/component_ui_button"
+                        android:textAllCaps="false"
                         android:textColor="@color/lib_pub_color_select_txt_main"
                         android:textSize="@dimen/lib_pub_dimen_text_small" />
                 </LinearLayout>

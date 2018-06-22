@@ -1,49 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="component_ui_app_name">Component-UI</string>
+    <!--Description-->
+    <string name="component_ui_desc_title">Navigation Bar Component</string>
+    <string name="component_ui_desc_row">Row Component</string>
+    <string name="component_ui_desc_tab">Tab Component</string>
+    <string name="component_ui_desc_alert">Alert Component</string>
+    <string name="component_ui_desc_sheet">Action Sheet Component(Used for triggering by the user\'s active operation, effective immediately after execution)</string>
+    <string name="component_ui_desc_bagde">Bagde Component</string>
+    <string name="component_ui_desc_page_indicator">Page Indicator Component</string>
+    <string name="component_ui_desc_notice_bar">Notice Bar Component</string>
 
-    <!--描述-->
-    <string name="component_ui_desc_title">Navigation Bar 组件</string>
-    <string name="component_ui_desc_row">Row 组件</string>
-    <string name="component_ui_desc_tab">Tab 组件</string>
-    <string name="component_ui_desc_alert">Alert 组件</string>
-    <string name="component_ui_desc_sheet">Action Sheet 组件(用于由用户主动操作触发的，执行后立即生效的)</string>
-    <string name="component_ui_desc_bagde">Bagde 组件</string>
-    <string name="component_ui_desc_page_indicator">Page indicator 组件</string>
-    <string name="component_ui_desc_notice_bar">Notice Bar 组件</string>
+    <!--Dialog-->
+    <string name="component_ui_dialog_title">Title</string>
+    <string name="component_ui_dialog_title_single">Single Title</string>
+    <string name="component_ui_dialog_detail">Details</string>
+    <string name="component_ui_dialog_content">Inform the current status, information and solutions, text breaks.</string>
+    <string name="component_ui_dialog_sub_tips">Supplementary instructions do not exceed one line</string>
+    <string name="component_ui_dialog_gotit">Got it</string>
+    <string name="component_ui_dialog_bottom_title">Inform the current status, information and solutions</string>
+    <string name="component_ui_dialog_bottom_operation">Operation</string>
+    <string name="component_ui_dialog_bottom_operation_normal">Normal operation</string>
+    <string name="component_ui_dialog_bottom_operation_dangerous">Dangerous operation</string>
+    <string name="component_ui_dialog_bottom_operation_none">Unavailable operation</string>
 
-    <string name="component_ui_dialog_title">标题单行</string>
-    <string name="component_ui_dialog_detail">详细信息</string>
-    <string name="component_ui_dialog_content">告知当前状态，信息和解决方案，文字换行的情况。</string>
-    <string name="component_ui_dialog_sub_tips">辅助说明不超过一行</string>
-    <string name="component_ui_dialog_ok">确定</string>
-    <string name="component_ui_dialog_cancel">取消</string>
-    <string name="component_ui_dialog_gotit">知道了</string>
-    <string name="component_ui_dialog_bottom_title">告知当前状态，信息和解决方案单行</string>
-    <string name="component_ui_dialog_bottom_operation">普通操作</string>
-    <string name="component_ui_dialog_bottom_operation_dangerous">危险操作</string>
-    <string name="component_ui_dialog_bottom_operation_none">不可用操作</string>
+    <!--DS-->
+    <string name="component_ui_ds_loading">Loading hard...</string>
+    <string name="component_ui_ds_no_data">No data Austria ~</string>
+    <string name="component_ui_ds_net_err">The network is going to make a difference ~</string>
+    <string name="component_ui_ds_scan">Data scanning...</string>
+    <string name="component_ui_ds_retry">Try again</string>
 
     <!--Button-->
-    <string name="component_ui_button">按钮</string>
-    <string name="component_ui_button_main_disable">页面主按钮 Disable</string>
-    <string name="component_ui_button_main_press">页面主按钮 Presss</string>
-    <string name="component_ui_button_main_normal">页面主按钮 Normal</string>
-    <string name="component_ui_button_destroy_press">毁灭性按钮 Presss</string>
-    <string name="component_ui_button_destroy_normal">毁灭性按钮 Normal</string>
+    <string name="component_ui_button">Button</string>
+    <string name="component_ui_button_text">Text button</string>
+    <string name="component_ui_button_main_disable">Page main button Disable</string>
+    <string name="component_ui_button_main_press">Page main button Presss</string>
+    <string name="component_ui_button_main_normal">Page main button Normal</string>
+    <string name="component_ui_button_destroy_press">Destructive button Presss</string>
+    <string name="component_ui_button_destroy_normal">Destructive button Normal</string>
 
     <!--ScrollTab-->
-    <string name="component_ui_label1">标签一</string>
-    <string name="component_ui_label2">标签二</string>
-    <string name="component_ui_label3">标签三</string>
-    <string name="component_ui_label4">标签四</string>
-    <string name="component_ui_labels">标签一;标签二</string>
+    <string name="component_ui_label1">Label 1</string>
+    <string name="component_ui_label2">Label 2</string>
+    <string name="component_ui_label3">Label 3</string>
+    <string name="component_ui_label4">Label 4</string>
+    <string name="component_ui_labels">Label 1;Label 2</string>
+    <string name="component_ui_labelss">Label 1;Label 2;Label 3;Label 4</string>
     <string name="component_ui_scrolltab">Apple;Orange</string>
     <string name="component_ui_scrolltab_list">GINGERBREAD;GINGERBREAD_MR1;HONEYCOMB;HONEYCOMB_MR1;HONEYCOMB_MR2;ICE_CREAM_SANDWICH;ICE_CREAM_SANDWICH_MR1</string>
 
     <!--Notice-->
-    <string name="component_ui_notice_type1">可点击跳转的通告栏样式</string>
-    <string name="component_ui_notice_type2">可关闭的通告栏样式</string>
-    <string name="component_ui_notice_type3">带按钮的通告栏样式</string>
-    <string name="component_ui_notice_type4">可滚动轮播的通告栏样式可滚动轮播的通告栏样式</string>
+    <string name="component_ui_notice_type1">Click to jump to the notification bar style</string>
+    <string name="component_ui_notice_type2">Closed Announcement bar style</string>
+    <string name="component_ui_notice_type3">Announcement bar style with buttons</string>
+    <string name="component_ui_notice_type4">Scrollable carousel bar style</string>
+
+    <!--Share-->
+    <string name="component_ui_share">Share</string>
+    <string name="component_ui_share_qq">QQ</string>
+    <string name="component_ui_share_weixin">Weixin</string>
+    <string name="component_ui_share_weixianquan">Weixinquan</string>
+    <string name="component_ui_share_weibo">Sina</string>
+    <string name="component_ui_share_sms">SMS</string>
+
+    <string name="component_ui_share_file_name">File name</string>
+    <string name="component_ui_share_link_address">Link address: </string>
+    <string name="component_ui_share_retrieve_password">Retrieve password: </string>
 </resources>

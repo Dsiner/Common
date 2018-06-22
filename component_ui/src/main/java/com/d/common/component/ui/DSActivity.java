@@ -33,23 +33,23 @@ public class DSActivity extends Activity implements View.OnClickListener {
         } else if (resId == R.id.btn_1_0) {
             dslDs.setState(DSLayout.STATE_EMPTY)
                     .gif(R.drawable.component_ui_gif_loading)
-                    .desc("拼命加载中...")
+                    .desc(getResources().getString(R.string.component_ui_ds_loading))
                     .button("", View.GONE);
         } else if (resId == R.id.btn_1_1) {
             dslDs.setState(DSLayout.STATE_EMPTY)
                     .gif(R.drawable.component_ui_gif_no_data)
-                    .desc("没有数据奥~")
+                    .desc(getResources().getString(R.string.component_ui_ds_no_data))
                     .button("", View.GONE);
         } else if (resId == R.id.btn_1_2) {
             dslDs.setState(DSLayout.STATE_EMPTY)
                     .gif(R.drawable.component_ui_gif_net_error)
-                    .desc("网络开小差了~")
-                    .button("点我重试", View.VISIBLE);
+                    .desc(getResources().getString(R.string.component_ui_ds_net_err))
+                    .button(getResources().getString(R.string.component_ui_ds_retry), View.VISIBLE);
 
         } else if (resId == R.id.btn_2_0) {
             dslDs.setState(DSLayout.STATE_EMPTY)
                     .gif(urlGif + "component_ui_gif_search.gif")
-                    .desc("数据扫描中...");
+                    .desc(getResources().getString(R.string.component_ui_ds_scan));
         } else if (resId == R.id.btn_2_1) {
             dslDs.setState(DSLayout.STATE_EMPTY)
                     .icon(urlPng + "lib_pub_ic_no_data.png");

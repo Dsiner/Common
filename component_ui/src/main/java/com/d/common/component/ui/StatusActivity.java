@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.PopupWindow;
 
 import com.d.lib.common.utils.ViewHelper;
 import com.d.lib.common.view.popup.MenuPopup;
@@ -23,7 +24,12 @@ public class StatusActivity extends Activity implements View.OnClickListener {
                     .getMenuPopup(Arrays.asList(new MenuPopup.Bean(getResources().getString(R.string.component_ui_dialog_title) + "1",
                                     R.color.lib_pub_color_text_hint, false),
                             new MenuPopup.Bean(getResources().getString(R.string.component_ui_dialog_title) + "2",
-                                    R.color.lib_pub_color_main, false)));
+                                    R.color.lib_pub_color_main, false)), new MenuPopup.OnMenuListener() {
+                        @Override
+                        public void onClick(PopupWindow popup, int position, String item) {
+
+                        }
+                    });
             menuPopup.showAsDropDown((View) ViewHelper.findView(this, R.id.iv_title_right));
         }
     }

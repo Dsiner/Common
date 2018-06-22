@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.d.lib.common.utils.ViewHelper;
+import com.d.lib.common.view.SegementView;
 import com.d.lib.common.view.tab.ScrollTab;
 
 import java.util.ArrayList;
@@ -33,25 +34,26 @@ public class ToolBarActivity extends FragmentActivity implements View.OnClickLis
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.component_ui_activity_toolbar);
-        initClick();
-        initScrollTab();
+        initView();
     }
 
-    private void initClick() {
+    private void initView() {
         ViewHelper.setOnClick(this, this, R.id.iv_title_left);
-    }
 
-    private void initScrollTab() {
+        SegementView svTab0 = (SegementView) findViewById(R.id.sv_tab0);
+        svTab0.setTitles(Arrays.asList(getResources().getString(R.string.component_ui_label1),
+                getResources().getString(R.string.component_ui_label2)));
+
         ScrollTab[] scrollTab0 = new ScrollTab[]{(ScrollTab) findViewById(R.id.stab_tab00), (ScrollTab) findViewById(R.id.stab_tab01), (ScrollTab) findViewById(R.id.stab_tab02)};
         ScrollTab[] scrollTab1 = new ScrollTab[]{(ScrollTab) findViewById(R.id.stab_tab10), (ScrollTab) findViewById(R.id.stab_tab11), (ScrollTab) findViewById(R.id.stab_tab12)};
         ViewPager pager0 = (ViewPager) findViewById(R.id.pager0);
         ViewPager pager1 = (ViewPager) findViewById(R.id.pager1);
-        init(scrollTab0, pager0, Arrays.asList("Kitkat", "Lollipop", "M"));
-        init(scrollTab1, pager1, Arrays.asList("Peach", "Lemon", "Watermelon", "Pear", "Avocado",
+        initScrollTab(scrollTab0, pager0, Arrays.asList("Kitkat", "Lollipop", "M"));
+        initScrollTab(scrollTab1, pager1, Arrays.asList("Peach", "Lemon", "Watermelon", "Pear", "Avocado",
                 "Banana", "Grape", "Apricot", "Orange", "Kumquat"));
     }
 
-    private void init(ScrollTab[] tabs, final ViewPager pager, List<String> titles) {
+    private void initScrollTab(ScrollTab[] tabs, final ViewPager pager, List<String> titles) {
         final ArrayList<Fragment> fragments = new ArrayList<>();
         for (int i = 0; i < titles.size(); i++) {
             TabFragment fragment = new TabFragment();
@@ -76,7 +78,7 @@ public class ToolBarActivity extends FragmentActivity implements View.OnClickLis
         pager.addOnPageChangeListener(this);
         for (ScrollTab tab : tabs) {
             tab.setTitles(titles);
-            tab.setNumber(1, "9", View.VISIBLE);//设置数字红点
+            tab.setNumber(1, "9", View.VISIBLE);//Set the red dot
             tab.setViewPager(pager);
             tab.setOnTabListener(new ScrollTab.OnTabListener() {
                 @Override

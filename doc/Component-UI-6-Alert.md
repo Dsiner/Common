@@ -20,7 +20,7 @@
                     }
                 });
 
-3.AlertDialog
+3.AlertSubDialog
 ----------------------------------------------------------------------------------------------------
         AlertDialogFactory.createFactory(activity).getAlertSubDialog("Title",
                 "Content",

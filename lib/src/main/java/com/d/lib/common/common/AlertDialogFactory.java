@@ -135,11 +135,11 @@ public class AlertDialogFactory {
         return dialog;
     }
 
-    public BottomVerSheetDialog getBottomDialog(List<BottomVerSheetDialog.Bean> datas, AbsSheetDialog.OnItemClickListener listener) {
-        return getBottomDialog(null, datas, listener);
+    public BottomVerSheetDialog getBottomVerDialog(List<BottomVerSheetDialog.Bean> datas, AbsSheetDialog.OnItemClickListener listener) {
+        return getBottomVerDialog(null, datas, listener);
     }
 
-    public BottomVerSheetDialog getBottomDialog(String title, List<BottomVerSheetDialog.Bean> datas, AbsSheetDialog.OnItemClickListener listener) {
+    public BottomVerSheetDialog getBottomVerDialog(String title, List<BottomVerSheetDialog.Bean> datas, AbsSheetDialog.OnItemClickListener listener) {
         BottomVerSheetDialog dialog = new BottomVerSheetDialog(context, title, datas);
         dialog.setOnItemClickListener(listener);
         dialog.show();

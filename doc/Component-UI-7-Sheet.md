@@ -1,7 +1,7 @@
 ------ Sheet使用 ------
 1.BottomVerDialog
 ----------------------------------------------------------------------------------------------------
-        AlertDialogFactory.createFactory(this).getBottomDialog("告知当前状态，信息和解决方案单行",
+        AlertDialogFactory.createFactory(this).getBottomVerDialog("告知当前状态，信息和解决方案单行",
                 Arrays.asList(new BottomVerSheetDialog.Bean("普通操作1", R.color.lib_pub_color_text_main, false),
                         new BottomVerSheetDialog.Bean("普通操作2", R.color.lib_pub_color_text_main, false),
                         new BottomVerSheetDialog.Bean("普通操作3", R.color.lib_pub_color_text_main, false),
@@ -23,9 +23,9 @@
 ----------------------------------------------------------------------------------------------------
         AlertDialogFactory.createFactory(this).getBottomHorDialog("分享",
                 Arrays.asList(new BottomHorSheetDialog.Bean("QQ", R.drawable.lib_pub_circle_msg_number),
-                        new BottomHorSheetDialog.Bean("QQ空间", R.drawable.lib_pub_circle_msg_number),
-                        new BottomHorSheetDialog.Bean("微博", R.drawable.lib_pub_circle_msg_number),
                         new BottomHorSheetDialog.Bean("微信", R.drawable.lib_pub_circle_msg_number),
+                        new BottomHorSheetDialog.Bean("朋友圈", R.drawable.lib_pub_circle_msg_number),
+                        new BottomHorSheetDialog.Bean("微博", R.drawable.lib_pub_circle_msg_number),
                         new BottomHorSheetDialog.Bean("短信", R.drawable.lib_pub_circle_msg_number)),
                 new AbsSheetDialog.OnItemClickListener() {
                     @Override

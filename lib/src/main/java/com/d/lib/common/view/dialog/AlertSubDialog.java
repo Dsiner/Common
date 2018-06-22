@@ -3,7 +3,9 @@ package com.d.lib.common.view.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -22,7 +24,9 @@ public class AlertSubDialog extends AbstractDialog {
     private OnCheckListener listener;
 
     public AlertSubDialog(Context context, String title, String content, String subTips, boolean isChecked) {
-        super(context, R.style.lib_pub_dialog_style, false, 0, 0, 0);
+        super(context, R.style.lib_pub_dialog_style, true, Gravity.CENTER,
+                (int) context.getResources().getDimension(R.dimen.lib_pub_dimen_dialog_width),
+                WindowManager.LayoutParams.WRAP_CONTENT);
         this.title = title;
         this.content = content;
         this.subTips = subTips;

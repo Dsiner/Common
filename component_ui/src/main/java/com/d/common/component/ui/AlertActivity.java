@@ -25,7 +25,7 @@ public class AlertActivity extends Activity implements View.OnClickListener {
         if (resId == R.id.iv_title_left) {
             finish();
         } else if (resId == R.id.btn_loading) {
-            AlertDialogFactory.createFactory(this).getLoadingDialog("Loading...");
+            AlertDialogFactory.createFactory(this).getLoadingDialog(getResources().getString(R.string.lib_pub_loading));
         } else if (resId == R.id.btn_style0) {
             AlertDialogFactory.createFactory(this).getAlertDialog(null,
                     getResources().getString(R.string.component_ui_dialog_content),
@@ -39,7 +39,7 @@ public class AlertActivity extends Activity implements View.OnClickListener {
         } else if (resId == R.id.btn_style1) {
             AlertDialogFactory.createFactory(this).getAlertDialog(null,
                     getResources().getString(R.string.component_ui_dialog_content),
-                    getResources().getString(R.string.component_ui_dialog_ok), getResources().getString(R.string.component_ui_dialog_cancel),
+                    getResources().getString(R.string.lib_pub_ok), getResources().getString(R.string.lib_pub_cancel),
                     new AlertDialogFactory.OnClickListener() {
                         @Override
                         public void onClick(AlertDialog dlg, View v) {
@@ -52,9 +52,9 @@ public class AlertActivity extends Activity implements View.OnClickListener {
                         }
                     });
         } else if (resId == R.id.btn_style2) {
-            AlertDialogFactory.createFactory(this).getAlertDialog(getResources().getString(R.string.component_ui_dialog_title),
+            AlertDialogFactory.createFactory(this).getAlertDialog(getResources().getString(R.string.component_ui_dialog_title_single),
                     getResources().getString(R.string.component_ui_dialog_content),
-                    getResources().getString(R.string.component_ui_dialog_ok), getResources().getString(R.string.component_ui_dialog_cancel),
+                    getResources().getString(R.string.lib_pub_ok), getResources().getString(R.string.lib_pub_cancel),
                     new AlertDialogFactory.OnClickListener() {
                         @Override
                         public void onClick(AlertDialog dlg, View v) {
@@ -82,7 +82,7 @@ public class AlertActivity extends Activity implements View.OnClickListener {
                         }
                     });
         } else if (resId == R.id.btn_style4) {
-            AlertDialogFactory.createFactory(this).getAlertSubDialog(getResources().getString(R.string.component_ui_dialog_title),
+            AlertDialogFactory.createFactory(this).getAlertSubDialog(getResources().getString(R.string.component_ui_dialog_title_single),
                     getResources().getString(R.string.component_ui_dialog_content),
                     getResources().getString(R.string.component_ui_dialog_sub_tips),
                     true, new AlertSubDialog.OnCheckListener() {
@@ -98,9 +98,9 @@ public class AlertActivity extends Activity implements View.OnClickListener {
                     });
         } else if (resId == R.id.btn_style5) {
             AlertDialogFactory.createFactory(this)
-                    .getAlertDialog(getResources().getString(R.string.component_ui_dialog_title),
+                    .getAlertDialog(getResources().getString(R.string.component_ui_dialog_title_single),
                             getResources().getString(R.string.component_ui_dialog_content),
-                            getResources().getString(R.string.component_ui_dialog_ok), null,
+                            getResources().getString(R.string.lib_pub_ok), null,
                             new AlertDialogFactory.OnClickListener() {
                                 @Override
                                 public void onClick(AlertDialog dlg, View v) {
@@ -108,7 +108,7 @@ public class AlertActivity extends Activity implements View.OnClickListener {
                                 }
                             }, null);
         } else if (resId == R.id.btn_style6) {
-            AlertDialogFactory.createFactory(this).getEditDialog(getResources().getString(R.string.component_ui_dialog_title)
+            AlertDialogFactory.createFactory(this).getEditDialog(getResources().getString(R.string.component_ui_dialog_title_single)
                     , "", new EditDialog.OnEditListener() {
                         @Override
                         public void onSubmit(Dialog dlg, String content) {
@@ -121,12 +121,12 @@ public class AlertActivity extends Activity implements View.OnClickListener {
                         }
                     });
         } else if (resId == R.id.btn_style7) {
-            AlertDialogFactory.createFactory(this).getInfoDialog(getResources().getString(R.string.component_ui_dialog_title),
-                    Arrays.asList(new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "1", "" + 1111111),
-                            new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "2", "" + 2222222),
-                            new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "3", "" + 3333333),
-                            new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "4", "" + 4444444),
-                            new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title) + "5", "" + 5555555)));
+            AlertDialogFactory.createFactory(this).getInfoDialog(getResources().getString(R.string.component_ui_dialog_title_single),
+                    Arrays.asList(new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title_single) + "1", "" + 1111111),
+                            new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title_single) + "2", "" + 2222222),
+                            new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title_single) + "3", "" + 3333333),
+                            new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title_single) + "4", "" + 4444444),
+                            new InfoDialog.Bean(getResources().getString(R.string.component_ui_dialog_title_single) + "5", "" + 5555555)));
         } else if (resId == R.id.btn_style8) {
             AlertDialogFactory.createFactory(this).getOperationDialog(getResources().getString(R.string.component_ui_dialog_content),
                     Arrays.asList(new OperationDialog.Bean(getResources().getString(R.string.component_ui_dialog_bottom_operation) + "1", R.color.lib_pub_color_main, false),
