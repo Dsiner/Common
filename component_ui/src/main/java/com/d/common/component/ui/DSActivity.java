@@ -9,8 +9,8 @@ import com.d.lib.common.utils.ViewHelper;
 import com.d.lib.common.view.DSLayout;
 
 public class DSActivity extends Activity implements View.OnClickListener {
-    private final String urlGif = "https://raw.githubusercontent.com/Dsiner/Common/develop_component_ui/component_ui/src/main/res/drawable-xxhdpi/";
-    private final String urlPng = "https://raw.githubusercontent.com/Dsiner/Common/develop_component_ui/lib/src/main/res/drawable-xxhdpi/";
+    private final String urlGif = "https://raw.githubusercontent.com/Dsiner/Common/master/component_ui/src/main/res/drawable-xxhdpi/";
+    private final String urlPng = "https://raw.githubusercontent.com/Dsiner/Common/master/lib/src/main/res/drawable-xxhdpi/";
 
     private DSLayout dslDs;
 
