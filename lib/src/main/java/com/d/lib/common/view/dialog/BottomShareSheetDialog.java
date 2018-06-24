@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.d.lib.common.R;
-import com.d.lib.common.view.ToggleButton;
+import com.d.lib.common.view.toggle.ToggleButton;
 import com.d.lib.xrv.adapter.CommonAdapter;
 import com.d.lib.xrv.adapter.CommonHolder;
 import com.d.lib.xrv.adapter.MultiItemTypeSupport;

@@ -1,4 +1,4 @@
-package com.d.lib.common.view;
+package com.d.lib.common.view.toggle;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -21,7 +21,7 @@ import com.nineoldandroids.animation.ValueAnimator;
  * ToggleButton
  * Created by D on 2017/6/6.
  */
-public class ToggleButton extends View {
+public class ToggleButton extends View implements ToggleView {
     private int width;
     private int height;
 
@@ -181,9 +181,7 @@ public class ToggleButton extends View {
         }
     }
 
-    /**
-     * toggle
-     */
+    @Override
     public void toggle() {
         isOpen = !isOpen;
         if (isOpen) {
@@ -202,10 +200,7 @@ public class ToggleButton extends View {
         }
     }
 
-    public boolean isOpen() {
-        return isOpen;
-    }
-
+    @Override
     public void setOpen(boolean open) {
         if (factor != 0 && factor != 1) {
             return;
@@ -221,14 +216,13 @@ public class ToggleButton extends View {
         invalidate();
     }
 
-    public interface OnToggleListener {
-        /**
-         * @param isOpen: isOpen
-         */
-        void onToggle(boolean isOpen);
+    @Override
+    public boolean isOpen() {
+        return isOpen;
     }
 
-    public void setOnToggleListener(OnToggleListener listener) {
-        this.listener = listener;
+    @Override
+    public void setOnToggleListener(OnToggleListener l) {
+        this.listener = l;
     }
 }

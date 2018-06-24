@@ -6,9 +6,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.d.lib.common.common.AlertDialogFactory;
 import com.d.lib.common.utils.ViewHelper;
 import com.d.lib.common.view.dialog.AbsSheetDialog;
+import com.d.lib.common.view.dialog.AlertDialogFactory;
 import com.d.lib.common.view.dialog.BottomHorSheetDialog;
 import com.d.lib.common.view.dialog.BottomShareSheetDialog;
 import com.d.lib.common.view.dialog.BottomVerSheetDialog;

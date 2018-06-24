@@ -11,6 +11,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.d.lib.common.R;
+import com.d.lib.common.view.toggle.ToggleButton;
+import com.d.lib.common.view.toggle.ToggleView;
 
 /**
  * TitleLayout
@@ -50,7 +52,7 @@ public class RowLayout extends RelativeLayout {
     }
 
     private void init(Context context) {
-        final View root = LayoutInflater.from(context).inflate(layout, this);
+        View root = LayoutInflater.from(context).inflate(layout, this);
         ivIcon = (ImageView) root.findViewById(R.id.iv_layout_row_icon);
         tvNumber = (TextView) root.findViewById(R.id.tv_layout_row_number);
         tvContent = (TextView) root.findViewById(R.id.tv_layout_row_content);
@@ -67,7 +69,7 @@ public class RowLayout extends RelativeLayout {
         tvContent.setText(content != null ? content : "");
         tvHint.setText(hint != null && visibilityGoto == VISIBLE ? hint : "");
         tbToggle.setVisibility(visibilityToggle);
-        tbToggle.setOnToggleListener(new ToggleButton.OnToggleListener() {
+        tbToggle.setOnToggleListener(new ToggleView.OnToggleListener() {
             @Override
             public void onToggle(boolean isOpen) {
                 if (listener != null) {
@@ -106,14 +108,14 @@ public class RowLayout extends RelativeLayout {
     }
 
     /**
-     * toggle按钮设置开闭
+     * Toggle按钮设置开闭
      */
     public void setOpen(boolean open) {
         tbToggle.setOpen(open);
     }
 
     /**
-     * toggle按钮开闭状态
+     * Toggle按钮开闭状态
      */
     public boolean isOpen() {
         return tbToggle.isOpen();

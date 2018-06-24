@@ -1,4 +1,4 @@
-package com.d.lib.common.common;
+package com.d.lib.common.view.dialog;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,14 +10,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.d.lib.common.R;
-import com.d.lib.common.view.dialog.AbsSheetDialog;
-import com.d.lib.common.view.dialog.AlertSubDialog;
-import com.d.lib.common.view.dialog.BottomHorSheetDialog;
-import com.d.lib.common.view.dialog.BottomShareSheetDialog;
-import com.d.lib.common.view.dialog.BottomVerSheetDialog;
-import com.d.lib.common.view.dialog.EditDialog;
-import com.d.lib.common.view.dialog.InfoDialog;
-import com.d.lib.common.view.dialog.OperationDialog;
 
 import java.util.List;
 

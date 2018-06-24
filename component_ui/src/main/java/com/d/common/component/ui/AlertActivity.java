@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.d.lib.common.common.AlertDialogFactory;
 import com.d.lib.common.utils.ViewHelper;
 import com.d.lib.common.view.dialog.AbsSheetDialog;
+import com.d.lib.common.view.dialog.AlertDialogFactory;
 import com.d.lib.common.view.dialog.AlertSubDialog;
 import com.d.lib.common.view.dialog.EditDialog;
 import com.d.lib.common.view.dialog.InfoDialog;

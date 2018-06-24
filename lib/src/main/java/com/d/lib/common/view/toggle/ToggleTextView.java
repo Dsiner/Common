@@ -11,7 +11,7 @@ import android.widget.CheckedTextView;
  * Created by D on 2018/1/16.
  */
 @SuppressLint("AppCompatCustomView")
-public class ToggleTextView extends CheckedTextView implements View.OnClickListener {
+public class ToggleTextView extends CheckedTextView implements ToggleView, View.OnClickListener {
 
     private OnToggleListener listener;
 
@@ -32,19 +32,19 @@ public class ToggleTextView extends CheckedTextView implements View.OnClickListe
         setOnClickListener(this);
     }
 
-    public boolean isOpen() {
-        return isChecked();
+    @Override
+    public void toggle() {
+        setChecked(!isChecked());
     }
 
+    @Override
     public void setOpen(boolean open) {
         setChecked(open);
     }
 
-    /**
-     * Toggle
-     */
-    public void toggle() {
-        setChecked(!isChecked());
+    @Override
+    public boolean isOpen() {
+        return isChecked();
     }
 
     @Override
@@ -55,14 +55,8 @@ public class ToggleTextView extends CheckedTextView implements View.OnClickListe
         }
     }
 
-    public interface OnToggleListener {
-        /**
-         * @param isOpen: isOpen
-         */
-        void onToggle(boolean isOpen);
-    }
-
-    public void setOnToggleListener(OnToggleListener listener) {
-        this.listener = listener;
+    @Override
+    public void setOnToggleListener(OnToggleListener l) {
+        this.listener = l;
     }
 }
