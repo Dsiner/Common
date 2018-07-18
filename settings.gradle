@@ -1,1 +1,1 @@
-include ':app', ':lib', ':component_ui'
+include ':app', ':lib', ':component_ui', ':component_mvp'

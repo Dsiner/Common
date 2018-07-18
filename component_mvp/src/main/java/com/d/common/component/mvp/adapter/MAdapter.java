@@ -1,8 +1,8 @@
-package com.d.commonapp.mvp.adapter;
+package com.d.common.component.mvp.adapter;
 
 import android.content.Context;
 
-import com.d.commonapp.mvp.model.MModel;
+import com.d.common.component.mvp.model.MModel;
 import com.d.lib.xrv.adapter.CommonAdapter;
 import com.d.lib.xrv.adapter.CommonHolder;
 

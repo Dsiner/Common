@@ -3,6 +3,7 @@ package com.d.commonapp;
 import android.content.Intent;
 import android.view.View;
 
+import com.d.common.component.mvp.MvpActivity;
 import com.d.common.component.ui.UIActivity;
 import com.d.commonapp.activity.LoaderActivity;
 import com.d.commonapp.activity.PagerActivity;
@@ -14,11 +15,14 @@ import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity<MvpBasePresenter> implements MvpView {
 
-    @OnClick({R.id.btn_ui, R.id.btn_loader, R.id.btn_pager})
+    @OnClick({R.id.btn_ui, R.id.btn_mvp, R.id.btn_loader, R.id.btn_pager})
     public void onClickListener(View v) {
         switch (v.getId()) {
             case R.id.btn_ui:
                 startActivity(new Intent(MainActivity.this, UIActivity.class));
+                break;
+            case R.id.btn_mvp:
+                startActivity(new Intent(MainActivity.this, MvpActivity.class));
                 break;
             case R.id.btn_loader:
                 startActivity(new Intent(MainActivity.this, LoaderActivity.class));

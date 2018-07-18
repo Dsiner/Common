@@ -1,4 +1,4 @@
-package com.d.commonapp.mvp.model;
+package com.d.common.component.mvp.model;
 
 /**
  * MVP Demo/模版 - Model

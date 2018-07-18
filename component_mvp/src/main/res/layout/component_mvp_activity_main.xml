@@ -9,45 +9,25 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/lib_pub_dimen_title_height"
         android:background="@color/lib_pub_color_main"
-        app:lib_pub_tl_middleText="Common" />
+        app:lib_pub_tl_middleText="Mvp" />
 
     <Button
-        android:id="@+id/btn_ui"
+        android:id="@+id/btn_mvp_activity"
         style="@style/lib_pub_btn_style"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
         android:layout_marginRight="@dimen/lib_pub_dimen_margin"
         android:layout_marginTop="@dimen/lib_pub_dimen_margin"
-        android:text="UI" />
+        android:text="Activity" />
 
     <Button
-        android:id="@+id/btn_mvp"
+        android:id="@+id/btn_mvp_fragment_activity"
         style="@style/lib_pub_btn_style"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
         android:layout_marginRight="@dimen/lib_pub_dimen_margin"
         android:layout_marginTop="@dimen/lib_pub_dimen_margin"
-        android:text="Mvp" />
-
-    <Button
-        android:id="@+id/btn_loader"
-        style="@style/lib_pub_btn_style"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
-        android:layout_marginRight="@dimen/lib_pub_dimen_margin"
-        android:layout_marginTop="@dimen/lib_pub_dimen_margin"
-        android:text="Loader" />
-
-    <Button
-        android:id="@+id/btn_pager"
-        style="@style/lib_pub_btn_style"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
-        android:layout_marginRight="@dimen/lib_pub_dimen_margin"
-        android:layout_marginTop="@dimen/lib_pub_dimen_margin"
-        android:text="Pager" />
+        android:text="FragmentActivity" />
 </LinearLayout>
