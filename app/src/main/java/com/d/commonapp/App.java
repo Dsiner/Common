@@ -2,7 +2,7 @@ package com.d.commonapp;
 
 import android.app.Application;
 
-import com.d.commonapp.api.API;
+import com.d.common.component.loader.api.API;
 import com.d.lib.rxnet.RxNet;
 import com.d.lib.rxnet.util.SSLUtil;
 

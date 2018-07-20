@@ -1,4 +1,4 @@
-package com.d.commonapp.api;
+package com.d.common.component.loader.api;
 
 /**
  * API

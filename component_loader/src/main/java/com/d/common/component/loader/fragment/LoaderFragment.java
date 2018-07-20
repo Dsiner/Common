@@ -1,10 +1,10 @@
-package com.d.commonapp.fragment;
+package com.d.common.component.loader.fragment;
 
-import com.d.commonapp.R;
-import com.d.commonapp.adapter.LoaderAdapter;
-import com.d.commonapp.model.LoaderModel;
-import com.d.commonapp.presenter.LoaderPresenter;
-import com.d.commonapp.view.ILoaderView;
+import com.d.common.component.loader.R;
+import com.d.common.component.loader.adapter.LoaderAdapter;
+import com.d.common.component.loader.model.LoaderModel;
+import com.d.common.component.loader.presenter.LoaderPresenter;
+import com.d.common.component.loader.view.ILoaderView;
 import com.d.lib.common.module.loader.AbsFragment;
 import com.d.lib.common.module.mvp.MvpView;
 import com.d.lib.xrv.adapter.CommonAdapter;
@@ -29,7 +29,7 @@ public class LoaderFragment extends AbsFragment<LoaderModel, LoaderPresenter> im
 
     @Override
     protected CommonAdapter<LoaderModel> getAdapter() {
-        return new LoaderAdapter(mContext, new ArrayList<LoaderModel>(), R.layout.adapter_loader);
+        return new LoaderAdapter(mContext, new ArrayList<LoaderModel>(), R.layout.component_loader_adapter_loader);
     }
 
     @Override

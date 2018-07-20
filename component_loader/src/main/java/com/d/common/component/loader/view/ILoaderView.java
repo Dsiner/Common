@@ -1,6 +1,6 @@
-package com.d.commonapp.view;
+package com.d.common.component.loader.view;
 
-import com.d.commonapp.model.LoaderModel;
+import com.d.common.component.loader.model.LoaderModel;
 import com.d.lib.common.module.loader.IAbsView;
 
 /**

@@ -1,12 +1,12 @@
-package com.d.commonapp.adapter;
+package com.d.common.component.loader.adapter;
 
 import android.content.Context;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.d.commonapp.R;
-import com.d.commonapp.model.LoaderModel;
+import com.d.common.component.loader.R;
+import com.d.common.component.loader.model.LoaderModel;
 import com.d.lib.xrv.adapter.CommonAdapter;
 import com.d.lib.xrv.adapter.CommonHolder;
 

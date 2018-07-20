@@ -1,10 +1,10 @@
-package com.d.commonapp.presenter;
+package com.d.common.component.loader.presenter;
 
 import android.content.Context;
 
-import com.d.commonapp.api.API;
-import com.d.commonapp.model.LoaderInfo;
-import com.d.commonapp.model.LoaderModel;
+import com.d.common.component.loader.api.API;
+import com.d.common.component.loader.model.LoaderInfo;
+import com.d.common.component.loader.model.LoaderModel;
 import com.d.lib.common.module.loader.AbsPresenter;
 import com.d.lib.common.module.loader.CommonLoader;
 import com.d.lib.rxnet.RxNet;

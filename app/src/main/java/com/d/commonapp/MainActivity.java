@@ -3,10 +3,10 @@ package com.d.commonapp;
 import android.content.Intent;
 import android.view.View;
 
+import com.d.common.component.loader.activity.LoaderActivity;
+import com.d.common.component.loader.activity.PagerActivity;
 import com.d.common.component.mvp.MvpActivity;
 import com.d.common.component.ui.UIActivity;
-import com.d.commonapp.activity.LoaderActivity;
-import com.d.commonapp.activity.PagerActivity;
 import com.d.lib.common.module.mvp.MvpBasePresenter;
 import com.d.lib.common.module.mvp.MvpView;
 import com.d.lib.common.module.mvp.base.BaseActivity;

@@ -25,8 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.d.commonapp.activity.LoaderActivity" />
-        <activity android:name="com.d.commonapp.activity.PagerActivity" />
     </application>
 
 </manifest>

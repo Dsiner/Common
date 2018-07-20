@@ -1,9 +1,9 @@
-package com.d.commonapp.activity;
+package com.d.common.component.loader.activity;
 
 import android.support.v4.app.Fragment;
 
-import com.d.commonapp.R;
-import com.d.commonapp.fragment.LoaderLazyFragment;
+import com.d.common.component.loader.R;
+import com.d.common.component.loader.fragment.LoaderLazyFragment;
 import com.d.lib.common.module.loader.AbsFragmentActivity;
 
 import java.util.ArrayList;

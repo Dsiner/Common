@@ -1,4 +1,4 @@
-package com.d.commonapp.model;
+package com.d.common.component.loader.model;
 
 import java.util.List;
 
