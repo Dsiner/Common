@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--Description-->
+    <!-- Description -->
     <string name="component_ui_desc_title">Navigation Bar Component</string>
     <string name="component_ui_desc_row">Row Component</string>
     <string name="component_ui_desc_tab">Tab Component</string>
@@ -10,7 +10,7 @@
     <string name="component_ui_desc_page_indicator">Page Indicator Component</string>
     <string name="component_ui_desc_notice_bar">Notice Bar Component</string>
 
-    <!--Dialog-->
+    <!-- Dialog -->
     <string name="component_ui_dialog_title">Title</string>
     <string name="component_ui_dialog_title_single">Single Title</string>
     <string name="component_ui_dialog_detail">Details</string>
@@ -23,14 +23,14 @@
     <string name="component_ui_dialog_bottom_operation_dangerous">Dangerous operation</string>
     <string name="component_ui_dialog_bottom_operation_none">Unavailable operation</string>
 
-    <!--DS-->
+    <!-- DS -->
     <string name="component_ui_ds_loading">Loading hard...</string>
     <string name="component_ui_ds_no_data">No data Austria ~</string>
     <string name="component_ui_ds_net_err">The network is going to make a difference ~</string>
     <string name="component_ui_ds_scan">Data scanning...</string>
     <string name="component_ui_ds_retry">Try again</string>
 
-    <!--Button-->
+    <!-- Button -->
     <string name="component_ui_button">Button</string>
     <string name="component_ui_button_text">Text button</string>
     <string name="component_ui_button_main_disable">Page main button Disable</string>
@@ -39,7 +39,8 @@
     <string name="component_ui_button_destroy_press">Destructive button Presss</string>
     <string name="component_ui_button_destroy_normal">Destructive button Normal</string>
 
-    <!--ScrollTab-->
+    <!-- ScrollTab -->
+    <string name="component_ui_label">Label</string>
     <string name="component_ui_label1">Label 1</string>
     <string name="component_ui_label2">Label 2</string>
     <string name="component_ui_label3">Label 3</string>
@@ -49,13 +50,13 @@
     <string name="component_ui_scrolltab">Apple;Orange</string>
     <string name="component_ui_scrolltab_list">GINGERBREAD;GINGERBREAD_MR1;HONEYCOMB;HONEYCOMB_MR1;HONEYCOMB_MR2;ICE_CREAM_SANDWICH;ICE_CREAM_SANDWICH_MR1</string>
 
-    <!--Notice-->
+    <!-- Notice -->
     <string name="component_ui_notice_type1">Click to jump to the notification bar style</string>
     <string name="component_ui_notice_type2">Closed Announcement bar style</string>
     <string name="component_ui_notice_type3">Announcement bar style with buttons</string>
     <string name="component_ui_notice_type4">Scrollable carousel bar style</string>
 
-    <!--Share-->
+    <!-- Share -->
     <string name="component_ui_share">Share</string>
     <string name="component_ui_share_qq">QQ</string>
     <string name="component_ui_share_weixin">Weixin</string>
@@ -66,4 +67,11 @@
     <string name="component_ui_share_file_name">File name</string>
     <string name="component_ui_share_link_address">Link address: </string>
     <string name="component_ui_share_retrieve_password">Retrieve password: </string>
+
+    <!-- Operation -->
+    <string name="component_ui_download">Download</string>
+    <string name="component_ui_move">Move</string>
+    <string name="component_ui_delete">Delete</string>
+    <string name="component_ui_rename">Rename</string>
+    <string name="component_ui_info">Info</string>
 </resources>

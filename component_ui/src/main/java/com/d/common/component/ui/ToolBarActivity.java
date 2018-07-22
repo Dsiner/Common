@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.d.lib.common.utils.ViewHelper;
 import com.d.lib.common.view.SegementView;
+import com.d.lib.common.view.btb.BottomThirdBar;
 import com.d.lib.common.view.tab.ScrollTab;
 
 import java.util.ArrayList;
@@ -40,9 +41,9 @@ public class ToolBarActivity extends FragmentActivity implements View.OnClickLis
     private void initView() {
         ViewHelper.setOnClick(this, this, R.id.iv_title_left);
 
-        SegementView svTab0 = (SegementView) findViewById(R.id.sv_tab0);
-        svTab0.setTitles(Arrays.asList(getResources().getString(R.string.component_ui_label1),
-                getResources().getString(R.string.component_ui_label2)));
+        initBtBar();
+
+        initSegement();
 
         ScrollTab[] scrollTab0 = new ScrollTab[]{(ScrollTab) findViewById(R.id.stab_tab00), (ScrollTab) findViewById(R.id.stab_tab01), (ScrollTab) findViewById(R.id.stab_tab02)};
         ScrollTab[] scrollTab1 = new ScrollTab[]{(ScrollTab) findViewById(R.id.stab_tab10), (ScrollTab) findViewById(R.id.stab_tab11), (ScrollTab) findViewById(R.id.stab_tab12)};
@@ -51,6 +52,61 @@ public class ToolBarActivity extends FragmentActivity implements View.OnClickLis
         initScrollTab(scrollTab0, pager0, Arrays.asList("Kitkat", "Lollipop", "M"));
         initScrollTab(scrollTab1, pager1, Arrays.asList("Peach", "Lemon", "Watermelon", "Pear", "Avocado",
                 "Banana", "Grape", "Apricot", "Orange", "Kumquat"));
+    }
+
+    private void initBtBar() {
+        BottomThirdBar[] btbBars = new BottomThirdBar[]{ViewHelper.findView(this, R.id.btb_bar0),
+                ViewHelper.findView(this, R.id.btb_bar1),
+                ViewHelper.findView(this, R.id.btb_bar2),
+                ViewHelper.findView(this, R.id.btb_bar3)};
+        btbBars[0].create(Arrays.asList(new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_SHARE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_share)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_DOWNLOAD, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_download))), new BottomThirdBar.OnClickListener() {
+            @Override
+            public void onClick(int position, BottomThirdBar.Item item) {
+
+            }
+        });
+        btbBars[1].create(Arrays.asList(new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_SHARE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_share)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_DOWNLOAD, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_download)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_MOVE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_move))
+        ), new BottomThirdBar.OnClickListener() {
+            @Override
+            public void onClick(int position, BottomThirdBar.Item item) {
+
+            }
+        });
+        btbBars[2].create(Arrays.asList(new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_SHARE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_share)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_DOWNLOAD, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_download)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_MOVE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_move)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_DELETE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_delete)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_RENAME, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_rename)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_info))), new BottomThirdBar.OnClickListener() {
+            @Override
+            public void onClick(int position, BottomThirdBar.Item item) {
+
+            }
+        });
+        btbBars[3].create(Arrays.asList(new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_label)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_label)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_label)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_label)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_label)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_label)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_label)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_label)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_label)),
+                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.component_ui_label))), new BottomThirdBar.OnClickListener() {
+            @Override
+            public void onClick(int position, BottomThirdBar.Item item) {
+
+            }
+        });
+    }
+
+    private void initSegement() {
+        SegementView svTab0 = (SegementView) findViewById(R.id.sv_tab0);
+        svTab0.setTitles(Arrays.asList(getResources().getString(R.string.component_ui_label1),
+                getResources().getString(R.string.component_ui_label2)));
     }
 
     private void initScrollTab(ScrollTab[] tabs, final ViewPager pager, List<String> titles) {

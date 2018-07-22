@@ -30,6 +30,30 @@
                 android:textColor="@color/lib_pub_color_black"
                 android:textSize="@dimen/lib_pub_dimen_text_small" />
 
+            <com.d.lib.common.view.btb.BottomThirdBar
+                android:id="@+id/btb_bar0"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="@dimen/lib_pub_dimen_margin" />
+
+            <com.d.lib.common.view.btb.BottomThirdBar
+                android:id="@+id/btb_bar1"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="@dimen/lib_pub_dimen_margin" />
+
+            <com.d.lib.common.view.btb.BottomThirdBar
+                android:id="@+id/btb_bar2"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="@dimen/lib_pub_dimen_margin" />
+
+            <com.d.lib.common.view.btb.BottomThirdBar
+                android:id="@+id/btb_bar3"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_marginTop="@dimen/lib_pub_dimen_margin" />
+
             <com.d.lib.common.view.SegementView
                 android:id="@+id/sv_tab0"
                 android:layout_width="match_parent"
