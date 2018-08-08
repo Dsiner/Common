@@ -2,8 +2,9 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![API](https://img.shields.io/badge/API-9%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=9)
+[![Wiki-Guide](https://img.shields.io/badge/Wiki-Guide-brightgreen.svg)](https://github.com/Dsiner/Common/wiki)
 
->**Common**  一个基于 `MVP` 的开发框架
+>**Common**  一个基于 `MVP` 的Android模块化开发框架
 
 * [UI Components](https://github.com/Dsiner/Common/wiki)
 * [MVP Base](https://github.com/Dsiner/Common/wiki)
@@ -18,7 +19,7 @@
    <img src="https://github.com/Dsiner/Resouce/blob/master/lib/Common/common.gif" width="320" alt="Screenshot"/>
 </p>
 
-More usage see [Wiki](https://github.com/Dsiner/Common/wiki)
+More usage see [Wiki](https://github.com/Dsiner/Common/wiki) [Wiki](https://github.com/Dsiner/Common/wiki) [Wiki](https://github.com/Dsiner/Common/wiki)
 
 ## Licence
 
