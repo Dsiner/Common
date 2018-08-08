@@ -47,6 +47,7 @@ public class CommonHolder {
         if (holder.mLayoutId != layoutId) {
             return new CommonHolder(context, parent, layoutId, position);
         }
+        holder.position = position;
         return holder;
     }
 
