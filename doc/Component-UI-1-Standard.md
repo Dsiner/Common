@@ -1,8 +1,7 @@
-##  =============================
-##  ==== Resource Standard资源标准 ===
-##  =============================
+## ------ Resource Standard资源标准 ------
 
-1.  ------------------------------ Colors ------------------------------
+#### 1.  ------------------------------ Colors ------------------------------
+```xml
     <!--标准色-->
     <color name="lib_pub_color_trans">#00000000</color>
     <color name="lib_pub_color_translucent">#9900040a</color>
@@ -54,9 +53,10 @@
     <color name="lib_pub_color_line">#e5e5e5</color>
     <!--全局弹窗背景色-->
     <color name="lib_pub_color_dialog_bg">#AAC1C1C1</color>
+```
 
-
-1.  ------------------------------ Dimens ------------------------------
+#### 2.  ------------------------------ Dimens ------------------------------
+```xml
     <!--全局标题栏高度-->
     <dimen name="lib_pub_dimen_title_height">50dp</dimen>
     <!--全局Tab高度-->
@@ -88,9 +88,10 @@
 
     <!--全局按钮圆角值-->
     <dimen name="lib_pub_dimen_btn_corner">4dp</dimen>
+```
 
-
-3.  ------------------------------ Drawable ------------------------------
+#### 3.  ------------------------------ Drawable ------------------------------
+```xml
     lib_pub_corner_btn_main_disable     |  页面主按钮 不可用背景
     lib_pub_corner_btn_main_press       |  页面主按钮 按压背景
     lib_pub_corner_btn_main_normal      |  页面主按钮 正常背景
@@ -99,3 +100,4 @@
     lib_pub_corner_btn_destroy_press    |  毁灭性按钮 按压背景
     lib_pub_corner_btn_destroy_normal   |  毁灭性按钮 正常背景
     lib_pub_select_btn_destroy          |  毁灭性按钮 背景
+```
