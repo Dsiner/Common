@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 import com.d.common.component.mvp.R;
 import com.d.common.component.mvp.fragment.MFragment;
-import com.d.lib.common.module.mvp.base.BaseFragmentActivity;
+import com.d.lib.common.component.mvp.base.BaseFragmentActivity;
 import com.d.lib.common.utils.ViewHelper;
 
 /**

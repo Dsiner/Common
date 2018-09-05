@@ -7,9 +7,9 @@ import com.d.common.component.loader.activity.LoaderActivity;
 import com.d.common.component.loader.activity.PagerActivity;
 import com.d.common.component.mvp.MvpActivity;
 import com.d.common.component.ui.UIActivity;
-import com.d.lib.common.module.mvp.MvpBasePresenter;
-import com.d.lib.common.module.mvp.MvpView;
-import com.d.lib.common.module.mvp.base.BaseActivity;
+import com.d.lib.common.component.mvp.MvpBasePresenter;
+import com.d.lib.common.component.mvp.MvpView;
+import com.d.lib.common.component.mvp.base.BaseActivity;
 
 import butterknife.OnClick;
 

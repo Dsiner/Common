@@ -4,7 +4,7 @@ import android.view.View;
 
 import com.d.common.component.loader.R;
 import com.d.common.component.loader.fragment.LoaderFragment;
-import com.d.lib.common.module.mvp.base.BaseFragmentActivity;
+import com.d.lib.common.component.mvp.base.BaseFragmentActivity;
 import com.d.lib.common.utils.ViewHelper;
 import com.d.lib.common.view.TitleLayout;
 

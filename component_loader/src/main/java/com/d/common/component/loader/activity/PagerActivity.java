@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 
 import com.d.common.component.loader.R;
 import com.d.common.component.loader.fragment.LoaderLazyFragment;
-import com.d.lib.common.module.loader.AbsFragmentActivity;
+import com.d.lib.common.component.loader.AbsFragmentActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;

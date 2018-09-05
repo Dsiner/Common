@@ -5,12 +5,12 @@ import android.support.annotation.NonNull;
 
 import com.d.common.component.mvp.model.MModel;
 import com.d.common.component.mvp.view.IMView;
-import com.d.lib.common.module.mvp.MvpBasePresenter;
-import com.d.lib.common.module.taskscheduler.TaskScheduler;
-import com.d.lib.common.module.taskscheduler.callback.Observer;
-import com.d.lib.common.module.taskscheduler.callback.Task;
-import com.d.lib.common.module.taskscheduler.schedule.Schedulers;
+import com.d.lib.common.component.mvp.MvpBasePresenter;
 import com.d.lib.common.view.DSLayout;
+import com.d.lib.taskscheduler.TaskScheduler;
+import com.d.lib.taskscheduler.callback.Observer;
+import com.d.lib.taskscheduler.callback.Task;
+import com.d.lib.taskscheduler.schedule.Schedulers;
 
 import java.util.ArrayList;
 import java.util.List;

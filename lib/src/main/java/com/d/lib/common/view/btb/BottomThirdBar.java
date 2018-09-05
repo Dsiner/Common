@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Scroller;
 
 import com.d.lib.common.R;
-import com.d.lib.common.module.lv.CommonHolder;
+import com.d.lib.common.component.lv.CommonHolder;
 import com.d.lib.common.utils.Util;
 
 import java.util.List;

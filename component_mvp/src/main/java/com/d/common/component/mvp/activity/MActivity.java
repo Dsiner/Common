@@ -7,8 +7,8 @@ import com.d.common.component.mvp.R;
 import com.d.common.component.mvp.model.MModel;
 import com.d.common.component.mvp.presenter.MPresenter;
 import com.d.common.component.mvp.view.IMView;
-import com.d.lib.common.module.mvp.MvpView;
-import com.d.lib.common.module.mvp.base.BaseActivity;
+import com.d.lib.common.component.mvp.MvpView;
+import com.d.lib.common.component.mvp.base.BaseActivity;
 import com.d.lib.common.utils.ViewHelper;
 
 import java.util.List;
