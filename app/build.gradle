@@ -1,13 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 27
 
     defaultConfig {
         applicationId "com.d.commonapp"
-        minSdkVersion 9
-        targetSdkVersion 21
+        minSdkVersion 14
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
 
@@ -23,16 +22,16 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    testCompile 'junit:junit:4.12'
-    compile project(':lib')
-    compile project(':component_ui')
-    compile project(':component_mvp')
-    compile project(':component_loader')
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation project(':lib')
+    implementation project(':component_ui')
+    implementation project(':component_mvp')
+    implementation project(':component_loader')
+
     annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
 }
