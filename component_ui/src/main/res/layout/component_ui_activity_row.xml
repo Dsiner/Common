@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lib_pub_color_bg_sub"
+    android:background="@color/lib_pub_color_bg_main"
     android:orientation="vertical">
 
     <com.d.lib.common.view.TitleLayout
@@ -40,7 +40,7 @@
                 android:id="@+id/rl_row0"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
-                android:background="@color/lib_pub_color_bg_main"
+                android:background="@color/lib_pub_color_bg_sub"
                 app:lib_pub_rl_gotoVisibility="visible"
                 app:lib_pub_rl_text="@string/component_ui_dialog_title_single"
                 app:lib_pub_rl_toggleVisibility="gone" />
@@ -57,7 +57,7 @@
                 android:id="@+id/rl_row1"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
-                android:background="@color/lib_pub_color_bg_main"
+                android:background="@color/lib_pub_color_bg_sub"
                 app:lib_pub_rl_gotoVisibility="visible"
                 app:lib_pub_rl_text="@string/component_ui_dialog_title_single"
                 app:lib_pub_rl_toggleVisibility="gone" />
@@ -68,7 +68,7 @@
                 android:id="@+id/rl_row2"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
-                android:background="@color/lib_pub_color_bg_main"
+                android:background="@color/lib_pub_color_bg_sub"
                 app:lib_pub_rl_gotoVisibility="visible"
                 app:lib_pub_rl_hint="@string/component_ui_dialog_detail"
                 app:lib_pub_rl_text="@string/component_ui_dialog_title_single"
@@ -80,7 +80,7 @@
                 android:id="@+id/rl_row3"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
-                android:background="@color/lib_pub_color_bg_main"
+                android:background="@color/lib_pub_color_bg_sub"
                 app:lib_pub_rl_gotoVisibility="gone"
                 app:lib_pub_rl_text="@string/component_ui_dialog_title_single"
                 app:lib_pub_rl_toggleVisibility="visible" />
@@ -91,7 +91,7 @@
                 android:id="@+id/rl_row4"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
-                android:background="@color/lib_pub_color_bg_main"
+                android:background="@color/lib_pub_color_bg_sub"
                 app:lib_pub_rl_gotoVisibility="gone"
                 app:lib_pub_rl_text="@string/component_ui_dialog_title_single"
                 app:lib_pub_rl_toggleVisibility="visible" />
@@ -103,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin"
-                android:background="@color/lib_pub_color_bg_main"
+                android:background="@color/lib_pub_color_bg_sub"
                 app:lib_pub_rl_gotoVisibility="visible"
                 app:lib_pub_rl_icon="@drawable/lib_pub_ic_btb_icon"
                 app:lib_pub_rl_text="@string/component_ui_dialog_title_single"
