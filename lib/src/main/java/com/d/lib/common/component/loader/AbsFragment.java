@@ -14,7 +14,7 @@ import com.d.lib.xrv.adapter.CommonAdapter;
 import java.util.List;
 
 /**
- * 通用分页加载Fragment
+ * Auto-Loader - Fragment
  * Created by D on 2017/8/23.
  */
 public abstract class AbsFragment<M, P extends MvpBasePresenter> extends BaseFragment<P>
@@ -66,7 +66,8 @@ public abstract class AbsFragment<M, P extends MvpBasePresenter> extends BaseFra
         xrvList.showAsList();
         xrvList.setAdapter(adapter);
         commonLoader = new CommonLoader<M>(xrvList, adapter);
-        commonLoader.setPageCount(CommonLoader.PAGE_COUNT);//每页数据数
+        // Number of data per page
+        commonLoader.setPageCount(CommonLoader.PAGE_COUNT);
         commonLoader.setOnLoaderListener(new CommonLoader.OnLoaderListener() {
             @Override
             public void onRefresh() {

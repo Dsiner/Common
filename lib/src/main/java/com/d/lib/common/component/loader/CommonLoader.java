@@ -10,38 +10,38 @@ import java.util.List;
 public class CommonLoader<T> {
     public final static int PAGE_COUNT = 10;
 
-    private XRecyclerView list;
-    private CommonAdapter adapter;
+    private XRecyclerView mList;
+    private CommonAdapter<T> mAdapter;
     private List<T> mDatas;
-    private int pageCount = PAGE_COUNT;
-    private OnLoaderListener listener;
+    private int mPageCount = PAGE_COUNT;
+    private OnLoaderListener mListener;
     public int page = 1;
 
-    public CommonLoader(XRecyclerView list, CommonAdapter adapter) {
+    public CommonLoader(XRecyclerView list, CommonAdapter<T> adapter) {
         this.mDatas = new ArrayList<T>();
-        this.list = list;
-        this.adapter = adapter;
-        this.list.setLoadingListener(new IRecyclerView.LoadingListener() {
+        this.mList = list;
+        this.mAdapter = adapter;
+        this.mList.setLoadingListener(new IRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
                 page = 1;
-                if (listener != null) {
-                    listener.onRefresh();
+                if (mListener != null) {
+                    mListener.onRefresh();
                 }
             }
 
             @Override
             public void onLoadMore() {
                 page++;
-                if (listener != null) {
-                    listener.onLoadMore();
+                if (mListener != null) {
+                    mListener.onLoadMore();
                 }
             }
         });
     }
 
     public void setPageCount(int count) {
-        this.pageCount = count;
+        this.mPageCount = count;
     }
 
     public void setData(List<T> data) {
@@ -51,58 +51,66 @@ public class CommonLoader<T> {
         int sizeLoad = data.size();
         initList(data);
         if (page == 1) {
-            list.refreshComplete();
+            mList.refreshComplete();
         } else {
-            list.loadMoreComplete();
+            mList.loadMoreComplete();
         }
-        if (sizeLoad < pageCount) {
-            list.setNoMore(true);
+        if (sizeLoad < mPageCount) {
+            mList.setNoMore(true);
         }
-        if (listener == null) {
+        if (mListener == null) {
             return;
         }
         if (page == 1 && sizeLoad <= 0) {
-            listener.noContent();
+            mListener.noContent();
         } else {
-            listener.loadSuccess();
+            mListener.loadSuccess();
         }
     }
 
-    public void addToTop(T data) {
+    public void addTop(T data) {
         if (mDatas != null && data != null) {
             mDatas.add(0, data);
-            adapter.setDatas(mDatas);
-            adapter.notifyDataSetChanged();
-            list.scrollToPosition(0);
+            mAdapter.setDatas(mDatas);
+            mAdapter.notifyDataSetChanged();
+            mList.scrollToPosition(0);
         }
     }
 
-    public void addToTop(List<T> datas) {
+    public void addTop(List<T> datas) {
         if (mDatas != null && datas != null) {
             mDatas.addAll(0, datas);
-            adapter.setDatas(mDatas);
-            adapter.notifyDataSetChanged();
-            list.scrollToPosition(0);
+            mAdapter.setDatas(mDatas);
+            mAdapter.notifyDataSetChanged();
+            mList.scrollToPosition(0);
         }
     }
 
     public void addData(int position, T data) {
         if (mDatas != null && data != null && position >= 0 && position <= mDatas.size()) {
             mDatas.add(position, data);
-            adapter.setDatas(mDatas);
-            adapter.notifyDataSetChanged();
+            mAdapter.setDatas(mDatas);
+            mAdapter.notifyDataSetChanged();
+        }
+    }
+
+    public void addData(int position, List<T> datas) {
+        if (mDatas != null && datas != null && position >= 0 && position <= mDatas.size()) {
+            mDatas.addAll(position, datas);
+            mAdapter.setDatas(mDatas);
+            mAdapter.notifyDataSetChanged();
         }
     }
 
     public void loadError() {
         if (page == 1) {
-            list.refreshComplete();
+            mList.refreshComplete();
         } else {
             page--;
-            list.loadMoreError();
+            mList.loadMoreError();
         }
-        if (listener != null) {
-            listener.loadError(mDatas.size() <= 0);
+        if (mListener != null) {
+            mListener.loadError(mDatas.size() <= 0);
         }
     }
 
@@ -110,12 +118,12 @@ public class CommonLoader<T> {
         if (page == 1) {
             mDatas.clear();
             mDatas.addAll(cacher);
-            adapter.setDatas(mDatas);
-            adapter.notifyDataSetChanged();
+            mAdapter.setDatas(mDatas);
+            mAdapter.notifyDataSetChanged();
         } else {
             mDatas.addAll(cacher);
-            adapter.setDatas(mDatas);
-            adapter.notifyDataSetChanged();
+            mAdapter.setDatas(mDatas);
+            mAdapter.notifyDataSetChanged();
         }
     }
 
@@ -136,6 +144,6 @@ public class CommonLoader<T> {
     }
 
     public void setOnLoaderListener(OnLoaderListener listener) {
-        this.listener = listener;
+        this.mListener = listener;
     }
 }

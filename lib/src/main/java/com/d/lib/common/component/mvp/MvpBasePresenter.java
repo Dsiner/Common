@@ -78,7 +78,7 @@ public class MvpBasePresenter<V extends MvpView> implements MvpPresenter<V> {
         if (context instanceof Application) {
             this.mContext = context;
         } else {
-            throw new IllegalArgumentException("context must be ApplicationContext");
+            throw new IllegalArgumentException("Context must be ApplicationContext");
         }
     }
 

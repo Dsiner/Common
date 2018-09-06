@@ -86,7 +86,7 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
     /**
      * @param position Position
      * @param holder   Holder
-     * @param item     Position位置对应的数据Item
+     * @param item     Position corresponding data
      */
     public abstract void convert(int position, CommonHolder holder, T item);
 

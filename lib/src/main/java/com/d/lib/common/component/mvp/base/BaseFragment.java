@@ -96,7 +96,9 @@ public abstract class BaseFragment<T extends MvpBasePresenter> extends Fragment 
         }
     }
 
-    @Override
+    /**
+     * Show loading dialog
+     */
     public void showLoading() {
         if (loadingDlg == null) {
             loadingDlg = AlertDialogFactory.createFactory(mContext).getLoadingDialog();
@@ -106,7 +108,9 @@ public abstract class BaseFragment<T extends MvpBasePresenter> extends Fragment 
         }
     }
 
-    @Override
+    /**
+     * Dismiss loading dialog
+     */
     public void closeLoading() {
         if (loadingDlg != null && loadingDlg.isShowing()) {
             loadingDlg.dismiss();

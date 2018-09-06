@@ -10,7 +10,7 @@
     <color name="lib_pub_color_red">#ff0000</color>
     <color name="lib_pub_color_green">#00ff00</color>
 
-    <!--全局背景色-->
+    <!-- Global background color -->
     <color name="lib_pub_color_bg_main">#FFFFFF</color>
     <color name="lib_pub_color_bg_sub">#F9F9F9</color>
 
@@ -24,7 +24,7 @@
     <color name="lib_pub_color_destroy_press">#D5604D</color>
 
     <color name="lib_pub_color_text_main">#000000</color>
-    <color name="lib_pub_color_text_sub">#FF888888</color>
+    <color name="lib_pub_color_text_sub">#7F7F7F</color>
     <color name="lib_pub_color_text_hint">#CCCCCC</color>
     <color name="lib_pub_color_text_disable">#A7AAB1</color>
     <color name="lib_pub_color_text_dialog_content">#5E5F64</color>

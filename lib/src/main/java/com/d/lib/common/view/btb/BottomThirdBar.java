@@ -277,6 +277,7 @@ public class BottomThirdBar extends ViewGroup implements View.OnClickListener {
     }
 
     public static class Item {
+
         /**
          * Define type here
          */

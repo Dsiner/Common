@@ -3,7 +3,6 @@ package com.d.lib.common.component.mvp.base;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
@@ -33,8 +32,6 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements M
         mContext = this;
         mActivity = this;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        //禁止横屏
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(getLayoutRes());
         if (getDSLayoutRes() != 0) {
             dslDs = (DSLayout) findViewById(getDSLayoutRes());
@@ -59,7 +56,9 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements M
         }
     }
 
-    @Override
+    /**
+     * Show loading dialog
+     */
     public void showLoading() {
         if (loadingDlg == null) {
             loadingDlg = AlertDialogFactory.createFactory(mContext).getLoadingDialog();
@@ -69,7 +68,9 @@ public abstract class BaseFragmentActivity extends FragmentActivity implements M
         }
     }
 
-    @Override
+    /**
+     * Dismiss loading dialog
+     */
     public void closeLoading() {
         if (loadingDlg != null && loadingDlg.isShowing()) {
             loadingDlg.dismiss();

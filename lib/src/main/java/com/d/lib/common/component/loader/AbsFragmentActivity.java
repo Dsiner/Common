@@ -14,7 +14,7 @@ import com.d.lib.common.view.tab.ScrollTab;
 import java.util.List;
 
 /**
- * 通用ViewPage-FragmentActivity
+ * Auto-Pager - FragmentActivity
  * Created by D on 2017/7/19.
  */
 public abstract class AbsFragmentActivity extends BaseFragmentActivity

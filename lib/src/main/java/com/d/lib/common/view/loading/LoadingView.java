@@ -1,5 +1,6 @@
 package com.d.lib.common.view.loading;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -11,6 +12,8 @@ import android.view.View;
 
 import com.d.lib.common.R;
 
+import java.lang.ref.WeakReference;
+
 /**
  * Loading
  * Created by Administrator on 2016/8/27.
@@ -18,6 +21,9 @@ import com.d.lib.common.R;
 public class LoadingView extends View {
     private float width;
     private float height;
+
+    private Context context;
+    private int type = 0;
     private Paint paint;
     private int count = 12;
     private RectF tempRct;
@@ -27,13 +33,37 @@ public class LoadingView extends View {
     private float radias;
     private int j;
     private Handler handler;
-    private Runnable runnable;
+    private Task runnable;
     private long daration;
     private float widthRate;
     private float heightRate;
     private boolean isFirst;
-    private int type = 0;
     private int color;
+
+    private static class Task implements Runnable {
+
+        WeakReference<LoadingView> weakRef;
+
+        Task(LoadingView view) {
+            this.weakRef = new WeakReference<>(view);
+        }
+
+        @Override
+        public void run() {
+            if (isFinished()) {
+                return;
+            }
+            LoadingView theView = weakRef.get();
+            theView.invalidate();
+            theView.handler.postDelayed(theView.runnable, theView.daration / theView.count);
+        }
+
+        private boolean isFinished() {
+            return weakRef == null || weakRef.get() == null
+                    || weakRef.get().context == null
+                    || weakRef.get().context instanceof Activity && ((Activity) weakRef.get().context).isFinishing();
+        }
+    }
 
     public LoadingView(Context context) {
         this(context, null);
@@ -49,22 +79,17 @@ public class LoadingView extends View {
     }
 
     private void init(Context context) {
-        isFirst = true;
-        color = ContextCompat.getColor(context, R.color.lib_pub_color_main);
-        paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setColor(color);
-        minAlpha = 50;
-        daration = 1000;
-        widthRate = 1f / 3;
-        heightRate = 1f / 2;
-        handler = new Handler();
-        runnable = new Runnable() {
-            @Override
-            public void run() {
-                postInvalidate();
-                handler.postDelayed(runnable, daration / count);
-            }
-        };
+        this.context = context;
+        this.isFirst = true;
+        this.color = ContextCompat.getColor(context, R.color.lib_pub_color_main);
+        this.paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        this.paint.setColor(color);
+        this.minAlpha = 50;
+        this.daration = 1000;
+        this.widthRate = 1f / 3;
+        this.heightRate = 1f / 2;
+        this.handler = new Handler();
+        this.runnable = new Task(this);
     }
 
     @Override
@@ -84,11 +109,11 @@ public class LoadingView extends View {
             paint.setAlpha(alpha);
             switch (type) {
                 case 0:
-                    /**菊花旋转**/
+                    /** Daisy rotation **/
                     canvas.drawRoundRect(tempRct, rectWidth / 2, rectWidth / 2, paint);
                     break;
                 case 1:
-                    /**圆点旋转**/
+                    /** Dot rotation **/
                     canvas.drawCircle((tempRct.left + tempRct.right) / 2, (tempRct.top + tempRct.bottom) / 2, rectWidth * 2 / 3, paint);
                     break;
             }
@@ -122,8 +147,6 @@ public class LoadingView extends View {
                 restart();
                 break;
             case GONE:
-                stop();
-                break;
             case INVISIBLE:
                 stop();
                 break;
@@ -146,7 +169,7 @@ public class LoadingView extends View {
     }
 
     /**
-     * 重新开始
+     * Restart
      */
     public void restart() {
         stop();
@@ -154,7 +177,7 @@ public class LoadingView extends View {
     }
 
     /**
-     * 停止
+     * Stop
      */
     public void stop() {
         isFirst = false;

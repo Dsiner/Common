@@ -6,7 +6,7 @@ import android.view.View;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
 
 /**
- * ViewPage-Fragment通用分页加载Fragment
+ * Auto-Loader - ViewPager Fragment
  * Created by D on 2017/8/23.
  */
 public abstract class AbsLazyFragment<M, P extends MvpBasePresenter> extends AbsFragment<M, P> {

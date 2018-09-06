@@ -6,11 +6,12 @@ import android.view.View;
  * OnClickFastListener
  * Created by D on 2017/6/6.
  */
-public abstract class OnClickFastListener extends ClickUtil implements View.OnClickListener {
+public abstract class OnClickFastListener extends ClickFast implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        //判断当前点击事件与前一次点击事件时间间隔是否小于阙值
+        // Determine whether the current click event and the previous click event interval
+        // are less than the threshold value
         if (isFastDoubleClick()) {
             return;
         }
@@ -18,7 +19,7 @@ public abstract class OnClickFastListener extends ClickUtil implements View.OnCl
     }
 
     /**
-     * 快速点击事件回调方法
+     * Quick click event callback method
      */
     public abstract void onFastClick(View v);
 }

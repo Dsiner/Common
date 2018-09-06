@@ -23,20 +23,13 @@ package com.d.lib.common.component.mvp;
  * @since 1.0.0
  */
 public interface MvpView {
+
     /**
-     * 设置默认态，网络请求出错时可通过getState(Throwable e)获取需要显示状态
+     * Set the default state.
+     * When the network request error occurs, you can get the display status by getState(Throwable e).
      *
-     * @param state：DSLayout.STATE_LOADING、DSLayout.STATE_EMPTY、DSLayout.STATE_NET_ERROR、DSLayout.GONE等
+     * @param state: DSLayout.STATE_LOADING、DSLayout.STATE_EMPTY、
+     *               DSLayout.STATE_NET_ERROR、DSLayout.GONE
      */
     void setState(int state);
-
-    /**
-     * loading dialog show
-     */
-    void showLoading();
-
-    /**
-     * loading dialog dismiss
-     */
-    void closeLoading();
 }

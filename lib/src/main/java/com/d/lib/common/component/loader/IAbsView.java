@@ -5,7 +5,7 @@ import com.d.lib.common.component.mvp.MvpView;
 import java.util.List;
 
 /**
- * 通用分页加载IView
+ * Auto-Loader - IView
  * Created by D on 2017/8/22.
  */
 public interface IAbsView<T> extends MvpView {

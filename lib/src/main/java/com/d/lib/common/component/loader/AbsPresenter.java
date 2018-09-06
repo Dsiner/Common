@@ -5,7 +5,7 @@ import android.content.Context;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
 
 /**
- * 通用分页加载Presenter
+ * Auto-Loader - Presenter
  * Created by D on 2017/8/22.
  */
 public class AbsPresenter<M> extends MvpBasePresenter<IAbsView<M>> {

@@ -57,11 +57,11 @@ public class SheetActivity extends Activity implements View.OnClickListener {
                     });
         } else if (resId == R.id.btn_style2) {
             AlertDialogFactory.createFactory(this).getBottomHorDialog(getResources().getString(R.string.component_ui_share),
-                    Arrays.asList(new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_qq), R.drawable.lib_pub_circle_msg_number),
-                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weixin), R.drawable.lib_pub_circle_msg_number),
-                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weixianquan), R.drawable.lib_pub_circle_msg_number),
-                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weibo), R.drawable.lib_pub_circle_msg_number),
-                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_sms), R.drawable.lib_pub_circle_msg_number)),
+                    Arrays.asList(new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_qq), R.drawable.lib_pub_ic_btb_icon),
+                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weixin), R.drawable.lib_pub_ic_btb_icon),
+                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weixianquan), R.drawable.lib_pub_ic_btb_icon),
+                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weibo), R.drawable.lib_pub_ic_btb_icon),
+                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_sms), R.drawable.lib_pub_ic_btb_icon)),
                     new AbsSheetDialog.OnItemClickListener() {
                         @Override
                         public void onClick(Dialog dlg, int position, String item) {
@@ -85,11 +85,11 @@ public class SheetActivity extends Activity implements View.OnClickListener {
                                     new BottomShareSheetDialog.Bean(getResources().getString(R.string.component_ui_share_retrieve_password), "3854", true)));
         } else if (resId == R.id.btn_style5) {
             AlertDialogFactory.createFactory(this).getBottomHorDialog(getResources().getString(R.string.component_ui_share),
-                    Arrays.asList(new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_qq), R.drawable.lib_pub_circle_msg_number),
-                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weixin), R.drawable.lib_pub_circle_msg_number),
-                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weixianquan), R.drawable.lib_pub_circle_msg_number),
-                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weibo), R.drawable.lib_pub_circle_msg_number),
-                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_sms), R.drawable.lib_pub_circle_msg_number)),
+                    Arrays.asList(new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_qq), R.drawable.lib_pub_ic_btb_icon),
+                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weixin), R.drawable.lib_pub_ic_btb_icon),
+                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weixianquan), R.drawable.lib_pub_ic_btb_icon),
+                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weibo), R.drawable.lib_pub_ic_btb_icon),
+                            new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_sms), R.drawable.lib_pub_ic_btb_icon)),
                     new AbsSheetDialog.OnItemClickListener() {
                         @Override
                         public void onClick(Dialog dlg, int position, String item) {
