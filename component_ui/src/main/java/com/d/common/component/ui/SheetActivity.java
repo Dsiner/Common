@@ -26,9 +26,9 @@ public class SheetActivity extends Activity implements View.OnClickListener {
             AlertDialogFactory.createFactory(this).getBottomVerDialog(null,
                     Arrays.asList(new BottomVerSheetDialog.Bean(getResources().getString(R.string.component_ui_dialog_bottom_operation_normal) + "1", R.color.lib_pub_color_text_main, true),
                             new BottomVerSheetDialog.Bean(getResources().getString(R.string.component_ui_dialog_bottom_operation_normal) + "2", R.color.lib_pub_color_text_main, false)),
-                    new AbsSheetDialog.OnItemClickListener() {
+                    new AbsSheetDialog.OnItemClickListener<BottomVerSheetDialog.Bean>() {
                         @Override
-                        public void onClick(Dialog dlg, int position, String item) {
+                        public void onClick(Dialog dlg, int position, BottomVerSheetDialog.Bean item) {
 
                         }
 
@@ -44,9 +44,9 @@ public class SheetActivity extends Activity implements View.OnClickListener {
                             new BottomVerSheetDialog.Bean(getResources().getString(R.string.component_ui_dialog_bottom_operation_normal) + "3", R.color.lib_pub_color_text_main, false),
                             new BottomVerSheetDialog.Bean(getResources().getString(R.string.component_ui_dialog_bottom_operation_dangerous), R.color.lib_pub_color_red, false),
                             new BottomVerSheetDialog.Bean(getResources().getString(R.string.component_ui_dialog_bottom_operation_none), R.color.lib_pub_color_text_hint, false)),
-                    new AbsSheetDialog.OnItemClickListener() {
+                    new AbsSheetDialog.OnItemClickListener<BottomVerSheetDialog.Bean>() {
                         @Override
-                        public void onClick(Dialog dlg, int position, String item) {
+                        public void onClick(Dialog dlg, int position, BottomVerSheetDialog.Bean item) {
 
                         }
 
@@ -62,9 +62,9 @@ public class SheetActivity extends Activity implements View.OnClickListener {
                             new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weixianquan), R.drawable.lib_pub_ic_btb_icon),
                             new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weibo), R.drawable.lib_pub_ic_btb_icon),
                             new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_sms), R.drawable.lib_pub_ic_btb_icon)),
-                    new AbsSheetDialog.OnItemClickListener() {
+                    new AbsSheetDialog.OnItemClickListener<BottomHorSheetDialog.Bean>() {
                         @Override
-                        public void onClick(Dialog dlg, int position, String item) {
+                        public void onClick(Dialog dlg, int position, BottomHorSheetDialog.Bean item) {
 
                         }
 
@@ -90,9 +90,9 @@ public class SheetActivity extends Activity implements View.OnClickListener {
                             new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weixianquan), R.drawable.lib_pub_ic_btb_icon),
                             new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_weibo), R.drawable.lib_pub_ic_btb_icon),
                             new BottomHorSheetDialog.Bean(getResources().getString(R.string.component_ui_share_sms), R.drawable.lib_pub_ic_btb_icon)),
-                    new AbsSheetDialog.OnItemClickListener() {
+                    new AbsSheetDialog.OnItemClickListener<BottomHorSheetDialog.Bean>() {
                         @Override
-                        public void onClick(Dialog dlg, int position, String item) {
+                        public void onClick(Dialog dlg, int position, BottomHorSheetDialog.Bean item) {
 
                         }
 

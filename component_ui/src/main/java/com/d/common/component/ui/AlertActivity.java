@@ -133,7 +133,7 @@ public class AlertActivity extends Activity implements View.OnClickListener {
                             new OperationDialog.Bean(getResources().getString(R.string.component_ui_dialog_bottom_operation) + "2", R.color.lib_pub_color_main, false)),
                     new AbsSheetDialog.OnItemClickListener() {
                         @Override
-                        public void onClick(Dialog dlg, int position, String item) {
+                        public void onClick(Dialog dlg, int position, Object item) {
 
                         }
 
