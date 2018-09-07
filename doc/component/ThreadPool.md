@@ -1,14 +1,17 @@
 ------ TaskScheduler ThreadPool ------
 
 1. Features
+```java
     1).TaskScheduler.postMain(...);        // Main thread, executing task
     2).TaskScheduler.postMainDelayed(...); // Main thread, executing task
     3).TaskScheduler.executeMain(...);     // Main thread, executing task
     4).TaskScheduler.executeTask(...);     // Asynchronous thread, executing tasks in the thread pool
     5).TaskScheduler.executeSingle(...);   // Asynchronous thread, executing tasks in the single-threaded thread pool
     6).TaskScheduler.create(...);          // Task scheduling
+```
 
 2. Task scheduling
+```java
     1)..func(...).func(...).func(...)...: Sequential flow execution
     2)..observeOn(...): Thread switching
     3).----- Demo -----
@@ -47,3 +50,4 @@
                         ...do something in main thread
                     }
                 });
+```

@@ -1,4 +1,4 @@
-package com.d.commonapp;
+package com.d.common;
 
 import android.app.Application;
 
