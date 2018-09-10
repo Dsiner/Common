@@ -4,8 +4,19 @@
 [![API](https://img.shields.io/badge/API-9%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=9)
 [![Wiki-Guide](https://img.shields.io/badge/Wiki-Guide-brightgreen.svg)](https://github.com/Dsiner/Common/wiki)
 
->**Common**  一个基于 `MVP` 的Android模块化开发框架
+>**Common**  一个基于 `MVP Base` + `MVP Customization` 的Android模块化开发框架
 
+## Module
+- **app**  -  `App引导`
+- **lib**  -  `核心库`
+- **module_ui**  - `模块化` 业务
+- **module_mvp**  - `模块化` 业务
+- **module_loader**  - `模块化` 业务
+
+`lib` 是核心库，也就是框架本身.
+`module_ui` , `module_mvp` ...是模块化业务，你也可以称之为业务分包，在这里是Common中各个组件的使用示例Demo.
+
+## Framework
 - [x] **UI**
     - [x] UI Components
     - [x] MVP Base

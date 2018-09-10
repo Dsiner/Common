@@ -48,7 +48,7 @@
         app:lib_pub_stab_indicatorType="none"
         app:lib_pub_stab_indicatorWeight="2dp"
         app:lib_pub_stab_indicatorWidth="65dp"
-        app:lib_pub_stab_titles="@string/component_ui_labels"
+        app:lib_pub_stab_titles="@string/module_ui_labels"
         app:lib_pub_stab_type="view_group" />
 ```
 

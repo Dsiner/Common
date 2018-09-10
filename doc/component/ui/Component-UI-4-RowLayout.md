@@ -9,7 +9,7 @@
         android:background="@color/lib_pub_color_bg_main"
         app:lib_pub_rl_gotoVisibility="visible"
         app:lib_pub_rl_icon="@color/lib_pub_color_red"
-        app:lib_pub_rl_text="@string/component_ui_dialog_title"
+        app:lib_pub_rl_text="@string/module_ui_dialog_title"
         app:lib_pub_rl_toggleVisibility="gone" />
 ```
 

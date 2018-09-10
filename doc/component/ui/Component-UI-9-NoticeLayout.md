@@ -10,7 +10,7 @@
         android:layout_marginRight="@dimen/lib_pub_dimen_margin"
         app:lib_pub_noticel_exitVisibility="gone"
         app:lib_pub_noticel_gotoVisibility="visible"
-        app:lib_pub_noticel_text="@string/component_ui_notice_type1" />
+        app:lib_pub_noticel_text="@string/module_ui_notice_type1" />
 ```
 
 #### 2. 获取引用
