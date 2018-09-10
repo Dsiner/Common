@@ -6,20 +6,37 @@
 
 >**Common**  一个基于 `MVP` 的Android模块化开发框架
 
-* [UI Components](https://github.com/Dsiner/Common/wiki)
-* [MVP Base](https://github.com/Dsiner/Common/wiki)
-* [MVP Customization](https://github.com/Dsiner/Common/wiki)
-    * [Auto Loader](https://github.com/Dsiner/Common/wiki)
-    * [Auto Pager](https://github.com/Dsiner/Common/wiki)
-* [Components](https://github.com/Dsiner/Common/wiki)
-* [Tools](https://github.com/Dsiner/Common/wiki)
+- [x] **UI**
+    - [x] UI Components
+    - [x] MVP Base
+    - [x] MVP Customization
+    - [x] Auto Loader
+    - [x] Auto Pager
+- [x] **Data**
+    - [ ] Data
+    - [ ] SharePreference
+    - [ ] DataBase
+- [x] **Event**
+    - [ ] Bus
+    - [x] EventBus
+- [x] **Network**
+    - [x] RxNet
+- [x] **Thread**
+    - [x] RxJava
+    - [x] TaskScheduler
+- [x] **Components**
+    - [x] Runtime permissions - [PermissionCompat](https://github.com/Dsiner/PermissionCompat)
+    - [x] Cache - [Cache](https://github.com/Dsiner/Cache)
+    - [x] Image Loading - [Glide](https://github.com/bumptech/glide)
+    - [x] Pull down refresh, load more - [Xrv](https://github.com/Dsiner/Xrv)
+- [x] **Tools**
 
 ## Demo
 <p>
    <img src="https://github.com/Dsiner/Resouce/blob/master/lib/Common/common.gif" width="320" alt="Screenshot"/>
 </p>
 
-More usage see [Wiki](https://github.com/Dsiner/Common/wiki) [Wiki](https://github.com/Dsiner/Common/wiki) [Wiki](https://github.com/Dsiner/Common/wiki)
+More usage see [Wiki](https://github.com/Dsiner/Common/wiki) [Wiki](https://github.com/Dsiner/Common/wiki) [Wiki](https://github.com/Dsiner/Common/wiki)!!!
 
 ## Licence
 
