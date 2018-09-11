@@ -4,17 +4,18 @@
 [![API](https://img.shields.io/badge/API-9%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=9)
 [![Wiki-Guide](https://img.shields.io/badge/Wiki-Guide-brightgreen.svg)](https://github.com/Dsiner/Common/wiki)
 
->**Common**  一个基于 `MVP Base` + `MVP Customization` 的Android模块化开发框架
+>Android modular development framework based on `MVP Base` + `MVP Customization` + `Component` .
 
 ## Module
-- **app**  -  `App引导`
-- **lib**  -  `核心库`
-- **module_ui**  - `模块化` 业务
-- **module_mvp**  - `模块化` 业务
-- **module_loader**  - `模块化` 业务
+- `app`  -  Guide
+- `lib`  -  Core
+- `module_ui`  - Business module
+- `module_mvp`  - Business module
+- `module_loader`  - Business module
 
-`lib` 是核心库，也就是框架本身.
-`module_ui` , `module_mvp` ...是模块化业务，你也可以称之为业务分包，在这里是Common中各个组件的使用示例Demo.
+`lib` is the core library that contains the basic components.
+
+`module_ui`, `module_mvp`, `...` are business modules, you can also call them business subcontracting, here are examples of the use of each component in `lib` .
 
 ## Framework
 - [x] **UI**
@@ -36,10 +37,10 @@
     - [x] RxJava
     - [x] TaskScheduler
 - [x] **Components**
-    - [x] Runtime permissions - [PermissionCompat](https://github.com/Dsiner/PermissionCompat)
-    - [x] Cache - [Cache](https://github.com/Dsiner/Cache)
-    - [x] Image Loading - [Glide](https://github.com/bumptech/glide)
-    - [x] Pull down refresh, load more - [Xrv](https://github.com/Dsiner/Xrv)
+    - [x] [PermissionCompat](https://github.com/Dsiner/PermissionCompat) - Runtime permissions
+    - [x] [Cache](https://github.com/Dsiner/Cache) - Cache
+    - [x] [Glide](https://github.com/bumptech/glide) - Image Loading
+    - [x] [Xrv](https://github.com/Dsiner/Xrv) - Pull down refresh, load more
 - [x] **Tools**
 
 ## Demo
