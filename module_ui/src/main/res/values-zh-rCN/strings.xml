@@ -23,7 +23,7 @@
     <string name="module_ui_dialog_bottom_operation_dangerous">危险操作</string>
     <string name="module_ui_dialog_bottom_operation_none">不可用操作</string>
 
-    <!-- DS -->
+    <!-- Default State -->
     <string name="module_ui_ds_loading">拼命加载中...</string>
     <string name="module_ui_ds_no_data">没有数据奥~</string>
     <string name="module_ui_ds_net_err">网络开小差了~</string>
