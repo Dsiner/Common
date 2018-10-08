@@ -4,7 +4,7 @@ import android.app.Application;
 
 import com.d.common.loader.api.API;
 import com.d.lib.rxnet.RxNet;
-import com.d.lib.rxnet.util.SSLUtil;
+import com.d.lib.rxnet.utils.SSLUtil;
 
 import okhttp3.logging.HttpLoggingInterceptor;
 
@@ -21,7 +21,8 @@ public class App extends Application {
     }
 
     private void initRxNet() {
-        RxNet.init().baseUrl(API.API_BASE)
+        RxNet.init()
+                .baseUrl(API.API_BASE)
                 .connectTimeout(10 * 1000)
                 .readTimeout(10 * 1000)
                 .writeTimeout(10 * 1000)
@@ -29,6 +30,7 @@ public class App extends Application {
                 .retryDelayMillis(2 * 1000)
                 .sslSocketFactory(SSLUtil.getSslSocketFactory(null, null, null))
                 .setLog("RetrofitLog Back = ", HttpLoggingInterceptor.Level.BODY)
+                .setDebug(true)
                 .build();
     }
 }

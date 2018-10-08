@@ -18,7 +18,7 @@ public interface API {
         String sign = "sign";
         String app_name = "app_name";
         String platform = "platform";
-        String app_version = "app_version";
+        String appVersion = "app_version";
         String uid = "uid";
         String imei = "imei";
         String rom = "rom";
@@ -29,7 +29,7 @@ public interface API {
     }
 
     /**
-     * GET/Test
+     * GET/MovieTop
      */
     interface MovieTop {
         String rtpType = "https://api.douban.com/v2/movie/top250";

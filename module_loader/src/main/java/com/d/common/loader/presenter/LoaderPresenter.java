@@ -9,7 +9,7 @@ import com.d.lib.common.component.loader.AbsPresenter;
 import com.d.lib.common.component.loader.CommonLoader;
 import com.d.lib.rxnet.RxNet;
 import com.d.lib.rxnet.base.Params;
-import com.d.lib.rxnet.listener.SimpleCallBack;
+import com.d.lib.rxnet.callback.SimpleCallback;
 
 import java.util.ArrayList;
 
@@ -28,8 +28,8 @@ public class LoaderPresenter extends AbsPresenter<LoaderModel> {
         params.addParam(API.MovieTop.start, String.valueOf(CommonLoader.PAGE_COUNT * (page - 1)));
         params.addParam(API.MovieTop.count, String.valueOf(CommonLoader.PAGE_COUNT));
 
-        RxNet.getInstance().get(API.MovieTop.rtpType, params)
-                .request(new SimpleCallBack<LoaderInfo>() {
+        RxNet.getDefault().get(API.MovieTop.rtpType, params)
+                .request(new SimpleCallback<LoaderInfo>() {
                     @Override
                     public void onSuccess(LoaderInfo response) {
                         if (getView() == null) {
