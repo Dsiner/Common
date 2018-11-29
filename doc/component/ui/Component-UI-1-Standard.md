@@ -19,15 +19,15 @@
     <color name="lib_pub_color_bg_sub">#F9F9F9</color>
 
     <!-- 全局主色 -->
-    <color name="lib_pub_color_main">#5E87FF</color>
+    <color name="lib_pub_color_main">#008577</color>
     <!-- 全局主按压色 -->
-    <color name="lib_pub_color_main_press">#5073DA</color>
+    <color name="lib_pub_color_main_press">#00574B</color>
     <!-- 全局主色90%透明度 -->
-    <color name="lib_pub_color_main_90">#E65E87FF</color>
+    <color name="lib_pub_color_main_90">#E6008577</color>
     <!-- 全局主色50%透明度 -->
-    <color name="lib_pub_color_main_50">#805E87FF</color>
+    <color name="lib_pub_color_main_50">#80008577</color>
     <!-- 全局主色30%透明度 -->
-    <color name="lib_pub_color_main_30">#665E87FF</color>
+    <color name="lib_pub_color_main_30">#66008577</color>
 
     <!-- 全局销毁色 -->
     <color name="lib_pub_color_destroy">#FA715B</color>

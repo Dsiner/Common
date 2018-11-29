@@ -25,9 +25,9 @@
     - [x] Auto Loader
     - [x] Auto Pager
 - [x] **Data**
-    - [ ] Data
-    - [ ] SharePreference
-    - [ ] DataBase
+    - [x] Data
+    - [x] SharePreference
+    - [x] [DataBase](https://github.com/Dsiner/AndroidOrm)
 - [x] **Event**
     - [ ] Bus
     - [x] EventBus
