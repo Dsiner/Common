@@ -22,6 +22,8 @@
     <color name="lib_pub_color_main">#008577</color>
     <!-- 全局主按压色 -->
     <color name="lib_pub_color_main_press">#00574B</color>
+    <!-- 全局主禁用色 -->
+    <color name="lib_pub_color_main_disable">#7BCBBF</color>
     <!-- 全局主色90%透明度 -->
     <color name="lib_pub_color_main_90">#E6008577</color>
     <!-- 全局主色50%透明度 -->
