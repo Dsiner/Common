@@ -16,7 +16,7 @@ public interface API {
         String rtp = "rtp";
         String time = "time";
         String sign = "sign";
-        String app_name = "app_name";
+        String appName = "app_name";
         String platform = "platform";
         String appVersion = "app_version";
         String uid = "uid";

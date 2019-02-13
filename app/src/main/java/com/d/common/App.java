@@ -3,10 +3,9 @@ package com.d.common;
 import android.app.Application;
 
 import com.d.common.loader.api.API;
-import com.d.lib.rxnet.RxNet;
-import com.d.lib.rxnet.utils.SSLUtil;
-
-import okhttp3.logging.HttpLoggingInterceptor;
+import com.d.lib.aster.Aster;
+import com.d.lib.aster.base.Config;
+import com.d.lib.aster.utils.SSLUtil;
 
 /**
  * Application
@@ -17,20 +16,20 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        initRxNet();
+        initAster();
     }
 
-    private void initRxNet() {
-        RxNet.init()
+    private void initAster() {
+        Aster.init()
                 .baseUrl(API.API_BASE)
                 .connectTimeout(10 * 1000)
                 .readTimeout(10 * 1000)
                 .writeTimeout(10 * 1000)
-                .retryCount(3)
-                .retryDelayMillis(2 * 1000)
+                .retryCount(0)
+                .retryDelayMillis(3 * 1000)
                 .sslSocketFactory(SSLUtil.getSslSocketFactory(null, null, null))
-                .setLog("RetrofitLog Back = ", HttpLoggingInterceptor.Level.BODY)
-                .setDebug(true)
+                .log("AsterLog Back = ", Config.Level.BODY)
+                .debug(true)
                 .build();
     }
 }

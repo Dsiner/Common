@@ -7,8 +7,8 @@
 >Android modular development framework based on `MVP Base` + `MVP Customization` + `Component` .
 
 ## Module
-- `app`  -  Guide
 - `lib`  -  Core
+- `app`  -  Guide module
 - `module_ui`  - Business module
 - `module_mvp`  - Business module
 - `module_loader`  - Business module
@@ -30,12 +30,12 @@
     - [x] [DataBase](https://github.com/Dsiner/AndroidOrm)
 - [x] **Event**
     - [ ] Bus
-    - [x] EventBus
+    - [x] [EventBus](https://github.com/greenrobot/EventBus)
 - [x] **Network**
-    - [x] RxNet
+    - [x] [Aster](https://github.com/Dsiner/Aster)
 - [x] **Thread**
-    - [x] RxJava
-    - [x] TaskScheduler
+    - [x] [TaskScheduler](https://github.com/Dsiner/TaskScheduler)
+    - [x] [RxJava](https://github.com/ReactiveX/RxJava)
 - [x] **Components**
     - [x] [PermissionCompat](https://github.com/Dsiner/PermissionCompat) - Runtime permissions
     - [x] [Cache](https://github.com/Dsiner/Cache) - Cache

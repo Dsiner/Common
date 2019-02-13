@@ -5,11 +5,11 @@ import android.content.Context;
 import com.d.common.loader.api.API;
 import com.d.common.loader.model.LoaderInfo;
 import com.d.common.loader.model.LoaderModel;
+import com.d.lib.aster.Aster;
+import com.d.lib.aster.base.Params;
+import com.d.lib.aster.callback.SimpleCallback;
 import com.d.lib.common.component.loader.AbsPresenter;
 import com.d.lib.common.component.loader.CommonLoader;
-import com.d.lib.rxnet.RxNet;
-import com.d.lib.rxnet.base.Params;
-import com.d.lib.rxnet.callback.SimpleCallback;
 
 import java.util.ArrayList;
 
@@ -28,7 +28,7 @@ public class LoaderPresenter extends AbsPresenter<LoaderModel> {
         params.addParam(API.MovieTop.start, String.valueOf(CommonLoader.PAGE_COUNT * (page - 1)));
         params.addParam(API.MovieTop.count, String.valueOf(CommonLoader.PAGE_COUNT));
 
-        RxNet.getDefault().get(API.MovieTop.rtpType, params)
+        Aster.getDefault().get(params.rtp, params)
                 .request(new SimpleCallback<LoaderInfo>() {
                     @Override
                     public void onSuccess(LoaderInfo response) {
