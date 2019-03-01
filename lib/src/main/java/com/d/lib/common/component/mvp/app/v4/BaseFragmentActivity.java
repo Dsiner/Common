@@ -105,9 +105,13 @@ public abstract class BaseFragmentActivity<T extends MvpBasePresenter>
         return 0;
     }
 
-    public abstract T getPresenter();
+    public T getPresenter() {
+        return null;
+    }
 
-    protected abstract MvpView getMvpView();
+    protected MvpView getMvpView() {
+        return null;
+    }
 
     protected void bindView() {
     }

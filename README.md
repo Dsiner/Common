@@ -29,7 +29,7 @@
     - [x] SharePreference
     - [x] [DataBase](https://github.com/Dsiner/AndroidOrm)
 - [x] **Event**
-    - [ ] Bus
+    - [x] Bus
     - [x] [EventBus](https://github.com/greenrobot/EventBus)
 - [x] **Network**
     - [x] [Aster](https://github.com/Dsiner/Aster)
