@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.d.common.mvp.activity.MActivity;
 import com.d.common.mvp.activity.MFragmentActivity;
+import com.d.lib.common.utils.ViewHelper;
 
 /**
  * MvpActivity
@@ -20,14 +21,16 @@ public class MvpActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.module_mvp_activity_main);
 
-        findViewById(R.id.btn_mvp_activity).setOnClickListener(this);
-        findViewById(R.id.btn_mvp_fragment_activity).setOnClickListener(this);
+        ViewHelper.setOnClick(this, this, R.id.iv_title_left,
+                R.id.btn_mvp_activity, R.id.btn_mvp_fragment_activity);
     }
 
     @Override
     public void onClick(View v) {
         int resId = v.getId();
-        if (resId == R.id.btn_mvp_activity) {
+        if (resId == R.id.iv_title_left) {
+            finish();
+        } else if (resId == R.id.btn_mvp_activity) {
             startActivity(new Intent(MvpActivity.this, MActivity.class));
         } else if (resId == R.id.btn_mvp_fragment_activity) {
             startActivity(new Intent(MvpActivity.this, MFragmentActivity.class));

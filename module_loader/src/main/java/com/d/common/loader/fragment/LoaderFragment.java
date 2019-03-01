@@ -5,7 +5,7 @@ import com.d.common.loader.adapter.LoaderAdapter;
 import com.d.common.loader.model.LoaderModel;
 import com.d.common.loader.presenter.LoaderPresenter;
 import com.d.common.loader.view.ILoaderView;
-import com.d.lib.common.component.loader.AbsFragment;
+import com.d.lib.common.component.loader.v4.AbsFragment;
 import com.d.lib.common.component.mvp.MvpView;
 import com.d.lib.xrv.adapter.CommonAdapter;
 

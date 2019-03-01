@@ -9,7 +9,7 @@ import com.d.common.loader.activity.PagerActivity;
 import com.d.common.ui.UIActivity;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
 import com.d.lib.common.component.mvp.MvpView;
-import com.d.lib.common.component.mvp.base.BaseActivity;
+import com.d.lib.common.component.mvp.app.BaseActivity;
 
 import butterknife.OnClick;
 

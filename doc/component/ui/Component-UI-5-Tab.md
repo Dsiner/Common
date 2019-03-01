@@ -1,27 +1,27 @@
 ## ------ Tab使用 ------
 
-### 一、SegementView
+### 一、SegmentView
 ----------------------------------------------------------------------------------------------------
 #### 1. Xml布局中添加
 ```xml
-    <com.d.lib.common.view.SegementView
+    <com.d.lib.common.view.SegmentView
         android:id="@+id/sv_tab"
         android:layout_width="match_parent"
         android:layout_height="27dp"
         android:layout_marginTop="@dimen/lib_pub_dimen_margin"
-        app:lib_pub_segementv_borderWidth="1dp"
-        app:lib_pub_segementv_colorMain="@color/lib_pub_color_main"
-        app:lib_pub_segementv_colorSub="@color/lib_pub_color_white"
-        app:lib_pub_segementv_divideWidth="1dp"
-        app:lib_pub_segementv_radius="4dp"
-        app:lib_pub_segementv_textSize="@dimen/lib_pub_dimen_text_small"
-        app:lib_pub_segementv_titles="标签一;标签二;标签三;标签四" />
+        app:lib_pub_segmentv_borderWidth="1dp"
+        app:lib_pub_segmentv_colorMain="@color/lib_pub_color_main"
+        app:lib_pub_segmentv_colorSub="@color/lib_pub_color_white"
+        app:lib_pub_segmentv_divideWidth="1dp"
+        app:lib_pub_segmentv_radius="4dp"
+        app:lib_pub_segmentv_textSize="@dimen/lib_pub_dimen_text_small"
+        app:lib_pub_segmentv_titles="标签一;标签二;标签三;标签四" />
 ```
 
 #### 2. 获取引用
 ```xml
     @Bind(R.id.sv_tab)
-    SegementView svTab;
+    SegmentView svTab;
 ```
 
 #### 3. 方法

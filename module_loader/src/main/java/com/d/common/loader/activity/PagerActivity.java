@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 
 import com.d.common.loader.R;
 import com.d.common.loader.fragment.LoaderLazyFragment;
-import com.d.lib.common.component.loader.AbsFragmentActivity;
+import com.d.lib.common.component.loader.v4.AbsFragmentActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,6 +34,6 @@ public class PagerActivity extends AbsFragmentActivity {
     @Override
     protected void init() {
         super.init();
-        tlTitle.setText(R.id.tv_title_title, "Pager");
+        mTlTitle.setText(R.id.tv_title_title, "Pager");
     }
 }
