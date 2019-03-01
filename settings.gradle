@@ -1,4 +1,3 @@
 include ':app',
         ':lib',
-        ':module_ui',
-        ':module_mvp', ':module_loader'
+        ':module_ui'

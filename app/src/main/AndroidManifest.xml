@@ -3,7 +3,6 @@
     package="com.d.common">
 
     <application
-        android:name="com.d.common.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/lib_pub_AppTheme">
 
-        <activity android:name="com.d.common.MainActivity">
+        <activity android:name="com.d.common.ui.UIActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
