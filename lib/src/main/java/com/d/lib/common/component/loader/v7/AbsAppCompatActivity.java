@@ -1,4 +1,4 @@
-package com.d.lib.common.component.loader.v4;
+package com.d.lib.common.component.loader.v7;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -7,7 +7,7 @@ import android.view.View;
 
 import com.d.lib.common.R;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
-import com.d.lib.common.component.mvp.app.v4.BaseFragmentActivity;
+import com.d.lib.common.component.mvp.app.v7.BaseAppCompatActivity;
 import com.d.lib.common.utils.ViewHelper;
 import com.d.lib.common.view.TitleLayout;
 import com.d.lib.common.view.tab.ScrollTab;
@@ -15,11 +15,11 @@ import com.d.lib.common.view.tab.ScrollTab;
 import java.util.List;
 
 /**
- * Auto-Pager - FragmentActivity
+ * Auto-Pager - AbsAppCompatActivity
  * Created by D on 2017/7/19.
  */
-public abstract class AbsFragmentActivity<T extends MvpBasePresenter>
-        extends BaseFragmentActivity<T>
+public abstract class AbsAppCompatActivity<T extends MvpBasePresenter>
+        extends BaseAppCompatActivity<T>
         implements View.OnClickListener, ViewPager.OnPageChangeListener {
 
     protected TitleLayout mTlTitle;

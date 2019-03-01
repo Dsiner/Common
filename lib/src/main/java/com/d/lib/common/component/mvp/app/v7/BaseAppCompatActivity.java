@@ -1,11 +1,11 @@
-package com.d.lib.common.component.mvp.app.v4;
+package com.d.lib.common.component.mvp.app.v7;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 
 import com.d.lib.common.component.mvp.MvpBasePresenter;
@@ -17,14 +17,14 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * BaseFragmentActivity
+ * AbsAppCompatActivity
  * Created by D on 2017/4/27.
  */
-public abstract class BaseFragmentActivity<T extends MvpBasePresenter>
-        extends FragmentActivity implements MvpView {
+public abstract class BaseAppCompatActivity<T extends MvpBasePresenter>
+        extends AppCompatActivity implements MvpView {
 
-    protected Activity mActivity;
     protected Context mContext;
+    protected Activity mActivity;
     protected T mPresenter;
     protected DSLayout mDslDs;
     private AlertDialog mLoadingDlg;

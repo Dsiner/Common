@@ -5,6 +5,8 @@ import android.widget.TextView;
 
 import com.d.common.mvp.R;
 import com.d.common.mvp.fragment.MFragment;
+import com.d.lib.common.component.mvp.MvpBasePresenter;
+import com.d.lib.common.component.mvp.MvpView;
 import com.d.lib.common.component.mvp.app.v4.BaseFragmentActivity;
 import com.d.lib.common.utils.ViewHelper;
 
@@ -12,8 +14,19 @@ import com.d.lib.common.utils.ViewHelper;
  * MVP Demo/模版 - FragmentActivity
  * Created by D on 2017/1/5.
  */
-public class MFragmentActivity extends BaseFragmentActivity implements View.OnClickListener {
+public class MFragmentActivity extends BaseFragmentActivity<MvpBasePresenter>
+        implements View.OnClickListener {
     private TextView tvTitle;
+
+    @Override
+    public MvpBasePresenter getPresenter() {
+        return null;
+    }
+
+    @Override
+    protected MvpView getMvpView() {
+        return null;
+    }
 
     @Override
     public void onClick(View v) {
