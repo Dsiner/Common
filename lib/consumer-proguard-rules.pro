@@ -11,11 +11,11 @@
     @butterknife.* <methods>;
 }
 
-# ----- nineoldandroids -----
+# ----- NineOldAndroids -----
 -keep class com.nineoldandroids.** {*;}
 -dontwarn com.nineoldandroids.*
 
-# ----- glide -----
+# ----- Glide -----
 -keep class com.bumptech.glide.** {*;}
 -keep public class * implements com.bumptech.glide.module.GlideModule
 -keep public class * extends com.bumptech.glide.AppGlideModule
@@ -24,5 +24,5 @@
   public *;
 }
 
-# ----- xrv -----
+# ----- Xrv -----
 -keep class com.d.lib.xrv.** {*;}
