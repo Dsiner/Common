@@ -18,13 +18,13 @@ public class Preferences extends AbstractPreference {
 
     private Preferences(Context context) {
         super(context);
-        initOps();
     }
 
     /**
      * Initialize operation handle
      */
-    private void initOps() {
+    @Override
+    protected void initOps() {
         opSetting = new OpSetting(mSettings, mEditor);
         opOnline = new OpOnline(mSettings, mEditor);
     }
