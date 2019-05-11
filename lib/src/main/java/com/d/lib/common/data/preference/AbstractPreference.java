@@ -26,7 +26,8 @@ public abstract class AbstractPreference {
     /**
      * Initialize operation handle
      */
-    protected abstract void initOps();
+    protected void initOps() {
+    }
 
     protected void save() {
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.GINGERBREAD) {
