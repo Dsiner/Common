@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.view.Window;
 
 import com.d.lib.common.component.mvp.MvpBasePresenter;
+import com.d.lib.common.component.mvp.MvpBaseView;
 import com.d.lib.common.component.mvp.MvpView;
 import com.d.lib.common.view.DSLayout;
 import com.d.lib.common.view.dialog.AlertDialogFactory;
@@ -20,7 +21,7 @@ import butterknife.Unbinder;
  * Created by D on 2017/4/27.
  */
 public abstract class BaseActivity<T extends MvpBasePresenter>
-        extends Activity implements MvpView {
+        extends Activity implements MvpBaseView {
 
     protected Context mContext;
     protected Activity mActivity;
@@ -67,9 +68,7 @@ public abstract class BaseActivity<T extends MvpBasePresenter>
         }
     }
 
-    /**
-     * Show loading dialog
-     */
+    @Override
     public void showLoading() {
         if (mLoadingDlg == null) {
             mLoadingDlg = AlertDialogFactory.createFactory(mContext).getLoadingDialog();
@@ -79,9 +78,7 @@ public abstract class BaseActivity<T extends MvpBasePresenter>
         }
     }
 
-    /**
-     * Dismiss loading dialog
-     */
+    @Override
     public void closeLoading() {
         if (mLoadingDlg != null && mLoadingDlg.isShowing()) {
             mLoadingDlg.dismiss();

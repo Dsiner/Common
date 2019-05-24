@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.d.lib.common.component.mvp.MvpBasePresenter;
+import com.d.lib.common.component.mvp.MvpBaseView;
 import com.d.lib.common.component.mvp.MvpView;
 import com.d.lib.common.view.DSLayout;
 import com.d.lib.common.view.dialog.AlertDialogFactory;
@@ -23,7 +24,7 @@ import butterknife.Unbinder;
  * Created by D on 2017/4/27.
  */
 public abstract class BaseFragment<T extends MvpBasePresenter>
-        extends Fragment implements MvpView {
+        extends Fragment implements MvpBaseView {
 
     protected Context mContext;
     protected Activity mActivity;
@@ -99,9 +100,7 @@ public abstract class BaseFragment<T extends MvpBasePresenter>
         }
     }
 
-    /**
-     * Show loading dialog
-     */
+    @Override
     public void showLoading() {
         if (mLoadingDlg == null) {
             mLoadingDlg = AlertDialogFactory.createFactory(mContext).getLoadingDialog();
@@ -111,9 +110,7 @@ public abstract class BaseFragment<T extends MvpBasePresenter>
         }
     }
 
-    /**
-     * Dismiss loading dialog
-     */
+    @Override
     public void closeLoading() {
         if (mLoadingDlg != null && mLoadingDlg.isShowing()) {
             mLoadingDlg.dismiss();
