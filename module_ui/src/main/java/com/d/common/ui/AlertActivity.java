@@ -32,7 +32,7 @@ public class AlertActivity extends Activity implements View.OnClickListener {
                     getResources().getString(R.string.module_ui_dialog_gotit), null,
                     new AlertDialogFactory.OnClickListener() {
                         @Override
-                        public void onClick(AlertDialog dlg, View v) {
+                        public void onClick(Dialog dlg, View v) {
 
                         }
                     }, null);
@@ -42,12 +42,12 @@ public class AlertActivity extends Activity implements View.OnClickListener {
                     getResources().getString(R.string.lib_pub_ok), getResources().getString(R.string.lib_pub_cancel),
                     new AlertDialogFactory.OnClickListener() {
                         @Override
-                        public void onClick(AlertDialog dlg, View v) {
+                        public void onClick(Dialog dlg, View v) {
 
                         }
                     }, new AlertDialogFactory.OnClickListener() {
                         @Override
-                        public void onClick(AlertDialog dlg, View v) {
+                        public void onClick(Dialog dlg, View v) {
 
                         }
                     });
@@ -57,12 +57,12 @@ public class AlertActivity extends Activity implements View.OnClickListener {
                     getResources().getString(R.string.lib_pub_ok), getResources().getString(R.string.lib_pub_cancel),
                     new AlertDialogFactory.OnClickListener() {
                         @Override
-                        public void onClick(AlertDialog dlg, View v) {
+                        public void onClick(Dialog dlg, View v) {
 
                         }
                     }, new AlertDialogFactory.OnClickListener() {
                         @Override
-                        public void onClick(AlertDialog dlg, View v) {
+                        public void onClick(Dialog dlg, View v) {
 
                         }
                     });
@@ -103,7 +103,7 @@ public class AlertActivity extends Activity implements View.OnClickListener {
                             getResources().getString(R.string.lib_pub_ok), null,
                             new AlertDialogFactory.OnClickListener() {
                                 @Override
-                                public void onClick(AlertDialog dlg, View v) {
+                                public void onClick(Dialog dlg, View v) {
 
                                 }
                             }, null);

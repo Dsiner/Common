@@ -202,7 +202,7 @@ public class Util {
     /**
      * 获取状态栏高度
      */
-    public static int getStatuBarHeight(Context context) {
+    public static int getStatusBarHeight(Context context) {
         Class<?> c = null;
         Object obj = null;
         Field field = null;

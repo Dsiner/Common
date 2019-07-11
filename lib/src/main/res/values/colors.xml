@@ -11,6 +11,8 @@
     <color name="lib_pub_color_green">#00ff00</color>
 
     <!-- Global background color -->
+    <color name="lib_pub_color_status_bar_main">#008577</color>
+    <color name="lib_pub_color_status_bar_white">#EDEDED</color>
     <color name="lib_pub_color_bg_main">#F9F9F9</color>
     <color name="lib_pub_color_bg_sub">#FFFFFF</color>
 

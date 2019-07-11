@@ -1,7 +1,7 @@
 package com.d.lib.common.component.mvp.app.v7;
 
 import android.app.Activity;
-import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,6 +11,8 @@ import android.view.Window;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
 import com.d.lib.common.component.mvp.MvpBaseView;
 import com.d.lib.common.component.mvp.MvpView;
+import com.d.lib.common.component.statusbarcompat.StatusBarCompat;
+import com.d.lib.common.utils.keyboard.KeyboardHelper;
 import com.d.lib.common.view.DSLayout;
 import com.d.lib.common.view.dialog.AlertDialogFactory;
 
@@ -28,7 +30,7 @@ public abstract class BaseAppCompatActivity<T extends MvpBasePresenter>
     protected Activity mActivity;
     protected T mPresenter;
     protected DSLayout mDslDs;
-    private AlertDialog mLoadingDlg;
+    private Dialog mLoadingDlg;
     private Unbinder mUnbinder;
 
     @Override
@@ -37,6 +39,7 @@ public abstract class BaseAppCompatActivity<T extends MvpBasePresenter>
         mContext = this;
         mActivity = this;
         requestWindowFeature(Window.FEATURE_NO_TITLE);
+        StatusBarCompat.changeStatusBar(this, StatusBarCompat.STYLE_MAIN);
         setContentView(getLayoutRes());
         if (getDSLayoutRes() != 0) {
             mDslDs = (DSLayout) findViewById(getDSLayoutRes());
@@ -48,6 +51,12 @@ public abstract class BaseAppCompatActivity<T extends MvpBasePresenter>
             mPresenter.attachView(getMvpView());
         }
         init();
+    }
+
+    @Override
+    public void finish() {
+        KeyboardHelper.hideKeyboard(this);
+        super.finish();
     }
 
     @Override

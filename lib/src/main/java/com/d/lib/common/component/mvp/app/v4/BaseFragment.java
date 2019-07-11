@@ -1,7 +1,7 @@
 package com.d.lib.common.component.mvp.app.v4;
 
 import android.app.Activity;
-import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -31,7 +31,7 @@ public abstract class BaseFragment<T extends MvpBasePresenter>
     protected T mPresenter;
     protected View mRootView;
     protected DSLayout mDslDs;
-    private AlertDialog mLoadingDlg;
+    private Dialog mLoadingDlg;
     private Unbinder mUnbinder;
 
     @Override

@@ -37,9 +37,10 @@ public abstract class AbstractDialog extends Dialog {
      * @param isSetWin   Set the gravity of the window
      * @param gravity    The desired gravity constant
      * @param width      The dialog's width
-     * @param heith      The dialog's height
+     * @param height     The dialog's height
      */
-    protected AbstractDialog(@NonNull Context context, @StyleRes int themeResId, boolean isSetWin, int gravity, int width, int heith) {
+    protected AbstractDialog(@NonNull Context context, @StyleRes int themeResId, boolean isSetWin,
+                             int gravity, int width, int height) {
         super(context, themeResId);
         this.mContext = context;
         this.mRootView = LayoutInflater.from(context).inflate(getLayoutRes(), null);
@@ -58,7 +59,7 @@ public abstract class AbstractDialog extends Dialog {
                 // Set dialog's width
                 p.width = width;
                 // Set dialog's height
-                p.height = heith;
+                p.height = height;
                 dialogWindow.setAttributes(p);
             }
         }

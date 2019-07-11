@@ -2,6 +2,7 @@ package com.d.lib.common.view.dialog;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.ContextThemeWrapper;
@@ -31,14 +32,14 @@ public class AlertDialogFactory {
     /**
      * LoadingDialog
      */
-    public AlertDialog getLoadingDialog() {
+    public Dialog getLoadingDialog() {
         return getLoadingDialog(null);
     }
 
     /**
      * LoadingDialog
      */
-    public AlertDialog getLoadingDialog(String text) {
+    public Dialog getLoadingDialog(String text) {
         final AlertDialog dlg = new AlertDialog
                 .Builder(new ContextThemeWrapper(mContext, R.style.lib_pub_dialog_style))
                 .create();
@@ -162,6 +163,6 @@ public class AlertDialogFactory {
     }
 
     public interface OnClickListener {
-        void onClick(AlertDialog dlg, View v);
+        void onClick(Dialog dlg, View v);
     }
 }
