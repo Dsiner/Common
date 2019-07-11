@@ -32,7 +32,7 @@ public interface API {
      * GET/MovieTop
      */
     interface MovieTop {
-        String rtpType = "https://api.douban.com/v2/movie/top250";
+        String rtpType = "https://douban.uieee.com/v2/movie/top250";
         String start = "start";
         String count = "count";
     }
