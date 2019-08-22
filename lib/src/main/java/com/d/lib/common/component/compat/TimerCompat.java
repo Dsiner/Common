@@ -34,6 +34,7 @@ public class TimerCompat {
                 ref.mTask.run();
             }
             if (ref.mPeriod <= 0) {
+                ref.stopTimeTask();
                 return;
             }
             ref.reStartTimeTask(ref.mPeriod);
