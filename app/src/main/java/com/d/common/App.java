@@ -6,6 +6,7 @@ import com.d.common.loader.api.API;
 import com.d.lib.aster.Aster;
 import com.d.lib.aster.base.Config;
 import com.d.lib.aster.utils.SSLUtil;
+import com.d.lib.common.utils.log.ULog;
 
 /**
  * Application
@@ -16,6 +17,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        ULog.setDebug(BuildConfig.DEBUG, "ULog");
         initAster();
     }
 
