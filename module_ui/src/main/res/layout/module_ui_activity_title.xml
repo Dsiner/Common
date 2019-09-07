@@ -7,10 +7,7 @@
 
     <com.d.lib.common.view.TitleLayout
         android:id="@+id/tl_title"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/lib_pub_dimen_title_height"
-        android:background="@color/lib_pub_color_main"
-        app:lib_pub_tl_leftDrawable="@drawable/lib_pub_ic_title_back"
+        style="@style/lib_pub_title_back_style"
         app:lib_pub_tl_middleText="Title" />
 
     <ScrollView
@@ -21,8 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/lib_pub_dimen_margin"
-            android:paddingTop="@dimen/lib_pub_dimen_margin">
+            android:paddingTop="@dimen/lib_pub_dimen_margin"
+            android:paddingBottom="@dimen/lib_pub_dimen_margin">
 
             <TextView
                 android:layout_width="match_parent"

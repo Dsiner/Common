@@ -8,7 +8,7 @@
 
     <com.d.lib.common.view.TitleLayout
         android:id="@+id/tl_title"
-        style="@style/lib_pub_title_style"
+        style="@style/lib_pub_title_back_style"
         app:lib_pub_tl_middleText="title" />
 
     <FrameLayout

@@ -27,14 +27,17 @@
 ```
 
 #### 4. 对照表(属性-Id)
-| Attrs                         | Id               |
-| ----------------------------- |:----------------:|
-|    lib_pub_tl_leftText        |  tv_title_left   |
-|    lib_pub_tl_leftDrawable    |  iv_title_left   |
-|    lib_pub_tl_leftRes         |  reference       |
-|    lib_pub_tl_rightText       |  tv_title_right  |
-|    lib_pub_tl_rightDrawable   |  iv_title_right  |
-|    lib_pub_tl_rightRes        |  reference       |
-|    lib_pub_tl_middleText      |  tv_title_title  |
-|    lib_pub_tl_middleDrawable  |  iv_title_middle |
-|    lib_pub_tl_middleRes       |  reference       |
+| Attrs                                | Id               |
+| -------------------------------------|:----------------:|
+|    lib_pub_tl_leftText               |  tv_title_left   |
+|    lib_pub_tl_leftDrawable           |  iv_title_left   |
+|    lib_pub_tl_leftDrawablePadding    |  -               |
+|    lib_pub_tl_leftRes                |  reference       |
+|    lib_pub_tl_rightText              |  tv_title_right  |
+|    lib_pub_tl_rightDrawable          |  iv_title_right  |
+|    lib_pub_tl_rightDrawablePadding   |  -               |
+|    lib_pub_tl_rightRes               |  reference       |
+|    lib_pub_tl_middleText             |  tv_title_title  |
+|    lib_pub_tl_middleDrawable         |  iv_title_middle |
+|    lib_pub_tl_middleDrawablePadding  |  -               |
+|    lib_pub_tl_middleRes              |  reference       |

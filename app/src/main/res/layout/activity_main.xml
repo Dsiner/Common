@@ -6,9 +6,7 @@
     android:orientation="vertical">
 
     <com.d.lib.common.view.TitleLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/lib_pub_dimen_title_height"
-        android:background="@color/lib_pub_color_main"
+        style="@style/lib_pub_title_style"
         app:lib_pub_tl_middleText="Common" />
 
     <Button
@@ -17,8 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
-        android:layout_marginRight="@dimen/lib_pub_dimen_margin"
         android:layout_marginTop="@dimen/lib_pub_dimen_margin"
+        android:layout_marginRight="@dimen/lib_pub_dimen_margin"
         android:text="UI" />
 
     <Button
@@ -27,8 +25,8 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
-        android:layout_marginRight="@dimen/lib_pub_dimen_margin"
         android:layout_marginTop="@dimen/lib_pub_dimen_margin"
+        android:layout_marginRight="@dimen/lib_pub_dimen_margin"
         android:text="Mvp" />
 
     <Button
@@ -37,8 +35,8 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
-        android:layout_marginRight="@dimen/lib_pub_dimen_margin"
         android:layout_marginTop="@dimen/lib_pub_dimen_margin"
+        android:layout_marginRight="@dimen/lib_pub_dimen_margin"
         android:text="Loader" />
 
     <Button
@@ -47,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
-        android:layout_marginRight="@dimen/lib_pub_dimen_margin"
         android:layout_marginTop="@dimen/lib_pub_dimen_margin"
+        android:layout_marginRight="@dimen/lib_pub_dimen_margin"
         android:text="Pager" />
 </LinearLayout>
