@@ -3,12 +3,15 @@
     <declare-styleable name="lib_pub_TitleLayout">
         <attr name="lib_pub_tl_leftText" format="string" />
         <attr name="lib_pub_tl_leftDrawable" format="reference" />
+        <attr name="lib_pub_tl_leftDrawablePadding" format="dimension" />
         <attr name="lib_pub_tl_leftRes" format="reference" />
         <attr name="lib_pub_tl_rightText" format="string" />
         <attr name="lib_pub_tl_rightDrawable" format="reference" />
+        <attr name="lib_pub_tl_rightDrawablePadding" format="dimension" />
         <attr name="lib_pub_tl_rightRes" format="reference" />
         <attr name="lib_pub_tl_middleText" format="string" />
         <attr name="lib_pub_tl_middleDrawable" format="reference" />
+        <attr name="lib_pub_tl_middleDrawablePadding" format="dimension" />
         <attr name="lib_pub_tl_middleRes" format="reference" />
         <attr name="lib_pub_tl_menu" format="reference" />
     </declare-styleable>

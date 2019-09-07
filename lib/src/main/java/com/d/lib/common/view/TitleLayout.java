@@ -25,6 +25,7 @@ public class TitleLayout extends RelativeLayout {
     protected final int mMenuRes;
     private final String[] mTexts = new String[3];
     private final Drawable[] mDrawables = new Drawable[3];
+    private final float[] mDrawablePaddings = new float[3];
     private final int[] mResIds = new int[3];
 
     public TitleLayout(Context context) {
@@ -46,6 +47,10 @@ public class TitleLayout extends RelativeLayout {
         mDrawables[1] = typedArray.getDrawable(R.styleable.lib_pub_TitleLayout_lib_pub_tl_rightDrawable);
         mDrawables[2] = typedArray.getDrawable(R.styleable.lib_pub_TitleLayout_lib_pub_tl_middleDrawable);
 
+        mDrawablePaddings[0] = typedArray.getDimension(R.styleable.lib_pub_TitleLayout_lib_pub_tl_leftDrawablePadding, 0);
+        mDrawablePaddings[1] = typedArray.getDimension(R.styleable.lib_pub_TitleLayout_lib_pub_tl_rightDrawablePadding, 0);
+        mDrawablePaddings[2] = typedArray.getDimension(R.styleable.lib_pub_TitleLayout_lib_pub_tl_middleDrawablePadding, 0);
+
         mResIds[0] = typedArray.getResourceId(R.styleable.lib_pub_TitleLayout_lib_pub_tl_leftRes, -1);
         mResIds[1] = typedArray.getResourceId(R.styleable.lib_pub_TitleLayout_lib_pub_tl_rightRes, -1);
         mResIds[2] = typedArray.getResourceId(R.styleable.lib_pub_TitleLayout_lib_pub_tl_middleRes, -1);
@@ -60,31 +65,19 @@ public class TitleLayout extends RelativeLayout {
         mRootView = LayoutInflater.from(context).inflate(R.layout.lib_pub_layout_title, this);
 
         // Left
-        inflate(context, mRootView, mTexts[0], mDrawables[0], mResIds[0],
+        inflate(context, mRootView, mTexts[0], mDrawables[0], (int) mDrawablePaddings[0], mResIds[0],
                 R.id.tv_title_left, R.id.iv_title_left, ALIGN_PARENT_LEFT);
         // Right
-        inflate(context, mRootView, mTexts[1], mDrawables[1], mResIds[1],
+        inflate(context, mRootView, mTexts[1], mDrawables[1], (int) mDrawablePaddings[1], mResIds[1],
                 R.id.tv_title_right, R.id.iv_title_right, ALIGN_PARENT_RIGHT);
         // Middle
-        inflate(context, mRootView, mTexts[2], mDrawables[2], mResIds[2],
+        inflate(context, mRootView, mTexts[2], mDrawables[2], (int) mDrawablePaddings[2], mResIds[2],
                 R.id.tv_title_title, R.id.iv_title_middle, CENTER_IN_PARENT);
     }
 
-    private void inflate(Context context, View root, String text, Drawable drawable, int res,
+    private void inflate(Context context, View root, String text, Drawable drawable, int drawablePadding, int res,
                          int tv_id, int iv_id, int verb) {
-        if (!TextUtils.isEmpty(text)) {
-            TextView tv = (TextView) root.findViewById(tv_id);
-            if (tv != null) {
-                tv.setText(text);
-                tv.setVisibility(VISIBLE);
-            }
-        } else if (drawable != null) {
-            ImageView iv = (ImageView) root.findViewById(iv_id);
-            if (iv != null) {
-                iv.setImageDrawable(drawable);
-                iv.setVisibility(VISIBLE);
-            }
-        } else if (res != -1) {
+        if (res != -1) {
             View view = LayoutInflater.from(context).inflate(res, this, false);
             addView(view);
             LayoutParams lp = (LayoutParams) view.getLayoutParams();
@@ -92,6 +85,19 @@ public class TitleLayout extends RelativeLayout {
             lp.height = ViewGroup.LayoutParams.MATCH_PARENT;
             lp.width = ViewGroup.LayoutParams.WRAP_CONTENT;
             view.setLayoutParams(lp);
+        } else if (drawable != null) {
+            ImageView iv = (ImageView) root.findViewById(iv_id);
+            if (iv != null) {
+                iv.setPadding(drawablePadding, drawablePadding, drawablePadding, drawablePadding);
+                iv.setImageDrawable(drawable);
+                iv.setVisibility(VISIBLE);
+            }
+        } else {
+            TextView tv = (TextView) root.findViewById(tv_id);
+            if (tv != null) {
+                tv.setText(!TextUtils.isEmpty(text) ? text : "");
+                tv.setVisibility(VISIBLE);
+            }
         }
     }
 
@@ -104,7 +110,7 @@ public class TitleLayout extends RelativeLayout {
 
     public void setText(@IdRes int resId, CharSequence text) {
         View v = findViewById(resId);
-        if (v != null && v instanceof TextView) {
+        if (v instanceof TextView) {
             ((TextView) v).setText(text);
         }
     }
