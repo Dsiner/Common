@@ -7,22 +7,20 @@ import android.view.View;
 
 import com.d.lib.common.R;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
-import com.d.lib.common.component.mvp.app.v4.BaseFragmentActivity;
+import com.d.lib.common.component.mvp.app.v4.BaseFragment;
 import com.d.lib.common.utils.ViewHelper;
-import com.d.lib.common.view.TitleLayout;
 import com.d.lib.common.view.tab.ScrollTab;
 
 import java.util.List;
 
 /**
- * Auto-Pager - FragmentActivity
+ * Auto-Pager - Fragment
  * Created by D on 2017/7/19.
  */
-public abstract class AbsFragmentActivity<T extends MvpBasePresenter>
-        extends BaseFragmentActivity<T>
+public abstract class AbsPageFragment<T extends MvpBasePresenter>
+        extends BaseFragment<T>
         implements View.OnClickListener, ViewPager.OnPageChangeListener {
 
-    protected TitleLayout mTlTitle;
     protected ScrollTab mScrollTab;
     protected ViewPager mViewPager;
 
@@ -31,26 +29,15 @@ public abstract class AbsFragmentActivity<T extends MvpBasePresenter>
     protected Fragment mCurFragment;
 
     @Override
-    public void onClick(View v) {
-        int resId = v.getId();
-        if (resId == R.id.iv_title_left) {
-            finish();
-        }
-    }
-
-    @Override
     protected int getLayoutRes() {
-        return R.layout.lib_pub_activity_abs_page;
+        return R.layout.lib_pub_fragment_abs_page;
     }
 
     @Override
-    protected void bindView() {
-        super.bindView();
-        mTlTitle = ViewHelper.findView(this, R.id.tl_title);
-        mScrollTab = ViewHelper.findView(this, R.id.indicator);
-        mViewPager = ViewHelper.findView(this, R.id.vp_page);
-
-        ViewHelper.setOnClick(this, this, R.id.iv_title_left);
+    protected void bindView(View rootView) {
+        super.bindView(rootView);
+        mScrollTab = ViewHelper.findView(rootView, R.id.indicator);
+        mViewPager = ViewHelper.findView(rootView, R.id.vp_page);
     }
 
     @Override
@@ -61,7 +48,7 @@ public abstract class AbsFragmentActivity<T extends MvpBasePresenter>
             throw new RuntimeException("The size of titles is not equal size of fragments.");
         }
         mCurFragment = mFragmentList.get(0);
-        FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
+        FragmentPagerAdapter fragmentPagerAdapter = new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public int getCount() {
                 return mFragmentList.size();

@@ -125,10 +125,9 @@ public class ScrollTab extends HorizontalScrollView implements View.OnClickListe
             for (String t : ts) {
                 this.mItems.add(new TabItem(t, ""));
             }
-            if (!mIsFirst) {
-                resetTab();
-                invalidate();
-            }
+            resetTab();
+            invalidate();
+            requestLayout();
         }
     }
 
