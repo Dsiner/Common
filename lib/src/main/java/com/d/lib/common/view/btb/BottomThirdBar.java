@@ -14,7 +14,7 @@ import android.widget.Scroller;
 
 import com.d.lib.common.R;
 import com.d.lib.common.component.lv.CommonHolder;
-import com.d.lib.common.utils.Util;
+import com.d.lib.common.util.DimenUtils;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -63,7 +63,7 @@ public class BottomThirdBar extends ViewGroup implements View.OnClickListener {
         this.mScroller = new Scroller(context);
         this.mItemViews = new SparseArray<>();
         this.mPageViews = new ArrayList<>();
-        this.mWidthNext = Util.dip2px(context, 36);
+        this.mWidthNext = DimenUtils.dp2px(context, 36);
     }
 
     @Override

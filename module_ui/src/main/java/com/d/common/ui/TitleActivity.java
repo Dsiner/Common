@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.d.lib.common.utils.ViewHelper;
+import com.d.lib.common.util.ViewHelper;
 
 public class TitleActivity extends Activity {
 

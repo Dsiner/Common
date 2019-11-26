@@ -14,7 +14,7 @@ import com.bumptech.glide.load.engine.cache.LruResourceCache;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.module.AppGlideModule;
 import com.bumptech.glide.request.RequestOptions;
-import com.d.lib.common.utils.log.ULog;
+import com.d.lib.common.util.log.ULog;
 
 import java.io.InputStream;
 import java.security.cert.CertificateException;

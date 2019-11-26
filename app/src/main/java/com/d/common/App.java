@@ -6,7 +6,7 @@ import com.d.common.loader.api.API;
 import com.d.lib.aster.Aster;
 import com.d.lib.aster.base.Config;
 import com.d.lib.aster.utils.SSLUtil;
-import com.d.lib.common.utils.log.ULog;
+import com.d.lib.common.util.log.ULog;
 
 /**
  * Application

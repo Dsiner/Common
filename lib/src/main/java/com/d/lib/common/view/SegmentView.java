@@ -15,7 +15,7 @@ import android.view.View;
 import android.view.ViewConfiguration;
 
 import com.d.lib.common.R;
-import com.d.lib.common.utils.Util;
+import com.d.lib.common.util.DimenUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -70,10 +70,10 @@ public class SegmentView extends View {
         mStrTitles = typedArray.getString(R.styleable.lib_pub_SegmentView_lib_pub_segmentv_titles);
         mColorA = typedArray.getColor(R.styleable.lib_pub_SegmentView_lib_pub_segmentv_colorMain, ContextCompat.getColor(context, R.color.lib_pub_color_main));
         mColorB = typedArray.getColor(R.styleable.lib_pub_SegmentView_lib_pub_segmentv_colorSub, ContextCompat.getColor(context, R.color.lib_pub_color_white));
-        mTextSize = typedArray.getDimension(R.styleable.lib_pub_SegmentView_lib_pub_segmentv_textSize, Util.dip2px(context, 14));
+        mTextSize = typedArray.getDimension(R.styleable.lib_pub_SegmentView_lib_pub_segmentv_textSize, DimenUtils.dp2px(context, 14));
         mRectRadius = typedArray.getDimension(R.styleable.lib_pub_SegmentView_lib_pub_segmentv_radius, -1);
-        mDivideWidth = typedArray.getDimension(R.styleable.lib_pub_SegmentView_lib_pub_segmentv_divideWidth, Util.dip2px(context, 1));
-        mPadding = typedArray.getDimension(R.styleable.lib_pub_SegmentView_lib_pub_segmentv_borderWidth, Util.dip2px(context, 1));
+        mDivideWidth = typedArray.getDimension(R.styleable.lib_pub_SegmentView_lib_pub_segmentv_divideWidth, DimenUtils.dp2px(context, 1));
+        mPadding = typedArray.getDimension(R.styleable.lib_pub_SegmentView_lib_pub_segmentv_borderWidth, DimenUtils.dp2px(context, 1));
         typedArray.recycle();
     }
 
@@ -97,7 +97,7 @@ public class SegmentView extends View {
         mPaintB.setTextAlign(Paint.Align.CENTER);
 
         // Get title height px
-        mHeightText = (int) Util.getTextHeight(mPaintB);
+        mHeightText = (int) DimenUtils.getTextHeight(mPaintB);
 
         if (!TextUtils.isEmpty(mStrTitles)) {
             String[] strs = mStrTitles.split(";");

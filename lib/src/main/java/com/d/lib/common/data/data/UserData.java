@@ -4,7 +4,7 @@ import android.content.Context;
 import android.text.TextUtils;
 
 import com.d.lib.common.data.preference.AbstractPreference;
-import com.d.lib.common.utils.Util;
+import com.d.lib.common.util.GsonUtils;
 
 public class UserData extends AbstractPreference {
     private static UserData instance = null;
@@ -28,7 +28,7 @@ public class UserData extends AbstractPreference {
         if (userBean == null) {
             String json = mSettings.getString(Keys.KEY_USER_JSON, "");
             if (!TextUtils.isEmpty(json)) {
-                userBean = Util.getGsonIns().fromJson(json, UserBean.class);
+                userBean = GsonUtils.getInstance().fromJson(json, UserBean.class);
             } else {
                 userBean = new UserBean();
             }
@@ -41,12 +41,12 @@ public class UserData extends AbstractPreference {
             return;
         }
         userBean = bean;
-        mEditor.putString(Keys.KEY_USER_JSON, Util.getGsonIns().toJson(bean));
+        mEditor.putString(Keys.KEY_USER_JSON, GsonUtils.getInstance().toJson(bean));
         save();
     }
 
     public void saveUserBean() {
-        mEditor.putString(Keys.KEY_USER_JSON, Util.getGsonIns().toJson(userBean));
+        mEditor.putString(Keys.KEY_USER_JSON, GsonUtils.getInstance().toJson(userBean));
         save();
     }
 

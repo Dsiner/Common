@@ -1,4 +1,4 @@
-package com.d.lib.common.utils.keyboard;
+package com.d.lib.common.util.keyboard;
 
 import android.graphics.Rect;
 import android.view.View;

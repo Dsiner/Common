@@ -8,7 +8,7 @@ import com.d.common.mvp.fragment.MFragment;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
 import com.d.lib.common.component.mvp.MvpView;
 import com.d.lib.common.component.mvp.app.v4.BaseFragmentActivity;
-import com.d.lib.common.utils.ViewHelper;
+import com.d.lib.common.util.ViewHelper;
 
 /**
  * MVP Demo/模版 - FragmentActivity

@@ -1,4 +1,4 @@
-package com.d.lib.common.utils.keyboard;
+package com.d.lib.common.util.keyboard;
 
 import android.app.Activity;
 import android.graphics.Rect;
@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 
-import com.d.lib.common.utils.Util;
+import com.d.lib.common.util.DimenUtils;
 
 /**
  * 软键盘管理++
@@ -81,7 +81,7 @@ public class KeyboardPlusPlusManager extends AbsKeyboardManager {
             final ViewTreeObserver.OnGlobalLayoutListener layoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
                 private DisplayMetrics metric = new DisplayMetrics();
                 private final Rect r = new Rect();
-                private final int visibleThreshold = Math.round(Util.dip2px(activity, KeyboardHelper.KEYBOARD_VISIBLE_THRESHOLD_DP));
+                private final int visibleThreshold = Math.round(DimenUtils.dp2px(activity, KeyboardHelper.KEYBOARD_VISIBLE_THRESHOLD_DP));
                 private boolean wasOpened = false;
 
                 @Override

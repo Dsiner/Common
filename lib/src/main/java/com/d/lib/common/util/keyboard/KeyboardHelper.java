@@ -1,4 +1,4 @@
-package com.d.lib.common.utils.keyboard;
+package com.d.lib.common.util.keyboard;
 
 import android.app.Activity;
 import android.app.Application;
@@ -12,8 +12,8 @@ import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
-import com.d.lib.common.utils.Util;
-import com.d.lib.common.utils.ViewHelper;
+import com.d.lib.common.util.DimenUtils;
+import com.d.lib.common.util.ViewHelper;
 
 /**
  * KeyboardHelper
@@ -99,7 +99,7 @@ public class KeyboardHelper {
         final View activityRoot = ViewHelper.getActivityRoot(activity);
         final ViewTreeObserver.OnGlobalLayoutListener layoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
             private final Rect r = new Rect();
-            private final int visibleThreshold = Math.round(Util.dip2px(activity, KEYBOARD_VISIBLE_THRESHOLD_DP));
+            private final int visibleThreshold = Math.round(DimenUtils.dp2px(activity, KEYBOARD_VISIBLE_THRESHOLD_DP));
             private boolean wasOpened = false;
 
             @Override
@@ -145,7 +145,7 @@ public class KeyboardHelper {
     public static boolean isKeyboardVisible(Activity activity) {
         Rect r = new Rect();
         View activityRoot = ViewHelper.getActivityRoot(activity);
-        int visibleThreshold = Math.round(Util.dip2px(activity, KEYBOARD_VISIBLE_THRESHOLD_DP));
+        int visibleThreshold = Math.round(DimenUtils.dp2px(activity, KEYBOARD_VISIBLE_THRESHOLD_DP));
         activityRoot.getWindowVisibleDisplayFrame(r);
         int heightDiff = activityRoot.getRootView().getHeight() - r.height();
         return heightDiff > visibleThreshold;

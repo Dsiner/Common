@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.d.lib.common.utils.ViewHelper;
+import com.d.lib.common.util.ViewHelper;
 import com.d.lib.common.view.SegmentView;
 import com.d.lib.common.view.btb.BottomThirdBar;
 import com.d.lib.common.view.tab.ScrollTab;

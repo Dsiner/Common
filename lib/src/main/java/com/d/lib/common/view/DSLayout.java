@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.d.lib.common.R;
-import com.d.lib.common.utils.Util;
+import com.d.lib.common.util.DimenUtils;
 import com.d.lib.common.view.loading.LoadingLayout;
 
 import java.lang.annotation.ElementType;
@@ -100,10 +100,10 @@ public class DSLayout extends FrameLayout {
         ViewGroup.LayoutParams paramsB = vB.getLayoutParams();
         switch (mCenterType) {
             case CENT_TYPE_MAIN:
-                paramsB.height = Util.dip2px(context, AJUST_HEIGHT[CENT_TYPE_MAIN]);
+                paramsB.height = DimenUtils.dp2px(context, AJUST_HEIGHT[CENT_TYPE_MAIN]);
                 break;
             case CENT_TYPE_LOCAL:
-                paramsB.height = Util.dip2px(context, AJUST_HEIGHT[CENT_TYPE_LOCAL]);
+                paramsB.height = DimenUtils.dp2px(context, AJUST_HEIGHT[CENT_TYPE_LOCAL]);
                 break;
             default:
                 // Do nothing, default center 0/0

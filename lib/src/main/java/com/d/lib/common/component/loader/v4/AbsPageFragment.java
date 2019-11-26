@@ -8,7 +8,7 @@ import android.view.View;
 import com.d.lib.common.R;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
 import com.d.lib.common.component.mvp.app.v4.BaseFragment;
-import com.d.lib.common.utils.ViewHelper;
+import com.d.lib.common.util.ViewHelper;
 import com.d.lib.common.view.tab.ScrollTab;
 
 import java.util.List;

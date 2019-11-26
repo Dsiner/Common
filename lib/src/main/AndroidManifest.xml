@@ -19,5 +19,15 @@
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
         </receiver>
+
+        <provider
+            android:name=".util.provider.FileProviderCompat"
+            android:authorities="${applicationId}.common.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/lib_pub_provider_paths" />
+        </provider>
     </application>
 </manifest>

@@ -1,13 +1,12 @@
 package com.d.common.ui;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
 
-import com.d.lib.common.utils.ViewHelper;
+import com.d.lib.common.util.ViewHelper;
 import com.d.lib.common.view.dialog.AbsSheetDialog;
 import com.d.lib.common.view.dialog.AlertDialogFactory;
 import com.d.lib.common.view.dialog.AlertSubDialog;

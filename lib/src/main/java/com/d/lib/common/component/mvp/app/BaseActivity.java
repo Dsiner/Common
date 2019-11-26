@@ -11,7 +11,7 @@ import com.d.lib.common.component.mvp.MvpBasePresenter;
 import com.d.lib.common.component.mvp.MvpBaseView;
 import com.d.lib.common.component.mvp.MvpView;
 import com.d.lib.common.component.statusbarcompat.StatusBarCompat;
-import com.d.lib.common.utils.keyboard.KeyboardHelper;
+import com.d.lib.common.util.keyboard.KeyboardHelper;
 import com.d.lib.common.view.DSLayout;
 import com.d.lib.common.view.dialog.AlertDialogFactory;
 

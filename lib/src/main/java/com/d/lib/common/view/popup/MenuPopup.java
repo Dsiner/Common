@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.PopupWindow;
 
 import com.d.lib.common.R;
-import com.d.lib.common.utils.Util;
+import com.d.lib.common.util.DimenUtils;
 import com.d.lib.xrv.adapter.CommonAdapter;
 import com.d.lib.xrv.adapter.CommonHolder;
 
@@ -23,8 +23,8 @@ public class MenuPopup extends AbstractPopup {
 
     public MenuPopup(Context context, List<Bean> datas) {
         super(context, R.layout.lib_pub_popup_menu,
-                Util.dip2px(context, 135),
-                datas != null ? datas.size() * Util.dip2px(context, 40) + Util.dip2px(context, 6) : 0, true, -1);
+                DimenUtils.dp2px(context, 135),
+                datas != null ? datas.size() * DimenUtils.dp2px(context, 40) + DimenUtils.dp2px(context, 6) : 0, true, -1);
         this.datas = datas != null ? datas : new ArrayList<Bean>();
         initView(mRootView);
     }
@@ -58,7 +58,7 @@ public class MenuPopup extends AbstractPopup {
     @Override
     public void showAsDropDown(View anchor) {
         if (!isShowing() && mContext != null && !((Activity) mContext).isFinishing()) {
-            super.showAsDropDown(anchor, -Util.dip2px(mContext, 135 - 45), 0);
+            super.showAsDropDown(anchor, -DimenUtils.dp2px(mContext, 135 - 45), 0);
         }
     }
 

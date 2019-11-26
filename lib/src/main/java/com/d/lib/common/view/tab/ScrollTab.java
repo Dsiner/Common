@@ -16,7 +16,7 @@ import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
 import com.d.lib.common.R;
-import com.d.lib.common.utils.Util;
+import com.d.lib.common.util.DimenUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,14 +85,14 @@ public class ScrollTab extends HorizontalScrollView implements View.OnClickListe
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.lib_pub_ScrollTab);
         mType = typedArray.getInt(R.styleable.lib_pub_ScrollTab_lib_pub_stab_type, TYPE_VIEW);
         mIsAvag = typedArray.getBoolean(R.styleable.lib_pub_ScrollTab_lib_pub_stab_avag, false);
-        mPadding = typedArray.getDimension(R.styleable.lib_pub_ScrollTab_lib_pub_stab_padding, Util.dip2px(context, 12));
+        mPadding = typedArray.getDimension(R.styleable.lib_pub_ScrollTab_lib_pub_stab_padding, DimenUtils.dp2px(context, 12));
         mStrTitles = typedArray.getString(R.styleable.lib_pub_ScrollTab_lib_pub_stab_titles);
         mIndicatorType = typedArray.getInt(R.styleable.lib_pub_ScrollTab_lib_pub_stab_indicatorType, TYPE_INDICATOR_TREND);
         mIndicatorColor = typedArray.getColor(R.styleable.lib_pub_ScrollTab_lib_pub_stab_indicatorColor, ContextCompat.getColor(context, R.color.lib_pub_color_main));
-        mIndicatorWidth = typedArray.getDimension(R.styleable.lib_pub_ScrollTab_lib_pub_stab_indicatorWidth, Util.dip2px(context, 30));
-        mIndicatorWeight = typedArray.getDimension(R.styleable.lib_pub_ScrollTab_lib_pub_stab_indicatorWeight, Util.dip2px(context, 1));
-        mIndicatorRadius = typedArray.getDimension(R.styleable.lib_pub_ScrollTab_lib_pub_stab_indicatorRadius, Util.dip2px(context, 0.5f));
-        mIndicatorPadding = typedArray.getDimension(R.styleable.lib_pub_ScrollTab_lib_pub_stab_indicatorPadding, Util.dip2px(context, 5));
+        mIndicatorWidth = typedArray.getDimension(R.styleable.lib_pub_ScrollTab_lib_pub_stab_indicatorWidth, DimenUtils.dp2px(context, 30));
+        mIndicatorWeight = typedArray.getDimension(R.styleable.lib_pub_ScrollTab_lib_pub_stab_indicatorWeight, DimenUtils.dp2px(context, 1));
+        mIndicatorRadius = typedArray.getDimension(R.styleable.lib_pub_ScrollTab_lib_pub_stab_indicatorRadius, DimenUtils.dp2px(context, 0.5f));
+        mIndicatorPadding = typedArray.getDimension(R.styleable.lib_pub_ScrollTab_lib_pub_stab_indicatorPadding, DimenUtils.dp2px(context, 5));
         typedArray.recycle();
     }
 

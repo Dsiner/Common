@@ -9,7 +9,7 @@ import com.d.common.mvp.presenter.MPresenter;
 import com.d.common.mvp.view.IMView;
 import com.d.lib.common.component.mvp.MvpView;
 import com.d.lib.common.component.mvp.app.BaseActivity;
-import com.d.lib.common.utils.ViewHelper;
+import com.d.lib.common.util.ViewHelper;
 
 import java.util.List;
 

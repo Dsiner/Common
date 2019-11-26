@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.d.lib.common.R;
-import com.d.lib.common.utils.Util;
+import com.d.lib.common.util.DimenUtils;
 
 /**
  * TabTextView
@@ -45,7 +45,7 @@ public class TabTextView extends View implements TabView {
     }
 
     private void init(Context context) {
-        mTextSize = Util.dip2px(context, 15);
+        mTextSize = DimenUtils.dp2px(context, 15);
         mTextColor = ContextCompat.getColor(context, R.color.lib_pub_color_gray);
         mTextColorFocus = ContextCompat.getColor(context, R.color.lib_pub_color_main);
 
@@ -54,7 +54,7 @@ public class TabTextView extends View implements TabView {
         mPaint.setTextSize(mTextSize);
         mPaint.setColor(mTextColor);
 
-        mTextHeight = Util.getTextHeight(mPaint);
+        mTextHeight = DimenUtils.getTextHeight(mPaint);
     }
 
     @Override
@@ -70,7 +70,7 @@ public class TabTextView extends View implements TabView {
         if (MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.EXACTLY) {
             mWidth = MeasureSpec.getSize(widthMeasureSpec);
         } else {
-            mWidth = Util.getTextWidth(mText, mPaint) + mPadding * 2;
+            mWidth = DimenUtils.getTextWidth(mText, mPaint) + mPadding * 2;
         }
         mHeight = getDefaultSize(getSuggestedMinimumWidth(), heightMeasureSpec);
         setMeasuredDimension(mWidth, mHeight);

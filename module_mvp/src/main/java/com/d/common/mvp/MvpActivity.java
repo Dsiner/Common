@@ -8,7 +8,7 @@ import android.view.View;
 
 import com.d.common.mvp.activity.MActivity;
 import com.d.common.mvp.activity.MFragmentActivity;
-import com.d.lib.common.utils.ViewHelper;
+import com.d.lib.common.util.ViewHelper;
 
 /**
  * MvpActivity

@@ -13,7 +13,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.d.lib.common.R;
-import com.d.lib.common.utils.Util;
+import com.d.lib.common.util.DimenUtils;
 
 /**
  * Message Background
@@ -57,10 +57,10 @@ public class ReplyBgView extends View {
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.lib_pub_ReplyBgView);
         mGravity = typedArray.getInteger(R.styleable.lib_pub_ReplyBgView_lib_pub_replybv_gravity, TOP);
         mColorBg = typedArray.getColor(R.styleable.lib_pub_ReplyBgView_lib_pub_replybv_color, ContextCompat.getColor(context, R.color.lib_pub_color_main));
-        mRectRadius = typedArray.getDimension(R.styleable.lib_pub_ReplyBgView_lib_pub_replybv_radius, Util.dip2px(context, 3));
-        mOffset = typedArray.getDimension(R.styleable.lib_pub_ReplyBgView_lib_pub_replybv_offset, Util.dip2px(context, 6.5f));
-        mTrgHalfWidth = typedArray.getDimension(R.styleable.lib_pub_ReplyBgView_lib_pub_replybv_trgWidth, Util.dip2px(context, 6)) / 2;
-        mTrgHeight = typedArray.getDimension(R.styleable.lib_pub_ReplyBgView_lib_pub_replybv_trgHeight, Util.dip2px(context, 5));
+        mRectRadius = typedArray.getDimension(R.styleable.lib_pub_ReplyBgView_lib_pub_replybv_radius, DimenUtils.dp2px(context, 3));
+        mOffset = typedArray.getDimension(R.styleable.lib_pub_ReplyBgView_lib_pub_replybv_offset, DimenUtils.dp2px(context, 6.5f));
+        mTrgHalfWidth = typedArray.getDimension(R.styleable.lib_pub_ReplyBgView_lib_pub_replybv_trgWidth, DimenUtils.dp2px(context, 6)) / 2;
+        mTrgHeight = typedArray.getDimension(R.styleable.lib_pub_ReplyBgView_lib_pub_replybv_trgHeight, DimenUtils.dp2px(context, 5));
         typedArray.recycle();
     }
 

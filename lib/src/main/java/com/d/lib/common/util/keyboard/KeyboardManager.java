@@ -1,4 +1,4 @@
-package com.d.lib.common.utils.keyboard;
+package com.d.lib.common.util.keyboard;
 
 import android.app.Activity;
 import android.os.Build;
@@ -6,9 +6,9 @@ import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.widget.EditText;
 
-import com.d.lib.common.utils.Util;
-import com.d.lib.common.utils.ViewHelper;
-import com.d.lib.common.utils.log.ULog;
+import com.d.lib.common.util.ScreenUtils;
+import com.d.lib.common.util.ViewHelper;
+import com.d.lib.common.util.log.ULog;
 
 /**
  * 软键盘管理
@@ -20,7 +20,7 @@ public class KeyboardManager extends AbsKeyboardManager implements View.OnLayout
 
     public KeyboardManager(Activity activity, EditText commonInput) {
         super(commonInput);
-        this.mKeyHeight = Util.getScreenSize(activity)[1] / 3;
+        this.mKeyHeight = ScreenUtils.getScreenSize(activity)[1] / 3;
         ViewHelper.getActivityRoot(activity).addOnLayoutChangeListener(this);
     }
 

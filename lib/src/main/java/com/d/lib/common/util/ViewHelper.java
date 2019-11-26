@@ -1,4 +1,4 @@
-package com.d.lib.common.utils;
+package com.d.lib.common.util;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;
@@ -15,6 +15,7 @@ import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.LightingColorFilter;
 import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.ColorDrawable;
@@ -24,6 +25,8 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
+import android.util.TypedValue;
 import android.view.TouchDelegate;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +40,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -202,6 +206,7 @@ public class ViewHelper {
     /**
      * 对 View 的做背景闪动的动画
      */
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     public static void playBackgroundBlinkAnimation(final View v, @ColorInt int bgColor) {
         if (v == null) {
             return;
@@ -219,6 +224,7 @@ public class ViewHelper {
      * @param stepDuration 每一步变化的时长
      * @param endAction    动画结束后的回调
      */
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     public static void playViewBackgroundAnimation(final View v, @ColorInt int bgColor, int[] alphaArray, int stepDuration, final Runnable endAction) {
         int animationCount = alphaArray.length - 1;
 
@@ -259,6 +265,7 @@ public class ViewHelper {
         animatorSet.start();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     public static void playViewBackgroundAnimation(final View v, @ColorInt int bgColor, int[] alphaArray, int stepDuration) {
         playViewBackgroundAnimation(v, bgColor, alphaArray, stepDuration, null);
     }
@@ -274,6 +281,7 @@ public class ViewHelper {
      * @param setAnimTagId 将动画设置tag给view,若为0则不设置
      * @param endAction    动画结束后的回调
      */
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     public static void playViewBackgroundAnimation(final View v, @ColorInt int startColor, @ColorInt int endColor, long duration, int repeatCount, int setAnimTagId, final Runnable endAction) {
         final Drawable oldBgDrawable = v.getBackground(); // 存储旧的背景
         ViewHelper.setBackgroundColorKeepPadding(v, startColor);
@@ -319,6 +327,7 @@ public class ViewHelper {
         anim.start();
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     public static void playViewBackgroundAnimation(final View v, int startColor, int endColor, long duration) {
         playViewBackgroundAnimation(v, startColor, endColor, duration, 0, 0, null);
     }
@@ -348,6 +357,7 @@ public class ViewHelper {
      * @param listener        动画回调
      * @param isNeedAnimation 是否需要动画
      */
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     public static AlphaAnimation fadeIn(View view, int duration, Animation.AnimationListener listener, boolean isNeedAnimation) {
         if (view == null) {
             return null;
@@ -418,6 +428,7 @@ public class ViewHelper {
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     public static void clearValueAnimator(ValueAnimator animator) {
         if (animator != null) {
             animator.removeAllListeners();
@@ -720,16 +731,46 @@ public class ViewHelper {
      * @param descendant descendant view to reference
      * @param out        rect to set to the bounds of the descendant view
      */
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
     public static void getDescendantRect(ViewGroup parent, View descendant, Rect out) {
         out.set(0, 0, descendant.getWidth(), descendant.getHeight());
         ViewGroupHelper.offsetDescendantRect(parent, descendant, out);
     }
 
+    /**
+     * Adjust TextView font size, adaptive width
+     *
+     * @param textView TextView
+     * @param text     Text
+     * @param maxWidth Maximum width
+     * @param dpMin    Minimum dp limit, default dp
+     * @param dpMax    Maximum dp limit, default dp
+     */
+    public static void autoSize(TextView textView, String text, float maxWidth, float dpMin, float dpMax) {
+        final Paint paint = textView.getPaint();
+        final float minSize = DimenUtils.dp2px(textView.getContext(), dpMin);
+        float textSize = DimenUtils.dp2px(textView.getContext(), dpMax);
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+        // Get the effective width of the current TextView
+        final int availableWidth = DimenUtils.dp2px(textView.getContext(), maxWidth);
+        float textWidth = paint.measureText(text);
+        while (textWidth > availableWidth) {
+            if (textSize < minSize) {
+                break;
+            }
+            textSize = textSize - 1;
+            // The unit passed in here is px
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
+            textWidth = paint.measureText(text) + 2;
+        }
+        textView.setText(text);
+    }
 
     private static class ViewGroupHelper {
         private static final ThreadLocal<Matrix> sMatrix = new ThreadLocal<>();
         private static final ThreadLocal<RectF> sRectF = new ThreadLocal<>();
 
+        @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
         public static void offsetDescendantRect(ViewGroup group, View child, Rect rect) {
             Matrix m = sMatrix.get();
             if (m == null) {
@@ -752,6 +793,7 @@ public class ViewHelper {
                     (int) (rectF.right + 0.5f), (int) (rectF.bottom + 0.5f));
         }
 
+        @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
         static void offsetDescendantMatrix(ViewParent target, View view, Matrix m) {
             final ViewParent parent = view.getParent();
             if (parent instanceof View && parent != target) {

@@ -1,4 +1,4 @@
-package com.d.lib.common.utils.log;
+package com.d.lib.common.util.log;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -102,5 +102,13 @@ public class ULog {
                 ste.getMethodName(),
                 ste.getLineNumber(),
                 msg));
+    }
+
+    /**
+     * Print information about the current thread
+     */
+    public static void printThread(final String tag) {
+        d(tag + " Current thread--> Id: " + Thread.currentThread().getId()
+                + " Name: " + Thread.currentThread().getName());
     }
 }

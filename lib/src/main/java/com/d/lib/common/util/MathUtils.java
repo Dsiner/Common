@@ -1,4 +1,4 @@
-package com.d.lib.common.utils;
+package com.d.lib.common.util;
 
 import android.text.TextUtils;
 
@@ -9,7 +9,7 @@ import java.text.DecimalFormat;
  * MathManager
  * Created by D on 2017/4/29.
  */
-public class MathManager {
+public class MathUtils {
     // 默认除法运算精度
     private static final int DEFAULT_DIV_SCALE = 10;
 

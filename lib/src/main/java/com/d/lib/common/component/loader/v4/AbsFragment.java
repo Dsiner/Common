@@ -8,7 +8,7 @@ import com.d.lib.common.component.loader.CommonLoader;
 import com.d.lib.common.component.loader.IAbsView;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
 import com.d.lib.common.component.mvp.app.v4.BaseFragment;
-import com.d.lib.common.utils.ViewHelper;
+import com.d.lib.common.util.ViewHelper;
 import com.d.lib.common.view.DSLayout;
 import com.d.lib.xrv.XRecyclerView;
 import com.d.lib.xrv.adapter.CommonAdapter;
