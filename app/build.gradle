@@ -32,6 +32,5 @@ dependencies {
     implementation project(':module_mvp')
     implementation project(':module_loader')
 
-    annotationProcessor "com.jakewharton:butterknife-compiler:8.8.1"
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
 }

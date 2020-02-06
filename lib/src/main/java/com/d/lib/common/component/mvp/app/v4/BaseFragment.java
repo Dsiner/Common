@@ -16,9 +16,6 @@ import com.d.lib.common.component.mvp.MvpView;
 import com.d.lib.common.view.DSLayout;
 import com.d.lib.common.view.dialog.AlertDialogFactory;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  * BaseFragment
  * Created by D on 2017/4/27.
@@ -32,7 +29,6 @@ public abstract class BaseFragment<T extends MvpBasePresenter>
     protected View mRootView;
     protected DSLayout mDslDs;
     private Dialog mLoadingDlg;
-    private Unbinder mUnbinder;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -53,7 +49,6 @@ public abstract class BaseFragment<T extends MvpBasePresenter>
                 mDslDs = (DSLayout) mRootView.findViewById(getDSLayoutRes());
             }
             bindView(mRootView);
-            mUnbinder = ButterKnife.bind(this, mRootView);
             init();
         } else {
             if (mRootView.getParent() != null) {
@@ -63,7 +58,6 @@ public abstract class BaseFragment<T extends MvpBasePresenter>
                 mDslDs = (DSLayout) mRootView.findViewById(getDSLayoutRes());
             }
             bindView(mRootView);
-            mUnbinder = ButterKnife.bind(this, mRootView);
         }
         return mRootView;
     }
@@ -80,10 +74,6 @@ public abstract class BaseFragment<T extends MvpBasePresenter>
     public void onDestroyView() {
         if (mPresenter != null) {
             mPresenter.detachView(false);
-        }
-        if (mUnbinder != null) {
-            mUnbinder.unbind();
-            mUnbinder = null;
         }
         super.onDestroyView();
     }

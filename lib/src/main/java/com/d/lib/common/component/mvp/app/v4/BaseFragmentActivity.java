@@ -16,9 +16,6 @@ import com.d.lib.common.util.keyboard.KeyboardHelper;
 import com.d.lib.common.view.DSLayout;
 import com.d.lib.common.view.dialog.AlertDialogFactory;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  * BaseFragmentActivity
  * Created by D on 2017/4/27.
@@ -31,7 +28,6 @@ public abstract class BaseFragmentActivity<T extends MvpBasePresenter>
     protected T mPresenter;
     protected DSLayout mDslDs;
     private Dialog mLoadingDlg;
-    private Unbinder mUnbinder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,7 +41,6 @@ public abstract class BaseFragmentActivity<T extends MvpBasePresenter>
             mDslDs = (DSLayout) findViewById(getDSLayoutRes());
         }
         bindView();
-        mUnbinder = ButterKnife.bind(this);
         mPresenter = getPresenter();
         if (mPresenter != null) {
             mPresenter.attachView(getMvpView());
@@ -63,10 +58,6 @@ public abstract class BaseFragmentActivity<T extends MvpBasePresenter>
     protected void onDestroy() {
         if (mPresenter != null) {
             mPresenter.detachView(false);
-        }
-        if (mUnbinder != null) {
-            mUnbinder.unbind();
-            mUnbinder = null;
         }
         super.onDestroy();
     }
