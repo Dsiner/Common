@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Scroller;
 
 import com.d.lib.common.R;
-import com.d.lib.common.component.lv.CommonHolder;
 import com.d.lib.common.util.DimenUtils;
 
 import java.lang.annotation.ElementType;
@@ -286,7 +285,7 @@ public class BottomThirdBar extends ViewGroup implements View.OnClickListener {
         public void convert(final int position, CommonHolder holder, final Item item) {
             holder.setText(R.id.tv_btb_tips, item.content);
             holder.setImageResource(R.id.iv_btb_icon, item.res);
-            holder.getConvertView().setOnClickListener(new View.OnClickListener() {
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (listener != null) {

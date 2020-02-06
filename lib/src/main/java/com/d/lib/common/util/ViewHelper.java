@@ -10,7 +10,6 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.LightingColorFilter;
@@ -55,10 +54,6 @@ public class ViewHelper {
     // Copy from View.generateViewId for API <= 16
     private static final AtomicInteger sNextGeneratedId = new AtomicInteger(1);
 
-    private static final int[] APPCOMPAT_CHECK_ATTRS = {
-            android.support.v7.appcompat.R.attr.colorPrimary
-    };
-
     @NonNull
     public static <T> T findView(@NonNull Activity activity, @IdRes int id) {
         T view = (T) activity.findViewById(id);
@@ -71,23 +66,41 @@ public class ViewHelper {
         return view;
     }
 
-    public static void setOnClick(@NonNull Activity activity, @IdRes int id, @Nullable View.OnClickListener l) {
-        activity.findViewById(id).setOnClickListener(l);
-    }
-
-    public static void setOnClick(@NonNull Activity activity, @Nullable View.OnClickListener l, @IdRes int... ids) {
+    public static void setOnClick(@NonNull Activity activity,
+                                  @Nullable View.OnClickListener l,
+                                  @IdRes int... ids) {
         for (int id : ids) {
             activity.findViewById(id).setOnClickListener(l);
         }
     }
 
-    public static void setOnClick(@NonNull View root, @IdRes int id, @Nullable View.OnClickListener l) {
-        root.findViewById(id).setOnClickListener(l);
-    }
-
-    public static void setOnClick(@NonNull View root, @Nullable View.OnClickListener l, @IdRes int... ids) {
+    public static void setOnClick(@NonNull View root,
+                                  @Nullable View.OnClickListener l,
+                                  @IdRes int... ids) {
         for (int id : ids) {
             root.findViewById(id).setOnClickListener(l);
+        }
+    }
+
+    public static void setVisibility(@NonNull Activity activity,
+                                     int visibility,
+                                     @IdRes int... ids) {
+        for (int id : ids) {
+            activity.findViewById(id).setVisibility(visibility);
+        }
+    }
+
+    public static void setVisibility(@NonNull View root,
+                                     int visibility,
+                                     @IdRes int... ids) {
+        for (int id : ids) {
+            root.findViewById(id).setVisibility(visibility);
+        }
+    }
+
+    public static void setVisibility(int visibility, View... views) {
+        for (View v : views) {
+            v.setVisibility(visibility);
         }
     }
 
@@ -99,16 +112,6 @@ public class ViewHelper {
         String runningActivity = activityManager.getRunningTasks(1).get(0).topActivity
                 .getClassName();
         return runningActivity;
-    }
-
-    public static void checkAppCompatTheme(Context context) {
-        TypedArray a = context.obtainStyledAttributes(APPCOMPAT_CHECK_ATTRS);
-        final boolean failed = !a.hasValue(0);
-        a.recycle();
-        if (failed) {
-            throw new IllegalArgumentException("You need to use a Theme.AppCompat theme "
-                    + "(or descendant) with the design library.");
-        }
     }
 
     /**
@@ -129,15 +132,6 @@ public class ViewHelper {
             view.getViewTreeObserver().removeOnGlobalLayoutListener(victim);
         } else {
             view.getViewTreeObserver().removeGlobalOnLayoutListener(victim);
-        }
-    }
-
-    /**
-     * 批量设置View visibility
-     */
-    public static void setViewVisibility(int visibility, View... views) {
-        for (View v : views) {
-            v.setVisibility(visibility);
         }
     }
 
