@@ -2,9 +2,24 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![API](https://img.shields.io/badge/API-9%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=9)
+[![Download](https://api.bintray.com/packages/dsiner/maven/common/images/download.svg) ](https://bintray.com/dsiner/maven/common/_latestVersion)
 [![Wiki-Guide](https://img.shields.io/badge/Wiki-Guide-brightgreen.svg)](https://github.com/Dsiner/Common/wiki)
 
->Android modular development framework based on `MVP Base` + `MVP Customization` + `Component` .
+>Common is a basic component library for android.
+
+## Set up
+Maven:
+```xml
+<dependency>
+  <groupId>com.dsiner.lib</groupId>
+  <artifactId>common</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+or Gradle:
+```groovy
+implementation 'com.dsiner.lib:common:1.0.0'
+```
 
 ## Module
 - `lib`  -  Core
@@ -48,7 +63,7 @@
    <img src="https://github.com/Dsiner/Resouce/blob/master/lib/Common/common.gif" width="320" alt="Screenshot"/>
 </p>
 
-More usage see [Wiki](https://github.com/Dsiner/Common/wiki) [Wiki](https://github.com/Dsiner/Common/wiki) [Wiki](https://github.com/Dsiner/Common/wiki)!!!
+More usage see [Wiki.](https://github.com/Dsiner/Common/wiki)
 
 ## Licence
 
