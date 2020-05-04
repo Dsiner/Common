@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.d.lib.common.R;
+import com.d.lib.common.util.ViewHelper;
 import com.d.lib.common.view.ClearEditText;
 
 /**
@@ -14,6 +15,8 @@ import com.d.lib.common.view.ClearEditText;
  * Created by D on 2018/6/15.
  */
 public class EditDialog extends AbstractDialog {
+    private TextView tv_title;
+    private ClearEditText cet_edit;
     private String mTitle;
     private String mContent;
     private OnEditListener mListener;
@@ -22,7 +25,8 @@ public class EditDialog extends AbstractDialog {
         super(context, R.style.lib_pub_dialog_style, false, 0, 0, 0);
         this.mTitle = title;
         this.mContent = content;
-        initView(mRootView);
+        bindView(mRootView);
+        init();
     }
 
     @Override
@@ -31,40 +35,42 @@ public class EditDialog extends AbstractDialog {
     }
 
     @Override
-    protected void init(View rootView) {
-
+    protected boolean isInitEnabled() {
+        return false;
     }
 
-    protected void initView(View rootView) {
-        TextView tvOk = (TextView) rootView.findViewById(R.id.btn_ok);
-        TextView tvCancel = (TextView) rootView.findViewById(R.id.btn_cancel);
-        TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
-        final ClearEditText cetEdit = (ClearEditText) rootView.findViewById(R.id.cet_edit);
-        cetEdit.setText(!TextUtils.isEmpty(mContent) ? mContent : "");
+    @Override
+    protected void bindView(View rootView) {
+        tv_title = ViewHelper.findView(rootView, R.id.tv_title);
+        cet_edit = ViewHelper.findView(rootView, R.id.cet_edit);
+        ViewHelper.setOnClick(rootView, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int resId = v.getId();
+                if (R.id.btn_ok == resId) {
+                    dismiss();
+                    if (mListener != null) {
+                        mListener.onSubmit(EditDialog.this, cet_edit.getText().toString());
+                    }
+                } else if (R.id.btn_cancel == resId) {
+                    dismiss();
+                    if (mListener != null) {
+                        mListener.onCancel(EditDialog.this);
+                    }
+                }
+            }
+        }, R.id.btn_ok, R.id.btn_cancel);
+    }
+
+    @Override
+    protected void init() {
+        cet_edit.setText(!TextUtils.isEmpty(mContent) ? mContent : "");
         if (!TextUtils.isEmpty(mTitle)) {
-            tvTitle.setVisibility(View.VISIBLE);
-            tvTitle.setText(mTitle);
+            tv_title.setVisibility(View.VISIBLE);
+            tv_title.setText(mTitle);
         } else {
-            tvTitle.setVisibility(View.GONE);
+            tv_title.setVisibility(View.GONE);
         }
-        tvOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-                if (mListener != null) {
-                    mListener.onSubmit(EditDialog.this, cetEdit.getText().toString());
-                }
-            }
-        });
-        tvCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-                if (mListener != null) {
-                    mListener.onCancel(EditDialog.this);
-                }
-            }
-        });
     }
 
     public interface OnEditListener {

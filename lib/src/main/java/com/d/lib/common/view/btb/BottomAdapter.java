@@ -9,17 +9,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * BottomThirdAdapter
+ * BottomAdapter
  * Created by D on 2018/7/11.
  */
-abstract class BottomThirdAdapter<T> {
+abstract class BottomAdapter<T> {
     protected Context mContext;
     protected List<T> mDatas;
     protected LayoutInflater mInflater;
     protected int mLayoutId;
     protected DataSetObserver mDataSetObserver;
 
-    public BottomThirdAdapter(Context context, List<T> datas, int layoutId) {
+    public BottomAdapter(Context context, List<T> datas, int layoutId) {
         mContext = context;
         mDatas = new ArrayList<T>();
         if (datas != null && datas.size() > 0) {

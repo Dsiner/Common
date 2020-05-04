@@ -82,7 +82,7 @@ public class LoadingView extends View {
     private void init(Context context) {
         this.mContext = context;
         this.mIsFirst = true;
-        this.mColor = ContextCompat.getColor(context, R.color.lib_pub_color_main);
+        this.mColor = ContextCompat.getColor(context, R.color.lib_pub_color_loading);
         this.mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         this.mPaint.setColor(mColor);
         this.mDuration = 1000;

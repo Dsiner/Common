@@ -32,12 +32,12 @@ public abstract class AbsSheetDialog<T> extends AbstractDialog {
     }
 
     @Override
-    protected void init(View rootView) {
-
+    protected boolean isInitEnabled() {
+        return false;
     }
 
-    protected void initRecyclerList(View rootView, @IdRes int id, int orientation) {
-        RecyclerView list = (RecyclerView) rootView.findViewById(id);
+    protected void initRecyclerList(@IdRes int id, int orientation) {
+        RecyclerView list = (RecyclerView) mRootView.findViewById(id);
         LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
         layoutManager.setOrientation(orientation);
         list.setLayoutManager(layoutManager);
@@ -56,8 +56,6 @@ public abstract class AbsSheetDialog<T> extends AbstractDialog {
     }
 
     protected abstract RecyclerView.Adapter getAdapter();
-
-    protected abstract void initView(View rootView);
 
     public interface OnItemClickListener<T> {
 

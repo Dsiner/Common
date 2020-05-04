@@ -23,10 +23,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * BottomThirdBar
+ * BottomBar
  * Created by D on 2018/7/11.
  */
-public class BottomThirdBar extends ViewGroup implements View.OnClickListener {
+public class BottomBar extends ViewGroup implements View.OnClickListener {
     private final static int ROW_COUNT = 4;
     private final float mLoadFactor = 1.75f;
     private final int mDuration = 1000;
@@ -42,17 +42,17 @@ public class BottomThirdBar extends ViewGroup implements View.OnClickListener {
     private int mWidthNext;
     private int mLeftBorder, mRightBorder;
 
-    public BottomThirdBar(Context context) {
+    public BottomBar(Context context) {
         super(context);
         init(context);
     }
 
-    public BottomThirdBar(Context context, AttributeSet attrs) {
+    public BottomBar(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
     }
 
-    public BottomThirdBar(Context context, AttributeSet attrs, int defStyleAttr) {
+    public BottomBar(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context);
     }
@@ -236,7 +236,7 @@ public class BottomThirdBar extends ViewGroup implements View.OnClickListener {
 
     public void setAdapter(Adapter adapter) {
         this.mAdapter = adapter;
-        this.mAdapter.registerDataSetObserver(new BottomThirdAdapter.DataSetObserver() {
+        this.mAdapter.registerDataSetObserver(new BottomAdapter.DataSetObserver() {
             @Override
             public void notifyChanged() {
                 reset();
@@ -248,12 +248,12 @@ public class BottomThirdBar extends ViewGroup implements View.OnClickListener {
     /**
      * Create or update list
      *
-     * @param datas Datas
+     * @param datas Data
      * @param l     ClickListener
      */
     public void create(List<Item> datas, OnClickListener l) {
         if (mAdapter == null) {
-            mAdapter = new BottomThirdBar.Adapter(mContext, datas, R.layout.lib_pub_adapter_btb);
+            mAdapter = new BottomBar.Adapter(mContext, datas, R.layout.lib_pub_adapter_btb);
             setAdapter(mAdapter);
         } else {
             mAdapter.setDatas(datas);
@@ -270,7 +270,7 @@ public class BottomThirdBar extends ViewGroup implements View.OnClickListener {
         }
     }
 
-    public static class Adapter extends BottomThirdAdapter<Item> {
+    public static class Adapter extends BottomAdapter<Item> {
         private OnClickListener listener;
 
         public Adapter(Context context, List<Item> datas, int layoutId) {

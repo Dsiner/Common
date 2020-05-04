@@ -3,12 +3,16 @@ package com.d.lib.common.view.popup;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
 import android.support.annotation.LayoutRes;
+import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
+
+import java.lang.reflect.Field;
 
 /**
  * AbstractPopup
@@ -46,9 +50,6 @@ public abstract class AbstractPopup extends PopupWindow implements View.OnKeyLis
      *                       animation, or a resource identifier for an explicit animation.
      */
     public AbstractPopup(Context context, @LayoutRes int resource, int width, int height, boolean focusable, int animationStyle) {
-        /*
-         * LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-         */
         super(LayoutInflater.from(context).inflate(resource, null), width, height, focusable);
         this.mContext = context;
         this.mRootView = getContentView();
@@ -57,9 +58,25 @@ public abstract class AbstractPopup extends PopupWindow implements View.OnKeyLis
         }
         setOutsideTouchable(true);
         setFocusable(true);
-        setClippingEnabled(true);
+        setClippingEnabled(false);
+        fitPopupWindowOverStatusBar(true);
         setBackgroundDrawable(new BitmapDrawable());
-        init();
+        if (isInitEnabled()) {
+            bindView(mRootView);
+            init();
+        }
+    }
+
+    protected void fitPopupWindowOverStatusBar(final boolean needFullScreen) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            try {
+                Field mLayoutInScreen = PopupWindow.class.getDeclaredField("mLayoutInScreen");
+                mLayoutInScreen.setAccessible(true);
+                mLayoutInScreen.set(this, needFullScreen);
+            } catch (Throwable e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
@@ -67,7 +84,10 @@ public abstract class AbstractPopup extends PopupWindow implements View.OnKeyLis
      */
     public void show() {
         if (!isShowing() && mContext != null && !((Activity) mContext).isFinishing()) {
-            showAsDropDown(mRootView);
+            final Activity activity = (Activity) mContext;
+            final View parent = ((ViewGroup) activity.findViewById(android.R.id.content))
+                    .getChildAt(0);
+            showAtLocation(parent, Gravity.CENTER, 0, 0);
         }
     }
 
@@ -88,6 +108,13 @@ public abstract class AbstractPopup extends PopupWindow implements View.OnKeyLis
             return true;
         }
         return false;
+    }
+
+    protected boolean isInitEnabled() {
+        return true;
+    }
+
+    protected void bindView(View rootView) {
     }
 
     protected abstract void init();

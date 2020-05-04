@@ -25,13 +25,15 @@ import java.util.List;
  * or pass the title=null or "" method above.
  */
 public class BottomVerSheetDialog extends AbsSheetDialog<BottomVerSheetDialog.Bean> {
+    private TextView tv_title;
     private boolean mIsChecked;
 
     public BottomVerSheetDialog(Context context, String title, List<Bean> datas) {
         super(context);
         this.mTitle = title;
         this.mDatas = datas;
-        initView(mRootView);
+        bindView(mRootView);
+        init();
     }
 
     @Override
@@ -56,24 +58,26 @@ public class BottomVerSheetDialog extends AbsSheetDialog<BottomVerSheetDialog.Be
     }
 
     @Override
-    protected void initView(View rootView) {
-        initRecyclerList(rootView, R.id.rv_list, LinearLayoutManager.VERTICAL);
-
-        TextView tvCancel = (TextView) rootView.findViewById(R.id.tv_cancel);
-        TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
-        if (!TextUtils.isEmpty(mTitle)) {
-            tvTitle.setVisibility(View.VISIBLE);
-            tvTitle.setText(mTitle);
-        } else {
-            tvTitle.setVisibility(View.GONE);
-        }
-
-        tvCancel.setOnClickListener(new View.OnClickListener() {
+    protected void bindView(View rootView) {
+        tv_title = (TextView) rootView.findViewById(R.id.tv_title);
+        TextView tv_cancel = (TextView) rootView.findViewById(R.id.tv_cancel);
+        tv_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onItemClick(-1, null);
             }
         });
+    }
+
+    @Override
+    protected void init() {
+        if (!TextUtils.isEmpty(mTitle)) {
+            tv_title.setVisibility(View.VISIBLE);
+            tv_title.setText(mTitle);
+        } else {
+            tv_title.setVisibility(View.GONE);
+        }
+        initRecyclerList(R.id.rv_list, LinearLayoutManager.VERTICAL);
     }
 
     public class SheetAdapter extends CommonAdapter<Bean> {
@@ -86,7 +90,7 @@ public class BottomVerSheetDialog extends AbsSheetDialog<BottomVerSheetDialog.Be
             holder.setText(R.id.tv_item, item.item);
             holder.setTextColor(R.id.tv_item, ContextCompat.getColor(mContext, item.color));
             holder.setViewVisibility(R.id.iv_check, item.isChecked ? View.VISIBLE : View.GONE);
-            holder.setViewVisibility(R.id.v_bttom_line, position < getItemCount() - 1 ? View.VISIBLE : View.GONE);
+            holder.setViewVisibility(R.id.v_bottom_line, position < getItemCount() - 1 ? View.VISIBLE : View.GONE);
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

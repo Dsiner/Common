@@ -23,6 +23,9 @@
     <color name="lib_pub_color_main_50">#80008577</color>
     <color name="lib_pub_color_main_30">#66008577</color>
 
+    <color name="lib_pub_color_dialog_bg">#FFFFFF</color>
+    <color name="lib_pub_color_dialog_text_content">#000000</color>
+
     <color name="lib_pub_color_destroy">#FA715B</color>
     <color name="lib_pub_color_destroy_press">#D5604D</color>
 
@@ -30,11 +33,10 @@
     <color name="lib_pub_color_text_sub">#7F7F7F</color>
     <color name="lib_pub_color_text_hint">#CCCCCC</color>
     <color name="lib_pub_color_text_disable">#A7AAB1</color>
-    <color name="lib_pub_color_text_dialog_content">#5E5F64</color>
 
     <color name="lib_pub_color_press">#E6F7F7F7</color>
     <color name="lib_pub_color_hint">#e3e4e5</color>
     <color name="lib_pub_color_notice">#FFF4CB</color>
     <color name="lib_pub_color_line">#e5e5e5</color>
-    <color name="lib_pub_color_dialog_bg">#AAC1C1C1</color>
+    <color name="lib_pub_color_loading">#929292</color>
 </resources>

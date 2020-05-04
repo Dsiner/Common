@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.d.lib.common.util.ViewHelper;
 import com.d.lib.common.view.SegmentView;
-import com.d.lib.common.view.btb.BottomThirdBar;
+import com.d.lib.common.view.btb.BottomBar;
 import com.d.lib.common.view.tab.ScrollTab;
 
 import java.util.ArrayList;
@@ -55,49 +55,49 @@ public class ToolBarActivity extends FragmentActivity implements View.OnClickLis
     }
 
     private void initBtBar() {
-        BottomThirdBar[] btbBars = new BottomThirdBar[]{ViewHelper.findView(this, R.id.btb_bar0),
+        BottomBar[] btbBars = new BottomBar[]{ViewHelper.findView(this, R.id.btb_bar0),
                 ViewHelper.findView(this, R.id.btb_bar1),
                 ViewHelper.findView(this, R.id.btb_bar2),
                 ViewHelper.findView(this, R.id.btb_bar3)};
-        btbBars[0].create(Arrays.asList(new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_SHARE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_share)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_DOWNLOAD, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_download))), new BottomThirdBar.OnClickListener() {
+        btbBars[0].create(Arrays.asList(new BottomBar.Item(BottomBar.Item.TYPE_SHARE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_share)),
+                new BottomBar.Item(BottomBar.Item.TYPE_DOWNLOAD, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_download))), new BottomBar.OnClickListener() {
             @Override
-            public void onClick(int position, BottomThirdBar.Item item) {
+            public void onClick(int position, BottomBar.Item item) {
 
             }
         });
-        btbBars[1].create(Arrays.asList(new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_SHARE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_share)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_DOWNLOAD, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_download)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_MOVE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_move))
-        ), new BottomThirdBar.OnClickListener() {
+        btbBars[1].create(Arrays.asList(new BottomBar.Item(BottomBar.Item.TYPE_SHARE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_share)),
+                new BottomBar.Item(BottomBar.Item.TYPE_DOWNLOAD, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_download)),
+                new BottomBar.Item(BottomBar.Item.TYPE_MOVE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_move))
+        ), new BottomBar.OnClickListener() {
             @Override
-            public void onClick(int position, BottomThirdBar.Item item) {
+            public void onClick(int position, BottomBar.Item item) {
 
             }
         });
-        btbBars[2].create(Arrays.asList(new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_SHARE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_share)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_DOWNLOAD, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_download)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_MOVE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_move)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_DELETE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_delete)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_RENAME, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_rename)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_info))), new BottomThirdBar.OnClickListener() {
+        btbBars[2].create(Arrays.asList(new BottomBar.Item(BottomBar.Item.TYPE_SHARE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_share)),
+                new BottomBar.Item(BottomBar.Item.TYPE_DOWNLOAD, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_download)),
+                new BottomBar.Item(BottomBar.Item.TYPE_MOVE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_move)),
+                new BottomBar.Item(BottomBar.Item.TYPE_DELETE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_delete)),
+                new BottomBar.Item(BottomBar.Item.TYPE_RENAME, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_rename)),
+                new BottomBar.Item(BottomBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_info))), new BottomBar.OnClickListener() {
             @Override
-            public void onClick(int position, BottomThirdBar.Item item) {
+            public void onClick(int position, BottomBar.Item item) {
 
             }
         });
-        btbBars[3].create(Arrays.asList(new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
-                new BottomThirdBar.Item(BottomThirdBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label))), new BottomThirdBar.OnClickListener() {
+        btbBars[3].create(Arrays.asList(new BottomBar.Item(BottomBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
+                new BottomBar.Item(BottomBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
+                new BottomBar.Item(BottomBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
+                new BottomBar.Item(BottomBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
+                new BottomBar.Item(BottomBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
+                new BottomBar.Item(BottomBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
+                new BottomBar.Item(BottomBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
+                new BottomBar.Item(BottomBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
+                new BottomBar.Item(BottomBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label)),
+                new BottomBar.Item(BottomBar.Item.TYPE_INFO, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_label))), new BottomBar.OnClickListener() {
             @Override
-            public void onClick(int position, BottomThirdBar.Item item) {
+            public void onClick(int position, BottomBar.Item item) {
 
             }
         });

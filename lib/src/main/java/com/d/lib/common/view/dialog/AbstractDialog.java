@@ -63,7 +63,10 @@ public abstract class AbstractDialog extends Dialog {
                 dialogWindow.setAttributes(p);
             }
         }
-        init(this.mRootView);
+        if (isInitEnabled()) {
+            bindView(mRootView);
+            init();
+        }
     }
 
     protected AbstractDialog(Context context, int themeResId, ViewGroup.LayoutParams params) {
@@ -79,7 +82,10 @@ public abstract class AbstractDialog extends Dialog {
             dialogWindow.setBackgroundDrawableResource(android.R.color.transparent);
             dialogWindow.getDecorView().setPadding(0, 0, 0, 0);
         }
-        init(this.mRootView);
+        if (isInitEnabled()) {
+            bindView(mRootView);
+            init();
+        }
     }
 
     /**
@@ -107,5 +113,12 @@ public abstract class AbstractDialog extends Dialog {
 
     protected abstract int getLayoutRes();
 
-    protected abstract void init(View rootView);
+    protected boolean isInitEnabled() {
+        return true;
+    }
+
+    protected void bindView(View rootView) {
+    }
+
+    protected abstract void init();
 }

@@ -2,7 +2,6 @@ package com.d.lib.common.view.popup;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.IdRes;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +10,7 @@ import android.widget.PopupWindow;
 
 import com.d.lib.common.R;
 import com.d.lib.common.util.DimenUtils;
+import com.d.lib.common.util.ViewHelper;
 import com.d.lib.xrv.adapter.CommonAdapter;
 import com.d.lib.xrv.adapter.CommonHolder;
 
@@ -18,41 +18,41 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuPopup extends AbstractPopup {
-    protected List<Bean> datas;
-    protected OnMenuListener listener;
+    private RecyclerView rv_list;
+    protected List<Bean> mDatas;
+    protected OnMenuListener mListener;
 
     public MenuPopup(Context context, List<Bean> datas) {
         super(context, R.layout.lib_pub_popup_menu,
                 DimenUtils.dp2px(context, 135),
-                datas != null ? datas.size() * DimenUtils.dp2px(context, 40) + DimenUtils.dp2px(context, 6) : 0, true, -1);
-        this.datas = datas != null ? datas : new ArrayList<Bean>();
-        initView(mRootView);
+                datas != null ? datas.size() * DimenUtils.dp2px(context, 40)
+                        + DimenUtils.dp2px(context, 6)
+                        : 0, true, -1);
+        mDatas = datas != null ? datas : new ArrayList<Bean>();
+        bindView(mRootView);
+        init();
     }
 
     private RecyclerView.Adapter getAdapter() {
-        return new SheetAdapter(mContext, datas, R.layout.lib_pub_adapter_popup_menu);
+        return new SheetAdapter(mContext, mDatas, R.layout.lib_pub_adapter_popup_menu);
+    }
+
+    @Override
+    protected boolean isInitEnabled() {
+        return false;
+    }
+
+    @Override
+    protected void bindView(View rootView) {
+        rv_list = ViewHelper.findView(rootView, R.id.rv_list);
     }
 
     @Override
     protected void init() {
-
-    }
-
-    private void initView(View rootView) {
-        initRecyclerList(rootView, R.id.rv_list, LinearLayoutManager.VERTICAL);
-    }
-
-    protected void initRecyclerList(View rootView, @IdRes int id, int orientation) {
-        RecyclerView list = (RecyclerView) rootView.findViewById(id);
         LinearLayoutManager layoutManager = new LinearLayoutManager(mContext);
-        layoutManager.setOrientation(orientation);
-        list.setLayoutManager(layoutManager);
-        list.setAdapter(getAdapter());
-    }
-
-    @Override
-    public void show() {
-        super.show();
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        rv_list.setLayoutManager(layoutManager);
+        rv_list.setAdapter(getAdapter());
     }
 
     @Override
@@ -64,8 +64,8 @@ public class MenuPopup extends AbstractPopup {
 
     protected void onItemClick(int position, String item) {
         dismiss();
-        if (listener != null) {
-            listener.onClick(this, position, item);
+        if (mListener != null) {
+            mListener.onClick(this, position, item);
         }
     }
 
@@ -111,6 +111,6 @@ public class MenuPopup extends AbstractPopup {
     }
 
     public void setOnMenuListener(OnMenuListener listener) {
-        this.listener = listener;
+        this.mListener = listener;
     }
 }

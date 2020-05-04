@@ -7,16 +7,18 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.CheckBox;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.d.lib.common.R;
+import com.d.lib.common.util.ViewHelper;
 
 /**
  * AlertSubDialog
  * Created by D on 2018/6/15.
  */
 public class AlertSubDialog extends AbstractDialog {
+    private TextView tv_title, tv_content, tv_sub_tips;
+    private CheckBox cb_toggle;
     private String mTitle;
     private String mContent;
     private String mSubTips;
@@ -31,7 +33,8 @@ public class AlertSubDialog extends AbstractDialog {
         this.mContent = content;
         this.mSubTips = subTips;
         this.mIsChecked = isChecked;
-        initView(mRootView);
+        bindView(mRootView);
+        init();
     }
 
     @Override
@@ -40,57 +43,55 @@ public class AlertSubDialog extends AbstractDialog {
     }
 
     @Override
-    protected void init(View rootView) {
-
+    protected boolean isInitEnabled() {
+        return false;
     }
 
-    private void initView(View rootView) {
-        TextView tvOk = (TextView) rootView.findViewById(R.id.btn_ok);
-        TextView tvCancel = (TextView) rootView.findViewById(R.id.btn_cancel);
-        TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
-        TextView tvContent = (TextView) rootView.findViewById(R.id.tv_content);
-        TextView tvSubTips = (TextView) rootView.findViewById(R.id.tv_sub_tips);
-        final FrameLayout flytToggle = (FrameLayout) rootView.findViewById(R.id.flyt_toggle);
-        final CheckBox cbToggle = (CheckBox) rootView.findViewById(R.id.cb_toggle);
+    @Override
+    protected void bindView(View rootView) {
+        tv_title = ViewHelper.findView(rootView, R.id.tv_title);
+        tv_content = ViewHelper.findView(rootView, R.id.tv_content);
+        tv_sub_tips = ViewHelper.findView(rootView, R.id.tv_sub_tips);
+        cb_toggle = ViewHelper.findView(rootView, R.id.cb_toggle);
+
+        ViewHelper.setOnClick(mRootView, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int resId = v.getId();
+                if (R.id.flyt_toggle == resId) {
+                    mIsChecked = !cb_toggle.isChecked();
+                    cb_toggle.setChecked(mIsChecked);
+                } else if (R.id.btn_ok == resId) {
+                    dismiss();
+                    if (mListener != null) {
+                        mListener.onSubmit(AlertSubDialog.this, mIsChecked);
+                    }
+                } else if (R.id.btn_cancel == resId) {
+                    dismiss();
+                    if (mListener != null) {
+                        mListener.onCancel(AlertSubDialog.this);
+                    }
+                }
+            }
+        }, R.id.flyt_toggle, R.id.btn_ok, R.id.btn_cancel);
+    }
+
+    @Override
+    protected void init() {
         if (!TextUtils.isEmpty(mTitle)) {
-            tvTitle.setVisibility(View.VISIBLE);
-            tvTitle.setText(mTitle);
+            tv_title.setVisibility(View.VISIBLE);
+            tv_title.setText(mTitle);
         } else {
-            tvTitle.setVisibility(View.GONE);
+            tv_title.setVisibility(View.GONE);
         }
         if (!TextUtils.isEmpty(mContent)) {
-            tvContent.setVisibility(View.VISIBLE);
-            tvContent.setText(mContent);
+            tv_content.setVisibility(View.VISIBLE);
+            tv_content.setText(mContent);
         } else {
-            tvContent.setVisibility(View.GONE);
+            tv_content.setVisibility(View.GONE);
         }
-        tvSubTips.setText(!TextUtils.isEmpty(mSubTips) ? mSubTips : "");
-        cbToggle.setChecked(mIsChecked);
-        flytToggle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mIsChecked = !cbToggle.isChecked();
-                cbToggle.setChecked(mIsChecked);
-            }
-        });
-        tvOk.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-                if (mListener != null) {
-                    mListener.onSubmit(AlertSubDialog.this, mIsChecked);
-                }
-            }
-        });
-        tvCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-                if (mListener != null) {
-                    mListener.onCancel(AlertSubDialog.this);
-                }
-            }
-        });
+        tv_sub_tips.setText(!TextUtils.isEmpty(mSubTips) ? mSubTips : "");
+        cb_toggle.setChecked(mIsChecked);
     }
 
     public interface OnCheckListener {

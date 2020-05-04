@@ -19,13 +19,16 @@ import java.util.List;
  * Created by D on 2018/6/15.
  */
 public class OperationDialog extends AbsSheetDialog<OperationDialog.Bean> {
+    private TextView tv_title;
+    private View v_line_top;
     private boolean mIsChecked;
 
     public OperationDialog(Context context, String title, List<Bean> datas) {
         super(context, R.style.lib_pub_dialog_style, false, 0, 0, 0);
         this.mTitle = title;
         this.mDatas = datas;
-        initView(mRootView);
+        bindView(mRootView);
+        init();
     }
 
     @Override
@@ -50,27 +53,29 @@ public class OperationDialog extends AbsSheetDialog<OperationDialog.Bean> {
     }
 
     @Override
-    protected void initView(View rootView) {
-        initRecyclerList(rootView, R.id.rv_list, LinearLayoutManager.VERTICAL);
-
-        TextView tvCancel = (TextView) rootView.findViewById(R.id.tv_cancel);
-        TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
-        View vLineTop = rootView.findViewById(R.id.line_top);
-        if (!TextUtils.isEmpty(mTitle)) {
-            tvTitle.setVisibility(View.VISIBLE);
-            tvTitle.setText(mTitle);
-            vLineTop.setVisibility(View.VISIBLE);
-        } else {
-            tvTitle.setVisibility(View.GONE);
-            vLineTop.setVisibility(View.GONE);
-        }
-
-        tvCancel.setOnClickListener(new View.OnClickListener() {
+    protected void bindView(View rootView) {
+        tv_title = (TextView) rootView.findViewById(R.id.tv_title);
+        v_line_top = rootView.findViewById(R.id.line_top);
+        TextView tv_cancel = (TextView) rootView.findViewById(R.id.tv_cancel);
+        tv_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onItemClick(-1, null);
             }
         });
+    }
+
+    @Override
+    protected void init() {
+        if (!TextUtils.isEmpty(mTitle)) {
+            tv_title.setVisibility(View.VISIBLE);
+            tv_title.setText(mTitle);
+            v_line_top.setVisibility(View.VISIBLE);
+        } else {
+            tv_title.setVisibility(View.GONE);
+            v_line_top.setVisibility(View.GONE);
+        }
+        initRecyclerList(R.id.rv_list, LinearLayoutManager.VERTICAL);
     }
 
     public class SheetAdapter extends CommonAdapter<Bean> {

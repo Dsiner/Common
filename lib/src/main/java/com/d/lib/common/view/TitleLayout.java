@@ -22,6 +22,7 @@ import com.d.lib.common.R;
 public class TitleLayout extends RelativeLayout {
     protected Context mContext;
     protected View mRootView;
+    protected final int mRes;
     protected final int mMenuRes;
     private final String[] mTexts = new String[3];
     private final Drawable[] mDrawables = new Drawable[3];
@@ -55,14 +56,15 @@ public class TitleLayout extends RelativeLayout {
         mResIds[1] = typedArray.getResourceId(R.styleable.lib_pub_TitleLayout_lib_pub_tl_rightRes, -1);
         mResIds[2] = typedArray.getResourceId(R.styleable.lib_pub_TitleLayout_lib_pub_tl_middleRes, -1);
 
+        mRes = typedArray.getResourceId(R.styleable.lib_pub_TitleLayout_lib_pub_tl_layout, R.layout.lib_pub_layout_title);
         mMenuRes = typedArray.getResourceId(R.styleable.lib_pub_TitleLayout_lib_pub_tl_menu, -1);
         typedArray.recycle();
         init(context);
     }
 
     protected void init(Context context) {
-        this.mContext = context;
-        mRootView = LayoutInflater.from(context).inflate(R.layout.lib_pub_layout_title, this);
+        mContext = context;
+        mRootView = LayoutInflater.from(context).inflate(mRes, this);
 
         // Left
         inflate(context, mRootView, mTexts[0], mDrawables[0], (int) mDrawablePaddings[0], mResIds[0],

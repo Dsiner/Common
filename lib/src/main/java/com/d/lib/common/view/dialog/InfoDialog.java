@@ -18,12 +18,14 @@ import java.util.List;
  * Created by D on 2018/6/15.
  */
 public class InfoDialog extends AbsSheetDialog<InfoDialog.Bean> {
+    private TextView tv_title;
 
     public InfoDialog(Context context, String title, List<Bean> datas) {
         super(context, R.style.lib_pub_dialog_style, false, 0, 0, 0);
         this.mTitle = title;
         this.mDatas = datas;
-        initView(mRootView);
+        bindView(mRootView);
+        init();
     }
 
     @Override
@@ -37,16 +39,19 @@ public class InfoDialog extends AbsSheetDialog<InfoDialog.Bean> {
     }
 
     @Override
-    protected void initView(View rootView) {
-        initRecyclerList(rootView, R.id.rv_list, LinearLayoutManager.VERTICAL);
+    protected void bindView(View rootView) {
+        tv_title = (TextView) rootView.findViewById(R.id.tv_title);
+    }
 
-        TextView tvTitle = (TextView) rootView.findViewById(R.id.tv_title);
+    @Override
+    protected void init() {
         if (!TextUtils.isEmpty(mTitle)) {
-            tvTitle.setVisibility(View.VISIBLE);
-            tvTitle.setText(mTitle);
+            tv_title.setVisibility(View.VISIBLE);
+            tv_title.setText(mTitle);
         } else {
-            tvTitle.setVisibility(View.GONE);
+            tv_title.setVisibility(View.GONE);
         }
+        initRecyclerList(R.id.rv_list, LinearLayoutManager.VERTICAL);
     }
 
     public class SheetAdapter extends CommonAdapter<Bean> {

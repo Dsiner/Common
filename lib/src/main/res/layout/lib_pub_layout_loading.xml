@@ -13,5 +13,5 @@
         android:layout_marginTop="@dimen/lib_pub_dimen_margin"
         android:gravity="center"
         android:text="@string/lib_pub_loading"
-        android:textColor="@color/lib_pub_color_main" />
+        android:textColor="@color/lib_pub_color_loading" />
 </merge>
