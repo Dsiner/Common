@@ -74,6 +74,7 @@ public abstract class AbsPageFragmentActivity<T extends MvpBasePresenter>
         };
         mViewPager.setOffscreenPageLimit(mFragmentList.size() - 1);
         mViewPager.setAdapter(fragmentPagerAdapter);
+        mViewPager.removeOnPageChangeListener(this);
         mViewPager.addOnPageChangeListener(this);
         mScrollTab.setTitles(mTitles);
         mScrollTab.setViewPager(mViewPager);

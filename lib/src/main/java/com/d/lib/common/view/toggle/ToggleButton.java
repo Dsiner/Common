@@ -1,5 +1,6 @@
 package com.d.lib.common.view.toggle;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -15,7 +16,6 @@ import android.view.ViewConfiguration;
 import android.view.animation.LinearInterpolator;
 
 import com.d.lib.common.R;
-import com.nineoldandroids.animation.ValueAnimator;
 
 /**
  * ToggleButton
@@ -33,16 +33,16 @@ public class ToggleButton extends View implements ToggleView {
     private Paint mPaintShader;
 
     private int mTouchSlop;
-    private boolean mIsOpen; // 当前的位置
-    private boolean mIsClickValid; // 点击是否有效
+    private boolean mIsOpen;
+    private boolean mIsClickValid;
 
-    private float mPadding; // Variables 背景边框线宽度
-    private int mDuration; // Variables 动画时长
+    private float mPadding;
+    private int mDuration;
 
     private int mColorThumb, mColorTrackOpen, mColorTrackOff, mColorPadding;
     private float mDX, mDY;
     private ValueAnimator mAnimation;
-    private float mFactor = 1; // 进度因子: 0-1
+    private float mFactor = 1; // 0-1
     private OnToggleListener mListener;
 
     public ToggleButton(Context context) {
@@ -98,7 +98,7 @@ public class ToggleButton extends View implements ToggleView {
         mAnimation.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                mFactor = (float) animation.getAnimatedValue(); // 更新进度因子
+                mFactor = (float) animation.getAnimatedValue();
                 invalidate();
             }
         });
@@ -110,19 +110,21 @@ public class ToggleButton extends View implements ToggleView {
         float rectRadius = mHeight / 2f;
         mRect.set(0, 0, mWidth, mHeight);
         mRectF.set(mRect);
-        canvas.drawRoundRect(mRectF, rectRadius, rectRadius, mIsOpen ? mPaintTrack : mPaintPadding);
+        canvas.drawRoundRect(mRectF, rectRadius, rectRadius,
+                mIsOpen ? mPaintTrack : mPaintPadding);
 
-        mRect.set((int) mPadding, (int) mPadding, (int) (mWidth - mPadding), (int) (mHeight - mPadding));
+        mRect.set((int) mPadding, (int) mPadding,
+                (int) (mWidth - mPadding), (int) (mHeight - mPadding));
         mRectF.set(mRect);
         canvas.drawRoundRect(mRectF, rectRadius, rectRadius, mPaintTrack);
 
-        float c0 = mHeight / 2;
-        float c1 = mWidth - mHeight / 2;
+        float c0 = mHeight / 2f;
+        float c1 = mWidth - mHeight / 2f;
         float start = !mIsOpen ? c1 : c0;
         float end = mIsOpen ? c1 : c0;
-        float offsetX = start + (end - start) * mFactor; // 通过属性动画因子，计算此瞬间圆心的横坐标
+        float offsetX = start + (end - start) * mFactor;
 
-        canvas.drawCircle(offsetX, mHeight / 2, mHeight / 2 - mPadding, mPaintShader);
+        canvas.drawCircle(offsetX, mHeight / 2f, mHeight / 2f - mPadding, mPaintShader);
     }
 
     @Override
@@ -140,16 +142,19 @@ public class ToggleButton extends View implements ToggleView {
         }
         float eX = event.getX();
         float eY = event.getY();
+
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 mDX = eX;
                 mDY = eY;
                 mIsClickValid = true;
+
             case MotionEvent.ACTION_MOVE:
                 if (mIsClickValid && (Math.abs(eX - mDX) > mTouchSlop || Math.abs(eY - mDY) > mTouchSlop)) {
                     mIsClickValid = false;
                 }
                 return mIsClickValid;
+
             case MotionEvent.ACTION_CANCEL:
             case MotionEvent.ACTION_UP:
                 if (!mIsClickValid || eX < 0 || eX > mWidth || eY < 0 || eY > mHeight) {
@@ -162,7 +167,7 @@ public class ToggleButton extends View implements ToggleView {
     }
 
     /**
-     * 开始动画
+     * Start animation
      */
     public void start() {
         stop();
@@ -172,7 +177,7 @@ public class ToggleButton extends View implements ToggleView {
     }
 
     /**
-     * 停止动画
+     * Stop animation
      */
     public void stop() {
         if (mAnimation != null) {

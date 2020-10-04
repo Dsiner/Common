@@ -7,7 +7,7 @@ import com.d.common.loader.presenter.LoaderPresenter;
 import com.d.common.loader.view.ILoaderView;
 import com.d.lib.common.component.loader.v4.AbsLazyFragment;
 import com.d.lib.common.component.mvp.MvpView;
-import com.d.lib.xrv.adapter.CommonAdapter;
+import com.d.lib.pulllayout.rv.adapter.CommonAdapter;
 
 import java.util.ArrayList;
 

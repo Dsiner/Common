@@ -69,7 +69,7 @@ public abstract class BaseActivity<T extends MvpBasePresenter>
     }
 
     @Override
-    public void showLoading() {
+    public void showLoadingDialog() {
         if (mLoadingDlg == null) {
             mLoadingDlg = AlertDialogFactory.createFactory(mContext).getLoadingDialog();
         }
@@ -79,7 +79,7 @@ public abstract class BaseActivity<T extends MvpBasePresenter>
     }
 
     @Override
-    public void closeLoading() {
+    public void dismissLoadingDialog() {
         if (mLoadingDlg != null && mLoadingDlg.isShowing()) {
             mLoadingDlg.dismiss();
         }

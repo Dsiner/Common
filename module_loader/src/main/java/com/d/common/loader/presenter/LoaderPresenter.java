@@ -9,7 +9,7 @@ import com.d.lib.aster.Aster;
 import com.d.lib.aster.base.Params;
 import com.d.lib.aster.callback.SimpleCallback;
 import com.d.lib.common.component.loader.AbsPresenter;
-import com.d.lib.common.component.loader.CommonLoader;
+import com.d.lib.pulllayout.loader.CommonLoader;
 
 import java.util.ArrayList;
 
@@ -36,9 +36,9 @@ public class LoaderPresenter extends AbsPresenter<LoaderModel> {
                             return;
                         }
                         if (response == null || response.subjects == null) {
-                            getView().setData(new ArrayList<LoaderModel>());
+                            getView().loadSuccess(new ArrayList<LoaderModel>());
                         } else {
-                            getView().setData(response.subjects);
+                            getView().loadSuccess(response.subjects);
                         }
                     }
 

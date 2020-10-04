@@ -9,9 +9,9 @@ import android.widget.TextView;
 
 import com.d.lib.common.R;
 import com.d.lib.common.view.toggle.ToggleButton;
-import com.d.lib.xrv.adapter.CommonAdapter;
-import com.d.lib.xrv.adapter.CommonHolder;
-import com.d.lib.xrv.adapter.MultiItemTypeSupport;
+import com.d.lib.pulllayout.rv.adapter.CommonAdapter;
+import com.d.lib.pulllayout.rv.adapter.CommonHolder;
+import com.d.lib.pulllayout.rv.adapter.MultiItemTypeSupport;
 
 import java.util.List;
 
@@ -86,10 +86,10 @@ public class BottomShareSheetDialog extends AbsSheetDialog<BottomShareSheetDialo
 
         @Override
         public void convert(final int position, CommonHolder holder, final Bean item) {
-            if (holder.mLayoutId == R.layout.lib_pub_adapter_dlg_bottom_share_content) {
+            if (holder.layoutId == R.layout.lib_pub_adapter_dlg_bottom_share_content) {
                 holder.setText(R.id.tv_title, item.title);
                 holder.setText(R.id.tv_content, item.content);
-            } else if (holder.mLayoutId == R.layout.lib_pub_adapter_dlg_bottom_share_psw) {
+            } else if (holder.layoutId == R.layout.lib_pub_adapter_dlg_bottom_share_psw) {
                 holder.setText(R.id.tv_title, item.title);
                 holder.setText(R.id.tv_psw, item.password);
                 ToggleButton toggleButton = holder.getView(R.id.tbtn_toggle);

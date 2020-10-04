@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.d.lib.common.R;
-import com.d.lib.xrv.adapter.CommonAdapter;
-import com.d.lib.xrv.adapter.CommonHolder;
+import com.d.lib.pulllayout.rv.adapter.CommonAdapter;
+import com.d.lib.pulllayout.rv.adapter.CommonHolder;
 
 import java.util.List;
 

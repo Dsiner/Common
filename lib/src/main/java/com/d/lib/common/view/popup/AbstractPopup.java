@@ -30,7 +30,7 @@ public abstract class AbstractPopup extends PopupWindow implements View.OnKeyLis
     }
 
     public AbstractPopup(Context context, @LayoutRes int resource) {
-        this(context, resource, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, true, -1);
+        this(context, resource, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, true, 0);
     }
 
     public AbstractPopup(Context context, @LayoutRes int resource, int animationStyle) {

@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.d.lib.common.R;
-import com.d.lib.xrv.adapter.CommonAdapter;
-import com.d.lib.xrv.adapter.CommonHolder;
+import com.d.lib.pulllayout.rv.adapter.CommonAdapter;
+import com.d.lib.pulllayout.rv.adapter.CommonHolder;
 
 import java.util.List;
 
@@ -89,8 +89,8 @@ public class BottomVerSheetDialog extends AbsSheetDialog<BottomVerSheetDialog.Be
         public void convert(final int position, CommonHolder holder, final Bean item) {
             holder.setText(R.id.tv_item, item.item);
             holder.setTextColor(R.id.tv_item, ContextCompat.getColor(mContext, item.color));
-            holder.setViewVisibility(R.id.iv_check, item.isChecked ? View.VISIBLE : View.GONE);
-            holder.setViewVisibility(R.id.v_bottom_line, position < getItemCount() - 1 ? View.VISIBLE : View.GONE);
+            holder.setVisibility(R.id.iv_check, item.isChecked ? View.VISIBLE : View.GONE);
+            holder.setVisibility(R.id.v_bottom_line, position < getItemCount() - 1 ? View.VISIBLE : View.GONE);
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

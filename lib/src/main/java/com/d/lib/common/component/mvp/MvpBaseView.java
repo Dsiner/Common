@@ -18,10 +18,10 @@ public interface MvpBaseView extends MvpView {
     /**
      * Show loading dialog
      */
-    void showLoading();
+    void showLoadingDialog();
 
     /**
      * Dismiss loading dialog
      */
-    void closeLoading();
+    void dismissLoadingDialog();
 }

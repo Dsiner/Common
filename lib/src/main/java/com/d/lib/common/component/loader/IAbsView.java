@@ -11,7 +11,7 @@ import java.util.List;
 public interface IAbsView<T> extends MvpBaseView {
     void getData();
 
-    void setData(List<T> datas);
+    void loadSuccess(List<T> datas);
 
     void loadError();
 }

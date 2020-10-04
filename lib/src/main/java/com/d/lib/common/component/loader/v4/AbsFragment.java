@@ -4,14 +4,15 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.d.lib.common.R;
-import com.d.lib.common.component.loader.CommonLoader;
 import com.d.lib.common.component.loader.IAbsView;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
 import com.d.lib.common.component.mvp.app.v4.BaseFragment;
 import com.d.lib.common.util.ViewHelper;
 import com.d.lib.common.view.DSLayout;
-import com.d.lib.xrv.XRecyclerView;
-import com.d.lib.xrv.adapter.CommonAdapter;
+import com.d.lib.pulllayout.Refreshable;
+import com.d.lib.pulllayout.loader.CommonLoader;
+import com.d.lib.pulllayout.loader.RecyclerAdapter;
+import com.d.lib.pulllayout.util.RefreshableCompat;
 
 import java.util.List;
 
@@ -23,8 +24,8 @@ public abstract class AbsFragment<M, P extends MvpBasePresenter>
         extends BaseFragment<P>
         implements IAbsView<M>, View.OnClickListener {
 
-    protected XRecyclerView mXrvList;
-    protected CommonAdapter<M> mAdapter;
+    protected Refreshable mPullList;
+    protected RecyclerAdapter<M> mAdapter;
     protected CommonLoader<M> mCommonLoader;
 
     @Override
@@ -48,7 +49,7 @@ public abstract class AbsFragment<M, P extends MvpBasePresenter>
     @Override
     protected void bindView(View rootView) {
         super.bindView(rootView);
-        mXrvList = ViewHelper.findView(rootView, R.id.xrv_list);
+        mPullList = ViewHelper.findView(rootView, R.id.pull_list);
 
         ViewHelper.setOnClick(rootView, this, R.id.btn_dsl);
     }
@@ -66,10 +67,8 @@ public abstract class AbsFragment<M, P extends MvpBasePresenter>
 
     protected void initList() {
         mAdapter = getAdapter();
-        mXrvList.showAsList();
-        mXrvList.setAdapter(mAdapter);
-        mCommonLoader = new CommonLoader<M>(mXrvList, mAdapter);
-        // Number of data per page
+        RefreshableCompat.setAdapter(mPullList, mAdapter);
+        mCommonLoader = new CommonLoader<>(mPullList, mAdapter);
         mCommonLoader.setPageCount(CommonLoader.PAGE_COUNT);
         mCommonLoader.setOnLoaderListener(new CommonLoader.OnLoaderListener() {
             @Override
@@ -85,7 +84,7 @@ public abstract class AbsFragment<M, P extends MvpBasePresenter>
             @Override
             public void loadSuccess() {
                 mDslDs.setState(DSLayout.GONE);
-                mXrvList.setVisibility(View.VISIBLE);
+                mPullList.setVisibility(View.VISIBLE);
             }
 
             @Override
@@ -103,14 +102,14 @@ public abstract class AbsFragment<M, P extends MvpBasePresenter>
     @Override
     public void getData() {
         mCommonLoader.page = 1;
-        mXrvList.setVisibility(View.GONE);
+        mPullList.setVisibility(View.GONE);
         mDslDs.setState(DSLayout.STATE_LOADING);
         onLoad(mCommonLoader.page);
     }
 
     @Override
-    public void setData(List<M> datas) {
-        mCommonLoader.setData(datas);
+    public void loadSuccess(List<M> datas) {
+        mCommonLoader.loadSuccess(datas);
     }
 
     @Override
@@ -121,7 +120,7 @@ public abstract class AbsFragment<M, P extends MvpBasePresenter>
     /**
      * Return the adapter
      */
-    protected abstract CommonAdapter<M> getAdapter();
+    protected abstract RecyclerAdapter<M> getAdapter();
 
     /**
      * Auto call this func to load data...

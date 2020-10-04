@@ -23,6 +23,3 @@
   **[] $VALUES;
   public *;
 }
-
-# ----- Xrv -----
--keep class com.d.lib.xrv.** {*;}

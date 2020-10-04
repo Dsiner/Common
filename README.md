@@ -1,7 +1,7 @@
 # Common for Android
 
 [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-[![API](https://img.shields.io/badge/API-9%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=9)
+[![API](https://img.shields.io/badge/API-9%2B-green.svg?style=flat)](https://android-arsenal.com/api?level=11)
 [![Download](https://api.bintray.com/packages/dsiner/maven/common/images/download.svg) ](https://bintray.com/dsiner/maven/common/_latestVersion)
 [![Wiki-Guide](https://img.shields.io/badge/Wiki-Guide-brightgreen.svg)](https://github.com/Dsiner/Common/wiki)
 
@@ -13,12 +13,12 @@ Maven:
 <dependency>
   <groupId>com.dsiner.lib</groupId>
   <artifactId>common</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 or Gradle:
 ```groovy
-implementation 'com.dsiner.lib:common:1.0.0'
+implementation 'com.dsiner.lib:common:1.1.0'
 ```
 
 ## Module
@@ -52,10 +52,10 @@ implementation 'com.dsiner.lib:common:1.0.0'
     - [x] [TaskScheduler](https://github.com/Dsiner/TaskScheduler)
     - [x] [RxJava](https://github.com/ReactiveX/RxJava)
 - [x] **Components**
-    - [x] [PermissionCompat](https://github.com/Dsiner/PermissionCompat) - Runtime permissions
+    - [x] [PullLayout](https://github.com/Dsiner/PullLayout) - Pull down refresh, load more
     - [x] [Cache](https://github.com/Dsiner/Cache) - Cache
     - [x] [Glide](https://github.com/bumptech/glide) - Image Loading
-    - [x] [Xrv](https://github.com/Dsiner/Xrv) - Pull down refresh, load more
+    - [x] [PermissionCompat](https://github.com/Dsiner/PermissionCompat) - Runtime permissions
 - [x] **Tools**
 
 ## Demo
