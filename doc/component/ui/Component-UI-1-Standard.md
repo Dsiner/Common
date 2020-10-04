@@ -65,19 +65,19 @@
     <dimen name="lib_pub_dimen_tab_height">46dp</dimen>
     <!-- 全局设置行高度 -->
     <dimen name="lib_pub_dimen_row_height">45dp</dimen>
+    <!-- 全局Item高度 -->
+    <dimen name="lib_pub_dimen_item_height">50dp</dimen>
+    <!-- 全局分割线高度 -->
+    <dimen name="lib_pub_dimen_line_height">1px</dimen>
+    <!-- 全局Margin -->
+    <dimen name="lib_pub_dimen_margin">12dp</dimen>
+
     <!-- 全局弹窗宽度 -->
     <dimen name="lib_pub_dimen_dialog_width">300dp</dimen>
     <!-- 全局弹窗最小高度 -->
     <dimen name="lib_pub_dimen_dialog_min_height">115dp</dimen>
     <!-- 全局弹窗按钮高度 -->
     <dimen name="lib_pub_dimen_dialog_btn_height">46dp</dimen>
-    <!-- 全局Margin -->
-    <dimen name="lib_pub_dimen_margin">12dp</dimen>
-
-    <!-- 全局Item高度 -->
-    <dimen name="lib_pub_dimen_item_height">50dp</dimen>
-    <!-- 全局Item Margin高度 -->
-    <dimen name="lib_pub_dimen_item_margin_top">2dp</dimen>
 
     <!-- 全局文字主大小值 -->
     <dimen name="lib_pub_dimen_text_main">19dp</dimen>

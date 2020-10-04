@@ -20,7 +20,7 @@ import android.widget.TextView;
  * CommonHolder for ListView
  * Created by D on 2017/4/25.
  */
-public class CommonHolder {
+class CommonHolder {
     public final View itemView;
     public final int layoutId;
     private int mPosition;
