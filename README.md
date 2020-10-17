@@ -13,12 +13,12 @@ Maven:
 <dependency>
   <groupId>com.dsiner.lib</groupId>
   <artifactId>common</artifactId>
-  <version>1.1.0</version>
+  <version>1.1.1</version>
 </dependency>
 ```
 or Gradle:
 ```groovy
-implementation 'com.dsiner.lib:common:1.1.0'
+implementation 'com.dsiner.lib:common:1.1.1'
 ```
 
 ## Module
