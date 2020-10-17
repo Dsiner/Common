@@ -57,11 +57,11 @@ public abstract class AbsAppCompatActivity<T extends MvpBasePresenter>
     @Override
     protected void bindView() {
         super.bindView();
-        mTlTitle = ViewHelper.findView(this, R.id.tl_title);
-        mScrollTab = ViewHelper.findView(this, R.id.indicator);
-        mViewPager = ViewHelper.findView(this, R.id.vp_page);
+        mTlTitle = ViewHelper.findViewById(this, R.id.tl_title);
+        mScrollTab = ViewHelper.findViewById(this, R.id.indicator);
+        mViewPager = ViewHelper.findViewById(this, R.id.vp_page);
 
-        ViewHelper.setOnClick(this, this, R.id.iv_title_left);
+        ViewHelper.setOnClickListener(this, this, R.id.iv_title_left);
     }
 
     @Override

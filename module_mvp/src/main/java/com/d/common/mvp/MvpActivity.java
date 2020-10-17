@@ -21,7 +21,7 @@ public class MvpActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.module_mvp_activity_main);
 
-        ViewHelper.setOnClick(this, this, R.id.iv_title_left,
+        ViewHelper.setOnClickListener(this, this, R.id.iv_title_left,
                 R.id.btn_mvp_activity, R.id.btn_mvp_fragment_activity);
     }
 

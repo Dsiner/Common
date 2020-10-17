@@ -41,9 +41,9 @@ public class EditDialog extends AbstractDialog {
 
     @Override
     protected void bindView(View rootView) {
-        tv_title = ViewHelper.findView(rootView, R.id.tv_title);
-        cet_edit = ViewHelper.findView(rootView, R.id.cet_edit);
-        ViewHelper.setOnClick(rootView, new View.OnClickListener() {
+        tv_title = ViewHelper.findViewById(rootView, R.id.tv_title);
+        cet_edit = ViewHelper.findViewById(rootView, R.id.cet_edit);
+        ViewHelper.setOnClickListener(rootView, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int resId = v.getId();

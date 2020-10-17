@@ -39,7 +39,7 @@ public class ToolBarActivity extends FragmentActivity implements View.OnClickLis
     }
 
     private void initView() {
-        ViewHelper.setOnClick(this, this, R.id.iv_title_left);
+        ViewHelper.setOnClickListener(this, this, R.id.iv_title_left);
 
         initBtBar();
 
@@ -55,10 +55,10 @@ public class ToolBarActivity extends FragmentActivity implements View.OnClickLis
     }
 
     private void initBtBar() {
-        BottomBar[] btbBars = new BottomBar[]{ViewHelper.findView(this, R.id.btb_bar0),
-                ViewHelper.findView(this, R.id.btb_bar1),
-                ViewHelper.findView(this, R.id.btb_bar2),
-                ViewHelper.findView(this, R.id.btb_bar3)};
+        BottomBar[] btbBars = new BottomBar[]{ViewHelper.findViewById(this, R.id.btb_bar0),
+                ViewHelper.findViewById(this, R.id.btb_bar1),
+                ViewHelper.findViewById(this, R.id.btb_bar2),
+                ViewHelper.findViewById(this, R.id.btb_bar3)};
         btbBars[0].create(Arrays.asList(new BottomBar.Item(BottomBar.Item.TYPE_SHARE, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_share)),
                 new BottomBar.Item(BottomBar.Item.TYPE_DOWNLOAD, R.drawable.lib_pub_ic_btb_icon, getResources().getString(R.string.module_ui_download))), new BottomBar.OnClickListener() {
             @Override

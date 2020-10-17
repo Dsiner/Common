@@ -49,12 +49,12 @@ public class AlertSubDialog extends AbstractDialog {
 
     @Override
     protected void bindView(View rootView) {
-        tv_title = ViewHelper.findView(rootView, R.id.tv_title);
-        tv_content = ViewHelper.findView(rootView, R.id.tv_content);
-        tv_sub_tips = ViewHelper.findView(rootView, R.id.tv_sub_tips);
-        cb_toggle = ViewHelper.findView(rootView, R.id.cb_toggle);
+        tv_title = ViewHelper.findViewById(rootView, R.id.tv_title);
+        tv_content = ViewHelper.findViewById(rootView, R.id.tv_content);
+        tv_sub_tips = ViewHelper.findViewById(rootView, R.id.tv_sub_tips);
+        cb_toggle = ViewHelper.findViewById(rootView, R.id.cb_toggle);
 
-        ViewHelper.setOnClick(mRootView, new View.OnClickListener() {
+        ViewHelper.setOnClickListener(mRootView, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int resId = v.getId();

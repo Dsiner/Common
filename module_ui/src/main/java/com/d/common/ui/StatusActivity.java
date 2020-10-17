@@ -30,7 +30,7 @@ public class StatusActivity extends Activity implements View.OnClickListener {
 
                         }
                     });
-            menuPopup.showAsDropDown((View) ViewHelper.findView(this, R.id.iv_title_right));
+            menuPopup.showAsDropDown((View) ViewHelper.findViewById(this, R.id.iv_title_right));
         }
     }
 
@@ -42,7 +42,7 @@ public class StatusActivity extends Activity implements View.OnClickListener {
     }
 
     private void initClick() {
-        ViewHelper.setOnClick(this, this, R.id.iv_title_left);
-        ViewHelper.setOnClick(this, this, R.id.iv_title_right);
+        ViewHelper.setOnClickListener(this, this, R.id.iv_title_left);
+        ViewHelper.setOnClickListener(this, this, R.id.iv_title_right);
     }
 }

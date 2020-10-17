@@ -49,9 +49,9 @@ public abstract class AbsFragment<M, P extends MvpBasePresenter>
     @Override
     protected void bindView(View rootView) {
         super.bindView(rootView);
-        mPullList = ViewHelper.findView(rootView, R.id.pull_list);
+        mPullList = ViewHelper.findViewById(rootView, R.id.pull_list);
 
-        ViewHelper.setOnClick(rootView, this, R.id.btn_dsl);
+        ViewHelper.setOnClickListener(rootView, this, R.id.btn_dsl);
     }
 
     @Override
@@ -69,7 +69,6 @@ public abstract class AbsFragment<M, P extends MvpBasePresenter>
         mAdapter = getAdapter();
         RefreshableCompat.setAdapter(mPullList, mAdapter);
         mCommonLoader = new CommonLoader<>(mPullList, mAdapter);
-        mCommonLoader.setPageCount(CommonLoader.PAGE_COUNT);
         mCommonLoader.setOnLoaderListener(new CommonLoader.OnLoaderListener() {
             @Override
             public void onRefresh() {

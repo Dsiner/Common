@@ -43,8 +43,8 @@ public class LoaderActivity extends BaseFragmentActivity<MvpBasePresenter> imple
     @Override
     protected void bindView() {
         super.bindView();
-        tlTitle = ViewHelper.findView(this, R.id.tl_title);
-        ViewHelper.setOnClick(this, this, R.id.iv_title_left);
+        tlTitle = ViewHelper.findViewById(this, R.id.tl_title);
+        ViewHelper.setOnClickListener(this, this, R.id.iv_title_left);
     }
 
     @Override

@@ -50,7 +50,7 @@ public class MainActivity extends BaseActivity<MvpBasePresenter> implements MvpV
     @Override
     protected void bindView() {
         super.bindView();
-        ViewHelper.setOnClick(this, this, R.id.btn_ui, R.id.btn_mvp, R.id.btn_loader,
+        ViewHelper.setOnClickListener(this, this, R.id.btn_ui, R.id.btn_mvp, R.id.btn_loader,
                 R.id.btn_pager);
     }
 

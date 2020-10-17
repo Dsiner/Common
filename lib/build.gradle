@@ -48,7 +48,7 @@ dependencies {
     api 'com.github.bumptech.glide:okhttp3-integration:4.0.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
     // Pull down refresh, load more
-    api 'com.dsiner.lib:pulllayout:1.0.0'
+    api 'com.dsiner.lib:pulllayout:1.0.1'
     // Network request
     api 'com.dsiner.lib:aster:2.0.9'
     api 'com.dsiner.lib:aster-adapter-okhttp3:2.0.9'

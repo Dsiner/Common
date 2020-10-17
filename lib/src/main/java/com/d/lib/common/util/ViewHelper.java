@@ -55,28 +55,28 @@ public class ViewHelper {
     private static final AtomicInteger sNextGeneratedId = new AtomicInteger(1);
 
     @NonNull
-    public static <T> T findView(@NonNull Activity activity, @IdRes int id) {
+    public static <T> T findViewById(@NonNull Activity activity, @IdRes int id) {
         T view = (T) activity.findViewById(id);
         return view;
     }
 
     @NonNull
-    public static <T> T findView(@NonNull View root, @IdRes int id) {
+    public static <T> T findViewById(@NonNull View root, @IdRes int id) {
         T view = (T) root.findViewById(id);
         return view;
     }
 
-    public static void setOnClick(@NonNull Activity activity,
-                                  @Nullable View.OnClickListener l,
-                                  @IdRes int... ids) {
+    public static void setOnClickListener(@NonNull Activity activity,
+                                          @Nullable View.OnClickListener l,
+                                          @IdRes int... ids) {
         for (int id : ids) {
             activity.findViewById(id).setOnClickListener(l);
         }
     }
 
-    public static void setOnClick(@NonNull View root,
-                                  @Nullable View.OnClickListener l,
-                                  @IdRes int... ids) {
+    public static void setOnClickListener(@NonNull View root,
+                                          @Nullable View.OnClickListener l,
+                                          @IdRes int... ids) {
         for (int id : ids) {
             root.findViewById(id).setOnClickListener(l);
         }

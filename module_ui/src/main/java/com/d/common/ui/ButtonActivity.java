@@ -25,6 +25,6 @@ public class ButtonActivity extends Activity implements View.OnClickListener {
     }
 
     private void initClick() {
-        ViewHelper.setOnClick(this, this, R.id.iv_title_left);
+        ViewHelper.setOnClickListener(this, this, R.id.iv_title_left);
     }
 }

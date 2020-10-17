@@ -27,25 +27,25 @@ public class RowActivity extends Activity implements View.OnClickListener {
     }
 
     private void initView() {
-        rlRows[0] = ViewHelper.findView(this, R.id.rl_row0);
-        rlRows[1] = ViewHelper.findView(this, R.id.rl_row1);
-        rlRows[2] = ViewHelper.findView(this, R.id.rl_row2);
-        rlRows[3] = ViewHelper.findView(this, R.id.rl_row3);
-        rlRows[4] = ViewHelper.findView(this, R.id.rl_row4);
-        rlRows[5] = ViewHelper.findView(this, R.id.rl_row5);
+        rlRows[0] = ViewHelper.findViewById(this, R.id.rl_row0);
+        rlRows[1] = ViewHelper.findViewById(this, R.id.rl_row1);
+        rlRows[2] = ViewHelper.findViewById(this, R.id.rl_row2);
+        rlRows[3] = ViewHelper.findViewById(this, R.id.rl_row3);
+        rlRows[4] = ViewHelper.findViewById(this, R.id.rl_row4);
+        rlRows[5] = ViewHelper.findViewById(this, R.id.rl_row5);
 
         rlRows[1].setNumber("99", View.VISIBLE);
 
         rlRows[3].setOpen(false);
         rlRows[4].setOpen(true);
 
-        ViewHelper.setOnClick(this, this, R.id.iv_title_left);
+        ViewHelper.setOnClickListener(this, this, R.id.iv_title_left);
 
-        ViewHelper.setOnClick(this, this, R.id.rl_row0);
-        ViewHelper.setOnClick(this, this, R.id.rl_row1);
-        ViewHelper.setOnClick(this, this, R.id.rl_row2);
-        ViewHelper.setOnClick(this, this, R.id.rl_row3);
-        ViewHelper.setOnClick(this, this, R.id.rl_row4);
-        ViewHelper.setOnClick(this, this, R.id.rl_row5);
+        ViewHelper.setOnClickListener(this, this, R.id.rl_row0);
+        ViewHelper.setOnClickListener(this, this, R.id.rl_row1);
+        ViewHelper.setOnClickListener(this, this, R.id.rl_row2);
+        ViewHelper.setOnClickListener(this, this, R.id.rl_row3);
+        ViewHelper.setOnClickListener(this, this, R.id.rl_row4);
+        ViewHelper.setOnClickListener(this, this, R.id.rl_row5);
     }
 }

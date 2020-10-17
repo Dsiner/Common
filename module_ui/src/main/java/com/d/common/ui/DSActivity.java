@@ -67,21 +67,21 @@ public class DSActivity extends Activity implements View.OnClickListener {
     }
 
     private void initView() {
-        dslDs = ViewHelper.findView(this, R.id.dsl_ds);
+        dslDs = ViewHelper.findViewById(this, R.id.dsl_ds);
 
-        ViewHelper.setOnClick(this, this, R.id.iv_title_left);
-        ViewHelper.setOnClick(this, this, R.id.btn_dsl);
+        ViewHelper.setOnClickListener(this, this, R.id.iv_title_left);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_dsl);
 
-        ViewHelper.setOnClick(this, this, R.id.btn_0_0);
-        ViewHelper.setOnClick(this, this, R.id.btn_0_1);
-        ViewHelper.setOnClick(this, this, R.id.btn_0_2);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_0_0);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_0_1);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_0_2);
 
-        ViewHelper.setOnClick(this, this, R.id.btn_1_0);
-        ViewHelper.setOnClick(this, this, R.id.btn_1_1);
-        ViewHelper.setOnClick(this, this, R.id.btn_1_2);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_1_0);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_1_1);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_1_2);
 
-        ViewHelper.setOnClick(this, this, R.id.btn_2_0);
-        ViewHelper.setOnClick(this, this, R.id.btn_2_1);
-        ViewHelper.setOnClick(this, this, R.id.btn_2_2);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_2_0);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_2_1);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_2_2);
     }
 }

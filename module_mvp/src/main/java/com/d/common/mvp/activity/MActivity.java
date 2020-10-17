@@ -50,9 +50,9 @@ public class MActivity extends BaseActivity<MPresenter> implements IMView, View.
     protected void bindView() {
         super.bindView();
         // Step 7-4: 通过@BindView/ViewHelper.findView(...)、ViewHelper.setOnClick(...)，绑定成员View变量及点击事件
-        tvTitle = ViewHelper.findView(this, R.id.tv_title_title);
+        tvTitle = ViewHelper.findViewById(this, R.id.tv_title_title);
 
-        ViewHelper.setOnClick(this, this, R.id.iv_title_left);
+        ViewHelper.setOnClickListener(this, this, R.id.iv_title_left);
     }
 
     @Override

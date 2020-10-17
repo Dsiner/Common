@@ -42,15 +42,15 @@ public class UIActivity extends Activity implements View.OnClickListener {
     }
 
     private void initClick() {
-        ViewHelper.setOnClick(this, this, R.id.iv_title_left);
+        ViewHelper.setOnClickListener(this, this, R.id.iv_title_left);
 
-        ViewHelper.setOnClick(this, this, R.id.btn_0);
-        ViewHelper.setOnClick(this, this, R.id.btn_1);
-        ViewHelper.setOnClick(this, this, R.id.btn_2);
-        ViewHelper.setOnClick(this, this, R.id.btn_3);
-        ViewHelper.setOnClick(this, this, R.id.btn_4);
-        ViewHelper.setOnClick(this, this, R.id.btn_5);
-        ViewHelper.setOnClick(this, this, R.id.btn_6);
-        ViewHelper.setOnClick(this, this, R.id.btn_7);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_0);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_1);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_2);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_3);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_4);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_5);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_6);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_7);
     }
 }

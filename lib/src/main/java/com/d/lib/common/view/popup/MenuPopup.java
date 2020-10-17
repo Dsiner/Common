@@ -44,7 +44,7 @@ public class MenuPopup extends AbstractPopup {
 
     @Override
     protected void bindView(View rootView) {
-        rv_list = ViewHelper.findView(rootView, R.id.rv_list);
+        rv_list = ViewHelper.findViewById(rootView, R.id.rv_list);
     }
 
     @Override

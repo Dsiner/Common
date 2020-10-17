@@ -112,13 +112,13 @@ public class SheetActivity extends Activity implements View.OnClickListener {
     }
 
     private void initClick() {
-        ViewHelper.setOnClick(this, this, R.id.iv_title_left);
+        ViewHelper.setOnClickListener(this, this, R.id.iv_title_left);
 
-        ViewHelper.setOnClick(this, this, R.id.btn_style0);
-        ViewHelper.setOnClick(this, this, R.id.btn_style1);
-        ViewHelper.setOnClick(this, this, R.id.btn_style2);
-        ViewHelper.setOnClick(this, this, R.id.btn_style3);
-        ViewHelper.setOnClick(this, this, R.id.btn_style4);
-        ViewHelper.setOnClick(this, this, R.id.btn_style5);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_style0);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_style1);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_style2);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_style3);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_style4);
+        ViewHelper.setOnClickListener(this, this, R.id.btn_style5);
     }
 }

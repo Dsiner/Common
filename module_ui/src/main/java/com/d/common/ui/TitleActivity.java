@@ -17,7 +17,7 @@ public class TitleActivity extends Activity {
     }
 
     private void initClick() {
-        ViewHelper.setOnClick((View) ViewHelper.findView(this, R.id.tl_title), new View.OnClickListener() {
+        ViewHelper.setOnClickListener((View) ViewHelper.findViewById(this, R.id.tl_title), new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();

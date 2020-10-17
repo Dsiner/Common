@@ -36,8 +36,8 @@ public abstract class AbsPageFragment<T extends MvpBasePresenter>
     @Override
     protected void bindView(View rootView) {
         super.bindView(rootView);
-        mScrollTab = ViewHelper.findView(rootView, R.id.indicator);
-        mViewPager = ViewHelper.findView(rootView, R.id.vp_page);
+        mScrollTab = ViewHelper.findViewById(rootView, R.id.indicator);
+        mViewPager = ViewHelper.findViewById(rootView, R.id.vp_page);
     }
 
     @Override
