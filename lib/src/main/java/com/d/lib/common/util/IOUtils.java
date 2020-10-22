@@ -1,5 +1,7 @@
 package com.d.lib.common.util;
 
+import android.database.Cursor;
+
 import java.io.BufferedOutputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
@@ -66,6 +68,21 @@ public class IOUtils {
         } finally {
             closeQuietly(is);
             closeQuietly(os);
+        }
+    }
+
+    /**
+     * Closes {@code cursor}, ignoring any checked exceptions. Does nothing if {@code cursor} is
+     * null.
+     */
+    public static void closeQuietly(Cursor cursor) {
+        if (cursor != null) {
+            try {
+                cursor.close();
+            } catch (RuntimeException rethrown) {
+                throw rethrown;
+            } catch (Exception ignored) {
+            }
         }
     }
 

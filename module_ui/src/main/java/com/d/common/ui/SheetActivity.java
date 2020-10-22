@@ -7,11 +7,11 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.d.lib.common.util.ViewHelper;
-import com.d.lib.common.view.dialog.AbsSheetDialog;
-import com.d.lib.common.view.dialog.AlertDialogFactory;
-import com.d.lib.common.view.dialog.BottomHorSheetDialog;
-import com.d.lib.common.view.dialog.BottomShareSheetDialog;
-import com.d.lib.common.view.dialog.BottomVerSheetDialog;
+import com.d.lib.common.widget.dialog.AbsSheetDialog;
+import com.d.lib.common.widget.dialog.AlertDialogFactory;
+import com.d.lib.common.widget.dialog.BottomHorSheetDialog;
+import com.d.lib.common.widget.dialog.BottomShareSheetDialog;
+import com.d.lib.common.widget.dialog.BottomVerSheetDialog;
 
 import java.util.Arrays;
 

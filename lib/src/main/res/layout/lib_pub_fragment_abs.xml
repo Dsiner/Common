@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.d.lib.common.view.DSLayout
+    <com.d.lib.common.widget.DSLayout
         android:id="@+id/dsl_ds"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

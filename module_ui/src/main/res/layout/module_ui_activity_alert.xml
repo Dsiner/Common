@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.d.lib.common.view.TitleLayout
+    <com.d.lib.common.widget.TitleLayout
         android:id="@+id/tl_title"
         style="@style/lib_pub_title_back_style"
         app:lib_pub_tl_middleText="Alert" />

@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 import com.d.common.mvp.model.MModel;
 import com.d.common.mvp.view.IMView;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
-import com.d.lib.common.view.DSLayout;
+import com.d.lib.common.widget.DSLayout;
 import com.d.lib.taskscheduler.TaskScheduler;
 import com.d.lib.taskscheduler.callback.Observer;
 import com.d.lib.taskscheduler.callback.Task;

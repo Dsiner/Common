@@ -9,7 +9,7 @@ import com.d.lib.common.R;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
 import com.d.lib.common.component.mvp.app.v4.BaseFragment;
 import com.d.lib.common.util.ViewHelper;
-import com.d.lib.common.view.tab.ScrollTab;
+import com.d.lib.common.widget.tab.ScrollTab;
 
 import java.util.List;
 

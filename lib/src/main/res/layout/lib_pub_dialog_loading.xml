@@ -8,7 +8,7 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <com.d.lib.common.view.loading.LoadingView
+        <com.d.lib.common.widget.loading.LoadingView
             android:layout_width="35dp"
             android:layout_height="35dp" />
 

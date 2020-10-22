@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.PopupWindow;
 
 import com.d.lib.common.util.ViewHelper;
-import com.d.lib.common.view.popup.MenuPopup;
-import com.d.lib.common.view.popup.PopupWindowFactory;
+import com.d.lib.common.widget.popup.MenuPopup;
+import com.d.lib.common.widget.popup.PopupWindowFactory;
 
 import java.util.Arrays;
 

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.d.lib.common.view.ReplyBgView
+    <com.d.lib.common.widget.ReplyBgView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:lib_pub_replybv_color="#EE000000"

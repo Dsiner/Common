@@ -6,7 +6,7 @@
     android:background="@color/lib_pub_color_bg_main"
     android:orientation="vertical">
 
-    <com.d.lib.common.view.TitleLayout
+    <com.d.lib.common.widget.TitleLayout
         android:id="@+id/tl_title"
         style="@style/lib_pub_title_back_style"
         app:lib_pub_tl_middleText="Row" />
@@ -33,7 +33,7 @@
 
             <include layout="@layout/lib_pub_layout_line" />
 
-            <com.d.lib.common.view.RowLayout
+            <com.d.lib.common.widget.RowLayout
                 android:id="@+id/rl_row0"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
@@ -50,7 +50,7 @@
                 android:layout_height="@dimen/lib_pub_dimen_line_height"
                 android:layout_marginTop="@dimen/lib_pub_dimen_margin" />
 
-            <com.d.lib.common.view.RowLayout
+            <com.d.lib.common.widget.RowLayout
                 android:id="@+id/rl_row1"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
@@ -61,7 +61,7 @@
 
             <include layout="@layout/lib_pub_layout_line" />
 
-            <com.d.lib.common.view.RowLayout
+            <com.d.lib.common.widget.RowLayout
                 android:id="@+id/rl_row2"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
@@ -73,7 +73,7 @@
 
             <include layout="@layout/lib_pub_layout_line" />
 
-            <com.d.lib.common.view.RowLayout
+            <com.d.lib.common.widget.RowLayout
                 android:id="@+id/rl_row3"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
@@ -84,7 +84,7 @@
 
             <include layout="@layout/lib_pub_layout_line" />
 
-            <com.d.lib.common.view.RowLayout
+            <com.d.lib.common.widget.RowLayout
                 android:id="@+id/rl_row4"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_row_height"
@@ -95,7 +95,7 @@
 
             <include layout="@layout/lib_pub_layout_line" />
 
-            <com.d.lib.common.view.RowLayout
+            <com.d.lib.common.widget.RowLayout
                 android:id="@+id/rl_row5"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/lib_pub_dimen_row_height"

@@ -7,12 +7,12 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.d.lib.common.util.ViewHelper;
-import com.d.lib.common.view.dialog.AbsSheetDialog;
-import com.d.lib.common.view.dialog.AlertDialogFactory;
-import com.d.lib.common.view.dialog.AlertSubDialog;
-import com.d.lib.common.view.dialog.EditDialog;
-import com.d.lib.common.view.dialog.InfoDialog;
-import com.d.lib.common.view.dialog.OperationDialog;
+import com.d.lib.common.widget.dialog.AbsSheetDialog;
+import com.d.lib.common.widget.dialog.AlertDialogFactory;
+import com.d.lib.common.widget.dialog.AlertSubDialog;
+import com.d.lib.common.widget.dialog.EditDialog;
+import com.d.lib.common.widget.dialog.InfoDialog;
+import com.d.lib.common.widget.dialog.OperationDialog;
 
 import java.util.Arrays;
 

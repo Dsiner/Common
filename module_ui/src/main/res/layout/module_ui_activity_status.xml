@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.d.lib.common.view.TitleLayout
+    <com.d.lib.common.widget.TitleLayout
         android:id="@+id/tl_title"
         style="@style/lib_pub_title_back_style"
         app:lib_pub_tl_middleText="Status"
@@ -38,14 +38,14 @@
                 android:orientation="horizontal"
                 android:padding="@dimen/lib_pub_dimen_margin">
 
-                <com.d.lib.common.view.BadgeView
+                <com.d.lib.common.widget.BadgeView
                     android:layout_width="14dp"
                     android:layout_height="14dp"
                     android:gravity="center"
                     android:textColor="@color/lib_pub_color_white"
                     app:lib_pub_badgev_color="@color/lib_pub_color_red" />
 
-                <com.d.lib.common.view.BadgeView
+                <com.d.lib.common.widget.BadgeView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_marginLeft="24dp"
@@ -58,7 +58,7 @@
                     android:textSize="10dp"
                     app:lib_pub_badgev_color="@color/lib_pub_color_red" />
 
-                <com.d.lib.common.view.BadgeView
+                <com.d.lib.common.widget.BadgeView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_marginLeft="24dp"
@@ -72,7 +72,7 @@
                     app:lib_pub_badgev_circle="false"
                     app:lib_pub_badgev_color="@color/lib_pub_color_red" />
 
-                <com.d.lib.common.view.BadgeView
+                <com.d.lib.common.widget.BadgeView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_marginLeft="24dp"
@@ -86,7 +86,7 @@
                     app:lib_pub_badgev_circle="false"
                     app:lib_pub_badgev_color="@color/lib_pub_color_red" />
 
-                <com.d.lib.common.view.BadgeView
+                <com.d.lib.common.widget.BadgeView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_marginLeft="24dp"
@@ -100,7 +100,7 @@
                     app:lib_pub_badgev_circle="false"
                     app:lib_pub_badgev_color="@color/lib_pub_color_red" />
 
-                <com.d.lib.common.view.BadgeView
+                <com.d.lib.common.widget.BadgeView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_marginLeft="24dp"
@@ -168,7 +168,7 @@
                 android:textColor="@color/lib_pub_color_black"
                 android:textSize="@dimen/lib_pub_dimen_text_small" />
 
-            <com.d.lib.common.view.NoticeLayout
+            <com.d.lib.common.widget.NoticeLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
@@ -178,7 +178,7 @@
                 app:lib_pub_noticel_gotoVisibility="visible"
                 app:lib_pub_noticel_text="@string/module_ui_notice_type1" />
 
-            <com.d.lib.common.view.NoticeLayout
+            <com.d.lib.common.widget.NoticeLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
@@ -188,7 +188,7 @@
                 app:lib_pub_noticel_gotoVisibility="gone"
                 app:lib_pub_noticel_text="@string/module_ui_notice_type2" />
 
-            <com.d.lib.common.view.NoticeLayout
+            <com.d.lib.common.widget.NoticeLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="@dimen/lib_pub_dimen_margin"
@@ -199,7 +199,7 @@
                 app:lib_pub_noticel_gotoVisibility="gone"
                 app:lib_pub_noticel_text="@string/module_ui_notice_type3" />
 
-            <com.d.lib.common.view.NoticeLayout
+            <com.d.lib.common.widget.NoticeLayout
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="@dimen/lib_pub_dimen_margin"

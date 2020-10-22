@@ -50,7 +50,7 @@
             android:layout_height="0dp" />
     </LinearLayout>
 
-    <com.d.lib.common.view.loading.LoadingLayout
+    <com.d.lib.common.widget.loading.LoadingLayout
         android:id="@+id/ldl_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

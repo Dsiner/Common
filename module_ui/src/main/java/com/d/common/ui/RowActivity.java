@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.d.lib.common.util.ViewHelper;
-import com.d.lib.common.view.RowLayout;
+import com.d.lib.common.widget.RowLayout;
 
 public class RowActivity extends Activity implements View.OnClickListener {
     private RowLayout[] rlRows = new RowLayout[6];

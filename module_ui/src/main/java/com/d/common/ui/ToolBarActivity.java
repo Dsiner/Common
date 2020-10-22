@@ -13,9 +13,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.d.lib.common.util.ViewHelper;
-import com.d.lib.common.view.SegmentView;
-import com.d.lib.common.view.btb.BottomBar;
-import com.d.lib.common.view.tab.ScrollTab;
+import com.d.lib.common.widget.SegmentView;
+import com.d.lib.common.widget.btb.BottomBar;
+import com.d.lib.common.widget.tab.ScrollTab;
 
 import java.util.ArrayList;
 import java.util.Arrays;

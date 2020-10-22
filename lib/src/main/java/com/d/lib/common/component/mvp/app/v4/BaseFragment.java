@@ -13,8 +13,8 @@ import android.view.ViewGroup;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
 import com.d.lib.common.component.mvp.MvpBaseView;
 import com.d.lib.common.component.mvp.MvpView;
-import com.d.lib.common.view.DSLayout;
-import com.d.lib.common.view.dialog.AlertDialogFactory;
+import com.d.lib.common.widget.DSLayout;
+import com.d.lib.common.widget.dialog.AlertDialogFactory;
 
 /**
  * BaseFragment

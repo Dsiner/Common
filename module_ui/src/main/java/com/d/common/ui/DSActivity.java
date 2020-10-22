@@ -6,7 +6,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.d.lib.common.util.ViewHelper;
-import com.d.lib.common.view.DSLayout;
+import com.d.lib.common.widget.DSLayout;
 
 public class DSActivity extends Activity implements View.OnClickListener {
     private final String urlGif = "https://raw.githubusercontent.com/Dsiner/Common/master/module_ui/src/main/res/drawable-xxhdpi/";
