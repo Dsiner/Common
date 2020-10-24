@@ -70,8 +70,8 @@ public final class AppUtils {
         }
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        FileProviderCompat.setDataAndType(context, intent,
-                "application/vnd.android.package-archive", file, false);
+        String type = "application/vnd.android.package-archive";
+        FileProviderCompat.setDataAndType(context, intent, file, type, false);
         context.startActivity(intent);
     }
 
@@ -93,8 +93,8 @@ public final class AppUtils {
         }
         Intent intent = new Intent(Intent.ACTION_VIEW);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        FileProviderCompat.setDataAndType(activity, intent,
-                "application/vnd.android.package-archive", file, false);
+        String type = "application/vnd.android.package-archive";
+        FileProviderCompat.setDataAndType(activity, intent, file, type, false);
         activity.startActivityForResult(intent, requestCode);
     }
 

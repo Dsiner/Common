@@ -32,15 +32,15 @@ public abstract class CommonPagerAdapter<T> extends PagerAdapter {
         mMultiItemTypeSupport = multiItemTypeSupport;
     }
 
+    public List<T> getDatas() {
+        return mDatas;
+    }
+
     public void setDatas(List<T> datas) {
         if (mDatas != null && datas != null) {
             mDatas.clear();
             mDatas.addAll(datas);
         }
-    }
-
-    public List<T> getDatas() {
-        return mDatas;
     }
 
     @Override

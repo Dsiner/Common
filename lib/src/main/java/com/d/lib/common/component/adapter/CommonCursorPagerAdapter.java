@@ -29,18 +29,24 @@ public abstract class CommonCursorPagerAdapter extends PagerAdapter {
         mMultiItemTypeSupport = multiItemTypeSupport;
     }
 
+    public Cursor getCursor() {
+        return mCursor;
+    }
+
     public void setCursor(Cursor cursor) {
+        setCursor(cursor, false);
+    }
+
+    public void setCursor(Cursor cursor, boolean close) {
         if (mCursor == cursor) {
             return;
         }
         final Cursor oldCursor = mCursor;
         mCursor = cursor;
         notifyDataSetChanged();
-        IOUtils.closeQuietly(oldCursor);
-    }
-
-    public Cursor getCursor() {
-        return mCursor;
+        if (close) {
+            IOUtils.closeQuietly(oldCursor);
+        }
     }
 
     protected boolean isDataValid(Cursor cursor) {

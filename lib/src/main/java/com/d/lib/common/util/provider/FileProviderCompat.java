@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.content.FileProvider;
 
 import java.io.File;
@@ -23,6 +24,7 @@ public class FileProviderCompat extends FileProvider {
         return uri;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public static Uri getUriForFile24(@NonNull Context context, @NonNull File file) {
         // Provider authorities
         return FileProvider.getUriForFile(context,
@@ -31,8 +33,8 @@ public class FileProviderCompat extends FileProvider {
 
     public static void setDataAndType(@NonNull Context context,
                                       @NonNull Intent intent,
-                                      @Nullable String type,
                                       @NonNull File file,
+                                      @Nullable String type,
                                       boolean writable) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             // Granting Temporary Permissions to a URI
