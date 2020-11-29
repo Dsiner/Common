@@ -58,12 +58,15 @@ implementation 'com.dsiner.lib:common:1.1.1'
     - [x] [PermissionCompat](https://github.com/Dsiner/PermissionCompat) - Runtime permissions
 - [x] **Tools**
 
-## Demo
+## Screenshot
 <p>
    <img src="https://github.com/Dsiner/Resouce/blob/master/lib/Common/common.gif" width="320" alt="Screenshot"/>
 </p>
 
 More usage see [Wiki.](https://github.com/Dsiner/Common/wiki)
+
+## Latest Changes
+- [Changelog.md](CHANGELOG.md)
 
 ## Licence
 

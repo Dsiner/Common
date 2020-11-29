@@ -28,7 +28,8 @@ public abstract class BaseFragment<T extends MvpBasePresenter>
     protected T mPresenter;
     protected View mRootView;
     protected DSLayout mDslDs;
-    private Dialog mLoadingDlg;
+    protected Dialog mLoadingDlg;
+    protected boolean mIsPrepared;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public abstract class BaseFragment<T extends MvpBasePresenter>
                 mDslDs = (DSLayout) mRootView.findViewById(getDSLayoutRes());
             }
             bindView(mRootView);
+            mIsPrepared = true;
             init();
         } else {
             if (mRootView.getParent() != null) {

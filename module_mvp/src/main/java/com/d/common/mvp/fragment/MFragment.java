@@ -21,7 +21,7 @@ public class MFragment extends BaseFragment<MPresenter> implements IMView {
     @Override
     protected int getLayoutRes() {
         // Step 7-1: Xml布局
-        return R.layout.lib_pub_fragment_abs;
+        return R.layout.lib_pub_fragment_loader;
     }
 
     @Override

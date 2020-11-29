@@ -120,12 +120,12 @@ public final class ScreenUtils {
         Class<?> c = null;
         Object obj = null;
         Field field = null;
-        int x = 0, sbar = 38; // The default is 38, which looks like most of them
+        int x = 0, sbar = DimenUtils.dp2px(context, 38); // The default is 38, which looks like most of them
         try {
             c = Class.forName("com.android.internal.R$dimen");
             obj = c.newInstance();
             field = c.getField("status_bar_height");
-            x = MathUtils.parseInt(field.get(obj).toString());
+            x = ConvertUtils.converInt(field.get(obj).toString());
             sbar = context.getResources().getDimensionPixelSize(x);
         } catch (Exception e1) {
             e1.printStackTrace();
@@ -145,7 +145,7 @@ public final class ScreenUtils {
             c = Class.forName("com.android.internal.R$dimen");
             obj = c.newInstance();
             field = c.getField("navigation_bar_height");
-            x = MathUtils.parseInt(field.get(obj).toString());
+            x = ConvertUtils.converInt(field.get(obj).toString());
             sbar = context.getResources().getDimensionPixelSize(x);
 
         } catch (Exception e1) {

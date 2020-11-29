@@ -37,8 +37,8 @@ public abstract class AbstractGlideModule extends AppGlideModule {
     public void applyOptions(Context context, GlideBuilder builder) {
         builder.setDefaultRequestOptions(new RequestOptions().format(DecodeFormat.PREFER_RGB_565))
                 .setDiskCache(new ExternalCacheDiskCacheFactory(context, getCachePath(), 1024 * 1024 * 1024))
-                .setMemoryCache(new LruResourceCache(3 * 1024 * 1024))
-                .setBitmapPool(new LruBitmapPool(3 * 1024 * 1024));
+                .setMemoryCache(new LruResourceCache(6 * 1024 * 1024))
+                .setBitmapPool(new LruBitmapPool(6 * 1024 * 1024));
     }
 
     @NonNull

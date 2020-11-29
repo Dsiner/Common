@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.Settings;
+import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.annotation.RequiresPermission;
@@ -18,15 +19,26 @@ import android.support.annotation.RequiresPermission;
 import com.d.lib.common.util.provider.FileProviderCompat;
 
 import java.io.File;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.Manifest.permission.CALL_PHONE;
 
 public final class IntentUtils {
-    public static int MIME_TYPE_ALL = 0;
-    public static int MIME_TYPE_IMAGE = 1;
-    public static int MIME_TYPE_VIDEO = 2;
+    public static final int MIME_TYPE_ALL = 0;
+    public static final int MIME_TYPE_IMAGE = 1;
+    public static final int MIME_TYPE_VIDEO = 2;
+
+    @IntDef({MIME_TYPE_ALL, MIME_TYPE_IMAGE, MIME_TYPE_VIDEO})
+    @Target({ElementType.METHOD, ElementType.PARAMETER})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface MimeType {
+
+    }
 
     private IntentUtils() {
     }
@@ -282,17 +294,19 @@ public final class IntentUtils {
     }
 
     public static Intent getPickIntent(final Activity activity,
-                                       final int mimeType,
+                                       @MimeType final int mimeType,
                                        final boolean multiple) {
         final Intent intent;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT
-                && isIntentAvailable(activity, getOpenDocPickIntent(mimeType, multiple))) {
-            intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            final Intent documentIntent = getPickDocumentIntent(mimeType, multiple);
+            if (isIntentAvailable(activity, documentIntent)) {
+                intent = documentIntent;
+            } else {
+                intent = getPickContentIntent(mimeType, multiple);
+            }
         } else {
-            intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent = getPickContentIntent(mimeType, multiple);
         }
-
-        setIntentExtra(intent, mimeType, multiple);
 
         if (queryIntentActivities(activity, intent).size() > 1) {
             // Create and start the chooser
@@ -302,14 +316,22 @@ public final class IntentUtils {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    private static Intent getOpenDocPickIntent(final int mimeType, final boolean multiple) {
+    private static Intent getPickDocumentIntent(@MimeType final int mimeType,
+                                                final boolean multiple) {
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         setIntentExtra(intent, mimeType, multiple);
         return intent;
     }
 
+    private static Intent getPickContentIntent(@MimeType final int mimeType,
+                                               final boolean multiple) {
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+        setIntentExtra(intent, mimeType, multiple);
+        return intent;
+    }
+
     private static void setIntentExtra(final Intent intent,
-                                       final int mimeType,
+                                       @MimeType final int mimeType,
                                        final boolean multiple) {
         if (MIME_TYPE_IMAGE == mimeType) {
             intent.setType("image/*");

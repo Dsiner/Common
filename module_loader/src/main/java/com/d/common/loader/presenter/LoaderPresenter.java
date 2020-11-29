@@ -8,7 +8,7 @@ import com.d.common.loader.model.LoaderModel;
 import com.d.lib.aster.Aster;
 import com.d.lib.aster.base.Params;
 import com.d.lib.aster.callback.SimpleCallback;
-import com.d.lib.common.component.loader.AbsPresenter;
+import com.d.lib.common.component.loader.MvpBaseLoaderPresenter;
 import com.d.lib.pulllayout.loader.CommonLoader;
 
 import java.util.ArrayList;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * Loader
  * Created by D on 2018/3/3.
  */
-public class LoaderPresenter extends AbsPresenter<LoaderModel> {
+public class LoaderPresenter extends MvpBaseLoaderPresenter<LoaderModel> {
 
     public LoaderPresenter(Context context) {
         super(context);

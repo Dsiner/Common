@@ -5,7 +5,7 @@ import com.d.common.loader.adapter.LoaderAdapter;
 import com.d.common.loader.model.LoaderModel;
 import com.d.common.loader.presenter.LoaderPresenter;
 import com.d.common.loader.view.ILoaderView;
-import com.d.lib.common.component.loader.v4.AbsLazyFragment;
+import com.d.lib.common.component.loader.v4.BaseLazyLoaderFragment;
 import com.d.lib.common.component.mvp.MvpView;
 import com.d.lib.pulllayout.rv.adapter.CommonAdapter;
 
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * Pager
  * Created by D on 2018/3/3.
  */
-public class LoaderLazyFragment extends AbsLazyFragment<LoaderModel, LoaderPresenter> implements ILoaderView {
+public class LoaderLazyFragment extends BaseLazyLoaderFragment<LoaderModel, LoaderPresenter> implements ILoaderView {
 
     @Override
     public LoaderPresenter getPresenter() {

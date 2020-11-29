@@ -39,7 +39,7 @@ public class MFragmentActivity extends BaseFragmentActivity<MvpBasePresenter>
     @Override
     protected int getLayoutRes() {
         // Step 3-1: Xml布局
-        return R.layout.lib_pub_activity_abs_content;
+        return R.layout.lib_pub_activity_loader_content;
     }
 
     @Override

@@ -6,6 +6,9 @@ import com.d.common.loader.api.API;
 import com.d.lib.aster.Aster;
 import com.d.lib.aster.base.Config;
 import com.d.lib.aster.utils.SSLUtil;
+import com.d.lib.common.component.network.NetworkBus;
+import com.d.lib.common.component.network.NetworkCompat;
+import com.d.lib.common.util.NetworkUtils;
 import com.d.lib.common.util.log.ULog;
 
 /**
@@ -19,6 +22,7 @@ public class App extends Application {
         super.onCreate();
         ULog.setDebug(BuildConfig.DEBUG, "ULog");
         initAster();
+        initNetwork();
     }
 
     private void initAster() {
@@ -33,5 +37,15 @@ public class App extends Application {
                 .log("AsterLog Back = ", Config.Level.BODY)
                 .debug(true)
                 .build();
+    }
+
+    private void initNetwork() {
+        NetworkCompat.init(this);
+        NetworkBus.getInstance().addListener(new NetworkBus.OnNetworkTypeChangeListener() {
+            @Override
+            public void onNetworkTypeChange(NetworkUtils.NetworkType networkType) {
+                ULog.d("onNetworkTypeChange: " + networkType);
+            }
+        });
     }
 }

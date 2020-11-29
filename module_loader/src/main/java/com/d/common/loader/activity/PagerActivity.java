@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment;
 
 import com.d.common.loader.R;
 import com.d.common.loader.fragment.LoaderLazyFragment;
-import com.d.lib.common.component.loader.v4.AbsPageFragmentActivity;
+import com.d.lib.common.component.loader.v4.BasePagerFragmentActivity;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
 import com.d.lib.common.component.mvp.MvpView;
 
@@ -16,7 +16,7 @@ import java.util.List;
  * PagerActivity
  * Created by D on 2018/3/3.
  */
-public class PagerActivity extends AbsPageFragmentActivity<MvpBasePresenter> {
+public class PagerActivity extends BasePagerFragmentActivity<MvpBasePresenter> {
 
     @Override
     public MvpBasePresenter getPresenter() {

@@ -31,7 +31,7 @@ public class MActivity extends BaseActivity<MPresenter> implements IMView, View.
     @Override
     protected int getLayoutRes() {
         // Step 7-1: Xml布局
-        return R.layout.lib_pub_activity_abs;
+        return R.layout.lib_pub_activity_loader;
     }
 
     @Override

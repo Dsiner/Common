@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.d.lib.common.component.adapter.CommonHolder;
 import com.d.lib.pulllayout.lv.adapter.MultiItemTypeSupport;
 
 import java.util.ArrayList;

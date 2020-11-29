@@ -5,10 +5,10 @@ import com.d.lib.common.component.mvp.MvpBaseView;
 import java.util.List;
 
 /**
- * Auto-Loader - IView
+ * Auto-Loader - MvpView
  * Created by D on 2017/8/22.
  */
-public interface IAbsView<T> extends MvpBaseView {
+public interface MvpBaseLoaderView<T> extends MvpBaseView {
     void getData();
 
     void loadSuccess(List<T> datas);

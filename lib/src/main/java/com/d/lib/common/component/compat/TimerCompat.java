@@ -74,6 +74,10 @@ public class TimerCompat {
         reStartTimeTask(mDelay);
     }
 
+    public boolean isRunning() {
+        return mIsTimeTaskRunning;
+    }
+
     public void cancel() {
         stopTimeTask();
     }

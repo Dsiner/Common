@@ -16,7 +16,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
-public class UriUtil {
+public class UriUtils {
     private static final String CACHE_DIR = "/uri_cache";
 
     /**

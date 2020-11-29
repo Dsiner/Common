@@ -1,4 +1,4 @@
-package com.d.lib.common.component.adapter;
+package com.d.lib.common.widget.btb;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -24,7 +24,7 @@ public class CommonHolder {
     public final View itemView;
     public final int layoutId;
     private final SparseArray<View> mViews;
-    public int mItemViewType = -1;
+    int mItemViewType = -1;
 
     private CommonHolder(View itemView, int layoutId) {
         this.itemView = itemView;

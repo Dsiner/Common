@@ -17,7 +17,7 @@ import java.util.List;
  * Auto-Pager - Fragment
  * Created by D on 2017/7/19.
  */
-public abstract class AbsPageFragment<T extends MvpBasePresenter>
+public abstract class BasePagerFragment<T extends MvpBasePresenter>
         extends BaseFragment<T>
         implements View.OnClickListener, ViewPager.OnPageChangeListener {
 
@@ -30,7 +30,7 @@ public abstract class AbsPageFragment<T extends MvpBasePresenter>
 
     @Override
     protected int getLayoutRes() {
-        return R.layout.lib_pub_fragment_abs_page;
+        return R.layout.lib_pub_fragment_pager;
     }
 
     @Override

@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.d.lib.common.util.IOUtils;
+import com.d.lib.pulllayout.lv.adapter.CommonHolder;
+import com.d.lib.pulllayout.lv.adapter.MultiItemTypeSupport;
 
 /**
  * CommonCursorPagerAdapter for ViewPager

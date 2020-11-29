@@ -9,17 +9,11 @@ import com.d.lib.common.component.mvp.MvpBasePresenter;
  * Auto-Loader - ViewPager Fragment
  * Created by D on 2017/8/23.
  */
-public abstract class AbsLazyFragment<M, P extends MvpBasePresenter>
-        extends AbsFragment<M, P> {
+public abstract class BaseLazyLoaderFragment<M, P extends MvpBasePresenter>
+        extends BaseLoaderFragment<M, P> {
 
     protected boolean mIsVisibleToUser;
     protected boolean mIsLazyLoaded;
-    protected boolean mIsPrepared;
-
-    @Override
-    protected void init() {
-        mIsPrepared = true;
-    }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -46,7 +40,6 @@ public abstract class AbsLazyFragment<M, P extends MvpBasePresenter>
             return;
         }
         mIsLazyLoaded = true; // Just lazy loading once
-        initList();
         getData();
     }
 

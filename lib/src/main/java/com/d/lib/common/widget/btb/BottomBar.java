@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Scroller;
 
 import com.d.lib.common.R;
-import com.d.lib.common.component.adapter.CommonHolder;
 import com.d.lib.common.util.DimenUtils;
 
 import java.lang.annotation.ElementType;
@@ -236,8 +235,8 @@ public class BottomBar extends ViewGroup implements View.OnClickListener {
     }
 
     public void setAdapter(Adapter adapter) {
-        this.mAdapter = adapter;
-        this.mAdapter.registerDataSetObserver(new BottomAdapter.DataSetObserver() {
+        mAdapter = adapter;
+        mAdapter.registerDataSetObserver(new BottomAdapter.DataSetObserver() {
             @Override
             public void notifyChanged() {
                 reset();

@@ -19,7 +19,7 @@ import java.util.List;
  * Auto-Pager - AbsAppCompatActivity
  * Created by D on 2017/7/19.
  */
-public abstract class AbsAppCompatActivity<T extends MvpBasePresenter>
+public abstract class BasePagerAppCompatActivity<T extends MvpBasePresenter>
         extends BaseAppCompatActivity<T>
         implements View.OnClickListener, ViewPager.OnPageChangeListener {
 
@@ -51,7 +51,7 @@ public abstract class AbsAppCompatActivity<T extends MvpBasePresenter>
 
     @Override
     protected int getLayoutRes() {
-        return R.layout.lib_pub_activity_abs_page;
+        return R.layout.lib_pub_activity_pager;
     }
 
     @Override

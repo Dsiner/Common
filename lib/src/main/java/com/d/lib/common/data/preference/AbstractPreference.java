@@ -13,16 +13,10 @@ public abstract class AbstractPreference {
     protected SharedPreferences.Editor mEditor;
 
     @SuppressLint("CommitPrefEdits")
-    protected AbstractPreference(Context context) {
-        mSettings = context.getApplicationContext().getSharedPreferences(getClass().getSimpleName(), 0);
+    protected AbstractPreference(Context context, String name) {
+        mSettings = context.getApplicationContext()
+                .getSharedPreferences(name, 0);
         mEditor = mSettings.edit();
-        initOps();
-    }
-
-    /**
-     * Initialize operation handle
-     */
-    protected void initOps() {
     }
 
     protected void save() {

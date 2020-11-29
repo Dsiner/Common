@@ -26,15 +26,15 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':lib')
     implementation project(':module_ui')
     implementation project(':module_mvp')
     implementation project(':module_loader')
 
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 }

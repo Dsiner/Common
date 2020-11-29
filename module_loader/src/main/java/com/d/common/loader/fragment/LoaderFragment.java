@@ -5,7 +5,7 @@ import com.d.common.loader.adapter.LoaderAdapter;
 import com.d.common.loader.model.LoaderModel;
 import com.d.common.loader.presenter.LoaderPresenter;
 import com.d.common.loader.view.ILoaderView;
-import com.d.lib.common.component.loader.v4.AbsFragment;
+import com.d.lib.common.component.loader.v4.BaseLoaderFragment;
 import com.d.lib.common.component.mvp.MvpView;
 import com.d.lib.pulllayout.rv.adapter.CommonAdapter;
 
@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * Loader
  * Created by D on 2018/3/3.
  */
-public class LoaderFragment extends AbsFragment<LoaderModel, LoaderPresenter> implements ILoaderView {
+public class LoaderFragment extends BaseLoaderFragment<LoaderModel, LoaderPresenter> implements ILoaderView {
 
     @Override
     public LoaderPresenter getPresenter() {

@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 
 import com.d.lib.common.R;
-import com.d.lib.common.util.MathUtils;
+import com.d.lib.common.util.ConvertUtils;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -164,7 +164,7 @@ public class StatusBarCompat {
             c = Class.forName("com.android.internal.R$dimen");
             obj = c.newInstance();
             field = c.getField("status_bar_height");
-            x = MathUtils.parseInt(field.get(obj).toString());
+            x = ConvertUtils.converInt(field.get(obj).toString());
             sbar = context.getResources().getDimensionPixelSize(x);
         } catch (Exception e1) {
             e1.printStackTrace();

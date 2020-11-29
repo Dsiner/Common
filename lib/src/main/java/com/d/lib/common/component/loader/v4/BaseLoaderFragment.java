@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.d.lib.common.R;
-import com.d.lib.common.component.loader.IAbsView;
+import com.d.lib.common.component.loader.MvpBaseLoaderView;
 import com.d.lib.common.component.mvp.MvpBasePresenter;
 import com.d.lib.common.component.mvp.app.v4.BaseFragment;
 import com.d.lib.common.util.ViewHelper;
@@ -20,9 +20,9 @@ import java.util.List;
  * Auto-Loader - Fragment
  * Created by D on 2017/8/23.
  */
-public abstract class AbsFragment<M, P extends MvpBasePresenter>
+public abstract class BaseLoaderFragment<M, P extends MvpBasePresenter>
         extends BaseFragment<P>
-        implements IAbsView<M>, View.OnClickListener {
+        implements MvpBaseLoaderView<M>, View.OnClickListener {
 
     protected Refreshable mPullList;
     protected RecyclerAdapter<M> mAdapter;
@@ -38,7 +38,7 @@ public abstract class AbsFragment<M, P extends MvpBasePresenter>
 
     @Override
     protected int getLayoutRes() {
-        return R.layout.lib_pub_fragment_abs;
+        return R.layout.lib_pub_fragment_loader;
     }
 
     @Override

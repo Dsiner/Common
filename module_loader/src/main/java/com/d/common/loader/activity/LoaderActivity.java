@@ -37,7 +37,7 @@ public class LoaderActivity extends BaseFragmentActivity<MvpBasePresenter> imple
 
     @Override
     protected int getLayoutRes() {
-        return R.layout.lib_pub_activity_abs_content;
+        return R.layout.lib_pub_activity_loader_content;
     }
 
     @Override
