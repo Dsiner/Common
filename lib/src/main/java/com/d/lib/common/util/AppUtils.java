@@ -33,28 +33,6 @@ public final class AppUtils {
     private AppUtils() {
     }
 
-    /**
-     * Exit application
-     */
-    public static void exit(Context context, int type) {
-        switch (type) {
-            case 0:
-                // Method 1
-                System.exit(0);
-                break;
-            case 1:
-                // Method 1
-                int pid = android.os.Process.myPid();
-                android.os.Process.killProcess(pid);
-                break;
-            case 2:
-                // Method 1
-                ActivityManager manager = (ActivityManager) context.getApplicationContext()
-                        .getSystemService(Context.ACTIVITY_SERVICE);
-                manager.killBackgroundProcesses(context.getApplicationContext().getPackageName());
-                break;
-        }
-    }
 
     /**
      * Install the app.
@@ -685,5 +663,32 @@ public final class AppUtils {
             e.printStackTrace();
         }
         return -1;
+    }
+
+    /**
+     * Exit application
+     */
+    public static void exit(Context context, int type) {
+        switch (type) {
+            case 0:
+                // Method 3-1
+                System.exit(0);
+                break;
+
+            case 1:
+                // Method 3-2
+                int pid = android.os.Process.myPid();
+                android.os.Process.killProcess(pid);
+                break;
+
+            case 2:
+                // Method 3-3
+                ActivityManager manager = (ActivityManager) context.getApplicationContext()
+                        .getSystemService(Context.ACTIVITY_SERVICE);
+                if (manager != null) {
+                    manager.killBackgroundProcesses(context.getApplicationContext().getPackageName());
+                }
+                break;
+        }
     }
 }

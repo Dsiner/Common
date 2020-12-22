@@ -30,7 +30,7 @@ There are too many changes to list individually, but here's a few highlights:
 - Update `Gson` to 2.8.5
 - Update `Glide` to 4.9.0
 - Update `PullLayout` to 1.0.2
-
+- Update `PermissionCompat` to 1.0.2
 
 
 ## Version 1.1.1 ##
@@ -48,6 +48,12 @@ There are too many changes to list individually, but here's a few highlights:
 
 ## Version 1.1.0 ##
 --------------------------------
+### Changes ###
+#### Rename
+- `MvpBaseView.showLoading()` --> `MvpBaseView.showLoadingDialog()`
+- `MvpBaseView.closeLoading()` --> `MvpBaseView.dismissLoadingDialog()`
+- `IAbsView.setData()` --> `IAbsView.loadSuccess()`
+
 ### Build Changes ###
 - Update `minSdkVersion` to 11
 - Update `PullLayout` to 1.0.0

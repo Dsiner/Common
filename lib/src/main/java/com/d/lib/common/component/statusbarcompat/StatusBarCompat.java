@@ -164,7 +164,7 @@ public class StatusBarCompat {
             c = Class.forName("com.android.internal.R$dimen");
             obj = c.newInstance();
             field = c.getField("status_bar_height");
-            x = ConvertUtils.converInt(field.get(obj).toString());
+            x = ConvertUtils.convertInt(field.get(obj).toString());
             sbar = context.getResources().getDimensionPixelSize(x);
         } catch (Exception e1) {
             e1.printStackTrace();

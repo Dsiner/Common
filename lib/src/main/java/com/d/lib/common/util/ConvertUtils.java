@@ -99,7 +99,7 @@ public class ConvertUtils {
         }
     }
 
-    public static boolean converBoolean(String value) {
+    public static boolean convertBoolean(String value) {
         if (TextUtils.isEmpty(value)) {
             return false;
         }
@@ -116,47 +116,49 @@ public class ConvertUtils {
         }
     }
 
-    public static int converInt(String string) {
+    public static int convertInt(String string) {
         if (TextUtils.isEmpty(string)) {
             return 0;
         }
         try {
             return Integer.parseInt(string);
-        } catch (Throwable ex) {
-            return 0;
-        }
-    }
-
-    public static long converLong(String string) {
-        if (TextUtils.isEmpty(string)) {
-            return 0;
-        }
-        try {
-            return Long.parseLong(string);
-        } catch (Throwable ex) {
-            return 0;
-        }
-    }
-
-    public static float converFloat(String value) {
-        if (TextUtils.isEmpty(value)) {
-            return 0;
-        }
-        try {
-            return Float.parseFloat(value);
-        } catch (NumberFormatException e) {
+        } catch (Throwable e) {
             e.printStackTrace();
             return 0;
         }
     }
 
-    public static double converDouble(String value) {
+    public static long convertLong(String string) {
+        if (TextUtils.isEmpty(string)) {
+            return 0;
+        }
+        try {
+            return Long.parseLong(string);
+        } catch (Throwable e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    public static float convertFloat(String value) {
+        if (TextUtils.isEmpty(value)) {
+            return 0;
+        }
+        try {
+            return Float.parseFloat(value);
+        } catch (Throwable e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
+
+    public static double convertDouble(String value) {
         if (TextUtils.isEmpty(value)) {
             return 0;
         }
         try {
             return Double.parseDouble(value);
-        } catch (NumberFormatException e) {
+        } catch (Throwable e) {
             e.printStackTrace();
             return 0;
         }
