@@ -18,7 +18,7 @@ public class NetworkCompat {
     }
 
     private static class Singleton {
-        private final static NetworkCompat INSTANCE = new NetworkCompat();
+        private static final NetworkCompat INSTANCE = new NetworkCompat();
     }
 
     /**

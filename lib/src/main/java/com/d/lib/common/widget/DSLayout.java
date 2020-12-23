@@ -34,14 +34,14 @@ import java.lang.annotation.Target;
 public class DSLayout extends FrameLayout {
 
     /*************** Type ***************/
-    public final static int STATE_LOADING = 0x10; // Default State: loading state
-    public final static int STATE_EMPTY = 0x11; // Default State: no data
-    public final static int STATE_NET_ERROR = 0x12; // Default State: network error
+    public static final int STATE_LOADING = 0x10; // Default State: loading state
+    public static final int STATE_EMPTY = 0x11; // Default State: no data
+    public static final int STATE_NET_ERROR = 0x12; // Default State: network error
 
     /*************** Centered type ***************/
-    private final static int CENT_TYPE_MAIN = 1;
-    private final static int CENT_TYPE_LOCAL = 2;
-    private final static float[] AJUST_HEIGHT = new float[]{0, 50, 70};
+    private static final int CENT_TYPE_MAIN = 1;
+    private static final int CENT_TYPE_LOCAL = 2;
+    private static final float[] AJUST_HEIGHT = new float[]{0, 50, 70};
 
     @IntDef({STATE_LOADING, STATE_EMPTY, STATE_NET_ERROR,
             DSLayout.VISIBLE, DSLayout.INVISIBLE, DSLayout.GONE})

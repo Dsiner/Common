@@ -99,8 +99,8 @@ public class BottomShareSheetDialog extends AbsSheetDialog<BottomShareSheetDialo
     }
 
     public static class Bean {
-        public final static int TYPE_CONTENT = 0;
-        public final static int TYPE_PASSWORD = 1;
+        public static final int TYPE_CONTENT = 0;
+        public static final int TYPE_PASSWORD = 1;
 
         public int type;
         public String title;

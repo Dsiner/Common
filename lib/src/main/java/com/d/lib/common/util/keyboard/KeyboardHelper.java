@@ -25,8 +25,8 @@ public class KeyboardHelper {
     /**
      * 显示软键盘的延迟时间
      */
-    public final static int SHOW_KEYBOARD_DELAY_TIME = 200;
-    public final static int KEYBOARD_VISIBLE_THRESHOLD_DP = 100;
+    public static final int SHOW_KEYBOARD_DELAY_TIME = 200;
+    public static final int KEYBOARD_VISIBLE_THRESHOLD_DP = 100;
 
     /**
      * 针对给定的editText显示软键盘（editText会先获得焦点）. 可以和{@link #hideKeyboard(View)}

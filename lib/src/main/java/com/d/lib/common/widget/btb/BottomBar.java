@@ -27,7 +27,7 @@ import java.util.List;
  * Created by D on 2018/7/11.
  */
 public class BottomBar extends ViewGroup implements View.OnClickListener {
-    private final static int ROW_COUNT = 4;
+    private static final int ROW_COUNT = 4;
     private final float mLoadFactor = 1.75f;
     private final int mDuration = 1000;
 
@@ -301,13 +301,13 @@ public class BottomBar extends ViewGroup implements View.OnClickListener {
         /**
          * Define type here
          */
-        public final static int TYPE_SHARE = 0;
-        public final static int TYPE_DOWNLOAD = 1;
-        public final static int TYPE_MOVE = 2;
-        public final static int TYPE_DELETE = 3;
-        public final static int TYPE_RENAME = 4;
-        public final static int TYPE_INFO = 5;
-        public final static int TYPE_TRANS_TO_FAKIT = 6;
+        public static final int TYPE_SHARE = 0;
+        public static final int TYPE_DOWNLOAD = 1;
+        public static final int TYPE_MOVE = 2;
+        public static final int TYPE_DELETE = 3;
+        public static final int TYPE_RENAME = 4;
+        public static final int TYPE_INFO = 5;
+        public static final int TYPE_TRANS_TO_FAKIT = 6;
 
         @IntDef({TYPE_SHARE, TYPE_DOWNLOAD, TYPE_MOVE,
                 TYPE_DELETE, TYPE_RENAME, TYPE_INFO,

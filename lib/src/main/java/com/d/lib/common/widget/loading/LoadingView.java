@@ -19,8 +19,8 @@ import java.lang.ref.WeakReference;
  * Created by Administrator on 2016/8/27.
  */
 public class LoadingView extends View {
-    public final static int TYPE_DAISY = 0;
-    public final static int TYPE_DOT = 1;
+    public static final int TYPE_DAISY = 0;
+    public static final int TYPE_DOT = 1;
 
     private float mWidth;
     private float mHeight;

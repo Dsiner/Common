@@ -28,8 +28,8 @@ import java.lang.reflect.Field;
  * Created by qiu on 3/29/16.
  */
 public class StatusBarCompat {
-    public final static int STYLE_MAIN = 0;
-    public final static int STYLE_WHITE = 1;
+    public static final int STYLE_MAIN = 0;
+    public static final int STYLE_WHITE = 1;
 
     @IntDef({STYLE_MAIN, STYLE_WHITE})
     @Target({ElementType.METHOD, ElementType.PARAMETER})
