@@ -19,9 +19,9 @@ import com.d.lib.common.widget.toggle.ToggleView;
  * Created by D on 2017/5/3.
  */
 public class RowLayout extends RelativeLayout {
+    private final String mContent, mHint;
     private int mLayout;
     private Drawable mIcon;
-    private final String mContent, mHint;
     private int mVisibilityToggle;
     private int mVisibilityGoto;
     private ImageView mIvIcon;
@@ -108,24 +108,24 @@ public class RowLayout extends RelativeLayout {
     }
 
     /**
-     * Toggle button set to open or close
-     */
-    public void setOpen(boolean open) {
-        mTbToggle.setOpen(open);
-    }
-
-    /**
      * Toggle button opening or closing status
      */
     public boolean isOpen() {
         return mTbToggle.isOpen();
     }
 
-    public interface OnToggleListener {
-        void onToggle(View v, boolean isOpen);
+    /**
+     * Toggle button set to open or close
+     */
+    public void setOpen(boolean open) {
+        mTbToggle.setOpen(open);
     }
 
     public void setOnToggleListener(OnToggleListener listener) {
         this.mListener = listener;
+    }
+
+    public interface OnToggleListener {
+        void onToggle(View v, boolean isOpen);
     }
 }

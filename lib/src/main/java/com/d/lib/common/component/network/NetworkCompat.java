@@ -17,10 +17,6 @@ public class NetworkCompat {
     private NetworkCompat() {
     }
 
-    private static class Singleton {
-        private static final NetworkCompat INSTANCE = new NetworkCompat();
-    }
-
     /**
      * Initialization
      */
@@ -115,5 +111,9 @@ public class NetworkCompat {
         if (broadcast) {
             NetworkBus.getInstance().onNetworkTypeChange(networkType);
         }
+    }
+
+    private static class Singleton {
+        private static final NetworkCompat INSTANCE = new NetworkCompat();
     }
 }

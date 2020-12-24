@@ -20,14 +20,14 @@ import com.d.lib.common.R;
  * Created by D on 2017/5/3.
  */
 public class TitleLayout extends RelativeLayout {
-    protected Context mContext;
-    protected View mRootView;
     protected final int mRes;
     protected final int mMenuRes;
     private final String[] mTexts = new String[3];
     private final Drawable[] mDrawables = new Drawable[3];
     private final float[] mDrawablePaddings = new float[3];
     private final int[] mResIds = new int[3];
+    protected Context mContext;
+    protected View mRootView;
 
     public TitleLayout(Context context) {
         this(context, null);

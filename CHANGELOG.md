@@ -29,8 +29,8 @@ There are too many changes to list individually, but here's a few highlights:
 ### Build Changes ###
 - Update `Gson` to 2.8.5
 - Update `Glide` to 4.9.0
-- Update `PullLayout` to 1.0.2
-- Update `PermissionCompat` to 1.0.2
+- Update `PullLayout` to 1.0.3
+- Update `PermissionCompat` to 1.0.3
 
 
 ## Version 1.1.1 ##

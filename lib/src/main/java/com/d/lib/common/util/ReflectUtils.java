@@ -103,6 +103,21 @@ public final class ReflectUtils {
     ///////////////////////////////////////////////////////////////////////////
 
     /**
+     * Get the POJO property name of an getter/setter
+     */
+    private static String property(String string) {
+        int length = string.length();
+
+        if (length == 0) {
+            return "";
+        } else if (length == 1) {
+            return string.toLowerCase();
+        } else {
+            return string.substring(0, 1).toLowerCase() + string.substring(1);
+        }
+    }
+
+    /**
      * Create and initialize a new instance.
      *
      * @return the single {@link ReflectUtils} instance
@@ -169,6 +184,10 @@ public final class ReflectUtils {
         });
     }
 
+    ///////////////////////////////////////////////////////////////////////////
+    // field
+    ///////////////////////////////////////////////////////////////////////////
+
     private ReflectUtils newInstance(final Constructor<?> constructor, final Object... args) {
         try {
             return new ReflectUtils(
@@ -179,10 +198,6 @@ public final class ReflectUtils {
             throw new ReflectException(e);
         }
     }
-
-    ///////////////////////////////////////////////////////////////////////////
-    // field
-    ///////////////////////////////////////////////////////////////////////////
 
     /**
      * Get the field.
@@ -247,16 +262,16 @@ public final class ReflectUtils {
         }
     }
 
+    ///////////////////////////////////////////////////////////////////////////
+    // method
+    ///////////////////////////////////////////////////////////////////////////
+
     private Object unwrap(Object object) {
         if (object instanceof ReflectUtils) {
             return ((ReflectUtils) object).get();
         }
         return object;
     }
-
-    ///////////////////////////////////////////////////////////////////////////
-    // method
-    ///////////////////////////////////////////////////////////////////////////
 
     /**
      * Invoke the method.
@@ -396,6 +411,10 @@ public final class ReflectUtils {
         }
     }
 
+    ///////////////////////////////////////////////////////////////////////////
+    // proxy
+    ///////////////////////////////////////////////////////////////////////////
+
     private <T extends AccessibleObject> T accessible(T accessible) {
         if (accessible == null) return null;
         if (accessible instanceof Member) {
@@ -408,10 +427,6 @@ public final class ReflectUtils {
         if (!accessible.isAccessible()) accessible.setAccessible(true);
         return accessible;
     }
-
-    ///////////////////////////////////////////////////////////////////////////
-    // proxy
-    ///////////////////////////////////////////////////////////////////////////
 
     /**
      * Create a proxy for the wrapped object allowing to typesafely invoke
@@ -451,21 +466,6 @@ public final class ReflectUtils {
         return (P) Proxy.newProxyInstance(proxyType.getClassLoader(),
                 new Class[]{proxyType},
                 handler);
-    }
-
-    /**
-     * Get the POJO property name of an getter/setter
-     */
-    private static String property(String string) {
-        int length = string.length();
-
-        if (length == 0) {
-            return "";
-        } else if (length == 1) {
-            return string.toLowerCase();
-        } else {
-            return string.substring(0, 1).toLowerCase() + string.substring(1);
-        }
     }
 
     private Class<?> type() {

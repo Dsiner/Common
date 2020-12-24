@@ -25,6 +25,8 @@ import android.view.WindowManager;
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
 class StatusBarCompatLollipop {
 
+    private static ValueAnimator sAnimator;
+
     /**
      * return statusBar's Height in pixels
      */
@@ -185,6 +187,4 @@ class StatusBarCompatLollipop {
         });
         sAnimator.start();
     }
-
-    private static ValueAnimator sAnimator;
 }

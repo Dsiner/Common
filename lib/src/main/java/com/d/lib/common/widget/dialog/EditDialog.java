@@ -73,6 +73,10 @@ public class EditDialog extends AbstractDialog {
         }
     }
 
+    public void setOnEditListener(OnEditListener listener) {
+        this.mListener = listener;
+    }
+
     public interface OnEditListener {
 
         /**
@@ -86,9 +90,5 @@ public class EditDialog extends AbstractDialog {
          * Click cancel
          */
         void onCancel(Dialog dlg);
-    }
-
-    public void setOnEditListener(OnEditListener listener) {
-        this.mListener = listener;
     }
 }

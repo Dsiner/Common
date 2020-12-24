@@ -7,9 +7,9 @@ public interface ToggleView {
      */
     void toggle();
 
-    void setOpen(boolean open);
-
     boolean isOpen();
+
+    void setOpen(boolean open);
 
     void setOnToggleListener(OnToggleListener l);
 

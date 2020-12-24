@@ -56,6 +56,10 @@ public abstract class AbsSheetDialog<T> extends AbstractDialog {
 
     protected abstract RecyclerView.Adapter getAdapter();
 
+    public void setOnItemClickListener(OnItemClickListener<T> listener) {
+        this.mListener = listener;
+    }
+
     public interface OnItemClickListener<T> {
 
         /**
@@ -69,9 +73,5 @@ public abstract class AbsSheetDialog<T> extends AbstractDialog {
          * Click cancel
          */
         void onCancel(Dialog dlg);
-    }
-
-    public void setOnItemClickListener(OnItemClickListener<T> listener) {
-        this.mListener = listener;
     }
 }

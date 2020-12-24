@@ -15,12 +15,12 @@ public class ULog {
      */
     private static boolean DEBUG = true;
 
+    private ULog() {
+    }
+
     public static void setDebug(boolean debug, String tag) {
         DEBUG = debug;
         LOG_TAG = tag;
-    }
-
-    private ULog() {
     }
 
     public static void v(String tag, String msg) {

@@ -228,15 +228,15 @@ public class SegmentView extends View {
         invalidate();
     }
 
+    public void setOnSelectedListener(OnSelectedListener listener) {
+        this.mListener = listener;
+    }
+
     public interface OnSelectedListener {
 
         /**
          * @param index Index
          */
         void onSelected(int index);
-    }
-
-    public void setOnSelectedListener(OnSelectedListener listener) {
-        this.mListener = listener;
     }
 }

@@ -14,13 +14,13 @@ public abstract class AbstractProgressBus<T, Callback extends ProgressCallback<T
     private int mState = DONE;
     private float mProgress;
 
-    public void setState(@State int state) {
-        this.mState = state;
-    }
-
     @State
     public int getState() {
         return mState;
+    }
+
+    public void setState(@State int state) {
+        this.mState = state;
     }
 
     public float getProgress() {

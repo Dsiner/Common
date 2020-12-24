@@ -38,13 +38,13 @@ public class ToggleTextView extends CheckedTextView implements ToggleView, View.
     }
 
     @Override
-    public void setOpen(boolean open) {
-        setChecked(open);
+    public boolean isOpen() {
+        return isChecked();
     }
 
     @Override
-    public boolean isOpen() {
-        return isChecked();
+    public void setOpen(boolean open) {
+        setChecked(open);
     }
 
     @Override

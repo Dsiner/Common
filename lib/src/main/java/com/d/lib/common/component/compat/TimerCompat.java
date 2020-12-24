@@ -17,28 +17,9 @@ public class TimerCompat {
     private long mPeriod = 0;
     private boolean mIsTimeTaskRunning = false;
 
-    static class TimeTask implements Runnable {
-        private final WeakReference<TimerCompat> reference;
-
-        TimeTask(TimerCompat timer) {
-            this.reference = new WeakReference<>(timer);
-        }
-
-        @Override
-        public void run() {
-            TimerCompat ref = reference.get();
-            if (ref == null || !ref.mIsTimeTaskRunning) {
-                return;
-            }
-            if (ref.mTask != null) {
-                ref.mTask.run();
-            }
-            if (ref.mPeriod <= 0) {
-                ref.stopTimeTask();
-                return;
-            }
-            ref.reStartTimeTask(ref.mPeriod);
-        }
+    public TimerCompat() {
+        mHandler = new Handler(Looper.getMainLooper());
+        mTimeTask = new TimeTask(this);
     }
 
     private void reStartTimeTask(long delay) {
@@ -50,11 +31,6 @@ public class TimerCompat {
     private void stopTimeTask() {
         mIsTimeTaskRunning = false;
         mHandler.removeCallbacks(mTimeTask);
-    }
-
-    public TimerCompat() {
-        mHandler = new Handler(Looper.getMainLooper());
-        mTimeTask = new TimeTask(this);
     }
 
     public void schedule(TimerTaskCompat task, long delay) {
@@ -80,5 +56,29 @@ public class TimerCompat {
 
     public void cancel() {
         stopTimeTask();
+    }
+
+    static class TimeTask implements Runnable {
+        private final WeakReference<TimerCompat> reference;
+
+        TimeTask(TimerCompat timer) {
+            this.reference = new WeakReference<>(timer);
+        }
+
+        @Override
+        public void run() {
+            TimerCompat ref = reference.get();
+            if (ref == null || !ref.mIsTimeTaskRunning) {
+                return;
+            }
+            if (ref.mTask != null) {
+                ref.mTask.run();
+            }
+            if (ref.mPeriod <= 0) {
+                ref.stopTimeTask();
+                return;
+            }
+            ref.reStartTimeTask(ref.mPeriod);
+        }
     }
 }

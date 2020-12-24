@@ -41,31 +41,6 @@ public class LoadingView extends View {
     private Task mRunnable;
     private boolean mIsFirst;
 
-    private static class Task implements Runnable {
-
-        WeakReference<LoadingView> weakRef;
-
-        Task(LoadingView view) {
-            this.weakRef = new WeakReference<>(view);
-        }
-
-        @Override
-        public void run() {
-            if (isFinished()) {
-                return;
-            }
-            LoadingView theView = weakRef.get();
-            theView.invalidate();
-            theView.mHandler.postDelayed(theView.mRunnable, theView.mDuration / theView.mCount);
-        }
-
-        private boolean isFinished() {
-            return weakRef == null || weakRef.get() == null
-                    || weakRef.get().mContext == null
-                    || weakRef.get().mContext instanceof Activity && ((Activity) weakRef.get().mContext).isFinishing();
-        }
-    }
-
     public LoadingView(Context context) {
         this(context, null);
     }
@@ -192,5 +167,30 @@ public class LoadingView extends View {
     public void stop() {
         mIsFirst = false;
         mHandler.removeCallbacks(mRunnable);
+    }
+
+    private static class Task implements Runnable {
+
+        WeakReference<LoadingView> weakRef;
+
+        Task(LoadingView view) {
+            this.weakRef = new WeakReference<>(view);
+        }
+
+        @Override
+        public void run() {
+            if (isFinished()) {
+                return;
+            }
+            LoadingView theView = weakRef.get();
+            theView.invalidate();
+            theView.mHandler.postDelayed(theView.mRunnable, theView.mDuration / theView.mCount);
+        }
+
+        private boolean isFinished() {
+            return weakRef == null || weakRef.get() == null
+                    || weakRef.get().mContext == null
+                    || weakRef.get().mContext instanceof Activity && ((Activity) weakRef.get().mContext).isFinishing();
+        }
     }
 }

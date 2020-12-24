@@ -57,15 +57,12 @@ public class RoundedDrawable extends Drawable {
     private final Paint mBorderPaint;
     private final Matrix mShaderMatrix = new Matrix();
     private final RectF mSquareCornersRect = new RectF();
-
+    // [ topLeft, topRight, bottomLeft, bottomRight ]
+    private final boolean[] mCornersRounded = new boolean[]{true, true, true, true};
     private Shader.TileMode mTileModeX = Shader.TileMode.CLAMP;
     private Shader.TileMode mTileModeY = Shader.TileMode.CLAMP;
     private boolean mRebuildShader = true;
-
     private float mCornerRadius = 0f;
-    // [ topLeft, topRight, bottomLeft, bottomRight ]
-    private final boolean[] mCornersRounded = new boolean[]{true, true, true, true};
-
     private boolean mOval = false;
     private float mBorderWidth = 0;
     private ColorStateList mBorderColor = ColorStateList.valueOf(DEFAULT_BORDER_COLOR);
@@ -143,6 +140,33 @@ public class RoundedDrawable extends Drawable {
         }
 
         return bitmap;
+    }
+
+    private static boolean only(int index, boolean[] booleans) {
+        for (int i = 0, len = booleans.length; i < len; i++) {
+            if (booleans[i] != (i == index)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private static boolean any(boolean[] booleans) {
+        for (boolean b : booleans) {
+            if (b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean all(boolean[] booleans) {
+        for (boolean b : booleans) {
+            if (b) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public Bitmap getSourceBitmap() {
@@ -441,14 +465,6 @@ public class RoundedDrawable extends Drawable {
     }
 
     /**
-     * @param corner the specific corner to get radius of.
-     * @return the corner radius of the specified corner.
-     */
-    public float getCornerRadius(@Corner int corner) {
-        return mCornersRounded[corner] ? mCornerRadius : 0f;
-    }
-
-    /**
      * Sets all corners to the specified radius.
      *
      * @param radius the radius.
@@ -457,6 +473,14 @@ public class RoundedDrawable extends Drawable {
     public RoundedDrawable setCornerRadius(float radius) {
         setCornerRadius(radius, radius, radius, radius);
         return this;
+    }
+
+    /**
+     * @param corner the specific corner to get radius of.
+     * @return the corner radius of the specified corner.
+     */
+    public float getCornerRadius(@Corner int corner) {
+        return mCornersRounded[corner] ? mCornerRadius : 0f;
     }
 
     /**
@@ -544,14 +568,14 @@ public class RoundedDrawable extends Drawable {
         return setBorderColor(ColorStateList.valueOf(color));
     }
 
-    public ColorStateList getBorderColors() {
-        return mBorderColor;
-    }
-
     public RoundedDrawable setBorderColor(ColorStateList colors) {
         mBorderColor = colors != null ? colors : ColorStateList.valueOf(0);
         mBorderPaint.setColor(mBorderColor.getColorForState(getState(), DEFAULT_BORDER_COLOR));
         return this;
+    }
+
+    public ColorStateList getBorderColors() {
+        return mBorderColor;
     }
 
     public boolean isOval() {
@@ -602,33 +626,6 @@ public class RoundedDrawable extends Drawable {
             invalidateSelf();
         }
         return this;
-    }
-
-    private static boolean only(int index, boolean[] booleans) {
-        for (int i = 0, len = booleans.length; i < len; i++) {
-            if (booleans[i] != (i == index)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private static boolean any(boolean[] booleans) {
-        for (boolean b : booleans) {
-            if (b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    private static boolean all(boolean[] booleans) {
-        for (boolean b : booleans) {
-            if (b) {
-                return false;
-            }
-        }
-        return true;
     }
 
     public Bitmap toBitmap() {

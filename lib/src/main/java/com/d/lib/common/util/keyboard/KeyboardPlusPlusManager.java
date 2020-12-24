@@ -28,17 +28,6 @@ public class KeyboardPlusPlusManager extends AbsKeyboardManager {
         init(activity);
     }
 
-    private void init(Activity activity) {
-        mPopup = new KeyboardPopup(activity);
-        mPopup.show();
-    }
-
-    @Override
-    public void setOnKeyboardEventListener(KeyboardHelper.OnKeyboardEventListener l) {
-        super.setOnKeyboardEventListener(l);
-        mPopup.setOnKeyboardEventListener(l);
-    }
-
     @Deprecated
     public static void onScroll(Activity activity, Rect rect, FrameLayout scrollRoot, View scroll) {
         Rect r = new Rect();
@@ -61,10 +50,21 @@ public class KeyboardPlusPlusManager extends AbsKeyboardManager {
         scroll.setLayoutParams(params);
     }
 
+    private void init(Activity activity) {
+        mPopup = new KeyboardPopup(activity);
+        mPopup.show();
+    }
+
+    @Override
+    public void setOnKeyboardEventListener(KeyboardHelper.OnKeyboardEventListener l) {
+        super.setOnKeyboardEventListener(l);
+        mPopup.setOnKeyboardEventListener(l);
+    }
+
     static class KeyboardPopup extends PopupWindow {
+        protected KeyboardHelper.OnKeyboardEventListener listener;
         private Activity activity;
         private View parentView, popupView;
-        protected KeyboardHelper.OnKeyboardEventListener listener;
 
         KeyboardPopup(final Activity activity) {
             super(activity);
@@ -79,9 +79,9 @@ public class KeyboardPlusPlusManager extends AbsKeyboardManager {
             setHeight(WindowManager.LayoutParams.MATCH_PARENT);
 
             final ViewTreeObserver.OnGlobalLayoutListener layoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
-                private DisplayMetrics metric = new DisplayMetrics();
                 private final Rect r = new Rect();
                 private final int visibleThreshold = Math.round(DimenUtils.dp2px(activity, KeyboardHelper.KEYBOARD_VISIBLE_THRESHOLD_DP));
+                private DisplayMetrics metric = new DisplayMetrics();
                 private boolean wasOpened = false;
 
                 @Override

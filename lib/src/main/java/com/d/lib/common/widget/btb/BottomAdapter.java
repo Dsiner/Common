@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.d.lib.pulllayout.lv.adapter.CommonHolder;
 import com.d.lib.pulllayout.lv.adapter.MultiItemTypeSupport;
 
 import java.util.ArrayList;
@@ -43,15 +44,15 @@ abstract class BottomAdapter<T> {
         }
     }
 
+    public List<T> getDatas() {
+        return mDatas;
+    }
+
     public void setDatas(List<T> datas) {
         if (mDatas != null && datas != null) {
             mDatas.clear();
             mDatas.addAll(datas);
         }
-    }
-
-    public List<T> getDatas() {
-        return mDatas;
     }
 
     public int getCount() {
@@ -108,7 +109,7 @@ abstract class BottomAdapter<T> {
             }
         }
         CommonHolder holder = CommonHolder.create(mContext, parent, layoutId);
-        holder.mItemViewType = viewType;
+        holder.setItemViewType(viewType);
         // setTag
         holder.itemView.setTag(holder);
         onViewHolderCreated(holder, holder.itemView);

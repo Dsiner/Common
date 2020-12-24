@@ -35,18 +35,6 @@ public final class NetworkUtils {
     private NetworkUtils() {
     }
 
-    public enum NetworkType {
-        TYPE_UN_AVAILABLE,
-        TYPE_MOBILE,
-        NETWORK_TYPE_2G,
-        NETWORK_TYPE_3G,
-        NETWORK_TYPE_4G,
-        NETWORK_TYPE_5G,
-        TYPE_WIFI,
-        TYPE_ETHERNET,
-        TYPE_UNKNOWN
-    }
-
     /**
      * Open the settings of wireless.
      */
@@ -473,5 +461,17 @@ public final class NetworkUtils {
             return ssid.substring(1, ssid.length() - 1);
         }
         return ssid;
+    }
+
+    public enum NetworkType {
+        TYPE_UN_AVAILABLE,
+        TYPE_MOBILE,
+        NETWORK_TYPE_2G,
+        NETWORK_TYPE_3G,
+        NETWORK_TYPE_4G,
+        NETWORK_TYPE_5G,
+        TYPE_WIFI,
+        TYPE_ETHERNET,
+        TYPE_UNKNOWN
     }
 }

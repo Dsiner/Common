@@ -78,26 +78,6 @@ public class BottomShareSheetDialog extends AbsSheetDialog<BottomShareSheetDialo
         initRecyclerList(R.id.rv_list, LinearLayoutManager.VERTICAL);
     }
 
-    public class SheetAdapter extends CommonAdapter<Bean> {
-
-        SheetAdapter(Context context, List<Bean> datas, MultiItemTypeSupport<Bean> multiItemTypeSupport) {
-            super(context, datas, multiItemTypeSupport);
-        }
-
-        @Override
-        public void convert(final int position, CommonHolder holder, final Bean item) {
-            if (holder.layoutId == R.layout.lib_pub_adapter_dlg_bottom_share_content) {
-                holder.setText(R.id.tv_title, item.title);
-                holder.setText(R.id.tv_content, item.content);
-            } else if (holder.layoutId == R.layout.lib_pub_adapter_dlg_bottom_share_psw) {
-                holder.setText(R.id.tv_title, item.title);
-                holder.setText(R.id.tv_psw, item.password);
-                ToggleButton toggleButton = holder.getView(R.id.tbtn_toggle);
-                toggleButton.setOpen(item.isChecked);
-            }
-        }
-    }
-
     public static class Bean {
         public static final int TYPE_CONTENT = 0;
         public static final int TYPE_PASSWORD = 1;
@@ -119,6 +99,26 @@ public class BottomShareSheetDialog extends AbsSheetDialog<BottomShareSheetDialo
             this.title = title;
             this.password = password;
             this.isChecked = isChecked;
+        }
+    }
+
+    public class SheetAdapter extends CommonAdapter<Bean> {
+
+        SheetAdapter(Context context, List<Bean> datas, MultiItemTypeSupport<Bean> multiItemTypeSupport) {
+            super(context, datas, multiItemTypeSupport);
+        }
+
+        @Override
+        public void convert(final int position, CommonHolder holder, final Bean item) {
+            if (holder.layoutId == R.layout.lib_pub_adapter_dlg_bottom_share_content) {
+                holder.setText(R.id.tv_title, item.title);
+                holder.setText(R.id.tv_content, item.content);
+            } else if (holder.layoutId == R.layout.lib_pub_adapter_dlg_bottom_share_psw) {
+                holder.setText(R.id.tv_title, item.title);
+                holder.setText(R.id.tv_psw, item.password);
+                ToggleButton toggleButton = holder.getView(R.id.tbtn_toggle);
+                toggleButton.setOpen(item.isChecked);
+            }
         }
     }
 }

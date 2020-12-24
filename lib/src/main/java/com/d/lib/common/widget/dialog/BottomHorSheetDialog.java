@@ -61,6 +61,16 @@ public class BottomHorSheetDialog extends AbsSheetDialog<BottomHorSheetDialog.Be
         initRecyclerList(R.id.rv_list, LinearLayoutManager.HORIZONTAL);
     }
 
+    public static class Bean {
+        public String item;
+        public int drawble;
+
+        public Bean(String item, int drawble) {
+            this.item = item;
+            this.drawble = drawble;
+        }
+    }
+
     public class SheetAdapter extends CommonAdapter<Bean> {
         SheetAdapter(Context context, List<Bean> datas, int layoutId) {
             super(context, datas, layoutId);
@@ -76,16 +86,6 @@ public class BottomHorSheetDialog extends AbsSheetDialog<BottomHorSheetDialog.Be
                     onItemClick(position, item);
                 }
             });
-        }
-    }
-
-    public static class Bean {
-        public String item;
-        public int drawble;
-
-        public Bean(String item, int drawble) {
-            this.item = item;
-            this.drawble = drawble;
         }
     }
 }

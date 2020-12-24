@@ -305,11 +305,11 @@ public class ScrollTab extends HorizontalScrollView implements View.OnClickListe
         }
     }
 
-    public interface OnTabListener {
-        void onChange(int position, View v);
-    }
-
     public void setOnTabListener(OnTabListener l) {
         this.mListener = l;
+    }
+
+    public interface OnTabListener {
+        void onChange(int position, View v);
     }
 }

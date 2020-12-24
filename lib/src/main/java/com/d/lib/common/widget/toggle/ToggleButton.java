@@ -205,6 +205,11 @@ public class ToggleButton extends View implements ToggleView {
     }
 
     @Override
+    public boolean isOpen() {
+        return mIsOpen;
+    }
+
+    @Override
     public void setOpen(boolean open) {
         if (mFactor != 0 && mFactor != 1) {
             return;
@@ -218,11 +223,6 @@ public class ToggleButton extends View implements ToggleView {
             mPaintTrack.setColor(mColorTrackOff);
         }
         invalidate();
-    }
-
-    @Override
-    public boolean isOpen() {
-        return mIsOpen;
     }
 
     @Override

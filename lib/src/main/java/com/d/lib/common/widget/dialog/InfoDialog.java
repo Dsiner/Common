@@ -54,6 +54,16 @@ public class InfoDialog extends AbsSheetDialog<InfoDialog.Bean> {
         initRecyclerList(R.id.rv_list, LinearLayoutManager.VERTICAL);
     }
 
+    public static class Bean {
+        public String title;
+        public String content;
+
+        public Bean(String title, String content) {
+            this.title = title;
+            this.content = content;
+        }
+    }
+
     public class SheetAdapter extends CommonAdapter<Bean> {
         SheetAdapter(Context context, List<Bean> datas, int layoutId) {
             super(context, datas, layoutId);
@@ -63,16 +73,6 @@ public class InfoDialog extends AbsSheetDialog<InfoDialog.Bean> {
         public void convert(final int position, CommonHolder holder, final Bean item) {
             holder.setText(R.id.tv_title, item.title);
             holder.setText(R.id.tv_content, item.content);
-        }
-    }
-
-    public static class Bean {
-        public String title;
-        public String content;
-
-        public Bean(String title, String content) {
-            this.title = title;
-            this.content = content;
         }
     }
 }

@@ -31,6 +31,8 @@ import javax.net.ssl.HttpsURLConnection;
 public final class FileUtils {
 
     private static final String LINE_SEP = System.getProperty("line.separator");
+    private static final char[] HEX_DIGITS =
+            {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     private FileUtils() {
     }
@@ -709,7 +711,6 @@ public final class FileUtils {
         return listFilesInDirWithFilter(dir, filter, isRecursive, null);
     }
 
-
     /**
      * Return the files that satisfy the filter in directory.
      *
@@ -1312,6 +1313,10 @@ public final class FileUtils {
         context.sendBroadcast(intent);
     }
 
+    ///////////////////////////////////////////////////////////////////////////
+    // other utils methods
+    ///////////////////////////////////////////////////////////////////////////
+
     /**
      * Notify system to scan the file.
      *
@@ -1322,13 +1327,6 @@ public final class FileUtils {
             MediaScannerConnection.scanFile(context, new String[]{file.getAbsolutePath()}, null, null);
         }
     }
-
-    ///////////////////////////////////////////////////////////////////////////
-    // other utils methods
-    ///////////////////////////////////////////////////////////////////////////
-
-    private static final char[] HEX_DIGITS =
-            {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
     private static String bytes2HexString(final byte[] bytes) {
         if (bytes == null) return "";

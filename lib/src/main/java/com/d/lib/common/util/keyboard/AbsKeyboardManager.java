@@ -18,25 +18,6 @@ public abstract class AbsKeyboardManager {
     }
 
     /**
-     * 弹起键盘输入
-     */
-    public void requestEdit(boolean delay) {
-        KeyboardHelper.showKeyboard(mCommonInput, delay);
-    }
-
-    /**
-     * 取消EditText焦点
-     *
-     * @param close 是否关闭软键盘
-     */
-    public void dismissEdit(boolean close) {
-        if (close) {
-            KeyboardHelper.hideKeyboard(mCommonInput);
-        }
-        mCommonInput.clearFocus();
-    }
-
-    /**
      * 手动滚动底部EditText，以避免被软键盘遮盖
      *
      * @param rect       Rect
@@ -53,6 +34,25 @@ public abstract class AbsKeyboardManager {
         if (scrollHeight > 0) {
             scrollRoot.scrollTo(0, scrollHeight);
         }
+    }
+
+    /**
+     * 弹起键盘输入
+     */
+    public void requestEdit(boolean delay) {
+        KeyboardHelper.showKeyboard(mCommonInput, delay);
+    }
+
+    /**
+     * 取消EditText焦点
+     *
+     * @param close 是否关闭软键盘
+     */
+    public void dismissEdit(boolean close) {
+        if (close) {
+            KeyboardHelper.hideKeyboard(mCommonInput);
+        }
+        mCommonInput.clearFocus();
     }
 
     public void setOnKeyboardEventListener(KeyboardHelper.OnKeyboardEventListener l) {

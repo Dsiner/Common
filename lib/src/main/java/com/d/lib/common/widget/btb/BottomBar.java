@@ -14,6 +14,7 @@ import android.widget.Scroller;
 
 import com.d.lib.common.R;
 import com.d.lib.common.util.DimenUtils;
+import com.d.lib.pulllayout.lv.adapter.CommonHolder;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -270,6 +271,10 @@ public class BottomBar extends ViewGroup implements View.OnClickListener {
         }
     }
 
+    public interface OnClickListener {
+        void onClick(int position, Item item);
+    }
+
     public static class Adapter extends BottomAdapter<Item> {
         private OnClickListener listener;
 
@@ -308,16 +313,6 @@ public class BottomBar extends ViewGroup implements View.OnClickListener {
         public static final int TYPE_RENAME = 4;
         public static final int TYPE_INFO = 5;
         public static final int TYPE_TRANS_TO_FAKIT = 6;
-
-        @IntDef({TYPE_SHARE, TYPE_DOWNLOAD, TYPE_MOVE,
-                TYPE_DELETE, TYPE_RENAME, TYPE_INFO,
-                TYPE_TRANS_TO_FAKIT})
-        @Target({ElementType.PARAMETER})
-        @Retention(RetentionPolicy.SOURCE)
-        public @interface Type {
-
-        }
-
         public int type;
         public int res;
         public String content;
@@ -334,9 +329,14 @@ public class BottomBar extends ViewGroup implements View.OnClickListener {
             this.content = content;
             this.weight = weight;
         }
-    }
 
-    public interface OnClickListener {
-        void onClick(int position, Item item);
+        @IntDef({TYPE_SHARE, TYPE_DOWNLOAD, TYPE_MOVE,
+                TYPE_DELETE, TYPE_RENAME, TYPE_INFO,
+                TYPE_TRANS_TO_FAKIT})
+        @Target({ElementType.PARAMETER})
+        @Retention(RetentionPolicy.SOURCE)
+        public @interface Type {
+
+        }
     }
 }

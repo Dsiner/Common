@@ -14,8 +14,8 @@ import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
 import java.security.MessageDigest;
 
 public class GlideRoundTransform extends BitmapTransformation {
-    private float mRadius;
     private final Matrix mMatrix = new Matrix();
+    private float mRadius;
 
     public GlideRoundTransform(int dp) {
         this.mRadius = Resources.getSystem().getDisplayMetrics().density * dp;

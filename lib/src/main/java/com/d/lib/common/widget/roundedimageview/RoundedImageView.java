@@ -41,16 +41,15 @@ import com.d.lib.common.R;
 @SuppressWarnings("UnusedDeclaration")
 public class RoundedImageView extends ImageView {
 
+    public static final String TAG = "RoundedImageView";
+    public static final float DEFAULT_RADIUS = 0f;
+    public static final float DEFAULT_BORDER_WIDTH = 0f;
+    public static final Shader.TileMode DEFAULT_TILE_MODE = Shader.TileMode.CLAMP;
     // Constants for tile mode attributes
     private static final int TILE_MODE_UNDEFINED = -2;
     private static final int TILE_MODE_CLAMP = 0;
     private static final int TILE_MODE_REPEAT = 1;
     private static final int TILE_MODE_MIRROR = 2;
-
-    public static final String TAG = "RoundedImageView";
-    public static final float DEFAULT_RADIUS = 0f;
-    public static final float DEFAULT_BORDER_WIDTH = 0f;
-    public static final Shader.TileMode DEFAULT_TILE_MODE = Shader.TileMode.CLAMP;
     private static final ScaleType[] SCALE_TYPES = {
             ScaleType.MATRIX,
             ScaleType.FIT_XY,
@@ -406,6 +405,15 @@ public class RoundedImageView extends ImageView {
     }
 
     /**
+     * Set the corner radii of all corners in px.
+     *
+     * @param radius the radius to set.
+     */
+    public void setCornerRadius(float radius) {
+        setCornerRadius(radius, radius, radius, radius);
+    }
+
+    /**
      * @return the largest corner radius.
      */
     public float getMaxCornerRadius() {
@@ -444,15 +452,6 @@ public class RoundedImageView extends ImageView {
      */
     public void setCornerRadiusDimen(@Corner int corner, @DimenRes int resId) {
         setCornerRadius(corner, getResources().getDimensionPixelSize(resId));
-    }
-
-    /**
-     * Set the corner radii of all corners in px.
-     *
-     * @param radius the radius to set.
-     */
-    public void setCornerRadius(float radius) {
-        setCornerRadius(radius, radius, radius, radius);
     }
 
     /**
@@ -527,10 +526,6 @@ public class RoundedImageView extends ImageView {
         setBorderColor(ColorStateList.valueOf(color));
     }
 
-    public ColorStateList getBorderColors() {
-        return mBorderColor;
-    }
-
     public void setBorderColor(ColorStateList colors) {
         if (mBorderColor.equals(colors)) {
             return;
@@ -543,6 +538,10 @@ public class RoundedImageView extends ImageView {
         if (mBorderWidth > 0) {
             invalidate();
         }
+    }
+
+    public ColorStateList getBorderColors() {
+        return mBorderColor;
     }
 
     /**

@@ -11,10 +11,6 @@ public class UserData extends AbstractPreference {
 
     private UserBean mUserBean;
 
-    private interface Keys {
-        String KEY_USER_JSON = "key_user_json";
-    }
-
     private UserData(Context context) {
         super(context, "UserData");
         getUserBean();
@@ -65,5 +61,9 @@ public class UserData extends AbstractPreference {
     public String getNickname() {
         UserBean userBean = getUserBean();
         return userBean != null ? userBean.nickname : "";
+    }
+
+    private interface Keys {
+        String KEY_USER_JSON = "key_user_json";
     }
 }

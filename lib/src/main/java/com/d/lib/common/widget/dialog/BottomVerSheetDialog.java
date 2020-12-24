@@ -80,6 +80,18 @@ public class BottomVerSheetDialog extends AbsSheetDialog<BottomVerSheetDialog.Be
         initRecyclerList(R.id.rv_list, LinearLayoutManager.VERTICAL);
     }
 
+    public static class Bean {
+        public String item;
+        public int color;
+        public boolean isChecked;
+
+        public Bean(String item, int color, boolean isChecked) {
+            this.item = item;
+            this.color = color;
+            this.isChecked = isChecked;
+        }
+    }
+
     public class SheetAdapter extends CommonAdapter<Bean> {
         SheetAdapter(Context context, List<Bean> datas, int layoutId) {
             super(context, datas, layoutId);
@@ -101,18 +113,6 @@ public class BottomVerSheetDialog extends AbsSheetDialog<BottomVerSheetDialog.Be
                     onItemClick(position, item);
                 }
             });
-        }
-    }
-
-    public static class Bean {
-        public String item;
-        public int color;
-        public boolean isChecked;
-
-        public Bean(String item, int color, boolean isChecked) {
-            this.item = item;
-            this.color = color;
-            this.isChecked = isChecked;
         }
     }
 }

@@ -31,13 +31,6 @@ public class StatusBarCompat {
     public static final int STYLE_MAIN = 0;
     public static final int STYLE_WHITE = 1;
 
-    @IntDef({STYLE_MAIN, STYLE_WHITE})
-    @Target({ElementType.METHOD, ElementType.PARAMETER})
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface StatusBarStyle {
-
-    }
-
     //Get alpha color
     static int calculateStatusBarColor(int color, int alpha) {
         float a = 1 - alpha / 255f;
@@ -191,5 +184,12 @@ public class StatusBarCompat {
                 }
                 break;
         }
+    }
+
+    @IntDef({STYLE_MAIN, STYLE_WHITE})
+    @Target({ElementType.METHOD, ElementType.PARAMETER})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface StatusBarStyle {
+
     }
 }

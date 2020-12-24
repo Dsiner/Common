@@ -94,6 +94,10 @@ public class AlertSubDialog extends AbstractDialog {
         cb_toggle.setChecked(mIsChecked);
     }
 
+    public void setOnCheckListener(OnCheckListener listener) {
+        this.mListener = listener;
+    }
+
     public interface OnCheckListener {
 
         /**
@@ -107,9 +111,5 @@ public class AlertSubDialog extends AbstractDialog {
          * Click cancel
          */
         void onCancel(Dialog dlg);
-    }
-
-    public void setOnCheckListener(OnCheckListener listener) {
-        this.mListener = listener;
     }
 }

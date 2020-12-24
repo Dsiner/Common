@@ -20,13 +20,12 @@ import com.d.lib.common.util.ViewHelper;
  * https://github.com/yshrsmz/KeyboardVisibilityEvent/blob/master/keyboardvisibilityevent/src/main/java/net/yslibrary/android/keyboardvisibilityevent/KeyboardVisibilityEvent.java
  */
 public class KeyboardHelper {
-    private static final String TAG = "QMUIKeyboardHelper";
-
     /**
      * 显示软键盘的延迟时间
      */
     public static final int SHOW_KEYBOARD_DELAY_TIME = 200;
     public static final int KEYBOARD_VISIBLE_THRESHOLD_DP = 100;
+    private static final String TAG = "QMUIKeyboardHelper";
 
     /**
      * 针对给定的editText显示软键盘（editText会先获得焦点）. 可以和{@link #hideKeyboard(View)}

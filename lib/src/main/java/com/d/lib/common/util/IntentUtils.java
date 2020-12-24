@@ -33,13 +33,6 @@ public final class IntentUtils {
     public static final int MIME_TYPE_IMAGE = 1;
     public static final int MIME_TYPE_VIDEO = 2;
 
-    @IntDef({MIME_TYPE_ALL, MIME_TYPE_IMAGE, MIME_TYPE_VIDEO})
-    @Target({ElementType.METHOD, ElementType.PARAMETER})
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface MimeType {
-
-    }
-
     private IntentUtils() {
     }
 
@@ -348,5 +341,12 @@ public final class IntentUtils {
             intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, multiple);
         }
         intent.addCategory(Intent.CATEGORY_OPENABLE);
+    }
+
+    @IntDef({MIME_TYPE_ALL, MIME_TYPE_IMAGE, MIME_TYPE_VIDEO})
+    @Target({ElementType.METHOD, ElementType.PARAMETER})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface MimeType {
+
     }
 }

@@ -93,6 +93,32 @@ public class MenuPopup extends AbstractPopup {
         }
     }
 
+    public void setOnMenuListener(OnMenuListener listener) {
+        this.mListener = listener;
+    }
+
+    public interface OnMenuListener {
+
+        /**
+         * Click item
+         *
+         * @param position From 0 to datas.size()-1;
+         */
+        void onClick(PopupWindow popup, int position, String item);
+    }
+
+    public static class Bean {
+        public String item;
+        public int color;
+        public boolean isChecked;
+
+        public Bean(String item, int color, boolean isChecked) {
+            this.item = item;
+            this.color = color;
+            this.isChecked = isChecked;
+        }
+    }
+
     public class SheetAdapter extends CommonAdapter<Bean> {
         SheetAdapter(Context context, List<Bean> datas, int layoutId) {
             super(context, datas, layoutId);
@@ -110,31 +136,5 @@ public class MenuPopup extends AbstractPopup {
                 }
             });
         }
-    }
-
-    public static class Bean {
-        public String item;
-        public int color;
-        public boolean isChecked;
-
-        public Bean(String item, int color, boolean isChecked) {
-            this.item = item;
-            this.color = color;
-            this.isChecked = isChecked;
-        }
-    }
-
-    public interface OnMenuListener {
-
-        /**
-         * Click item
-         *
-         * @param position From 0 to datas.size()-1;
-         */
-        void onClick(PopupWindow popup, int position, String item);
-    }
-
-    public void setOnMenuListener(OnMenuListener listener) {
-        this.mListener = listener;
     }
 }

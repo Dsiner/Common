@@ -42,21 +42,11 @@ public class DSLayout extends FrameLayout {
     private static final int CENT_TYPE_MAIN = 1;
     private static final int CENT_TYPE_LOCAL = 2;
     private static final float[] AJUST_HEIGHT = new float[]{0, 50, 70};
-
-    @IntDef({STATE_LOADING, STATE_EMPTY, STATE_NET_ERROR,
-            DSLayout.VISIBLE, DSLayout.INVISIBLE, DSLayout.GONE})
-    @Target({ElementType.PARAMETER})
-    @Retention(RetentionPolicy.SOURCE)
-    public @interface State {
-
-    }
-
     private int mLayoutId;
     private int mCenterType; // Centered type
     private float mAdjustHeightT; // Correction height
     private float mAdjustHeightB; // Correction height
     private int mResIdEmpty, mResIdNetError;
-
     private LinearLayout mLlDsl;
     private ImageView mIvIcon;
     private TextView mTvDesc;
@@ -230,5 +220,13 @@ public class DSLayout extends FrameLayout {
                 break;
         }
         return this;
+    }
+
+    @IntDef({STATE_LOADING, STATE_EMPTY, STATE_NET_ERROR,
+            DSLayout.VISIBLE, DSLayout.INVISIBLE, DSLayout.GONE})
+    @Target({ElementType.PARAMETER})
+    @Retention(RetentionPolicy.SOURCE)
+    public @interface State {
+
     }
 }
