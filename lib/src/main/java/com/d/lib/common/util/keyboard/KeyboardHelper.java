@@ -6,11 +6,12 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+
+import androidx.annotation.RequiresApi;
 
 import com.d.lib.common.util.DimenUtils;
 import com.d.lib.common.util.ViewHelper;

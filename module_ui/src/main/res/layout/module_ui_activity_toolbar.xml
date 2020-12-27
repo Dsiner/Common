@@ -137,7 +137,7 @@
                 app:lib_pub_stab_indicatorWidth="40dp"
                 app:lib_pub_stab_type="view_group" />
 
-            <android.support.v4.view.ViewPager
+            <androidx.viewpager.widget.ViewPager
                 android:id="@+id/pager0"
                 android:layout_width="match_parent"
                 android:layout_height="95dp" />
@@ -187,7 +187,7 @@
                 app:lib_pub_stab_indicatorWidth="40dp"
                 app:lib_pub_stab_type="view_group" />
 
-            <android.support.v4.view.ViewPager
+            <androidx.viewpager.widget.ViewPager
                 android:id="@+id/pager1"
                 android:layout_width="match_parent"
                 android:layout_height="95dp" />

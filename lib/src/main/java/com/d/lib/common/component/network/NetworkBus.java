@@ -1,6 +1,6 @@
 package com.d.lib.common.component.network;
 
-import android.support.annotation.UiThread;
+import androidx.annotation.UiThread;
 
 import com.d.lib.common.util.NetworkUtils;
 

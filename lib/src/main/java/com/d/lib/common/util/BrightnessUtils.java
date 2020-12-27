@@ -3,10 +3,11 @@ package com.d.lib.common.util;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.provider.Settings;
-import android.support.annotation.IntRange;
-import android.support.annotation.NonNull;
 import android.view.Window;
 import android.view.WindowManager;
+
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
 
 public class BrightnessUtils {
 

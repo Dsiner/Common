@@ -1,6 +1,6 @@
 package com.d.lib.common.event.bus;
 
-import android.support.annotation.UiThread;
+import androidx.annotation.UiThread;
 
 import com.d.lib.common.event.bus.callback.SimpleCallback;
 

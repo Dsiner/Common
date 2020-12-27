@@ -2,11 +2,12 @@ package com.d.lib.common.widget.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.support.annotation.IdRes;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.WindowManager;
+
+import androidx.annotation.IdRes;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.d.lib.common.R;
 

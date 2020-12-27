@@ -3,8 +3,9 @@ package com.d.common.ui;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.View;
+
+import androidx.annotation.Nullable;
 
 import com.d.lib.common.util.ViewHelper;
 

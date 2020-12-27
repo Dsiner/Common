@@ -1,7 +1,8 @@
 package com.d.common.mvp.presenter;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+
+import androidx.annotation.NonNull;
 
 import com.d.common.mvp.model.MModel;
 import com.d.common.mvp.view.IMView;

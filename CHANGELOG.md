@@ -1,6 +1,16 @@
 # Changelog #
 --------------------------------
 
+## Version 2.0.0 ##
+--------------------------------
+### Build Changes ###
+- Migrate to AndroidX
+- Updated target SDK to 26
+- Update `Glide` to 4.11.0
+- Update `PullLayout` to 2.0.0
+
+
+
 ## Version: 1.2.0 ##
 --------------------------------
 ### Changes ###

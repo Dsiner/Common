@@ -1,6 +1,6 @@
 package com.d.common.loader.activity;
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.d.common.loader.R;
 import com.d.common.loader.fragment.LoaderLazyFragment;

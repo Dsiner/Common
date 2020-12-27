@@ -2,9 +2,10 @@ package com.d.lib.common.util.keyboard;
 
 import android.app.Activity;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.widget.EditText;
+
+import androidx.annotation.RequiresApi;
 
 import com.d.lib.common.util.ScreenUtils;
 import com.d.lib.common.util.ViewHelper;

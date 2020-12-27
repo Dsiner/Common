@@ -1,9 +1,10 @@
 package com.d.lib.common.widget.btb;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
 
 import com.d.lib.pulllayout.lv.adapter.CommonHolder;
 import com.d.lib.pulllayout.lv.adapter.MultiItemTypeSupport;

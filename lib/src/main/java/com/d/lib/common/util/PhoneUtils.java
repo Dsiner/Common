@@ -3,9 +3,10 @@ package com.d.lib.common.util;
 import android.annotation.SuppressLint;
 import android.app.Service;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.RequiresPermission;
 import android.telephony.TelephonyManager;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresPermission;
 
 import java.lang.reflect.Method;
 

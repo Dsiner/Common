@@ -16,7 +16,7 @@
 
 package com.d.lib.common.component.mvp;
 
-import android.support.annotation.UiThread;
+import androidx.annotation.UiThread;
 
 /**
  * The base interface for each mvp presenter.
