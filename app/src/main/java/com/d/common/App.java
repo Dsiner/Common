@@ -5,7 +5,7 @@ import android.app.Application;
 import com.d.common.loader.api.API;
 import com.d.lib.aster.Aster;
 import com.d.lib.aster.base.Config;
-import com.d.lib.aster.utils.SSLUtil;
+import com.d.lib.aster.util.SSLUtils;
 import com.d.lib.common.component.network.NetworkBus;
 import com.d.lib.common.component.network.NetworkCompat;
 import com.d.lib.common.util.NetworkUtils;
@@ -33,7 +33,7 @@ public class App extends Application {
                 .writeTimeout(10 * 1000)
                 .retryCount(0)
                 .retryDelayMillis(3 * 1000)
-                .sslSocketFactory(SSLUtil.getSslSocketFactory(null, null, null))
+                .sslSocketFactory(SSLUtils.getSslSocketFactory(null, null, null))
                 .log("AsterLog Back = ", Config.Level.BODY)
                 .debug(true)
                 .build();

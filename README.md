@@ -13,11 +13,15 @@ Maven:
 <dependency>
   <groupId>com.dsiner.lib</groupId>
   <artifactId>common</artifactId>
-  <version>1.2.1</version>
+  <version>2.0.0</version>
 </dependency>
 ```
+
 or Gradle:
 ```groovy
+// AndroidX
+implementation 'com.dsiner.lib:common:2.0.0'
+// Or Support
 implementation 'com.dsiner.lib:common:1.2.1'
 ```
 

@@ -35,6 +35,6 @@ dependencies {
     implementation project(':lib')
 
     // Network request
-    api 'com.dsiner.lib:aster:2.0.9'
-    api 'com.dsiner.lib:aster-adapter-okhttp3:2.0.9'
+    api 'com.dsiner.lib:aster:2.1.0'
+    api 'com.dsiner.lib:aster-adapter-okhttp3:2.1.0'
 }
