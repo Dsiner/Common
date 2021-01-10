@@ -1,6 +1,13 @@
 # Changelog #
 --------------------------------
 
+## Version 1.2.1 ##
+--------------------------------
+### Build Changes ###
+- Update `PullLayout` to 1.0.4
+
+
+
 ## Version: 1.2.0 ##
 --------------------------------
 ### Changes ###
@@ -31,6 +38,7 @@ There are too many changes to list individually, but here's a few highlights:
 - Update `Glide` to 4.9.0
 - Update `PullLayout` to 1.0.3
 - Update `PermissionCompat` to 1.0.3
+
 
 
 ## Version 1.1.1 ##
