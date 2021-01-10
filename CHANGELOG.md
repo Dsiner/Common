@@ -31,7 +31,7 @@ There are too many changes to list individually, but here's a few highlights:
   - `AbsPageFragment` --> `BasePagerFragment`
   - `AbsPageFragmentActivity` --> `BasePagerFragmentActivity`
 - package `com.d.lib.common.component.loader.v7`
-  - `BaseAppCompatActivity` --> `BasePagerAppCompatActivity`
+  - `AbsAppCompatActivity` --> `BasePagerAppCompatActivity`
 - package `com.d.lib.common.component.loader`
   - `IAbsView` --> `MvpBaseLoaderView`
   - `AbsPresenter` --> `MvpBaseLoaderPresenter`
@@ -55,7 +55,6 @@ There are too many changes to list individually, but here's a few highlights:
 --------------------------------
 ### Changes ###
 #### Rename
-- package `com.d.lib.common.view` --> package `com.d.lib.common.widget`
 - `ViewHelper.findView()` --> `ViewHelper.findViewById()`
 - `ViewHelper.setOnClick()` --> `ViewHelper.setOnClickListener()`
 
