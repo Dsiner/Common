@@ -32,6 +32,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.TranslateAnimation;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -103,6 +104,14 @@ public class ViewHelper {
         for (View v : views) {
             v.setVisibility(visibility);
         }
+    }
+
+    public static String trim(EditText editText) {
+        return editText.getText().toString().trim();
+    }
+
+    public static void setSelectionToLast(EditText editText) {
+        editText.setSelection(editText.getText().toString().length());
     }
 
     public static String getRunningActivityName(Context context) {
@@ -738,26 +747,27 @@ public class ViewHelper {
      * @param textView TextView
      * @param text     Text
      * @param maxWidth Maximum width
-     * @param dpMin    Minimum dp limit, default dp
+     * @param dpMin    Minimum dp limit
      * @param dpMax    Maximum dp limit, default dp
      */
     public static void autoSize(TextView textView, String text, float maxWidth, float dpMin, float dpMax) {
+        final Context context = textView.getContext();
         final Paint paint = textView.getPaint();
-        final float minSize = DimenUtils.dp2px(textView.getContext(), dpMin);
-        float textSize = DimenUtils.dp2px(textView.getContext(), dpMax);
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
         // Get the effective width of the current TextView
-        final int availableWidth = DimenUtils.dp2px(textView.getContext(), maxWidth);
-        float textWidth = paint.measureText(text);
-        while (textWidth > availableWidth) {
-            if (textSize < minSize) {
+        final int availableWidth = DimenUtils.dp2px(context, maxWidth);
+        final float minSize = DimenUtils.dp2px(context, dpMin);
+        float textSize = DimenUtils.dp2px(context, dpMax);
+        paint.setTextSize(textSize);
+        while (paint.measureText(text) > availableWidth) {
+            if (textSize <= minSize) {
+                textSize = minSize;
                 break;
             }
-            textSize = textSize - 1;
+            textSize -= 1;
             // The unit passed in here is px
-            textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
-            textWidth = paint.measureText(text) + 2;
+            paint.setTextSize(textSize);
         }
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
         textView.setText(text);
     }
 

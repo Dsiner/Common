@@ -79,7 +79,7 @@ public class DrawableTextView extends TextView {
             if (left != null) {
                 int leftDrawableWidth = left.getBounds().right;
                 int drawablePadding = getCompoundDrawablePadding();
-                int textWidth = (int) getPaint().measureText(getText().toString().trim());
+                int textWidth = (int) getPaint().measureText(getText().toString());
                 int bodyWidth = leftDrawableWidth + drawablePadding + textWidth;
                 canvas.save();
                 canvas.translate((getWidth() - bodyWidth) / 2f, 0);
