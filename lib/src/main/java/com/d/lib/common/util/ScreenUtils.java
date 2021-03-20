@@ -1,5 +1,7 @@
 package com.d.lib.common.util;
 
+import static android.Manifest.permission.WRITE_SETTINGS;
+
 import android.app.Activity;
 import android.app.KeyguardManager;
 import android.content.Context;
@@ -22,8 +24,6 @@ import androidx.annotation.RequiresPermission;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-
-import static android.Manifest.permission.WRITE_SETTINGS;
 
 public final class ScreenUtils {
     private static int SCREEN_WIDTH; // Screen width
@@ -121,15 +121,16 @@ public final class ScreenUtils {
         Class<?> c = null;
         Object obj = null;
         Field field = null;
-        int x = 0, sbar = DimenUtils.dp2px(context, 38); // The default is 38, which looks like most of them
+        int x = 0, sbar = 0;
         try {
             c = Class.forName("com.android.internal.R$dimen");
             obj = c.newInstance();
             field = c.getField("status_bar_height");
             x = ConvertUtils.convertInt(field.get(obj).toString());
             sbar = context.getResources().getDimensionPixelSize(x);
-        } catch (Exception e1) {
-            e1.printStackTrace();
+        } catch (Throwable e) {
+            e.printStackTrace();
+            sbar = DimenUtils.dp2px(context, 20); // The default is 20dp, which looks like most of them
         }
         return sbar;
     }
@@ -148,7 +149,6 @@ public final class ScreenUtils {
             field = c.getField("navigation_bar_height");
             x = ConvertUtils.convertInt(field.get(obj).toString());
             sbar = context.getResources().getDimensionPixelSize(x);
-
         } catch (Exception e1) {
             e1.printStackTrace();
         }
